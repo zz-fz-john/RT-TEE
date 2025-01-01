@@ -1,5 +1,5 @@
 out/
-out-br
+out-br/
 toolchains/
 arm-trusted-firmware/
 optee_client/out
@@ -7,3 +7,6 @@ optee_os/out
 linux
 edk/
 qemu/
+soc_term
+buildroot
+
