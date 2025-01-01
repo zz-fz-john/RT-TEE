@@ -1,4 +1,4 @@
-export RTTEE_PATH=/home/osboxes/fix_rttee_text/RT-TEE
+export RTTEE_PATH=/home/zrz0517/study/TEE/RT-TEE
 export HOST_CROSS_COMPILE=$RTTEE_PATH/toolchains/aarch64/bin/aarch64-linux-gnu-
 export CROSS_COMPILE=$RTTEE_PATH/toolchains/aarch64/bin/aarch64-linux-gnu-
 export TA_CROSS_COMPILE=$RTTEE_PATH/toolchains/aarch64/bin/aarch64-linux-gnu-
