@@ -1,1 +1,0 @@
-/home/zrz0517/study/TEE/RT-TEE/qemu/Makefile.target
