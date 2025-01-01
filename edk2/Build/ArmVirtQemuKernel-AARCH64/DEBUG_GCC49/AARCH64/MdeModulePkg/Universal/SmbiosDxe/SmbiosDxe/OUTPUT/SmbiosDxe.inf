@@ -31,6 +31,7 @@
 
 [Binaries.AARCH64]
   PE32|SmbiosDxe.efi
+  DXE_DEPEX|SmbiosDxe.depex
 
 [PatchPcd.AARCH64]
 

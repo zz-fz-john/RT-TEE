@@ -32,6 +32,7 @@
 
 [Binaries.AARCH64]
   PE32|MonotonicCounterRuntimeDxe.efi
+  DXE_DEPEX|MonotonicCounterRuntimeDxe.depex
 
 [PatchPcd.AARCH64]
 

@@ -1,6 +1,6 @@
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/MdeModulePkg/Application/UiApp/UiApp/OUTPUT/FrontPageVfr.obj
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/MdeModulePkg/Application/UiApp/UiApp/OUTPUT/FrontPage.obj
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/MdeModulePkg/Application/UiApp/UiApp/OUTPUT/String.obj
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/MdeModulePkg/Application/UiApp/UiApp/OUTPUT/FrontPageCustomizedUi.obj
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/MdeModulePkg/Application/UiApp/UiApp/OUTPUT/FrontPageCustomizedUiSupport.obj
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/MdeModulePkg/Application/UiApp/UiApp/OUTPUT/AutoGen.obj
+/home/zrz0517/study/TEE/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/MdeModulePkg/Application/UiApp/UiApp/OUTPUT/FrontPageVfr.obj
+/home/zrz0517/study/TEE/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/MdeModulePkg/Application/UiApp/UiApp/OUTPUT/FrontPage.obj
+/home/zrz0517/study/TEE/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/MdeModulePkg/Application/UiApp/UiApp/OUTPUT/String.obj
+/home/zrz0517/study/TEE/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/MdeModulePkg/Application/UiApp/UiApp/OUTPUT/FrontPageCustomizedUi.obj
+/home/zrz0517/study/TEE/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/MdeModulePkg/Application/UiApp/UiApp/OUTPUT/FrontPageCustomizedUiSupport.obj
+/home/zrz0517/study/TEE/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/MdeModulePkg/Application/UiApp/UiApp/OUTPUT/AutoGen.obj

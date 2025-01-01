@@ -32,6 +32,7 @@
 
 [Binaries.AARCH64]
   PE32|MetronomeDxe.efi
+  DXE_DEPEX|MetronomeDxe.depex
 
 [PatchPcd.AARCH64]
 

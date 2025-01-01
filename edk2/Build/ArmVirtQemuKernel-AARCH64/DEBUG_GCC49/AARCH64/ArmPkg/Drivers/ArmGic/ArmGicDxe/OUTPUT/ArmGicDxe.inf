@@ -31,6 +31,7 @@
 
 [Binaries.AARCH64]
   PE32|ArmGicDxe.efi
+  DXE_DEPEX|ArmGicDxe.depex
 
 [PatchPcd.AARCH64]
 

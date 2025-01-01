@@ -31,6 +31,7 @@
 
 [Binaries.AARCH64]
   PE32|HighMemDxe.efi
+  DXE_DEPEX|HighMemDxe.depex
 
 [PatchPcd.AARCH64]
 

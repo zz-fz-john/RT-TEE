@@ -33,6 +33,7 @@
 
 [Binaries.AARCH64]
   PE32|LogoDxe.efi
+  DXE_DEPEX|LogoDxe.depex
 
 [PatchPcd.AARCH64]
 

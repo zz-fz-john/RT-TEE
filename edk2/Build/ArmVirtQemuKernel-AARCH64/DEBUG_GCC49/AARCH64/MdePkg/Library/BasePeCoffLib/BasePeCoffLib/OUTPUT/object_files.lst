@@ -1,2 +1,2 @@
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/MdePkg/Library/BasePeCoffLib/BasePeCoffLib/OUTPUT/BasePeCoff.obj
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/MdePkg/Library/BasePeCoffLib/BasePeCoffLib/OUTPUT/PeCoffLoaderEx.obj
+/home/zrz0517/study/TEE/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/MdePkg/Library/BasePeCoffLib/BasePeCoffLib/OUTPUT/BasePeCoff.obj
+/home/zrz0517/study/TEE/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/MdePkg/Library/BasePeCoffLib/BasePeCoffLib/OUTPUT/PeCoffLoaderEx.obj

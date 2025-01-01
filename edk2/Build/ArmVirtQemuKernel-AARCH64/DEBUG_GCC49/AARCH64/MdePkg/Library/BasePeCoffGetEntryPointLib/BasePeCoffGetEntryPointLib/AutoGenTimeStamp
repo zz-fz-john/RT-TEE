@@ -1,8 +1,8 @@
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/MdePkg/Include/Base.h
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/MdePkg/Include/IndustryStandard/PeImage.h
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/MdePkg/Include/Library/PeCoffGetEntryPointLib.h
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/MdePkg/Library/BasePeCoffGetEntryPointLib/BasePeCoffGetEntryPointLib/DEBUG/AutoGen.h
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/MdePkg/Library/BasePeCoffGetEntryPointLib/BasePeCoffGetEntryPointLib.inf
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/MdePkg/Include/Library/DebugLib.h
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/MdePkg/Library/BasePeCoffGetEntryPointLib/PeCoffGetEntryPoint.c
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/MdePkg/Include/AArch64/ProcessorBind.h
+/home/zrz0517/study/TEE/RT-TEE/edk2/MdePkg/Include/IndustryStandard/PeImage.h
+/home/zrz0517/study/TEE/RT-TEE/edk2/MdePkg/Include/Library/PeCoffGetEntryPointLib.h
+/home/zrz0517/study/TEE/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/MdePkg/Library/BasePeCoffGetEntryPointLib/BasePeCoffGetEntryPointLib/DEBUG/AutoGen.h
+/home/zrz0517/study/TEE/RT-TEE/edk2/MdePkg/Library/BasePeCoffGetEntryPointLib/PeCoffGetEntryPoint.c
+/home/zrz0517/study/TEE/RT-TEE/edk2/MdePkg/Include/AArch64/ProcessorBind.h
+/home/zrz0517/study/TEE/RT-TEE/edk2/MdePkg/Include/Library/DebugLib.h
+/home/zrz0517/study/TEE/RT-TEE/edk2/MdePkg/Library/BasePeCoffGetEntryPointLib/BasePeCoffGetEntryPointLib.inf
+/home/zrz0517/study/TEE/RT-TEE/edk2/MdePkg/Include/Base.h

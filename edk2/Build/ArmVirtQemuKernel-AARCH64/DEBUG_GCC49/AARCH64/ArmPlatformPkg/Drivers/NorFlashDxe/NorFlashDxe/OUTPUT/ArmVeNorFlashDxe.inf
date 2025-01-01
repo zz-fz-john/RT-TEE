@@ -33,6 +33,7 @@
 
 [Binaries.AARCH64]
   PE32|ArmVeNorFlashDxe.efi
+  DXE_DEPEX|ArmVeNorFlashDxe.depex
 
 [PatchPcd.AARCH64]
 

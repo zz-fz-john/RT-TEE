@@ -32,6 +32,7 @@
 
 [Binaries.AARCH64]
   PE32|DpcDxe.efi
+  DXE_DEPEX|DpcDxe.depex
 
 [PatchPcd.AARCH64]
 

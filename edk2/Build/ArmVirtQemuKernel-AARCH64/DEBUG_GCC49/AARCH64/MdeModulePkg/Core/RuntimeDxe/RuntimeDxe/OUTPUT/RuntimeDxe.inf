@@ -35,6 +35,7 @@
 
 [Binaries.AARCH64]
   PE32|RuntimeDxe.efi
+  DXE_DEPEX|RuntimeDxe.depex
 
 [PatchPcd.AARCH64]
 

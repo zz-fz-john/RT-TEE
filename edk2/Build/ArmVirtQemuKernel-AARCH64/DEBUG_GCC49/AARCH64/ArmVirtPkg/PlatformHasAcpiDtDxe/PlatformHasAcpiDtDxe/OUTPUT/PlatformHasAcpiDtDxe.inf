@@ -32,6 +32,7 @@
 
 [Binaries.AARCH64]
   PE32|PlatformHasAcpiDtDxe.efi
+  DXE_DEPEX|PlatformHasAcpiDtDxe.depex
 
 [PatchPcd.AARCH64]
 

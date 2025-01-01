@@ -34,6 +34,7 @@
 
 [Binaries.AARCH64]
   PE32|AcpiTableDxe.efi
+  DXE_DEPEX|AcpiTableDxe.depex
 
 [PatchPcd.AARCH64]
 

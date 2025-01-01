@@ -1,6 +1,6 @@
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/OvmfPkg/AcpiPlatformDxe/QemuFwCfgAcpiPlatformDxe/OUTPUT/BootScript.obj
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/OvmfPkg/AcpiPlatformDxe/QemuFwCfgAcpiPlatformDxe/OUTPUT/EntryPoint.obj
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/OvmfPkg/AcpiPlatformDxe/QemuFwCfgAcpiPlatformDxe/OUTPUT/PciDecoding.obj
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/OvmfPkg/AcpiPlatformDxe/QemuFwCfgAcpiPlatformDxe/OUTPUT/QemuFwCfgAcpi.obj
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/OvmfPkg/AcpiPlatformDxe/QemuFwCfgAcpiPlatformDxe/OUTPUT/QemuFwCfgAcpiPlatform.obj
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/OvmfPkg/AcpiPlatformDxe/QemuFwCfgAcpiPlatformDxe/OUTPUT/AutoGen.obj
+/home/zrz0517/study/TEE/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/OvmfPkg/AcpiPlatformDxe/QemuFwCfgAcpiPlatformDxe/OUTPUT/BootScript.obj
+/home/zrz0517/study/TEE/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/OvmfPkg/AcpiPlatformDxe/QemuFwCfgAcpiPlatformDxe/OUTPUT/EntryPoint.obj
+/home/zrz0517/study/TEE/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/OvmfPkg/AcpiPlatformDxe/QemuFwCfgAcpiPlatformDxe/OUTPUT/PciDecoding.obj
+/home/zrz0517/study/TEE/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/OvmfPkg/AcpiPlatformDxe/QemuFwCfgAcpiPlatformDxe/OUTPUT/QemuFwCfgAcpi.obj
+/home/zrz0517/study/TEE/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/OvmfPkg/AcpiPlatformDxe/QemuFwCfgAcpiPlatformDxe/OUTPUT/QemuFwCfgAcpiPlatform.obj
+/home/zrz0517/study/TEE/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/OvmfPkg/AcpiPlatformDxe/QemuFwCfgAcpiPlatformDxe/OUTPUT/AutoGen.obj

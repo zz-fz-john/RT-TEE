@@ -1,8 +1,8 @@
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/MdePkg/Include/Base.h
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/MdePkg/Library/BasePerformanceLibNull/BasePerformanceLibNull/DEBUG/AutoGen.h
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/MdePkg/Include/Library/PcdLib.h
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/MdePkg/Include/Library/PerformanceLib.h
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/MdePkg/Library/BasePerformanceLibNull/BasePerformanceLibNull.inf
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/MdePkg/Include/Library/DebugLib.h
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/MdePkg/Library/BasePerformanceLibNull/PerformanceLib.c
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/MdePkg/Include/AArch64/ProcessorBind.h
+/home/zrz0517/study/TEE/RT-TEE/edk2/MdePkg/Include/AArch64/ProcessorBind.h
+/home/zrz0517/study/TEE/RT-TEE/edk2/MdePkg/Library/BasePerformanceLibNull/BasePerformanceLibNull.inf
+/home/zrz0517/study/TEE/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/MdePkg/Library/BasePerformanceLibNull/BasePerformanceLibNull/DEBUG/AutoGen.h
+/home/zrz0517/study/TEE/RT-TEE/edk2/MdePkg/Include/Library/PcdLib.h
+/home/zrz0517/study/TEE/RT-TEE/edk2/MdePkg/Library/BasePerformanceLibNull/PerformanceLib.c
+/home/zrz0517/study/TEE/RT-TEE/edk2/MdePkg/Include/Library/DebugLib.h
+/home/zrz0517/study/TEE/RT-TEE/edk2/MdePkg/Include/Base.h
+/home/zrz0517/study/TEE/RT-TEE/edk2/MdePkg/Include/Library/PerformanceLib.h

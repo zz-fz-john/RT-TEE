@@ -35,6 +35,7 @@
 
 [Binaries.AARCH64]
   PE32|PlatformDxe.efi
+  DXE_DEPEX|PlatformDxe.depex
   BIN|PlatformDxeOffset.bin
 
 [PatchPcd.AARCH64]

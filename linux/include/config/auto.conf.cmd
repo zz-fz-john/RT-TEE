@@ -1232,10 +1232,10 @@ endif
 ifneq "$(srctree)" "."
 include/config/auto.conf: FORCE
 endif
-ifneq "$(CC)" "/usr/bin/ccache /home/osboxes/fix_rttee_text/RT-TEE/build/../toolchains/aarch64/bin/aarch64-linux-gnu-gcc"
+ifneq "$(CC)" "/usr/bin/ccache /home/zrz0517/study/TEE/RT-TEE/build/../toolchains/aarch64/bin/aarch64-linux-gnu-gcc"
 include/config/auto.conf: FORCE
 endif
-ifneq "$(LD)" "/usr/bin/ccache /home/osboxes/fix_rttee_text/RT-TEE/build/../toolchains/aarch64/bin/aarch64-linux-gnu-ld"
+ifneq "$(LD)" "/usr/bin/ccache /home/zrz0517/study/TEE/RT-TEE/build/../toolchains/aarch64/bin/aarch64-linux-gnu-ld"
 include/config/auto.conf: FORCE
 endif
 ifneq "$(SRCARCH)" "arm64"

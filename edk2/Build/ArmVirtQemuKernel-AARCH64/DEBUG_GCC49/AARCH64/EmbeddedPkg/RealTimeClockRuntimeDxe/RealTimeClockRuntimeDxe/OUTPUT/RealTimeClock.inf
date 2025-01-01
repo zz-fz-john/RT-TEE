@@ -31,6 +31,7 @@
 
 [Binaries.AARCH64]
   PE32|RealTimeClock.efi
+  DXE_DEPEX|RealTimeClock.depex
 
 [PatchPcd.AARCH64]
 

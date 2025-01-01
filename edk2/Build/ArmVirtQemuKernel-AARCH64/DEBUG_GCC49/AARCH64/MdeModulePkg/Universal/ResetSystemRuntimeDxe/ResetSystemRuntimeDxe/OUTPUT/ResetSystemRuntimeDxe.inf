@@ -32,6 +32,7 @@
 
 [Binaries.AARCH64]
   PE32|ResetSystemRuntimeDxe.efi
+  DXE_DEPEX|ResetSystemRuntimeDxe.depex
 
 [PatchPcd.AARCH64]
 

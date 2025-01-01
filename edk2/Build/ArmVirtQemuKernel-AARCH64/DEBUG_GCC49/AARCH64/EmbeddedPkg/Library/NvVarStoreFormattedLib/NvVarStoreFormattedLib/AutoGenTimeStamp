@@ -1,5 +1,5 @@
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/EmbeddedPkg/Library/NvVarStoreFormattedLib/NvVarStoreFormattedLib.inf
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/MdePkg/Include/Base.h
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/MdePkg/Include/AArch64/ProcessorBind.h
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/EmbeddedPkg/Library/NvVarStoreFormattedLib/NvVarStoreFormattedLib.c
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/EmbeddedPkg/Library/NvVarStoreFormattedLib/NvVarStoreFormattedLib/DEBUG/AutoGen.h
+/home/zrz0517/study/TEE/RT-TEE/edk2/MdePkg/Include/AArch64/ProcessorBind.h
+/home/zrz0517/study/TEE/RT-TEE/edk2/EmbeddedPkg/Library/NvVarStoreFormattedLib/NvVarStoreFormattedLib.inf
+/home/zrz0517/study/TEE/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/EmbeddedPkg/Library/NvVarStoreFormattedLib/NvVarStoreFormattedLib/DEBUG/AutoGen.h
+/home/zrz0517/study/TEE/RT-TEE/edk2/MdePkg/Include/Base.h
+/home/zrz0517/study/TEE/RT-TEE/edk2/EmbeddedPkg/Library/NvVarStoreFormattedLib/NvVarStoreFormattedLib.c

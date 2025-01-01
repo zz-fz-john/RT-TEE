@@ -1,3 +1,6 @@
+# RT_TEE_Scheduler.c修改后文件
+
+~~~c
 //           ....,,
 //         .::o::;'          .....
 //        ::::::::        .::::o:::.,
@@ -96,14 +99,14 @@ at the world switching level, for each core, we run a deferrable servers, one fo
 
 //qemu plat includes
 #include <drivers/gic.h>
-#include <drivers/pl011.h>
-#include <drivers/tzc400.h>
-#include <initcall.h>
-#include <sm/psci.h>
+// #include <drivers/pl011.h>
+// #include <drivers/tzc400.h>
+// #include <initcall.h>
+// #include <sm/psci.h>
 
 
 
-// #define RT-TEE_SYNTHETIC	
+ #define RT-TEE_SYNTHETIC	
 
 
 // choosing schedulre one of following scheduler must be defined
@@ -210,10 +213,13 @@ struct mutex runnable_tasks_mutex = MUTEX_INITIALIZER;
 // MEM_AREA_IO_SEC:   Secure HW mapped registers
 // however, bc rpi3 uart is not secure hw, so it does not support tz secure bit.
 // thus, normal world can still access it.
-// register_phys_mem(MEM_AREA_IO_SEC, CONSOLE_UART_BASE, SERIAL8250_UART_REG_SIZE);
-// #define CONSOLE_UART_BASE	0x3f215040 /* UART0 */
-// register_phys_mem(MEM_AREA_IO_SEC, BCM2836_BASE , 0x100);
-// register_phys_mem(MEM_AREA_IO_SEC, BCM2836_GPIO_BASE, 0x100);
+#define CONSOLE_UART_BASE	0x3f215040 /* UART0 */
+register_phys_mem(MEM_AREA_IO_SEC, CONSOLE_UART_BASE, SERIAL8250_UART_REG_SIZE);
+
+ #define   BCM2836_BASE 0x12000000
+ #define BCM2836_GPIO_BASE  0x12100000
+register_phys_mem(MEM_AREA_IO_SEC, BCM2836_BASE , 0x100);
+ register_phys_mem(MEM_AREA_IO_SEC, BCM2836_GPIO_BASE, 0x100);
 
 
 typedef struct {
@@ -424,294 +430,335 @@ static void main_fiq(void);
 
 static void main_fiq(void)
 {
+	IMSG("ZRZ+++++++++++++++++++++++++++++++++++++++++++");
 	if(!scheduler_start_flag[get_current_core()]){
 		// Disable the timer 
+		IMSG("enable RT-TEE_scheuler.c  main_fiq to if");
 		write_cntps_ctl(0);
 	}
 	else{
 		//save normal world vfp state
+		IMSG("enable RT-TEE_scheuler.c  main_fiq to else");
 		fp_regs_save(&nw_vfp_state[get_current_core()]);
 		world_schedule_item();
 	}
 }
 
 // pi3 platform
-// static const struct thread_handlers handlers = {
-// 	.std_smc = tee_entry_std,
-// 	.fast_smc = tee_entry_fast,
-// 	.nintr = main_fiq, // main_fiq, rd_test. this is the entry for EL3 forward fiq. 
-// 					   // real el1 fiq handler is created by rd as rd_scheduler_stub below
-// 	.cpu_on = cpu_on_handler,
-// 	.cpu_off = pm_do_nothing,
-// 	.cpu_suspend = pm_do_nothing,
-// 	.cpu_resume = pm_do_nothing,
-// 	.system_off = pm_do_nothing,
-// 	.system_reset = pm_do_nothing,
-// };
-
-// static struct serial8250_uart_data console_data;
-
-// const struct thread_handlers *generic_boot_get_handlers(void)
-// {
-// 	return &handlers;
-
-// }
-
-// void console_init(void)
-// {
-// 	serial8250_uart_init(&console_data, CONSOLE_UART_BASE,
-// 			     CONSOLE_UART_CLK_IN_HZ, CONSOLE_BAUDRATE);
-// 	register_serial_console(&console_data.chip);
-// }
-
-//qemu plat
 static const struct thread_handlers handlers = {
 	.std_smc = tee_entry_std,
 	.fast_smc = tee_entry_fast,
-	.nintr = main_fiq,
-#if defined(CFG_WITH_ARM_TRUSTED_FW)
+	.nintr = main_fiq, // main_fiq, rd_test. this is the entry for EL3 forward fiq. 
+					   // real el1 fiq handler is created by rd as rd_scheduler_stub below
 	.cpu_on = cpu_on_handler,
 	.cpu_off = pm_do_nothing,
 	.cpu_suspend = pm_do_nothing,
 	.cpu_resume = pm_do_nothing,
 	.system_off = pm_do_nothing,
 	.system_reset = pm_do_nothing,
-#else
-	.cpu_on = pm_panic,
-	.cpu_off = pm_panic,
-	.cpu_suspend = pm_panic,
-	.cpu_resume = pm_panic,
-	.system_off = pm_panic,
-	.system_reset = pm_panic,
-#endif
 };
 
-static struct gic_data gic_data;
-static struct pl011_data console_data;
-
-
-//export gic address
-struct gic_data *addr_gic_data = &gic_data;
-register_phys_mem(MEM_AREA_IO_SEC, 0x08020000, PL011_REG_SIZE);
-
-// test_gic_fun();
-
-register_phys_mem(MEM_AREA_IO_SEC, CONSOLE_UART_BASE, PL011_REG_SIZE);
-#if defined(PLATFORM_FLAVOR_fvp)
-register_phys_mem(MEM_AREA_RAM_SEC, TZCDRAM_BASE, TZCDRAM_SIZE);
-#endif
-#if defined(PLATFORM_FLAVOR_qemu_virt)
-register_phys_mem(MEM_AREA_IO_SEC, SECRAM_BASE, SECRAM_COHERENT_SIZE);
-#endif
-#ifdef DRAM0_BASE
-register_ddr(DRAM0_BASE, DRAM0_SIZE);
-#endif
-#ifdef DRAM1_BASE
-register_ddr(DRAM1_BASE, DRAM1_SIZE);
-#endif
+static struct serial8250_uart_data console_data;
 
 const struct thread_handlers *generic_boot_get_handlers(void)
 {
 	return &handlers;
-}
 
-#ifdef GIC_BASE
-
-register_phys_mem(MEM_AREA_IO_SEC, GICD_BASE, GIC_DIST_REG_SIZE);
-register_phys_mem(MEM_AREA_IO_SEC, GICC_BASE, GIC_DIST_REG_SIZE);
-
-void main_init_gic(void)
-{
-	vaddr_t gicc_base;
-	vaddr_t gicd_base;
-
-	gicc_base = (vaddr_t)phys_to_virt(GIC_BASE + GICC_OFFSET,
-					  MEM_AREA_IO_SEC);
-	gicd_base = (vaddr_t)phys_to_virt(GIC_BASE + GICD_OFFSET,
-					  MEM_AREA_IO_SEC);
-	if (!gicc_base || !gicd_base)
-		panic();
-
-#if defined(CFG_WITH_ARM_TRUSTED_FW)
-	/* On ARMv8, GIC configuration is initialized in ARM-TF */
-	gic_init_base_addr(&gic_data, gicc_base, gicd_base);
-#else
-	/* Initialize GIC */
-	gic_init(&gic_data, gicc_base, gicd_base);
-#endif
-	itr_init(&gic_data.chip);
-}
-
-#if !defined(CFG_WITH_ARM_TRUSTED_FW)
-void main_secondary_init_gic(void)
-{
-	gic_cpu_init(&gic_data);
-}
-#endif
-
-#endif
-
+ }
 
 void console_init(void)
 {
-
-	pl011_init(&console_data, CONSOLE_UART_BASE, CONSOLE_UART_CLK_IN_HZ,
-		   CONSOLE_BAUDRATE);
+	serial8250_uart_init(&console_data, CONSOLE_UART_BASE,
+			     CONSOLE_UART_CLK_IN_HZ, CONSOLE_BAUDRATE);
 	register_serial_console(&console_data.chip);
 }
 
-#if defined(IT_CONSOLE_UART) && \
-	!(defined(CFG_WITH_ARM_TRUSTED_FW) && defined(CFG_ARM_GICV3))
-/*
- * This cannot be enabled with TF-A and GICv3 because TF-A then need to
- * assign the interrupt number of the UART to OP-TEE (S-EL1). Currently
- * there's no way of TF-A to know which interrupts that OP-TEE will serve.
- * If TF-A doesn't assign the interrupt we're enabling below to OP-TEE it
- * will hang in EL3 since the interrupt will just be delivered again and
- * again.
- */
-static enum itr_return console_itr_cb(struct itr_handler *h __unused)
-{
-	struct serial_chip *cons = &console_data.chip;
+//qemu plat
+// static const struct thread_handlers handlers = {
+// 	.std_smc = tee_entry_std,
+// 	.fast_smc = tee_entry_fast,
+// 	.nintr = main_fiq,
+// #if defined(CFG_WITH_ARM_TRUSTED_FW)
+// 	.cpu_on = cpu_on_handler,
+// 	.cpu_off = pm_do_nothing,
+// 	.cpu_suspend = pm_do_nothing,
+// 	.cpu_resume = pm_do_nothing,
+// 	.system_off = pm_do_nothing,
+// 	.system_reset = pm_do_nothing,
+// #else
+// 	.cpu_on = pm_panic,
+// 	.cpu_off = pm_panic,
+// 	.cpu_suspend = pm_panic,
+// 	.cpu_resume = pm_panic,
+// 	.system_off = pm_panic,
+// 	.system_reset = pm_panic,
+// #endif
+// };
 
-	while (cons->ops->have_rx_data(cons)) {
-		int ch __maybe_unused = cons->ops->getchar(cons);
+// static struct gic_data gic_data;
+// static struct pl011_data console_data;
 
-		DMSG("cpu %zu: got 0x%x", get_core_pos(), ch);
-	}
-	return ITRR_HANDLED;
-}
 
-static struct itr_handler console_itr = {
-	.it = IT_CONSOLE_UART,
-	.flags = ITRF_TRIGGER_LEVEL,
-	.handler = console_itr_cb,
-};
-KEEP_PAGER(console_itr);
+// //export gic address
+// struct gic_data *addr_gic_data = &gic_data;
+// register_phys_mem(MEM_AREA_IO_SEC, 0x08020000, PL011_REG_SIZE);
 
-static TEE_Result init_console_itr(void)
-{
-	itr_add(&console_itr);
-	itr_enable(IT_CONSOLE_UART);
-	return TEE_SUCCESS;
-}
-driver_init(init_console_itr);
-#endif
+// test_gic_fun();
 
-#ifdef CFG_TZC400
-register_phys_mem(MEM_AREA_IO_SEC, TZC400_BASE, TZC400_REG_SIZE);
+// register_phys_mem(MEM_AREA_IO_SEC, CONSOLE_UART_BASE, PL011_REG_SIZE);
+// #if defined(PLATFORM_FLAVOR_fvp)
+// register_phys_mem(MEM_AREA_RAM_SEC, TZCDRAM_BASE, TZCDRAM_SIZE);
+// #endif
+// #if defined(PLATFORM_FLAVOR_qemu_virt)
+// register_phys_mem(MEM_AREA_IO_SEC, SECRAM_BASE, SECRAM_COHERENT_SIZE);
+// #endif
+// #ifdef DRAM0_BASE
+// register_ddr(DRAM0_BASE, DRAM0_SIZE);
+// #endif
+// #ifdef DRAM1_BASE
+// register_ddr(DRAM1_BASE, DRAM1_SIZE);
+// #endif
 
-static TEE_Result init_tzc400(void)
-{
-	void *va;
+// // const struct thread_handlers *generic_boot_get_handlers(void)
+// // {
+// // 	return &handlers;
+// // }
 
-	DMSG("Initializing TZC400");
+// #ifdef GIC_BASE
 
-	va = phys_to_virt(TZC400_BASE, MEM_AREA_IO_SEC);
-	if (!va) {
-		EMSG("TZC400 not mapped");
-		panic();
-	}
+// register_phys_mem(MEM_AREA_IO_SEC, GICD_BASE, GIC_DIST_REG_SIZE);
+// register_phys_mem(MEM_AREA_IO_SEC, GICC_BASE, GIC_DIST_REG_SIZE);
 
-	tzc_init((vaddr_t)va);
-	tzc_dump_state();
+// void main_init_gic(void)
+// {
+// 	vaddr_t gicc_base;
+// 	vaddr_t gicd_base;
 
-	return TEE_SUCCESS;
-}
+// 	gicc_base = (vaddr_t)phys_to_virt(GIC_BASE + GICC_OFFSET,
+// 					  MEM_AREA_IO_SEC);
+// 	gicd_base = (vaddr_t)phys_to_virt(GIC_BASE + GICD_OFFSET,
+// 					  MEM_AREA_IO_SEC);
+// 	if (!gicc_base || !gicd_base)
+// 		panic();
 
-service_init(init_tzc400);
-#endif /*CFG_TZC400*/
+// #if defined(CFG_WITH_ARM_TRUSTED_FW)
+// 	/* On ARMv8, GIC configuration is initialized in ARM-TF */
+// 	gic_init_base_addr(&gic_data, gicc_base, gicd_base);
+// #elseconsole_init
+// 	/* Initialize GIC */
+// 	gic_init(&gic_data, gicc_base, gicd_base);
+// #endif
+// 	itr_init(&gic_data.chip);
+// }
 
-#if defined(PLATFORM_FLAVOR_qemu_virt)
-static void release_secondary_early_hpen(size_t pos)
-{
-	struct mailbox {
-		uint64_t ep;
-		uint64_t hpen[];
-	} *mailbox;
+// #if !defined(CFG_WITH_ARM_TRUSTED_FW)
+// void main_secondary_init_gic(void)
+// {
+// 	gic_cpu_init(&gic_data);
+// }
+// #endif
 
-	if (cpu_mmu_enabled())
-		mailbox = phys_to_virt(SECRAM_BASE, MEM_AREA_IO_SEC);
-	else
-		mailbox = (void *)SECRAM_BASE;
+// #endif
 
-	if (!mailbox)
-		panic();
 
-	mailbox->ep = TEE_LOAD_ADDR;
-	dsb_ishst();
-	mailbox->hpen[pos] = 1;
-	dsb_ishst();
-	sev();
-}
+// void console_init(void)
+// {
 
-int psci_cpu_on(uint32_t core_id, uint32_t entry, uint32_t context_id)
-{
-	size_t pos = get_core_pos_mpidr(core_id);
-	static bool core_is_released[CFG_TEE_CORE_NB_CORE];
+// 	pl011_init(&console_data, CONSOLE_UART_BASE, CONSOLE_UART_CLK_IN_HZ,
+// 		   CONSOLE_BAUDRATE);
+// 	register_serial_console(&console_data.chip);
+// }
 
-	if (!pos || pos >= CFG_TEE_CORE_NB_CORE)
-		return PSCI_RET_INVALID_PARAMETERS;
+// #if defined(IT_CONSOLE_UART) && \
+// 	!(defined(CFG_WITH_ARM_TRUSTED_FW) && defined(CFG_ARM_GICV3))
+// /*
+//  * This cannot be enabled with TF-A and GICv3 because TF-A then need to
+//  * assign the interrupt number of the UART to OP-TEE (S-EL1). Currently
+//  * there's no way of TF-A to know which interrupts that OP-TEE will serve.
+//  * If TF-A doesn't assign the interrupt we're enabling below to OP-TEE it
+//  * will hang in EL3 since the interrupt will just be delivered again and
+//  * again.
+//  */
+// static enum itr_return console_itr_cb(struct itr_handler *h __unused)
+// {
+// 	struct serial_chip *cons = &console_data.chip;
 
-	DMSG("core pos: %zu: ns_entry %#" PRIx32, pos, entry);
+// 	while (cons->ops->have_rx_data(cons)) {
+// 		int ch __maybe_unused = cons->ops->getchar(cons);
 
-	if (core_is_released[pos]) {
-		EMSG("core %zu already released", pos);
-		return PSCI_RET_DENIED;
-	}
-	core_is_released[pos] = true;
+// 		DMSG("cpu %zu: got 0x%x", get_core_pos(), ch);
+// 	}
+// 	return ITRR_HANDLED;
+// }
 
-	generic_boot_set_core_ns_entry(pos, entry, context_id);
-	release_secondary_early_hpen(pos);
+// static struct itr_handler console_itr = {
+// 	.it = IT_CONSOLE_UART,
+// 	.flags = ITRF_TRIGGER_LEVEL,
+// 	.handler = console_itr_cb,
+// };
+// KEEP_PAGER(console_itr);
 
-	return PSCI_RET_SUCCESS;
-}
-#endif /*PLATFORM_FLAVOR_qemu_virt*/
+// static TEE_Result init_console_itr(void)
+// {
+// 	itr_add(&console_itr);
+// 	itr_enable(IT_CONSOLE_UART);
+// 	return TEE_SUCCESS;
+// }
+// driver_init(init_console_itr);
+// #endif
+
+// #ifdef CFG_TZC400
+// register_phys_mem(MEM_AREA_IO_SEC, TZC400_BASE, TZC400_REG_SIZE);
+
+// static TEE_Result init_tzc400(void)
+// {
+// 	void *va;
+
+// 	DMSG("Initializing TZC400");
+
+// 	va = phys_to_virt(TZC400_BASE, MEM_AREA_IO_SEC);
+// 	if (!va) {
+// 		EMSG("TZC400 not mapped");
+// 		panic();
+// 	}
+
+// 	tzc_init((vaddr_t)va);
+// 	tzc_dump_state();
+
+// 	return TEE_SUCCESS;
+// }
+
+// service_init(init_tzc400);
+// #endif /*CFG_TZC400*/
+
+// #if defined(PLATFORM_FLAVOR_qemu_virt)
+// static void release_secondary_early_hpen(size_t pos)
+// {
+// 	struct mailbox {
+// 		uint64_t ep;
+// 		uint64_t hpen[];
+// 	} *mailbox;
+
+// 	if (cpu_mmu_enabled())
+// 		mailbox = phys_to_virt(SECRAM_BASE, MEM_AREA_IO_SEC);
+// 	else
+// 		mailbox = (void *)SECRAM_BASE;
+
+// 	if (!mailbox)
+// 		panic();
+
+// 	mailbox->ep = TEE_LOAD_ADDR;
+// 	dsb_ishst();
+// 	mailbox->hpen[pos] = 1;
+// 	dsb_ishst();
+// 	sev();
+// }
+
+// int psci_cpu_on(uint32_t core_id, uint32_t entry, uint32_t context_id)
+// {
+// 	size_t pos = get_core_pos_mpidr(core_id);
+// 	static bool core_is_released[CFG_TEE_CORE_NB_CORE];
+
+// 	if (!pos || pos >= CFG_TEE_CORE_NB_CORE)
+// 		return PSCI_RET_INVALID_PARAMETERS;
+
+// 	DMSG("core pos: %zu: ns_entry %#" PRIx32, pos, entry);
+
+// 	if (core_is_released[pos]) {
+// 		EMSG("core %zu already released", pos);
+// 		return PSCI_RET_DENIED;
+// 	}
+// 	core_is_released[pos] = true;
+
+// 	generic_boot_set_core_ns_entry(pos, entry, context_id);
+// 	release_secondary_early_hpen(pos);
+
+// 	return PSCI_RET_SUCCESS;
+// }
+// #endif /*PLATFORM_FLAVOR_qemu_virt*/
 
 
 extern int gic_init_fun(void);
-
+#define CORE0_TIMER_IRQCNTL 0x12000040
+#define CORE1_TIMER_IRQCNTL 0x12000044
+#define CORE2_TIMER_IRQCNTL 0x12000048
+#define CORE3_TIMER_IRQCNTL 0x1200004C
+#define CORE0_FIQ_SOURCE 0x12000070
+#define CORE1_FIQ_SOURCE 0x12000074
+#define CORE2_FIQ_SOURCE 0x12000078
+#define CORE3_FIQ_SOURCE 0x1200007C
+#define TIMER0_FIQ 0x10
+#define TIMER1_FIQ 0x20
+#define TIMER2_FIQ 0x40
+#define TIMER3_FIQ 0x80
+#define INT_SRC_TIMER0 0x00000001
+#define INT_SRC_TIMER1 0x00000002
+#define INT_SRC_TIMER2 0x00000004
+#define INT_SRC_TIMER3 0x00000008
 void timer_routing(){
 
 	// pi3 platform
-	// int core_fiq_source[4];
-	// int core_timer_irqcntl[4];
-	// core_fiq_source[0] = CORE0_FIQ_SOURCE;
-	// core_fiq_source[1] = CORE1_FIQ_SOURCE;
-	// core_fiq_source[2] = CORE2_FIQ_SOURCE;
-	// core_fiq_source[3] = CORE3_FIQ_SOURCE;
+	paddr_t core_fiq_source[4];
+	paddr_t core_timer_irqcntl[4];
+	core_fiq_source[0] = CORE0_FIQ_SOURCE;
+	core_fiq_source[1] = CORE1_FIQ_SOURCE;
+	core_fiq_source[2] = CORE2_FIQ_SOURCE;
+	core_fiq_source[3] = CORE3_FIQ_SOURCE;
 
-	// core_timer_irqcntl[0] = CORE0_TIMER_IRQCNTL;
-	// core_timer_irqcntl[1] = CORE1_TIMER_IRQCNTL;
-	// core_timer_irqcntl[2] = CORE2_TIMER_IRQCNTL;
-	// core_timer_irqcntl[3] = CORE3_TIMER_IRQCNTL;
+	core_timer_irqcntl[0] = CORE0_TIMER_IRQCNTL;
+	core_timer_irqcntl[1] = CORE1_TIMER_IRQCNTL;
+	core_timer_irqcntl[2] = CORE2_TIMER_IRQCNTL;
+	core_timer_irqcntl[3] = CORE3_TIMER_IRQCNTL;
 
-	// IMSG("setting IRQ_routing:\n");
-	// for(int i = 0; i < 4; i++){
-	// 	IMSG("setting core%d FIQ source to timer0 physical secure interrupt on IRQ_routing!\n", i);
+	IMSG("setting IRQ_routing:\n");
+	for(int i = 0; i < 4; i++){
+		IMSG("setting core%d FIQ source to timer0 physical secure interrupt on IRQ_routing!\n", i);
 
-	// 	vaddr_t corei_fiq_source;
+		vaddr_t corei_fiq_source;
+		IMSG("test before statement phys_to_virt1    %p",core_fiq_source[i]);
+		corei_fiq_source = (vaddr_t)phys_to_virt(core_fiq_source[i],
+						  MEM_AREA_IO_SEC);
+		IMSG("test last statement phys_to_virt1    %p",corei_fiq_source);
+		write32(INT_SRC_TIMER0, corei_fiq_source);
+		// if(i==0){
+		// 	write32(INT_SRC_TIMER0, corei_fiq_source);	
+		// }
+		// else if (i==1){
+		// 	write32(INT_SRC_TIMER1, corei_fiq_source);	
+		// }
+		// else if (i==2){
+		// 	write32(INT_SRC_TIMER2, corei_fiq_source);	
+		// }		
+		// else if (i==3){
+		// 	write32(INT_SRC_TIMER3, corei_fiq_source);	
+		// }
+		
+		// where to route timer interrupt to, IRQ or FIQ
+		IMSG("routing core%d secure timer interrupt to fiq interrupt on IRQ_routing!\n", i);
 
-	// 	corei_fiq_source = (vaddr_t)phys_to_virt(core_fiq_source[i],
-	// 					  MEM_AREA_IO_SEC);
+		vaddr_t corei_timer_irqcntl;
 
+		corei_timer_irqcntl = (vaddr_t)phys_to_virt(core_timer_irqcntl[i],
+						  MEM_AREA_IO_SEC);	
+		IMSG("test last statement phys_to_virt1   %p",corei_timer_irqcntl);
+		write32(TIMER0_FIQ, corei_timer_irqcntl);		
+		// if(i==0){
+		// 	write32(TIMER0_FIQ, corei_timer_irqcntl);
+		// }
+		// else if (i==1){
+		// 	write32(TIMER1_FIQ, corei_timer_irqcntl);
+		// }
+		// else if (i==2){
+		// 	write32(TIMER2_FIQ, corei_timer_irqcntl);	
+		// }		
+		// else if (i==3){
+		// 	write32(TIMER3_FIQ, corei_timer_irqcntl);
+		// }
+	}
 
-	// 	write32(INT_SRC_TIMER0, corei_fiq_source);
-
-	// 	// where to route timer interrupt to, IRQ or FIQ
-	// 	IMSG("routing core%d secure timer interrupt to fiq interrupt on IRQ_routing!\n", i);
-
-	// 	vaddr_t corei_timer_irqcntl;
-
-	// 	corei_timer_irqcntl = (vaddr_t)phys_to_virt(core_timer_irqcntl[i],
-	// 					  MEM_AREA_IO_SEC);	
-
-	// 	write32(TIMER0_FIQ, corei_timer_irqcntl);		
-	// }
-
-	//qemu platform
-	gic_init_fun();
-}
+// 	//qemu platform
+ 	//gic_init_fun();
+ }
 
 
 static TEE_Result init_timer_itr(void)
@@ -813,7 +860,7 @@ extern void thread_fiq_exit(int *fiqORstd_add);
 
 void return_to_normal_world()
 {	
-
+	IMSG("return to normal_word");
 	fp_regs_restore(&nw_vfp_state[get_current_core()]);
 	fiqORstd[get_current_core()] = 1;
 	thread_fiq_exit(&fiqORstd[get_current_core()]);
@@ -1409,6 +1456,7 @@ void execute_secure_world(int coreNum)
 
 
 void rt_tee_sched_item(){
+	IMSG("rt_tee_sched_item() run");
 	//put runnable tasks into runnable tasks queue
 	secure_world_schedule_event();
 	//empty now
@@ -1440,7 +1488,7 @@ unsigned int result_print_lock = SPINLOCK_UNLOCK;
 void secure_world_schedule_event()
 {
 	int coreNum = get_current_core();
-
+	IMSG(" secure_world_schedule_event() run ");
 
 	// #ifdef RT-TEE_SYNTHETIC	
 	// this will do the time keeping for secure world task 
@@ -1457,7 +1505,7 @@ void secure_world_schedule_event()
 			if(secure_tasks[i].numOfJobCompleted >= NUM_OF_MEASURED \
 				|| getCurrentTime_micro() - start_time[get_current_core()] > NUM_OF_MEASURED * secure_tasks[i].period){
 
-				// IMSG("current_time:%d, time_constrains:%d", getCurrentTime_micro() - start_time[get_current_core()], \
+				IMSG("current_time:%d, time_constrains:%d", getCurrentTime_micro() - start_time[get_current_core()], \
 					NUM_OF_MEASURED * secure_tasks[i].period);
 
 
@@ -1596,7 +1644,7 @@ void secure_world_recalculate_prio()
 extern  void context_saving_begin();
 void secure_schedule()
 {
-
+	IMSG(" secure_schedule() is run ");
 	int coreNum = get_current_core();
 	// picks and executes the right secure wolrd task to execute
 	// pick the task with highest priority
@@ -1662,3 +1710,6 @@ long mult_busy_loop(unsigned long execution_time){
         );
 	uint64_t end = read_cntpct();
 }
+
+~~~
+

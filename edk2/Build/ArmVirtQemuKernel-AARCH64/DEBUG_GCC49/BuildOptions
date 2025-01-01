@@ -1,4 +1,4 @@
 gCommandLineDefines: {'ARCH': 'AARCH64'}
 BuildOptionPcd: []
-Active Platform: /home/osboxes/fix_rttee_text/RT-TEE/edk2/ArmVirtPkg/ArmVirtQemuKernel.dsc
-Flash Image Definition: /home/osboxes/fix_rttee_text/RT-TEE/edk2/ArmVirtPkg/ArmVirtQemuKernel.fdf
+Active Platform: /home/zrz0517/study/TEE/RT-TEE/edk2/ArmVirtPkg/ArmVirtQemuKernel.dsc
+Flash Image Definition: /home/zrz0517/study/TEE/RT-TEE/edk2/ArmVirtPkg/ArmVirtQemuKernel.fdf

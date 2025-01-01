@@ -1,6 +1,6 @@
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/ArmPkg/Drivers/CpuDxe/CpuDxe/OUTPUT/CpuDxe.obj
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/ArmPkg/Drivers/CpuDxe/CpuDxe/OUTPUT/CpuMpCore.obj
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/ArmPkg/Drivers/CpuDxe/CpuDxe/OUTPUT/CpuMmuCommon.obj
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/ArmPkg/Drivers/CpuDxe/CpuDxe/OUTPUT/Exception.obj
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/ArmPkg/Drivers/CpuDxe/CpuDxe/OUTPUT/AArch64/Mmu.obj
-/home/osboxes/fix_rttee_text/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/ArmPkg/Drivers/CpuDxe/CpuDxe/OUTPUT/AutoGen.obj
+/home/zrz0517/study/TEE/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/ArmPkg/Drivers/CpuDxe/CpuDxe/OUTPUT/CpuDxe.obj
+/home/zrz0517/study/TEE/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/ArmPkg/Drivers/CpuDxe/CpuDxe/OUTPUT/CpuMpCore.obj
+/home/zrz0517/study/TEE/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/ArmPkg/Drivers/CpuDxe/CpuDxe/OUTPUT/CpuMmuCommon.obj
+/home/zrz0517/study/TEE/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/ArmPkg/Drivers/CpuDxe/CpuDxe/OUTPUT/Exception.obj
+/home/zrz0517/study/TEE/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/ArmPkg/Drivers/CpuDxe/CpuDxe/OUTPUT/AArch64/Mmu.obj
+/home/zrz0517/study/TEE/RT-TEE/edk2/Build/ArmVirtQemuKernel-AARCH64/DEBUG_GCC49/AARCH64/ArmPkg/Drivers/CpuDxe/CpuDxe/OUTPUT/AutoGen.obj

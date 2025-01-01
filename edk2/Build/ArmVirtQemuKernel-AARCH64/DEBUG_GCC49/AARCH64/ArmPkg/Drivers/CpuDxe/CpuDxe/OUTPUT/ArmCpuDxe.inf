@@ -34,6 +34,7 @@
 
 [Binaries.AARCH64]
   PE32|ArmCpuDxe.efi
+  DXE_DEPEX|ArmCpuDxe.depex
 
 [PatchPcd.AARCH64]
 
