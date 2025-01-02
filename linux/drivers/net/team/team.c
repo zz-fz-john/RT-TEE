@@ -41,6 +41,11 @@
 
 #define team_port_exists(dev) (dev->priv_flags & IFF_TEAM_PORT)
 
+static struct team_port *team_port_get_rcu(const struct net_device *dev)
+{
+	return rcu_dereference(dev->rx_handler_data);
+}
+
 static struct team_port *team_port_get_rtnl(const struct net_device *dev)
 {
 	struct team_port *port = rtnl_dereference(dev->rx_handler_data);
@@ -275,7 +280,7 @@ static int __team_options_register(struct team *team,
 	struct team_option **dst_opts;
 	int err;
 
-	dst_opts = kcalloc(option_count, sizeof(struct team_option *),
+	dst_opts = kzalloc(sizeof(struct team_option *) * option_count,
 			   GFP_KERNEL);
 	if (!dst_opts)
 		return -ENOMEM;
@@ -786,8 +791,7 @@ static int team_queue_override_init(struct team *team)
 
 	if (!queue_cnt)
 		return 0;
-	listarr = kmalloc_array(queue_cnt, sizeof(struct list_head),
-				GFP_KERNEL);
+	listarr = kmalloc(sizeof(struct list_head) * queue_cnt, GFP_KERNEL);
 	if (!listarr)
 		return -ENOMEM;
 	team->qom_lists = listarr;
@@ -1023,8 +1027,7 @@ static void __team_compute_features(struct team *team)
 	}
 
 	team->dev->vlan_features = vlan_features;
-	team->dev->hw_enc_features = enc_features | NETIF_F_GSO_ENCAP_ALL |
-				     NETIF_F_GSO_UDP_L4;
+	team->dev->hw_enc_features = enc_features | NETIF_F_GSO_ENCAP_ALL;
 	team->dev->hard_header_len = max_hard_header_len;
 
 	team->dev->priv_flags &= ~IFF_XMIT_DST_RELEASE;
@@ -1119,16 +1122,14 @@ static void team_port_disable_netpoll(struct team_port *port)
 }
 #endif
 
-static int team_upper_dev_link(struct team *team, struct team_port *port,
-			       struct netlink_ext_ack *extack)
+static int team_upper_dev_link(struct team *team, struct team_port *port)
 {
 	struct netdev_lag_upper_info lag_upper_info;
 	int err;
 
 	lag_upper_info.tx_type = team->mode->lag_tx_type;
-	lag_upper_info.hash_type = NETDEV_LAG_HASH_UNKNOWN;
 	err = netdev_master_upper_dev_link(port->dev, team->dev, NULL,
-					   &lag_upper_info, extack);
+					   &lag_upper_info);
 	if (err)
 		return err;
 	port->dev->priv_flags |= IFF_TEAM_PORT;
@@ -1145,8 +1146,7 @@ static void __team_port_change_port_added(struct team_port *port, bool linkup);
 static int team_dev_type_check_change(struct net_device *dev,
 				      struct net_device *port_dev);
 
-static int team_port_add(struct team *team, struct net_device *port_dev,
-			 struct netlink_ext_ack *extack)
+static int team_port_add(struct team *team, struct net_device *port_dev)
 {
 	struct net_device *dev = team->dev;
 	struct team_port *port;
@@ -1154,28 +1154,19 @@ static int team_port_add(struct team *team, struct net_device *port_dev,
 	int err;
 
 	if (port_dev->flags & IFF_LOOPBACK) {
-		NL_SET_ERR_MSG(extack, "Loopback device can't be added as a team port");
 		netdev_err(dev, "Device %s is loopback device. Loopback devices can't be added as a team port\n",
 			   portname);
 		return -EINVAL;
 	}
 
 	if (team_port_exists(port_dev)) {
-		NL_SET_ERR_MSG(extack, "Device is already a port of a team device");
 		netdev_err(dev, "Device %s is already a port "
 				"of a team device\n", portname);
 		return -EBUSY;
 	}
 
-	if (dev == port_dev) {
-		NL_SET_ERR_MSG(extack, "Cannot enslave team device to itself");
-		netdev_err(dev, "Cannot enslave team device to itself\n");
-		return -EINVAL;
-	}
-
 	if (port_dev->features & NETIF_F_VLAN_CHALLENGED &&
 	    vlan_uses_dev(dev)) {
-		NL_SET_ERR_MSG(extack, "Device is VLAN challenged and team device has VLAN set up");
 		netdev_err(dev, "Device %s is VLAN challenged and team device has VLAN set up\n",
 			   portname);
 		return -EPERM;
@@ -1186,7 +1177,6 @@ static int team_port_add(struct team *team, struct net_device *port_dev,
 		return err;
 
 	if (port_dev->flags & IFF_UP) {
-		NL_SET_ERR_MSG(extack, "Device is up. Set it down before adding it as a team port");
 		netdev_err(dev, "Device %s is up. Set it down before adding it as a team port\n",
 			   portname);
 		return -EBUSY;
@@ -1249,7 +1239,7 @@ static int team_port_add(struct team *team, struct net_device *port_dev,
 		goto err_handler_register;
 	}
 
-	err = team_upper_dev_link(team, port, extack);
+	err = team_upper_dev_link(team, port);
 	if (err) {
 		netdev_err(dev, "Device %s failed to set upper link\n",
 			   portname);
@@ -1708,8 +1698,7 @@ static netdev_tx_t team_xmit(struct sk_buff *skb, struct net_device *dev)
 }
 
 static u16 team_select_queue(struct net_device *dev, struct sk_buff *skb,
-			     struct net_device *sb_dev,
-			     select_queue_fallback_t fallback)
+			     void *accel_priv, select_queue_fallback_t fallback)
 {
 	/*
 	 * This helper function exists to help dev_pick_tx get the correct
@@ -1940,14 +1929,13 @@ static int team_netpoll_setup(struct net_device *dev,
 }
 #endif
 
-static int team_add_slave(struct net_device *dev, struct net_device *port_dev,
-			  struct netlink_ext_ack *extack)
+static int team_add_slave(struct net_device *dev, struct net_device *port_dev)
 {
 	struct team *team = netdev_priv(dev);
 	int err;
 
 	mutex_lock(&team->lock);
-	err = team_port_add(team, port_dev, extack);
+	err = team_port_add(team, port_dev);
 	mutex_unlock(&team->lock);
 
 	if (!err)
@@ -2123,7 +2111,7 @@ static void team_setup(struct net_device *dev)
 			   NETIF_F_HW_VLAN_CTAG_RX |
 			   NETIF_F_HW_VLAN_CTAG_FILTER;
 
-	dev->hw_features |= NETIF_F_GSO_ENCAP_ALL | NETIF_F_GSO_UDP_L4;
+	dev->hw_features |= NETIF_F_GSO_ENCAP_ALL;
 	dev->features |= dev->hw_features;
 }
 
@@ -2430,6 +2418,7 @@ send_done:
 nla_put_failure:
 	err = -EMSGSIZE;
 errout:
+	genlmsg_cancel(skb, hdr);
 	nlmsg_free(skb);
 	return err;
 }
@@ -2723,6 +2712,7 @@ send_done:
 nla_put_failure:
 	err = -EMSGSIZE;
 errout:
+	genlmsg_cancel(skb, hdr);
 	nlmsg_free(skb);
 	return err;
 }
@@ -2946,7 +2936,7 @@ static int team_device_event(struct notifier_block *unused,
 	case NETDEV_CHANGE:
 		if (netif_running(port->dev))
 			team_port_change_check(port,
-					       !!netif_oper_up(port->dev));
+					       !!netif_carrier_ok(port->dev));
 		break;
 	case NETDEV_UNREGISTER:
 		team_del_slave(port->team->dev, dev);

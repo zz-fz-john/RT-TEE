@@ -1,4 +1,4 @@
-# Install script for directory: /home/osboxes/fix_rttee_text/RT-TEE/optee_client/libteec
+# Install script for directory: /home/zrz0517/study/TEE/RT-TEE/optee_client/libteec
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -32,11 +32,20 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
   set(CMAKE_INSTALL_SO_NO_EXE "1")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+# Is this installation the result of a crosscompile?
+if(NOT DEFINED CMAKE_CROSSCOMPILING)
+  set(CMAKE_CROSSCOMPILING "FALSE")
+endif()
+
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/aarch64-linux-gnu-objdump")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   foreach(file
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libteec.so.1.0.0"
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libteec.so.1"
-      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libteec.so"
       )
     if(EXISTS "${file}" AND
        NOT IS_SYMLINK "${file}")
@@ -46,21 +55,35 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
     endif()
   endforeach()
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES
-    "/home/osboxes/fix_rttee_text/RT-TEE/optee_client/build/libteec/libteec.so.1.0.0"
-    "/home/osboxes/fix_rttee_text/RT-TEE/optee_client/build/libteec/libteec.so.1"
-    "/home/osboxes/fix_rttee_text/RT-TEE/optee_client/build/libteec/libteec.so"
+    "/home/zrz0517/study/TEE/RT-TEE/optee_client/build/libteec/libteec.so.1.0.0"
+    "/home/zrz0517/study/TEE/RT-TEE/optee_client/build/libteec/libteec.so.1"
     )
   foreach(file
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libteec.so.1.0.0"
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libteec.so.1"
-      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libteec.so"
       )
     if(EXISTS "${file}" AND
        NOT IS_SYMLINK "${file}")
       if(CMAKE_INSTALL_DO_STRIP)
-        execute_process(COMMAND "/usr/bin/strip" "${file}")
+        execute_process(COMMAND "/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/aarch64-linux-gnu-strip" "${file}")
       endif()
     endif()
   endforeach()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libteec.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libteec.so")
+    file(RPATH_CHECK
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libteec.so"
+         RPATH "")
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/zrz0517/study/TEE/RT-TEE/optee_client/build/libteec/libteec.so")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libteec.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libteec.so")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/aarch64-linux-gnu-strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libteec.so")
+    endif()
+  endif()
 endif()
 

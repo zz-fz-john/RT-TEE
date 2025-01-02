@@ -1,13 +1,19 @@
-// SPDX-License-Identifier: GPL-2.0+
-//
-// drivers/dma/imx-dma.c
-//
-// This file contains a driver for the Freescale i.MX DMA engine
-// found on i.MX1/21/27
-//
-// Copyright 2010 Sascha Hauer, Pengutronix <s.hauer@pengutronix.de>
-// Copyright 2012 Javier Martin, Vista Silicon <javier.martin@vista-silicon.com>
-
+/*
+ * drivers/dma/imx-dma.c
+ *
+ * This file contains a driver for the Freescale i.MX DMA engine
+ * found on i.MX1/21/27
+ *
+ * Copyright 2010 Sascha Hauer, Pengutronix <s.hauer@pengutronix.de>
+ * Copyright 2012 Javier Martin, Vista Silicon <javier.martin@vista-silicon.com>
+ *
+ * The code contained herein is licensed under the GNU General Public
+ * License. You may obtain a copy of the GNU General Public License
+ * Version 2 or later at the following locations:
+ *
+ * http://www.opensource.org/licenses/gpl-license.html
+ * http://www.gnu.org/copyleft/gpl.html
+ */
 #include <linux/err.h>
 #include <linux/init.h>
 #include <linux/types.h>
@@ -358,9 +364,9 @@ static void imxdma_disable_hw(struct imxdma_channel *imxdmac)
 	local_irq_restore(flags);
 }
 
-static void imxdma_watchdog(struct timer_list *t)
+static void imxdma_watchdog(unsigned long data)
 {
-	struct imxdma_channel *imxdmac = from_timer(imxdmac, t, watchdog);
+	struct imxdma_channel *imxdmac = (struct imxdma_channel *)data;
 	struct imxdma_engine *imxdma = imxdmac->imxdma;
 	int channel = imxdmac->channel;
 
@@ -759,7 +765,7 @@ static int imxdma_alloc_chan_resources(struct dma_chan *chan)
 		desc = kzalloc(sizeof(*desc), GFP_KERNEL);
 		if (!desc)
 			break;
-		memset(&desc->desc, 0, sizeof(struct dma_async_tx_descriptor));
+		__memzero(&desc->desc, sizeof(struct dma_async_tx_descriptor));
 		dma_async_tx_descriptor_init(&desc->desc, chan);
 		desc->desc.tx_submit = imxdma_tx_submit;
 		/* txd.flags will be overwritten in prep funcs */
@@ -1147,7 +1153,9 @@ static int __init imxdma_probe(struct platform_device *pdev)
 			}
 
 			imxdmac->irq = irq + i;
-			timer_setup(&imxdmac->watchdog, imxdma_watchdog, 0);
+			init_timer(&imxdmac->watchdog);
+			imxdmac->watchdog.function = &imxdma_watchdog;
+			imxdmac->watchdog.data = (unsigned long)imxdmac;
 		}
 
 		imxdmac->imxdma = imxdma;

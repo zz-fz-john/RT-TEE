@@ -53,7 +53,7 @@ MODULE_AUTHOR("Bruno Ducrot");
 MODULE_DESCRIPTION("ACPI Video Driver");
 MODULE_LICENSE("GPL");
 
-static bool brightness_switch_enabled = true;
+static bool brightness_switch_enabled = 1;
 module_param(brightness_switch_enabled, bool, 0644);
 
 /*
@@ -832,9 +832,8 @@ int acpi_video_get_levels(struct acpi_device *device,
 	 * in order to account for buggy BIOS which don't export the first two
 	 * special levels (see below)
 	 */
-	br->levels = kmalloc_array(obj->package.count + ACPI_VIDEO_FIRST_LEVEL,
-				   sizeof(*br->levels),
-				   GFP_KERNEL);
+	br->levels = kmalloc((obj->package.count + ACPI_VIDEO_FIRST_LEVEL) *
+	                     sizeof(*br->levels), GFP_KERNEL);
 	if (!br->levels) {
 		result = -ENOMEM;
 		goto out_free;

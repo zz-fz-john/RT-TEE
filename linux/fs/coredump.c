@@ -680,11 +680,16 @@ void do_coredump(const siginfo_t *siginfo)
 		 * privs and don't want to unlink another user's coredump.
 		 */
 		if (!need_suid_safe) {
+			mm_segment_t old_fs;
+
+			old_fs = get_fs();
+			set_fs(KERNEL_DS);
 			/*
 			 * If it doesn't exist, that's fine. If there's some
 			 * other problem, we'll catch it at the filp_open().
 			 */
-			do_unlinkat(AT_FDCWD, getname_kernel(cn.corename));
+			(void) sys_unlink((const char __user *)cn.corename);
+			set_fs(old_fs);
 		}
 
 		/*

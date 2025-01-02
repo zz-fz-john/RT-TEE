@@ -1,10 +1,13 @@
-// SPDX-License-Identifier: GPL-2.0+
 /*
  * linux/fs/jbd2/journal.c
  *
  * Written by Stephen C. Tweedie <sct@redhat.com>, 1998
  *
  * Copyright 1998 Red Hat corp --- All Rights Reserved
+ *
+ * This file is part of the Linux kernel and is made available under
+ * the terms of the GNU General Public License, version 2, or at your
+ * option, any later version, incorporated herein by reference.
  *
  * Generic filesystem journal-writing code; part of the ext2fs
  * journaling system.
@@ -114,7 +117,7 @@ void __jbd2_debug(int level, const char *file, const char *func,
 	va_start(args, fmt);
 	vaf.fmt = fmt;
 	vaf.va = &args;
-	printk(KERN_DEBUG "%s: (%s, %u): %pV", file, func, line, &vaf);
+	printk(KERN_DEBUG "%s: (%s, %u): %pV\n", file, func, line, &vaf);
 	va_end(args);
 }
 EXPORT_SYMBOL(__jbd2_debug);
@@ -162,11 +165,11 @@ static void jbd2_superblock_csum_set(journal_t *j, journal_superblock_t *sb)
  * Helper function used to manage commit timeouts
  */
 
-static void commit_timeout(struct timer_list *t)
+static void commit_timeout(unsigned long __data)
 {
-	journal_t *journal = from_timer(journal, t, j_commit_timer);
+	struct task_struct * p = (struct task_struct *) __data;
 
-	wake_up_process(journal->j_task);
+	wake_up_process(p);
 }
 
 /*
@@ -194,7 +197,8 @@ static int kjournald2(void *arg)
 	 * Set up an interval timer which can be used to trigger a commit wakeup
 	 * after the commit interval expires
 	 */
-	timer_setup(&journal->j_commit_timer, commit_timeout, 0);
+	setup_timer(&journal->j_commit_timer, commit_timeout,
+			(unsigned long)current);
 
 	set_freezable();
 
@@ -733,23 +737,6 @@ int jbd2_log_wait_commit(journal_t *journal, tid_t tid)
 		err = -EIO;
 	return err;
 }
-
-/* Return 1 when transaction with given tid has already committed. */
-int jbd2_transaction_committed(journal_t *journal, tid_t tid)
-{
-	int ret = 1;
-
-	read_lock(&journal->j_state_lock);
-	if (journal->j_running_transaction &&
-	    journal->j_running_transaction->t_tid == tid)
-		ret = 0;
-	if (journal->j_committing_transaction &&
-	    journal->j_committing_transaction->t_tid == tid)
-		ret = 0;
-	read_unlock(&journal->j_state_lock);
-	return ret;
-}
-EXPORT_SYMBOL(jbd2_transaction_committed);
 
 /*
  * When this function returns the transaction corresponding to tid
@@ -2302,7 +2289,8 @@ static void jbd2_journal_destroy_slabs(void)
 	int i;
 
 	for (i = 0; i < JBD2_MAX_SLABS; i++) {
-		kmem_cache_destroy(jbd2_slab[i]);
+		if (jbd2_slab[i])
+			kmem_cache_destroy(jbd2_slab[i]);
 		jbd2_slab[i] = NULL;
 	}
 }
@@ -2403,8 +2391,10 @@ static int jbd2_journal_init_journal_head_cache(void)
 
 static void jbd2_journal_destroy_journal_head_cache(void)
 {
-	kmem_cache_destroy(jbd2_journal_head_cache);
-	jbd2_journal_head_cache = NULL;
+	if (jbd2_journal_head_cache) {
+		kmem_cache_destroy(jbd2_journal_head_cache);
+		jbd2_journal_head_cache = NULL;
+	}
 }
 
 /*
@@ -2662,10 +2652,11 @@ static int __init jbd2_journal_init_handle_cache(void)
 
 static void jbd2_journal_destroy_handle_cache(void)
 {
-	kmem_cache_destroy(jbd2_handle_cache);
-	jbd2_handle_cache = NULL;
-	kmem_cache_destroy(jbd2_inode_cache);
-	jbd2_inode_cache = NULL;
+	if (jbd2_handle_cache)
+		kmem_cache_destroy(jbd2_handle_cache);
+	if (jbd2_inode_cache)
+		kmem_cache_destroy(jbd2_inode_cache);
+
 }
 
 /*

@@ -1,6 +1,4 @@
-# RT_TEE_Scheduler.c修改后文件
 
-~~~c
 //           ....,,
 //         .::o::;'          .....
 //        ::::::::        .::::o:::.,
@@ -113,7 +111,7 @@ at the world switching level, for each core, we run a deferrable servers, one fo
 // #define IDLE_SCHEDULER
 #define HIERARCHICAL_SCHEDULER
 
-
+#define UART1_REG_SIZE 0x1000
 
 //main.c part
 void thread_resume(struct thread_ctx_regs *regs);
@@ -215,9 +213,9 @@ struct mutex runnable_tasks_mutex = MUTEX_INITIALIZER;
 // thus, normal world can still access it.
 #define CONSOLE_UART_BASE	0x3f215040 /* UART0 */
 register_phys_mem(MEM_AREA_IO_SEC, CONSOLE_UART_BASE, SERIAL8250_UART_REG_SIZE);
-
- #define   BCM2836_BASE 0x12000000
- #define BCM2836_GPIO_BASE  0x12100000
+register_phys_mem(MEM_AREA_IO_SEC,0x3F201000,UART1_REG_SIZE);
+ #define   BCM2836_BASE  0x40000000
+ #define BCM2836_GPIO_BASE   0x40100000
 register_phys_mem(MEM_AREA_IO_SEC, BCM2836_BASE , 0x100);
  register_phys_mem(MEM_AREA_IO_SEC, BCM2836_GPIO_BASE, 0x100);
 
@@ -400,6 +398,7 @@ static void rt_tee_thread_invoke(uint32_t arg_session_id, int taskUid)
 	arg->clnt_login = TEEC_LOGIN_PUBLIC;
 
 	msg_arg->cmd = OPTEE_MSG_CMD_INVOKE_COMMAND;
+	msg_arg->func=0;
 	msg_arg->session = arg_session_id; 
 	msg_arg->params[0].attr = 3;
 	msg_arg->params[0].u.value.a = 0x2a; // params from host ta
@@ -430,7 +429,7 @@ static void main_fiq(void);
 
 static void main_fiq(void)
 {
-	IMSG("ZRZ+++++++++++++++++++++++++++++++++++++++++++");
+	DMSG("ZRZ+++++++++++++++++++++++++++++++++++++++++++");
 	if(!scheduler_start_flag[get_current_core()]){
 		// Disable the timer 
 		IMSG("enable RT-TEE_scheuler.c  main_fiq to if");
@@ -438,7 +437,7 @@ static void main_fiq(void)
 	}
 	else{
 		//save normal world vfp state
-		IMSG("enable RT-TEE_scheuler.c  main_fiq to else");
+		DMSG("enable RT-TEE_scheuler.c  main_fiq to else");
 		fp_regs_save(&nw_vfp_state[get_current_core()]);
 		world_schedule_item();
 	}
@@ -469,7 +468,7 @@ const struct thread_handlers *generic_boot_get_handlers(void)
 void console_init(void)
 {
 	serial8250_uart_init(&console_data, CONSOLE_UART_BASE,
-			     CONSOLE_UART_CLK_IN_HZ, CONSOLE_BAUDRATE);
+		     CONSOLE_UART_CLK_IN_HZ, CONSOLE_BAUDRATE);
 	register_serial_console(&console_data.chip);
 }
 
@@ -679,22 +678,26 @@ void console_init(void)
 
 
 extern int gic_init_fun(void);
-#define CORE0_TIMER_IRQCNTL 0x12000040
-#define CORE1_TIMER_IRQCNTL 0x12000044
-#define CORE2_TIMER_IRQCNTL 0x12000048
-#define CORE3_TIMER_IRQCNTL 0x1200004C
-#define CORE0_FIQ_SOURCE 0x12000070
-#define CORE1_FIQ_SOURCE 0x12000074
-#define CORE2_FIQ_SOURCE 0x12000078
-#define CORE3_FIQ_SOURCE 0x1200007C
-#define TIMER0_FIQ 0x10
-#define TIMER1_FIQ 0x20
-#define TIMER2_FIQ 0x40
-#define TIMER3_FIQ 0x80
+#define CORE0_TIMER_IRQCNTL 0x40000040
+#define CORE1_TIMER_IRQCNTL 0x40000044
+#define CORE2_TIMER_IRQCNTL 0x40000048
+#define CORE3_TIMER_IRQCNTL 0x4000004C
+#define CORE0_IRQ_SOURCE 0x40000060
+#define CORE1_IRQ_SOURCE 0x40000064
+#define CORE2_IRQ_SOURCE 0x40000068
+#define CORE3_IRQ_SOURCE 0x4000006C
+#define CORE0_FIQ_SOURCE 0x40000070
+#define CORE1_FIQ_SOURCE 0x40000074
+#define CORE2_FIQ_SOURCE 0x40000078
+#define CORE3_FIQ_SOURCE 0x4000007C
 #define INT_SRC_TIMER0 0x00000001
 #define INT_SRC_TIMER1 0x00000002
 #define INT_SRC_TIMER2 0x00000004
 #define INT_SRC_TIMER3 0x00000008
+#define TIMER0_FIQ 0x10
+#define TIMER1_FIQ 0x20
+#define TIMER2_FIQ 0x40
+#define TIMER3_FIQ 0x80
 void timer_routing(){
 
 	// pi3 platform
@@ -863,6 +866,7 @@ void return_to_normal_world()
 	IMSG("return to normal_word");
 	fp_regs_restore(&nw_vfp_state[get_current_core()]);
 	fiqORstd[get_current_core()] = 1;
+	IMSG("zrz %d",fiqORstd[get_current_core()] );
 	thread_fiq_exit(&fiqORstd[get_current_core()]);
 }
 
@@ -1488,7 +1492,7 @@ unsigned int result_print_lock = SPINLOCK_UNLOCK;
 void secure_world_schedule_event()
 {
 	int coreNum = get_current_core();
-	IMSG(" secure_world_schedule_event() run ");
+	DMSG(" secure_world_schedule_event() run ");
 
 	// #ifdef RT-TEE_SYNTHETIC	
 	// this will do the time keeping for secure world task 
@@ -1505,7 +1509,7 @@ void secure_world_schedule_event()
 			if(secure_tasks[i].numOfJobCompleted >= NUM_OF_MEASURED \
 				|| getCurrentTime_micro() - start_time[get_current_core()] > NUM_OF_MEASURED * secure_tasks[i].period){
 
-				IMSG("current_time:%d, time_constrains:%d", getCurrentTime_micro() - start_time[get_current_core()], \
+				DMSG("current_time:%d, time_constrains:%d", getCurrentTime_micro() - start_time[get_current_core()], \
 					NUM_OF_MEASURED * secure_tasks[i].period);
 
 
@@ -1711,5 +1715,4 @@ long mult_busy_loop(unsigned long execution_time){
 	uint64_t end = read_cntpct();
 }
 
-~~~
 

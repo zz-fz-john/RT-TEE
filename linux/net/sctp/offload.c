@@ -45,7 +45,7 @@ static struct sk_buff *sctp_gso_segment(struct sk_buff *skb,
 	struct sk_buff *segs = ERR_PTR(-EINVAL);
 	struct sctphdr *sh;
 
-	if (!skb_is_gso_sctp(skb))
+	if (!(skb_shinfo(skb)->gso_type & SKB_GSO_SCTP))
 		goto out;
 
 	sh = sctp_hdr(skb);

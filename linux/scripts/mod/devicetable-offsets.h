@@ -115,8 +115,6 @@
 #define OFF_virtio_device_id_vendor 4 /* offsetof(struct virtio_device_id, vendor) */
 #define SIZE_hv_vmbus_device_id 24 /* sizeof(struct hv_vmbus_device_id) */
 #define OFF_hv_vmbus_device_id_guid 0 /* offsetof(struct hv_vmbus_device_id, guid) */
-#define SIZE_rpmsg_device_id 32 /* sizeof(struct rpmsg_device_id) */
-#define OFF_rpmsg_device_id_name 0 /* offsetof(struct rpmsg_device_id, name) */
 #define SIZE_i2c_device_id 32 /* sizeof(struct i2c_device_id) */
 #define OFF_i2c_device_id_name 0 /* offsetof(struct i2c_device_id, name) */
 #define SIZE_spi_device_id 40 /* sizeof(struct spi_device_id) */
@@ -165,20 +163,8 @@
 #define OFF_hda_device_id_vendor_id 0 /* offsetof(struct hda_device_id, vendor_id) */
 #define OFF_hda_device_id_rev_id 4 /* offsetof(struct hda_device_id, rev_id) */
 #define OFF_hda_device_id_api_version 8 /* offsetof(struct hda_device_id, api_version) */
-#define SIZE_sdw_device_id 16 /* sizeof(struct sdw_device_id) */
-#define OFF_sdw_device_id_mfg_id 0 /* offsetof(struct sdw_device_id, mfg_id) */
-#define OFF_sdw_device_id_part_id 2 /* offsetof(struct sdw_device_id, part_id) */
 #define SIZE_fsl_mc_device_id 18 /* sizeof(struct fsl_mc_device_id) */
 #define OFF_fsl_mc_device_id_vendor 0 /* offsetof(struct fsl_mc_device_id, vendor) */
 #define OFF_fsl_mc_device_id_obj_type 2 /* offsetof(struct fsl_mc_device_id, obj_type) */
-#define SIZE_tb_service_id 40 /* sizeof(struct tb_service_id) */
-#define OFF_tb_service_id_match_flags 0 /* offsetof(struct tb_service_id, match_flags) */
-#define OFF_tb_service_id_protocol_key 4 /* offsetof(struct tb_service_id, protocol_key) */
-#define OFF_tb_service_id_protocol_id 16 /* offsetof(struct tb_service_id, protocol_id) */
-#define OFF_tb_service_id_protocol_version 20 /* offsetof(struct tb_service_id, protocol_version) */
-#define OFF_tb_service_id_protocol_revision 24 /* offsetof(struct tb_service_id, protocol_revision) */
-#define SIZE_typec_device_id 16 /* sizeof(struct typec_device_id) */
-#define OFF_typec_device_id_svid 0 /* offsetof(struct typec_device_id, svid) */
-#define OFF_typec_device_id_mode 2 /* offsetof(struct typec_device_id, mode) */
 
 #endif

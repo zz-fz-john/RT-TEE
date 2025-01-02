@@ -9,4 +9,7 @@ edk/
 qemu/
 soc_term
 buildroot
+module_output
+optee_client/build
+optee_os/out
 

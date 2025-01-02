@@ -154,12 +154,8 @@ clusterip_config_find_get(struct net *net, __be32 clusterip, int entry)
 #endif
 		if (unlikely(!refcount_inc_not_zero(&c->refcount)))
 			c = NULL;
-		else if (entry) {
-			if (unlikely(!refcount_inc_not_zero(&c->entries))) {
-				clusterip_config_put(c);
-				c = NULL;
-			}
-		}
+		else if (entry)
+			refcount_inc(&c->entries);
 	}
 	rcu_read_unlock_bh();
 
@@ -250,7 +246,7 @@ clusterip_config_init(struct net *net, const struct ipt_clusterip_tgt_info *i,
 
 		/* create proc dir entry */
 		sprintf(buffer, "%pI4", &ip);
-		c->pde = proc_create_data(buffer, 0600,
+		c->pde = proc_create_data(buffer, S_IWUSR|S_IRUSR,
 					  cn->procdir,
 					  &clusterip_proc_fops, c);
 		if (!c->pde) {
@@ -795,6 +791,7 @@ static ssize_t clusterip_proc_write(struct file *file, const char __user *input,
 }
 
 static const struct file_operations clusterip_proc_fops = {
+	.owner	 = THIS_MODULE,
 	.open	 = clusterip_proc_open,
 	.read	 = seq_read,
 	.write	 = clusterip_proc_write,
@@ -831,13 +828,12 @@ static int clusterip_net_init(struct net *net)
 
 static void clusterip_net_exit(struct net *net)
 {
-	struct clusterip_net *cn = net_generic(net, clusterip_net_id);
 #ifdef CONFIG_PROC_FS
+	struct clusterip_net *cn = net_generic(net, clusterip_net_id);
 	proc_remove(cn->procdir);
 	cn->procdir = NULL;
 #endif
 	nf_unregister_net_hook(net, &cip_arp_ops);
-	WARN_ON_ONCE(!list_empty(&cn->configs));
 }
 
 static struct pernet_operations clusterip_net_ops = {

@@ -27,7 +27,7 @@ static void nd_pfn_release(struct device *dev)
 	struct nd_region *nd_region = to_nd_region(dev->parent);
 	struct nd_pfn *nd_pfn = to_nd_pfn(dev);
 
-	dev_dbg(dev, "trace\n");
+	dev_dbg(dev, "%s\n", __func__);
 	nd_detach_ndns(&nd_pfn->dev, &nd_pfn->ndns);
 	ida_simple_remove(&nd_region->pfn_ida, nd_pfn->id);
 	kfree(nd_pfn->uuid);
@@ -94,8 +94,8 @@ static ssize_t mode_store(struct device *dev,
 		else
 			rc = -EINVAL;
 	}
-	dev_dbg(dev, "result: %zd wrote: %s%s", rc, buf,
-			buf[len - 1] == '\n' ? "" : "\n");
+	dev_dbg(dev, "%s: result: %zd wrote: %s%s", __func__,
+			rc, buf, buf[len - 1] == '\n' ? "" : "\n");
 	nvdimm_bus_unlock(dev);
 	device_unlock(dev);
 
@@ -144,8 +144,8 @@ static ssize_t align_store(struct device *dev,
 	nvdimm_bus_lock(dev);
 	rc = nd_size_select_store(dev, buf, &nd_pfn->align,
 			nd_pfn_supported_alignments());
-	dev_dbg(dev, "result: %zd wrote: %s%s", rc, buf,
-			buf[len - 1] == '\n' ? "" : "\n");
+	dev_dbg(dev, "%s: result: %zd wrote: %s%s", __func__,
+			rc, buf, buf[len - 1] == '\n' ? "" : "\n");
 	nvdimm_bus_unlock(dev);
 	device_unlock(dev);
 
@@ -171,8 +171,8 @@ static ssize_t uuid_store(struct device *dev,
 
 	device_lock(dev);
 	rc = nd_uuid_store(dev, &nd_pfn->uuid, buf, len);
-	dev_dbg(dev, "result: %zd wrote: %s%s", rc, buf,
-			buf[len - 1] == '\n' ? "" : "\n");
+	dev_dbg(dev, "%s: result: %zd wrote: %s%s", __func__,
+			rc, buf, buf[len - 1] == '\n' ? "" : "\n");
 	device_unlock(dev);
 
 	return rc ? rc : len;
@@ -201,8 +201,8 @@ static ssize_t namespace_store(struct device *dev,
 	device_lock(dev);
 	nvdimm_bus_lock(dev);
 	rc = nd_namespace_store(dev, &nd_pfn->ndns, buf, len);
-	dev_dbg(dev, "result: %zd wrote: %s%s", rc, buf,
-			buf[len - 1] == '\n' ? "" : "\n");
+	dev_dbg(dev, "%s: result: %zd wrote: %s%s", __func__,
+			rc, buf, buf[len - 1] == '\n' ? "" : "\n");
 	nvdimm_bus_unlock(dev);
 	device_unlock(dev);
 
@@ -304,7 +304,7 @@ static const struct attribute_group *nd_pfn_attribute_groups[] = {
 struct device *nd_pfn_devinit(struct nd_pfn *nd_pfn,
 		struct nd_namespace_common *ndns)
 {
-	struct device *dev;
+	struct device *dev = &nd_pfn->dev;
 
 	if (!nd_pfn)
 		return NULL;
@@ -314,8 +314,8 @@ struct device *nd_pfn_devinit(struct nd_pfn *nd_pfn,
 	dev = &nd_pfn->dev;
 	device_initialize(&nd_pfn->dev);
 	if (ndns && !__nd_attach_ndns(&nd_pfn->dev, ndns, &nd_pfn->ndns)) {
-		dev_dbg(&ndns->dev, "failed, already claimed by %s\n",
-				dev_name(ndns->claim));
+		dev_dbg(&ndns->dev, "%s failed, already claimed by %s\n",
+				__func__, dev_name(ndns->claim));
 		put_device(dev);
 		return NULL;
 	}
@@ -510,7 +510,8 @@ int nd_pfn_probe(struct device *dev, struct nd_namespace_common *ndns)
 	nd_pfn = to_nd_pfn(pfn_dev);
 	nd_pfn->pfn_sb = pfn_sb;
 	rc = nd_pfn_validate(nd_pfn, PFN_SIG);
-	dev_dbg(dev, "pfn: %s\n", rc == 0 ? dev_name(pfn_dev) : "<none>");
+	dev_dbg(dev, "%s: pfn: %s\n", __func__,
+			rc == 0 ? dev_name(pfn_dev) : "<none>");
 	if (rc < 0) {
 		nd_detach_ndns(pfn_dev, &nd_pfn->ndns);
 		put_device(pfn_dev);
@@ -541,10 +542,9 @@ static unsigned long init_altmap_reserve(resource_size_t base)
 	return reserve;
 }
 
-static int __nvdimm_setup_pfn(struct nd_pfn *nd_pfn, struct dev_pagemap *pgmap)
+static struct vmem_altmap *__nvdimm_setup_pfn(struct nd_pfn *nd_pfn,
+		struct resource *res, struct vmem_altmap *altmap)
 {
-	struct resource *res = &pgmap->res;
-	struct vmem_altmap *altmap = &pgmap->altmap;
 	struct nd_pfn_sb *pfn_sb = nd_pfn->pfn_sb;
 	u64 offset = le64_to_cpu(pfn_sb->dataoff);
 	u32 start_pad = __le32_to_cpu(pfn_sb->start_pad);
@@ -563,9 +563,9 @@ static int __nvdimm_setup_pfn(struct nd_pfn *nd_pfn, struct dev_pagemap *pgmap)
 
 	if (nd_pfn->mode == PFN_MODE_RAM) {
 		if (offset < SZ_8K)
-			return -EINVAL;
+			return ERR_PTR(-EINVAL);
 		nd_pfn->npfns = le64_to_cpu(pfn_sb->npfns);
-		pgmap->altmap_valid = false;
+		altmap = NULL;
 	} else if (nd_pfn->mode == PFN_MODE_PMEM) {
 		nd_pfn->npfns = PFN_SECTION_ALIGN_UP((resource_size(res)
 					- offset) / PAGE_SIZE);
@@ -577,11 +577,10 @@ static int __nvdimm_setup_pfn(struct nd_pfn *nd_pfn, struct dev_pagemap *pgmap)
 		memcpy(altmap, &__altmap, sizeof(*altmap));
 		altmap->free = PHYS_PFN(offset - SZ_8K);
 		altmap->alloc = 0;
-		pgmap->altmap_valid = true;
 	} else
-		return -ENXIO;
+		return ERR_PTR(-ENXIO);
 
-	return 0;
+	return altmap;
 }
 
 static u64 phys_pmem_align_down(struct nd_pfn *nd_pfn, u64 phys)
@@ -709,18 +708,19 @@ static int nd_pfn_init(struct nd_pfn *nd_pfn)
  * Determine the effective resource range and vmem_altmap from an nd_pfn
  * instance.
  */
-int nvdimm_setup_pfn(struct nd_pfn *nd_pfn, struct dev_pagemap *pgmap)
+struct vmem_altmap *nvdimm_setup_pfn(struct nd_pfn *nd_pfn,
+		struct resource *res, struct vmem_altmap *altmap)
 {
 	int rc;
 
 	if (!nd_pfn->uuid || !nd_pfn->ndns)
-		return -ENODEV;
+		return ERR_PTR(-ENODEV);
 
 	rc = nd_pfn_init(nd_pfn);
 	if (rc)
-		return rc;
+		return ERR_PTR(rc);
 
-	/* we need a valid pfn_sb before we can init a dev_pagemap */
-	return __nvdimm_setup_pfn(nd_pfn, pgmap);
+	/* we need a valid pfn_sb before we can init a vmem_altmap */
+	return __nvdimm_setup_pfn(nd_pfn, res, altmap);
 }
 EXPORT_SYMBOL_GPL(nvdimm_setup_pfn);

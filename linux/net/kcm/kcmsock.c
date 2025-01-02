@@ -396,8 +396,8 @@ static int kcm_read_sock_done(struct strparser *strp, int err)
 
 static void psock_state_change(struct sock *sk)
 {
-	/* TCP only does a EPOLLIN for a half close. Do a EPOLLHUP here
-	 * since application will normally not poll with EPOLLIN
+	/* TCP only does a POLLIN for a half close. Do a POLLHUP here
+	 * since application will normally not poll with POLLIN
 	 * on the TCP sockets.
 	 */
 
@@ -1338,7 +1338,7 @@ static void init_kcm_sock(struct kcm_sock *kcm, struct kcm_mux *mux)
 
 	/* For SOCK_SEQPACKET sock type, datagram_poll checks the sk_state, so
 	 * we set sk_state, otherwise epoll_wait always returns right away with
-	 * EPOLLHUP
+	 * POLLHUP
 	 */
 	kcm->sk.sk_state = TCP_ESTABLISHED;
 
@@ -1660,6 +1660,7 @@ static struct file *kcm_clone(struct socket *osock)
 {
 	struct socket *newsock;
 	struct sock *newsk;
+	struct file *file;
 
 	newsock = sock_alloc();
 	if (!newsock)
@@ -1679,7 +1680,11 @@ static struct file *kcm_clone(struct socket *osock)
 	sock_init_data(newsock, newsk);
 	init_kcm_sock(kcm_sk(newsk), kcm_sk(osock->sk)->mux);
 
-	return sock_alloc_file(newsock, 0, osock->sk->sk_prot_creator->name);
+	file = sock_alloc_file(newsock, 0, osock->sk->sk_prot_creator->name);
+	if (IS_ERR(file))
+		sock_release(newsock);
+
+	return file;
 }
 
 static int kcm_ioctl(struct socket *sock, unsigned int cmd, unsigned long arg)
@@ -2104,3 +2109,4 @@ module_exit(kcm_exit);
 
 MODULE_LICENSE("GPL");
 MODULE_ALIAS_NETPROTO(PF_KCM);
+

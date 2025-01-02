@@ -511,8 +511,9 @@ static enum resp_states send_data_in(struct rxe_qp *qp, void *data_addr,
 				     int data_len)
 {
 	int err;
+	struct rxe_dev *rxe = to_rdev(qp->ibqp.device);
 
-	err = copy_data(qp->pd, IB_ACCESS_LOCAL_WRITE, &qp->resp.wqe->dma,
+	err = copy_data(rxe, qp->pd, IB_ACCESS_LOCAL_WRITE, &qp->resp.wqe->dma,
 			data_addr, data_len, to_mem_obj, NULL);
 	if (unlikely(err))
 		return (err == -ENOSPC) ? RESPST_ERR_LENGTH
@@ -861,7 +862,8 @@ static enum resp_states do_complete(struct rxe_qp *qp,
 
 			if (pkt->mask & RXE_IMMDT_MASK) {
 				uwc->wc_flags |= IB_WC_WITH_IMM;
-				uwc->ex.imm_data = immdt_imm(pkt);
+				uwc->ex.imm_data =
+					(__u32 __force)immdt_imm(pkt);
 			}
 
 			if (pkt->mask & RXE_IETH_MASK) {
@@ -883,11 +885,6 @@ static enum resp_states do_complete(struct rxe_qp *qp,
 				wc->network_hdr_type = RDMA_NETWORK_IPV4;
 			else
 				wc->network_hdr_type = RDMA_NETWORK_IPV6;
-
-			if (is_vlan_dev(skb->dev)) {
-				wc->wc_flags |= IB_WC_WITH_VLAN;
-				wc->vlan_id = vlan_dev_vlan_id(skb->dev);
-			}
 
 			if (pkt->mask & RXE_IMMDT_MASK) {
 				wc->wc_flags |= IB_WC_WITH_IMM;
@@ -970,6 +967,7 @@ static int send_atomic_ack(struct rxe_qp *qp, struct rxe_pkt_info *pkt,
 	int rc = 0;
 	struct rxe_pkt_info ack_pkt;
 	struct sk_buff *skb;
+	struct sk_buff *skb_copy;
 	struct rxe_dev *rxe = to_rdev(qp->ibqp.device);
 	struct resp_res *res;
 
@@ -981,7 +979,14 @@ static int send_atomic_ack(struct rxe_qp *qp, struct rxe_pkt_info *pkt,
 		goto out;
 	}
 
-	rxe_add_ref(qp);
+	skb_copy = skb_clone(skb, GFP_ATOMIC);
+	if (skb_copy)
+		rxe_add_ref(qp); /* for the new SKB */
+	else {
+		pr_warn("Could not clone atomic response\n");
+		rc = -ENOMEM;
+		goto out;
+	}
 
 	res = &qp->resp.resources[qp->resp.res_head];
 	free_rd_atomic_resource(qp, res);
@@ -991,18 +996,19 @@ static int send_atomic_ack(struct rxe_qp *qp, struct rxe_pkt_info *pkt,
 	memset((unsigned char *)SKB_TO_PKT(skb) + sizeof(ack_pkt), 0,
 	       sizeof(skb->cb) - sizeof(ack_pkt));
 
-	skb_get(skb);
 	res->type = RXE_ATOMIC_MASK;
 	res->atomic.skb = skb;
 	res->first_psn = ack_pkt.psn;
 	res->last_psn  = ack_pkt.psn;
 	res->cur_psn   = ack_pkt.psn;
 
-	rc = rxe_xmit_packet(rxe, qp, &ack_pkt, skb);
+	rc = rxe_xmit_packet(rxe, qp, &ack_pkt, skb_copy);
 	if (rc) {
 		pr_err_ratelimited("Failed sending ack\n");
 		rxe_drop_ref(qp);
+		kfree_skb(skb_copy);
 	}
+
 out:
 	return rc;
 }
@@ -1125,12 +1131,23 @@ static enum resp_states duplicate_request(struct rxe_qp *qp,
 		/* Find the operation in our list of responder resources. */
 		res = find_resource(qp, pkt->psn);
 		if (res) {
-			skb_get(res->atomic.skb);
+			struct sk_buff *skb_copy;
+
+			skb_copy = skb_clone(res->atomic.skb, GFP_ATOMIC);
+			if (skb_copy) {
+				rxe_add_ref(qp); /* for the new SKB */
+			} else {
+				pr_warn("Couldn't clone atomic resp\n");
+				rc = RESPST_CLEANUP;
+				goto out;
+			}
+
 			/* Resend the result. */
 			rc = rxe_xmit_packet(to_rdev(qp->ibqp.device), qp,
-					     pkt, res->atomic.skb);
+					     pkt, skb_copy);
 			if (rc) {
 				pr_err("Failed resending result. This flow is not handled - skb ignored\n");
+				rxe_drop_ref(qp);
 				rc = RESPST_CLEANUP;
 				goto out;
 			}

@@ -2876,7 +2876,6 @@ TEST(get_metadata)
 	int pipefd[2];
 	char buf;
 	struct seccomp_metadata md;
-	long ret;
 
 	ASSERT_EQ(0, pipe(pipefd));
 
@@ -2910,26 +2909,16 @@ TEST(get_metadata)
 	ASSERT_EQ(0, ptrace(PTRACE_ATTACH, pid));
 	ASSERT_EQ(pid, waitpid(pid, NULL, 0));
 
-	/* Past here must not use ASSERT or child process is never killed. */
-
 	md.filter_off = 0;
-	errno = 0;
-	ret = ptrace(PTRACE_SECCOMP_GET_METADATA, pid, sizeof(md), &md);
-	EXPECT_EQ(sizeof(md), ret) {
-		if (errno == EINVAL)
-			XFAIL(goto skip, "Kernel does not support PTRACE_SECCOMP_GET_METADATA (missing CONFIG_CHECKPOINT_RESTORE?)");
-	}
-
+	ASSERT_EQ(sizeof(md), ptrace(PTRACE_SECCOMP_GET_METADATA, pid, sizeof(md), &md));
 	EXPECT_EQ(md.flags, SECCOMP_FILTER_FLAG_LOG);
 	EXPECT_EQ(md.filter_off, 0);
 
 	md.filter_off = 1;
-	ret = ptrace(PTRACE_SECCOMP_GET_METADATA, pid, sizeof(md), &md);
-	EXPECT_EQ(sizeof(md), ret);
+	ASSERT_EQ(sizeof(md), ptrace(PTRACE_SECCOMP_GET_METADATA, pid, sizeof(md), &md));
 	EXPECT_EQ(md.flags, 0);
 	EXPECT_EQ(md.filter_off, 1);
 
-skip:
 	ASSERT_EQ(0, kill(pid, SIGKILL));
 }
 

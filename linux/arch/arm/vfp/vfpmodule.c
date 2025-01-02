@@ -179,8 +179,11 @@ static int vfp_notifier(struct notifier_block *self, unsigned long cmd, void *v)
 		 * case the thread migrates to a different CPU. The
 		 * restoring is done lazily.
 		 */
-		if ((fpexc & FPEXC_EN) && vfp_current_hw_state[cpu])
+		if ((fpexc & FPEXC_EN) && vfp_current_hw_state[cpu]) {
+			/* vfp_save_state oopses on VFP11 if EX bit set */
+			fmxr(FPEXC, fpexc & ~FPEXC_EX);
 			vfp_save_state(vfp_current_hw_state[cpu], fpexc);
+		}
 #endif
 
 		/*
@@ -218,7 +221,8 @@ static void vfp_raise_sigfpe(unsigned int sicode, struct pt_regs *regs)
 {
 	siginfo_t info;
 
-	clear_siginfo(&info);
+	memset(&info, 0, sizeof(info));
+
 	info.si_signo = SIGFPE;
 	info.si_code = sicode;
 	info.si_addr = (void __user *)(instruction_pointer(regs) - 4);
@@ -256,7 +260,7 @@ static void vfp_raise_exceptions(u32 exceptions, u32 inst, u32 fpscr, struct pt_
 
 	if (exceptions == VFP_EXCEPTION_ERROR) {
 		vfp_panic("unhandled bounce", inst);
-		vfp_raise_sigfpe(FPE_FLTINV, regs);
+		vfp_raise_sigfpe(0, regs);
 		return;
 	}
 
@@ -462,13 +466,16 @@ static int vfp_pm_suspend(void)
 	/* if vfp is on, then save state for resumption */
 	if (fpexc & FPEXC_EN) {
 		pr_debug("%s: saving vfp state\n", __func__);
+		/* vfp_save_state oopses on VFP11 if EX bit set */
+		fmxr(FPEXC, fpexc & ~FPEXC_EX);
 		vfp_save_state(&ti->vfpstate, fpexc);
 
 		/* disable, just in case */
 		fmxr(FPEXC, fmrx(FPEXC) & ~FPEXC_EN);
 	} else if (vfp_current_hw_state[ti->cpu]) {
 #ifndef CONFIG_SMP
-		fmxr(FPEXC, fpexc | FPEXC_EN);
+		/* vfp_save_state oopses on VFP11 if EX bit set */
+		fmxr(FPEXC, (fpexc & ~FPEXC_EX) | FPEXC_EN);
 		vfp_save_state(vfp_current_hw_state[ti->cpu], fpexc);
 		fmxr(FPEXC, fpexc);
 #endif
@@ -531,7 +538,8 @@ void vfp_sync_hwstate(struct thread_info *thread)
 		/*
 		 * Save the last VFP state on this CPU.
 		 */
-		fmxr(FPEXC, fpexc | FPEXC_EN);
+		/* vfp_save_state oopses on VFP11 if EX bit set */
+		fmxr(FPEXC, (fpexc & ~FPEXC_EX) | FPEXC_EN);
 		vfp_save_state(&thread->vfpstate, fpexc | FPEXC_EN);
 		fmxr(FPEXC, fpexc);
 	}
@@ -596,11 +604,14 @@ int vfp_preserve_user_clear_hwstate(struct user_vfp __user *ufp,
 }
 
 /* Sanitise and restore the current VFP state from the provided structures. */
-int vfp_restore_user_hwstate(struct user_vfp *ufp, struct user_vfp_exc *ufp_exc)
+int vfp_restore_user_hwstate(struct user_vfp __user *ufp,
+			     struct user_vfp_exc __user *ufp_exc)
 {
 	struct thread_info *thread = current_thread_info();
 	struct vfp_hard_struct *hwstate = &thread->vfpstate.hard;
 	unsigned long fpexc;
+	int err = 0;
+	u32 fpsid = fmrx(FPSID);
 
 	/* Disable VFP to avoid corrupting the new thread state. */
 	vfp_flush_hwstate(thread);
@@ -609,28 +620,33 @@ int vfp_restore_user_hwstate(struct user_vfp *ufp, struct user_vfp_exc *ufp_exc)
 	 * Copy the floating point registers. There can be unused
 	 * registers see asm/hwcap.h for details.
 	 */
-	memcpy(&hwstate->fpregs, &ufp->fpregs, sizeof(hwstate->fpregs));
+	err |= __copy_from_user(&hwstate->fpregs, &ufp->fpregs,
+				sizeof(hwstate->fpregs));
 	/*
 	 * Copy the status and control register.
 	 */
-	hwstate->fpscr = ufp->fpscr;
+	__get_user_error(hwstate->fpscr, &ufp->fpscr, err);
 
 	/*
 	 * Sanitise and restore the exception registers.
 	 */
-	fpexc = ufp_exc->fpexc;
+	__get_user_error(fpexc, &ufp_exc->fpexc, err);
 
 	/* Ensure the VFP is enabled. */
 	fpexc |= FPEXC_EN;
 
-	/* Ensure FPINST2 is invalid and the exception flag is cleared. */
-	fpexc &= ~(FPEXC_EX | FPEXC_FP2V);
+	/* Mask FPXEC_EX and FPEXC_FP2V if not required by VFP arch */
+	if ((fpsid & FPSID_ARCH_MASK) != (1 << FPSID_ARCH_BIT)) {
+		/* Ensure FPINST2 is invalid and the exception flag is cleared. */
+		fpexc &= ~(FPEXC_EX | FPEXC_FP2V);
+	}
+
 	hwstate->fpexc = fpexc;
 
-	hwstate->fpinst = ufp_exc->fpinst;
-	hwstate->fpinst2 = ufp_exc->fpinst2;
+	__get_user_error(hwstate->fpinst, &ufp_exc->fpinst, err);
+	__get_user_error(hwstate->fpinst2, &ufp_exc->fpinst2, err);
 
-	return 0;
+	return err ? -EFAULT : 0;
 }
 
 /*
@@ -694,7 +710,8 @@ void kernel_neon_begin(void)
 	cpu = get_cpu();
 
 	fpexc = fmrx(FPEXC) | FPEXC_EN;
-	fmxr(FPEXC, fpexc);
+	/* vfp_save_state oopses on VFP11 if EX bit set */
+	fmxr(FPEXC, fpexc & ~FPEXC_EX);
 
 	/*
 	 * Save the userland NEON/VFP state. Under UP,

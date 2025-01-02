@@ -104,6 +104,8 @@ struct intel_pt {
 	u64 pwrx_id;
 	u64 cbr_id;
 
+	bool synth_needs_swap;
+
 	u64 tsc_bit;
 	u64 mtc_bit;
 	u64 mtc_freq_bits;
@@ -132,7 +134,6 @@ struct intel_pt_queue {
 	struct intel_pt *pt;
 	unsigned int queue_nr;
 	struct auxtrace_buffer *buffer;
-	struct auxtrace_buffer *old_buffer;
 	void *decoder;
 	const struct intel_pt_state *state;
 	struct ip_callchain *chain;
@@ -223,14 +224,38 @@ static int intel_pt_do_fix_overlap(struct intel_pt *pt, struct auxtrace_buffer *
 	return 0;
 }
 
+static void intel_pt_use_buffer_pid_tid(struct intel_pt_queue *ptq,
+					struct auxtrace_queue *queue,
+					struct auxtrace_buffer *buffer)
+{
+	if (queue->cpu == -1 && buffer->cpu != -1)
+		ptq->cpu = buffer->cpu;
+
+	ptq->pid = buffer->pid;
+	ptq->tid = buffer->tid;
+
+	intel_pt_log("queue %u cpu %d pid %d tid %d\n",
+		     ptq->queue_nr, ptq->cpu, ptq->pid, ptq->tid);
+
+	thread__zput(ptq->thread);
+
+	if (ptq->tid != -1) {
+		if (ptq->pid != -1)
+			ptq->thread = machine__findnew_thread(ptq->pt->machine,
+							      ptq->pid,
+							      ptq->tid);
+		else
+			ptq->thread = machine__find_thread(ptq->pt->machine, -1,
+							   ptq->tid);
+	}
+}
+
 /* This function assumes data is processed sequentially only */
 static int intel_pt_get_trace(struct intel_pt_buffer *b, void *data)
 {
 	struct intel_pt_queue *ptq = data;
-	struct auxtrace_buffer *buffer = ptq->buffer;
-	struct auxtrace_buffer *old_buffer = ptq->old_buffer;
+	struct auxtrace_buffer *buffer = ptq->buffer, *old_buffer = buffer;
 	struct auxtrace_queue *queue;
-	bool might_overlap;
 
 	if (ptq->stop) {
 		b->len = 0;
@@ -238,7 +263,7 @@ static int intel_pt_get_trace(struct intel_pt_buffer *b, void *data)
 	}
 
 	queue = &ptq->pt->queues.queue_array[ptq->queue_nr];
-
+next:
 	buffer = auxtrace_buffer__next(queue, buffer);
 	if (!buffer) {
 		if (old_buffer)
@@ -250,15 +275,14 @@ static int intel_pt_get_trace(struct intel_pt_buffer *b, void *data)
 	ptq->buffer = buffer;
 
 	if (!buffer->data) {
-		int fd = perf_data__fd(ptq->pt->session->data);
+		int fd = perf_data_file__fd(ptq->pt->session->file);
 
 		buffer->data = auxtrace_buffer__get_data(buffer, fd);
 		if (!buffer->data)
 			return -ENOMEM;
 	}
 
-	might_overlap = ptq->pt->snapshot_mode || ptq->pt->sampling_mode;
-	if (might_overlap && !buffer->consecutive && old_buffer &&
+	if (ptq->pt->snapshot_mode && !buffer->consecutive && old_buffer &&
 	    intel_pt_do_fix_overlap(ptq->pt, old_buffer, buffer))
 		return -ENOMEM;
 
@@ -271,24 +295,33 @@ static int intel_pt_get_trace(struct intel_pt_buffer *b, void *data)
 	}
 	b->ref_timestamp = buffer->reference;
 
-	if (!old_buffer || (might_overlap && !buffer->consecutive)) {
+	/*
+	 * If in snapshot mode and the buffer has no usable data, get next
+	 * buffer and again check overlap against old_buffer.
+	 */
+	if (ptq->pt->snapshot_mode && !b->len)
+		goto next;
+
+	if (old_buffer)
+		auxtrace_buffer__drop_data(old_buffer);
+
+	if (!old_buffer || ptq->pt->sampling_mode || (ptq->pt->snapshot_mode &&
+						      !buffer->consecutive)) {
 		b->consecutive = false;
 		b->trace_nr = buffer->buffer_nr + 1;
 	} else {
 		b->consecutive = true;
 	}
 
+	if (ptq->use_buffer_pid_tid && (ptq->pid != buffer->pid ||
+					ptq->tid != buffer->tid))
+		intel_pt_use_buffer_pid_tid(ptq, queue, buffer);
+
 	if (ptq->step_through_buffers)
 		ptq->stop = true;
 
-	if (b->len) {
-		if (old_buffer)
-			auxtrace_buffer__drop_data(old_buffer);
-		ptq->old_buffer = buffer;
-	} else {
-		auxtrace_buffer__drop_data(buffer);
+	if (!b->len)
 		return intel_pt_get_trace(b, data);
-	}
 
 	return 0;
 }
@@ -442,7 +475,8 @@ static int intel_pt_walk_next_insn(struct intel_pt_insn *intel_pt_insn,
 	}
 
 	while (1) {
-		if (!thread__find_map(thread, cpumode, *ip, &al) || !al.map->dso)
+		thread__find_addr_map(thread, cpumode, MAP__FUNCTION, *ip, &al);
+		if (!al.map || !al.map->dso)
 			return -EINVAL;
 
 		if (al.map->dso->data.status == DSO_DATA_STATUS_ERROR &&
@@ -595,7 +629,8 @@ static int __intel_pt_pgd_ip(uint64_t ip, void *data)
 	if (!thread)
 		return -EINVAL;
 
-	if (!thread__find_map(thread, cpumode, ip, &al) || !al.map->dso)
+	thread__find_addr_map(thread, cpumode, MAP__FUNCTION, ip, &al);
+	if (!al.map || !al.map->dso)
 		return -EINVAL;
 
 	offset = al.map->map_ip(al.map, ip);
@@ -929,9 +964,12 @@ static int intel_pt_setup_queue(struct intel_pt *pt,
 			ptq->cpu = queue->cpu;
 		ptq->tid = queue->tid;
 
-		if (pt->sampling_mode && !pt->snapshot_mode &&
-		    pt->timeless_decoding)
-			ptq->step_through_buffers = true;
+		if (pt->sampling_mode) {
+			if (pt->timeless_decoding)
+				ptq->step_through_buffers = true;
+			if (pt->timeless_decoding || !pt->have_sched_switch)
+				ptq->use_buffer_pid_tid = true;
+		}
 
 		ptq->sync_switch = pt->sync_switch;
 	}
@@ -1073,10 +1111,11 @@ static void intel_pt_prep_b_sample(struct intel_pt *pt,
 }
 
 static int intel_pt_inject_event(union perf_event *event,
-				 struct perf_sample *sample, u64 type)
+				 struct perf_sample *sample, u64 type,
+				 bool swapped)
 {
 	event->header.size = perf_event__sample_event_size(sample, type, 0);
-	return perf_event__synthesize_sample(event, type, 0, sample);
+	return perf_event__synthesize_sample(event, type, 0, sample, swapped);
 }
 
 static inline int intel_pt_opt_inject(struct intel_pt *pt,
@@ -1086,7 +1125,7 @@ static inline int intel_pt_opt_inject(struct intel_pt *pt,
 	if (!pt->synth_opts.inject)
 		return 0;
 
-	return intel_pt_inject_event(event, sample, type);
+	return intel_pt_inject_event(event, sample, type, pt->synth_needs_swap);
 }
 
 static int intel_pt_deliver_synth_b_event(struct intel_pt *pt,
@@ -1568,7 +1607,7 @@ static u64 intel_pt_switch_ip(struct intel_pt *pt, u64 *ptss_ip)
 	if (map__load(map))
 		return 0;
 
-	start = dso__first_symbol(map->dso);
+	start = dso__first_symbol(map->dso, MAP__FUNCTION);
 
 	for (sym = start; sym; sym = dso__next_symbol(sym)) {
 		if (sym->binding == STB_GLOBAL &&
@@ -2065,13 +2104,16 @@ static int intel_pt_process_auxtrace_event(struct perf_session *session,
 	struct intel_pt *pt = container_of(session->auxtrace, struct intel_pt,
 					   auxtrace);
 
+	if (pt->sampling_mode)
+		return 0;
+
 	if (!pt->data_queued) {
 		struct auxtrace_buffer *buffer;
 		off_t data_offset;
-		int fd = perf_data__fd(session->data);
+		int fd = perf_data_file__fd(session->file);
 		int err;
 
-		if (perf_data__is_pipe(session->data)) {
+		if (perf_data_file__is_pipe(session->file)) {
 			data_offset = 0;
 		} else {
 			data_offset = lseek(fd, 0, SEEK_CUR);
@@ -2312,6 +2354,8 @@ static int intel_pt_synth_events(struct intel_pt *pt,
 		intel_pt_set_event_name(evlist, id, "pwrx");
 		id += 1;
 	}
+
+	pt->synth_needs_swap = evsel->needs_swap;
 
 	return 0;
 }

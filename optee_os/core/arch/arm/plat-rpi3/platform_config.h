@@ -85,4 +85,11 @@
 
 # define TA_RAM_SIZE		(8 * 1024 * 1024)
 
+#define GIC_BASE		0x12000000
+#define GICD_OFFSET		0
+#define GICC_OFFSET		0x10000
+#ifdef GIC_BASE
+#define GICD_BASE		(GIC_BASE + GICD_OFFSET)
+#define GICC_BASE		(GIC_BASE + GICC_OFFSET)
+#endif
 #endif /* PLATFORM_CONFIG_H */

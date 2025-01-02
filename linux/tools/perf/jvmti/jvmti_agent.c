@@ -35,7 +35,6 @@
 #include <sys/mman.h>
 #include <syscall.h> /* for gettid() */
 #include <err.h>
-#include <linux/kernel.h>
 
 #include "jvmti_agent.h"
 #include "../util/jitdump.h"
@@ -250,7 +249,7 @@ void *jvmti_open(void)
 	/*
 	 * jitdump file name
 	 */
-	scnprintf(dump_path, PATH_MAX, "%s/jit-%i.dump", jit_path, getpid());
+	snprintf(dump_path, PATH_MAX, "%s/jit-%i.dump", jit_path, getpid());
 
 	fd = open(dump_path, O_CREAT|O_TRUNC|O_RDWR, 0666);
 	if (fd == -1)
@@ -385,13 +384,13 @@ jvmti_write_code(void *agent, char const *sym,
 }
 
 int
-jvmti_write_debug_info(void *agent, uint64_t code,
-    int nr_lines, jvmti_line_info_t *li,
-    const char * const * file_names)
+jvmti_write_debug_info(void *agent, uint64_t code, const char *file,
+		       jvmti_line_info_t *li, int nr_lines)
 {
 	struct jr_code_debug_info rec;
-	size_t sret, len, size, flen = 0;
+	size_t sret, len, size, flen;
 	uint64_t addr;
+	const char *fn = file;
 	FILE *fp = agent;
 	int i;
 
@@ -406,9 +405,7 @@ jvmti_write_debug_info(void *agent, uint64_t code,
 		return -1;
 	}
 
-	for (i = 0; i < nr_lines; ++i) {
-	    flen += strlen(file_names[i]) + 1;
-	}
+	flen = strlen(file) + 1;
 
 	rec.p.id        = JIT_CODE_DEBUG_INFO;
 	size            = sizeof(rec);
@@ -424,7 +421,7 @@ jvmti_write_debug_info(void *agent, uint64_t code,
 	 * file[]   : source file name
 	 */
 	size += nr_lines * sizeof(struct debug_entry);
-	size += flen;
+	size += flen * nr_lines;
 	rec.p.total_size = size;
 
 	/*
@@ -455,7 +452,7 @@ jvmti_write_debug_info(void *agent, uint64_t code,
 		if (sret != 1)
 			goto error;
 
-		sret = fwrite_unlocked(file_names[i], strlen(file_names[i]) + 1, 1, fp);
+		sret = fwrite_unlocked(fn, flen, 1, fp);
 		if (sret != 1)
 			goto error;
 	}

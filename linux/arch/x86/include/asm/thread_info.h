@@ -63,6 +63,8 @@ struct thread_info {
 	.flags		= 0,			\
 }
 
+#define init_stack		(init_thread_union.stack)
+
 #else /* !__ASSEMBLY__ */
 
 #include <asm/asm-offsets.h>

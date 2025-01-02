@@ -53,7 +53,7 @@ struct secure_task_params{
 
 struct world_params
 {
-	int secure_period;
+	int secure_period;//周期
 	int secure_budget;
 	int non_secure_period;
 	int non_secure_budget;
@@ -68,7 +68,7 @@ struct secure_task_params task_params[TA_NUM];
 uint32_t err_origins[TA_NUM];
 struct world_params each_core_world_params[CFG_TEE_CORE_NB_CORE];
 
-
+//初始化每个核上每个世界的参数
 void world_params_init(struct world_params *world_params, int secure_period,\
 	int secure_budget, int non_secure_period, int non_secure_budget){
 	world_params->secure_period = secure_period;
@@ -77,7 +77,7 @@ void world_params_init(struct world_params *world_params, int secure_period,\
 	world_params->non_secure_budget = non_secure_budget;
 }
 
-
+//对每个任务的调度参数初始化
 void task_param_init(struct secure_task_params * task_params, int period,\
  int priority, int execution_time, int task_init_flag, int cpu){
  	task_params->period = period;
@@ -109,7 +109,7 @@ void rt_tee_open_session(int taskId){
 }
 
 // void rt_tee_scheduler_start(struct world_params *curr_world_params){
-void rt_tee_scheduler_start(struct world_params *first_world_params, unsigned int cmd_id){
+void rt_tee_scheduler_start(struct world_params *first_world_params, unsigned int cmd_id){//为每个核初始化每个世界的参数
 
 	cpu_set_t mask;
 	CPU_ZERO(&mask);
@@ -141,12 +141,17 @@ void rt_tee_close_sessions(int taskId){
 }
 
 //trigger timer on core 1,2,3
-void trigger_timer_on_cores(int pin_core){
+void trigger_timer_on_cores(int pin_core){//在pin_core核上启动调度
 
-	cpu_set_t mask;
-	CPU_ZERO(&mask);
-    CPU_SET(pin_core, &mask);
-    sched_setaffinity(0, sizeof(cpu_set_t), &mask);
+	cpu_set_t mask;//表示一个cpu集合
+	CPU_ZERO(&mask);//清空一个集合
+    CPU_SET(pin_core, &mask);//将一个给定的cpu号pin_core，加入到集合mask中，cpu_clr()表示从一个集合中删除该cpu号。
+    sched_setaffinity(0, sizeof(cpu_set_t), &mask);//将某一个核和指定的线程绑定到一块运行。//sched_setaffinity(pid_t pid, unsigned int cpusetsize, cpu_set_t *mask)
+//如果pid的值为0,则表示指定的是当前进程,使当前进程运行在mask所设定的那些CPU上.
+//第二个参数cpusetsize是mask所指定的数的长度.通常设定为sizeof(cpu_set_t).如果当前pid所指定的进程此时没有运行在mask所指定的任意一个CPU上,则该指定的进程会从其它CPU上迁移到mask的指定的一个CPU上运行.
+//mask 即用户 通过CPU_SET 接口，线程ID 绑定到集合中的一个CPU上，使用mask来表示cpu集合中的CPU
+
+
 
 	/* code */
 	TEEC_Result res;
@@ -180,11 +185,11 @@ void rt_tee_task_init(int task_index){
 }
 
 void world_sched_init(){
-	rt_tee_scheduler_start(&each_core_world_params[0], PTA_RT_TEE_SCHEDULER_CMD_START);
+	rt_tee_scheduler_start(&each_core_world_params[0], PTA_RT_TEE_SCHEDULER_CMD_START);//只为0号core初始化每个世界的参数
 }
 
 void world_sched_start(int core){
-	trigger_timer_on_cores(core);
+	trigger_timer_on_cores(core);//在core核上触发调度
 }
 
 int main(int argc, char *argv[])
@@ -279,24 +284,23 @@ int main(int argc, char *argv[])
 
 
 	//initiate world scheduer params(world period and budget) and start rt-tee-scheduler
-	world_sched_init();
+	world_sched_init();//初始化每个世界的参数，同时启动rt-tee-schedule调度器
 
 
 	//trigger_timer_on_cores(0);
-	world_sched_start(0);
+	world_sched_start(0);//在0号核上触发调度。
 
 	// trigger_timer_on_cores(2);
 
 	// trigger_timer_on_cores(2);
 
 	
-	sleep(3500);
+	sleep(1000);
 
 	// finish tasks and close all sessions to destroy the context
 	for(int i = 0; i <= SECURE_TASK_NUM; i++){
 		rt_tee_close_sessions(i);
 	}
-
 	return 0;
 }
 

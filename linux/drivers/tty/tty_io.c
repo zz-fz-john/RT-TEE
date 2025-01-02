@@ -1,4 +1,3 @@
-// SPDX-License-Identifier: GPL-2.0
 /*
  *  Copyright (C) 1991, 1992  Linus Torvalds
  */
@@ -144,7 +143,7 @@ static ssize_t tty_read(struct file *, char __user *, size_t, loff_t *);
 static ssize_t tty_write(struct file *, const char __user *, size_t, loff_t *);
 ssize_t redirected_tty_write(struct file *, const char __user *,
 							size_t, loff_t *);
-static __poll_t tty_poll(struct file *, poll_table *);
+static unsigned int tty_poll(struct file *, poll_table *);
 static int tty_open(struct inode *, struct file *);
 long tty_ioctl(struct file *file, unsigned int cmd, unsigned long arg);
 #ifdef CONFIG_COMPAT
@@ -443,9 +442,9 @@ static ssize_t hung_up_tty_write(struct file *file, const char __user *buf,
 }
 
 /* No kernel lock held - none needed ;) */
-static __poll_t hung_up_tty_poll(struct file *filp, poll_table *wait)
+static unsigned int hung_up_tty_poll(struct file *filp, poll_table *wait)
 {
-	return EPOLLIN | EPOLLOUT | EPOLLERR | EPOLLHUP | EPOLLRDNORM | EPOLLWRNORM;
+	return POLLIN | POLLOUT | POLLERR | POLLHUP | POLLRDNORM | POLLWRNORM;
 }
 
 static long hung_up_tty_ioctl(struct file *file, unsigned int cmd,
@@ -533,7 +532,7 @@ void tty_wakeup(struct tty_struct *tty)
 			tty_ldisc_deref(ld);
 		}
 	}
-	wake_up_interruptible_poll(&tty->write_wait, EPOLLOUT);
+	wake_up_interruptible_poll(&tty->write_wait, POLLOUT);
 }
 
 EXPORT_SYMBOL_GPL(tty_wakeup);
@@ -814,9 +813,9 @@ void start_tty(struct tty_struct *tty)
 }
 EXPORT_SYMBOL(start_tty);
 
-static void tty_update_time(struct timespec64 *time)
+static void tty_update_time(struct timespec *time)
 {
-	time64_t sec = ktime_get_real_seconds();
+	unsigned long sec = get_seconds();
 
 	/*
 	 * We only care if the two values differ in anything other than the
@@ -876,7 +875,7 @@ static ssize_t tty_read(struct file *file, char __user *buf, size_t count,
 static void tty_write_unlock(struct tty_struct *tty)
 {
 	mutex_unlock(&tty->atomic_write_lock);
-	wake_up_interruptible_poll(&tty->write_wait, EPOLLOUT);
+	wake_up_interruptible_poll(&tty->write_wait, POLLOUT);
 }
 
 static int tty_write_lock(struct tty_struct *tty, int ndelay)
@@ -1255,7 +1254,6 @@ static void tty_driver_remove_tty(struct tty_driver *driver, struct tty_struct *
 static int tty_reopen(struct tty_struct *tty)
 {
 	struct tty_driver *driver = tty->driver;
-	int retval;
 
 	if (driver->type == TTY_DRIVER_TYPE_PTY &&
 	    driver->subtype == PTY_TYPE_MASTER)
@@ -1269,14 +1267,10 @@ static int tty_reopen(struct tty_struct *tty)
 
 	tty->count++;
 
-	if (tty->ldisc)
-		return 0;
+	if (!tty->ldisc)
+		return tty_ldisc_reinit(tty, tty->termios.c_line);
 
-	retval = tty_ldisc_reinit(tty, tty->termios.c_line);
-	if (retval)
-		tty->count--;
-
-	return retval;
+	return 0;
 }
 
 /**
@@ -1681,21 +1675,21 @@ int tty_release(struct inode *inode, struct file *filp)
 
 		if (tty->count <= 1) {
 			if (waitqueue_active(&tty->read_wait)) {
-				wake_up_poll(&tty->read_wait, EPOLLIN);
+				wake_up_poll(&tty->read_wait, POLLIN);
 				do_sleep++;
 			}
 			if (waitqueue_active(&tty->write_wait)) {
-				wake_up_poll(&tty->write_wait, EPOLLOUT);
+				wake_up_poll(&tty->write_wait, POLLOUT);
 				do_sleep++;
 			}
 		}
 		if (o_tty && o_tty->count <= 1) {
 			if (waitqueue_active(&o_tty->read_wait)) {
-				wake_up_poll(&o_tty->read_wait, EPOLLIN);
+				wake_up_poll(&o_tty->read_wait, POLLIN);
 				do_sleep++;
 			}
 			if (waitqueue_active(&o_tty->write_wait)) {
-				wake_up_poll(&o_tty->write_wait, EPOLLOUT);
+				wake_up_poll(&o_tty->write_wait, POLLOUT);
 				do_sleep++;
 			}
 		}
@@ -2077,11 +2071,11 @@ retry_open:
  *	may be re-entered freely by other callers.
  */
 
-static __poll_t tty_poll(struct file *filp, poll_table *wait)
+static unsigned int tty_poll(struct file *filp, poll_table *wait)
 {
 	struct tty_struct *tty = file_tty(filp);
 	struct tty_ldisc *ld;
-	__poll_t ret = 0;
+	int ret = 0;
 
 	if (tty_paranoia_check(tty, file_inode(filp), "tty_poll"))
 		return 0;
@@ -2118,7 +2112,7 @@ static int __tty_fasync(int fd, struct file *filp, int on)
 			type = PIDTYPE_PGID;
 		} else {
 			pid = task_pid(current);
-			type = PIDTYPE_TGID;
+			type = PIDTYPE_PID;
 		}
 		get_pid(pid);
 		spin_unlock_irqrestore(&tty->ctrl_lock, flags);

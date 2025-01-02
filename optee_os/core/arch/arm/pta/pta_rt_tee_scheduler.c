@@ -30,7 +30,7 @@ extern int wait_to_execute[CFG_TEE_CORE_NB_CORE];
 
 
 static TEE_Result start_scheduler(uint32_t param_types __unused,
-			TEE_Param params[TEE_NUM_PARAMS] )
+			TEE_Param params[TEE_NUM_PARAMS] )//初始化调度参数
 {
 
 
@@ -58,7 +58,7 @@ static TEE_Result start_scheduler(uint32_t param_types __unused,
 
 	for(int core = 0; core < CFG_TEE_CORE_NB_CORE; core++){
 
-		for(int i = 0; i < SECURE_WORLD_MIN_PRIORITY; i++){
+		for(int i = 0; i < SECURE_WORLD_MIN_PRIORITY; i++){//分层调度，给每个优先级分配一个队列
 			
 			if(!TAILQ_EMPTY(&runnable_tasks[core][i])){
 				IMSG("core %d priority %d:", core, i);
@@ -90,8 +90,9 @@ static TEE_Result trigger_timer_start_scheduler(uint32_t param_types __unused,
 	thread_unmask_exceptions(old_exp);
 	IMSG("=============core %d scheduler starts=============", get_current_core());
 	thread_unmask_exceptions(old_exp);
+	IMSG("=============test core %d scheduler starts after last unmusk=============", get_current_core());
 	trigger_timer(1000);
-
+	IMSG("=============test core %d scheduler starts after trigger_timer=============", get_current_core());
 	return TEE_SUCCESS;
 
 }

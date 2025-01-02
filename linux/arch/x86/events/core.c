@@ -49,7 +49,7 @@ DEFINE_PER_CPU(struct cpu_hw_events, cpu_hw_events) = {
 	.enabled = 1,
 };
 
-DEFINE_STATIC_KEY_FALSE(rdpmc_always_available_key);
+struct static_key rdpmc_always_available = STATIC_KEY_INIT_FALSE;
 
 u64 __read_mostly hw_cache_event_ids
 				[PERF_COUNT_HW_CACHE_MAX]
@@ -996,7 +996,7 @@ static int collect_events(struct cpu_hw_events *cpuc, struct perf_event *leader,
 	if (!dogrp)
 		return n;
 
-	for_each_sibling_event(event, leader) {
+	list_for_each_entry(event, &leader->sibling_list, group_entry) {
 		if (!is_x86_event(event) ||
 		    event->state <= PERF_EVENT_STATE_OFF)
 			continue;
@@ -1637,7 +1637,7 @@ __init struct attribute **merge_attr(struct attribute **a, struct attribute **b)
 		j++;
 	j++;
 
-	new = kmalloc_array(j, sizeof(struct attribute *), GFP_KERNEL);
+	new = kmalloc(sizeof(struct attribute *) * j, GFP_KERNEL);
 	if (!new)
 		return NULL;
 
@@ -1887,8 +1887,6 @@ early_initcall(init_hw_perf_events);
 
 static inline void x86_pmu_read(struct perf_event *event)
 {
-	if (x86_pmu.read)
-		return x86_pmu.read(event);
 	x86_perf_event_update(event);
 }
 
@@ -2123,8 +2121,7 @@ static int x86_pmu_event_init(struct perf_event *event)
 			event->destroy(event);
 	}
 
-	if (READ_ONCE(x86_pmu.attr_rdpmc) &&
-	    !(event->hw.flags & PERF_X86_EVENT_LARGE_PEBS))
+	if (ACCESS_ONCE(x86_pmu.attr_rdpmc))
 		event->hw.flags |= PERF_X86_EVENT_RDPMC_ALLOWED;
 
 	return err;
@@ -2212,9 +2209,9 @@ static ssize_t set_attr_rdpmc(struct device *cdev,
 		 * but only root can trigger it, so it's okay.
 		 */
 		if (val == 2)
-			static_branch_inc(&rdpmc_always_available_key);
+			static_key_slow_inc(&rdpmc_always_available);
 		else
-			static_branch_dec(&rdpmc_always_available_key);
+			static_key_slow_dec(&rdpmc_always_available);
 		on_each_cpu(refresh_pce, NULL, 1);
 	}
 
@@ -2397,7 +2394,7 @@ static unsigned long get_segment_base(unsigned int segment)
 
 #ifdef CONFIG_IA32_EMULATION
 
-#include <linux/compat.h>
+#include <asm/compat.h>
 
 static inline int
 perf_callchain_user32(struct pt_regs *regs, struct perf_callchain_entry_ctx *entry)
@@ -2465,7 +2462,7 @@ perf_callchain_user(struct perf_callchain_entry_ctx *entry, struct pt_regs *regs
 
 	perf_callchain_store(entry, regs->ip);
 
-	if (!nmi_uaccess_okay())
+	if (!current->mm)
 		return;
 
 	if (perf_callchain_user32(regs, entry))

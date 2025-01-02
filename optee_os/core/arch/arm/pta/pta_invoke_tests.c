@@ -254,14 +254,14 @@ static void gic_op_add(vaddr_t gicd_base, size_t it)
 }
 
 
-#define PHYS_ADDR_GICD 		0x08000000
-#define PHYS_ADDR_GICC 		0x08010000
+#define PHYS_ADDR_GICD 		0x12000000
+#define PHYS_ADDR_GICC 		0x12010000
 #define EL1_PHYSICAL_TIMER 	29
 
 
 int gic_init_fun(void){
 
-
+	IMSG("PTA TEst gic_init_fun is run ");
 	vaddr_t vaddr_gicd;
 	vaddr_t vaddr_gicc;
 
