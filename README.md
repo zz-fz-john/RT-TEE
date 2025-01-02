@@ -3,8 +3,9 @@
 Jinwen Wang, Ao Li, Haoran Li, Chenyang Lu, and Ning Zhang. "RT-TEE: Real-time System Availability for Cyber-physical Systems using ARM TrustZone." 2022 IEEE Symposium on Security and Privacy (SP), pp. 1573-1573. IEEE Computer Society, 2022.
 
 ## Dependencies
-RT-TEE is migrated on QEMU. The testing environmet is Ubuntu 16.04. Install prerequisite folowing [this](https://optee.readthedocs.io/en/latest/building/prerequisites.html).
+Original repo is for qemu ,I modirfy is to run on RPI3. The testing environmet is Ubuntu 20.04. Install prerequisite folowing [this](https://optee.readthedocs.io/en/latest/building/prerequisites.html).
 
+gcc version is 4.9
 ## Project Structure
 The main RT-TEE codes are distributed in directory structure as follows.
 ```
@@ -39,7 +40,7 @@ make toolchains
 cd REPO_ROOT
 cd build
 make clean
-source start_qemu.txt
+make -j8
 ```
 3. Build trusted application and configure scheduling parameters. 
 
@@ -59,12 +60,19 @@ An example of configuring RT-TEE scheduling parameters is shown in /optee_exampl
 
 
 ## Running
-- start qemu
+- start 
 ```
 cd REPO_ROOT
 cd build
-source start_qemu.txt
+make img-help
+
 ```
+following the guide
+
+
+before umount rootfs,you should move file(ta and binary) to rootfs/root in shared_folder
+
+
 - After VM initialization, start RT-TEE hierarchical scheduling.
 ```
 mkdir shared && mount -t 9p -o trans=virtio host shared
