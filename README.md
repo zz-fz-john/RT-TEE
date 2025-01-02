@@ -70,7 +70,7 @@ make img-help
 following the guide
 
 
-before umount rootfs,you should move file(ta and binary) to rootfs/root in shared_folder
+before umount rootfs,you should move files(ta and binary) in shared_folder to rootfs/root 
 
 
 - After VM initialization, start RT-TEE hierarchical scheduling.
