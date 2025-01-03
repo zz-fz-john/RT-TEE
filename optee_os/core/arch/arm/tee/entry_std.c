@@ -4,6 +4,11 @@
  * Copyright (c) 2014, STMicroelectronics International N.V.
  */
 
+/*
+*在 OP-TEE 中，entry_std.c 是一个关键的源文件，
+*它处理 标准调用（Standard Call） 的入口点。
+*它的主要职责是管理从非安全世界（Non-secure World）到安全世界（Secure World）的标准调用过程。
+*/
 #include <assert.h>
 #include <bench.h>
 #include <compiler.h>
