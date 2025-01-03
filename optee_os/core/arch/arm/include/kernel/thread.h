@@ -33,7 +33,7 @@
 #define THREAD_CORE_LOCAL_ALIGNED __aligned(8)
 #endif
 
-struct thread_core_local {
+struct thread_core_local {//绑定task到thread上
 #ifdef ARM32
 	uint32_t r[2];
 	paddr_t sm_pm_ctx_phys;

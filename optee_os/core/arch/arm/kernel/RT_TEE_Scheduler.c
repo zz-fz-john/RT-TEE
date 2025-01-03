@@ -149,7 +149,7 @@ void secure_world_recalculate_prio();
 void secure_schedule();
 
 
-int world_scheduler_init[CFG_TEE_CORE_NB_CORE] = {0};
+int world_scheduler_init[CFG_TEE_CORE_NB_CORE] = {0};//用于判断每个核是否已经初始化了
 
 
 bool threadCreated = false;
@@ -880,14 +880,14 @@ int debug_core1_trigger_time = 0;
 void trigger_timer_micro_s(uint64_t time_micro_s)
 {
 	// /* Disable the timer */
-	write_cntps_ctl(0);
+	write_cntps_ctl(0);//将定时器的控制寄存器（CNTPS_CTL）置为 0，禁用当前的安全物理定时器
 	
 	uint64_t timer_ticks;
 
 	// The timer will fire time_ms from now 
-	uint64_t frq = read_cntfrq();
-	timer_ticks = (frq * time_micro_s) / 1000000;
-	write_cntps_tval(timer_ticks);
+	uint64_t frq = read_cntfrq();//读取系统计数器的频率寄存器 CNTFRQ_EL0，该寄存器包含当前定时器的时钟频率（以 Hz 为单位）
+	timer_ticks = (frq * time_micro_s) / 1000000;//除以 1,000,000 将微秒转换为秒（每秒有 1,000,000 微秒）。
+	write_cntps_tval(timer_ticks);//将计算得到的 timer_ticks 写入定时器值寄存器 CNTPS_TVAL。定时器会从 timer_ticks 开始倒计，直到倒计到 0 时触发fiq中断
 
 	//original codes
 	/* Enable the secure physical timer */

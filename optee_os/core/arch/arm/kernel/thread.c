@@ -225,7 +225,7 @@ static void unlock_global(void)
 }
 
 #ifdef ARM32
-uint32_t thread_get_exceptions(void)
+uint32_t thread_get_exceptions(void)//返回当前核心的异常状态，包含一系列标志。
 {
 	uint32_t cpsr = read_cpsr();
 
@@ -281,17 +281,23 @@ void thread_unmask_exceptions(uint32_t state)
 	thread_set_exceptions(state & THREAD_EXCP_ALL);
 }
 
-
+/**
+ * 用于获取当前核心的本地线程上下文信息
+ * 每个核心都有独立的本地存储区域，用于存放与当前核心相关的上下文信息
+ * 通过该函数，可以在任意时间点快速访问当前核心的本地存储
+ * 在多核调度中，核心本地数据可以存储当前线程的上下文信息，以便在切换线程或处理中断时使用。
+ * 核心本地数据可存储当前中断状态或调度标志，确保异常处理的正确性。
+* */
 struct thread_core_local *thread_get_core_local(void)
 {
-	uint32_t cpu_id = get_core_pos();
+	uint32_t cpu_id = get_core_pos();//获取当前核心的逻辑 ID（CPU ID）
 
 	/*
 	 * Foreign interrupts must be disabled before playing with core_local
 	 * since we otherwise may be rescheduled to a different core in the
 	 * middle of this function.
 	 */
-	assert(thread_get_exceptions() & THREAD_EXCP_FOREIGN_INTR);
+	assert(thread_get_exceptions() & THREAD_EXCP_FOREIGN_INTR);//THREAD_EXCP_FOREIGN_INTR 是一个标志，表示是否屏蔽了外部中断。
 
 	assert(cpu_id < CFG_TEE_CORE_NB_CORE);
 	return &thread_core_local[cpu_id];

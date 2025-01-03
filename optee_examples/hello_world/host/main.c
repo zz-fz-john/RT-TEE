@@ -71,8 +71,8 @@ struct world_params each_core_world_params[CFG_TEE_CORE_NB_CORE];
 //初始化每个核上每个世界的参数
 void world_params_init(struct world_params *world_params, int secure_period,\
 	int secure_budget, int non_secure_period, int non_secure_budget){
-	world_params->secure_period = secure_period;
-	world_params->secure_budget = secure_budget;
+	world_params->secure_period = secure_period;//安全世界时间周期，指定一段时间循环的长度。
+	world_params->secure_budget = secure_budget;//安全世界时间预算， 指定在一个周期内，允许该世界运行的时间。
 	world_params->non_secure_period = non_secure_period;
 	world_params->non_secure_budget = non_secure_budget;
 }
@@ -114,7 +114,7 @@ void rt_tee_scheduler_start(struct world_params *first_world_params, unsigned in
 	cpu_set_t mask;
 	CPU_ZERO(&mask);
 	CPU_SET(0, &mask);
-	sched_setaffinity(0, sizeof(cpu_set_t), &mask);
+	sched_setaffinity(0, sizeof(cpu_set_t), &mask);//设置cpu任务的关联性
 
 	//initiate world scheduer params(world period and budget) and start rt-tee-scheduler
 	memset(&operations[0], 0, sizeof(operations[0]));

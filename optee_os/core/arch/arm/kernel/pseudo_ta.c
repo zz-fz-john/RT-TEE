@@ -3,6 +3,10 @@
  * Copyright (c) 2014, STMicroelectronics International N.V.
  * Copyright (c) 2015, Linaro Limited
  */
+/**
+ * 提供伪 TA 的注册、命令分发和生命周期管理。
+ * 实现伪 TA 与客户端及核心之间的交互逻辑。
+ */
 #include <initcall.h>
 #include <kernel/linker.h>
 #include <kernel/panic.h>

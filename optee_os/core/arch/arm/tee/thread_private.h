@@ -102,6 +102,7 @@ struct thread_ctx {
 #define SECURE_TASK_RUNNING 1	//secure task is running
 typedef unsigned long s_time_t;
 //8 byte alignment
+//job 是指一个task的一个实例，一个task可能有多个job，表示任务的一次执行
 struct secure_task{
 	struct thread_ctx_regs saved_regs;  //this is used to save regs during context switch 
 	struct tee_ta_ctx *curr_tee_ta_ctx; //this is initialized during open session, this is used to use busy memory to decide whether task has been finished
