@@ -698,6 +698,7 @@ extern int gic_init_fun(void);
 #define TIMER1_FIQ 0x20
 #define TIMER2_FIQ 0x40
 #define TIMER3_FIQ 0x80
+//设置timer fiq中断路由的地址
 void timer_routing(){
 
 	// pi3 platform
@@ -764,7 +765,7 @@ void timer_routing(){
  }
 
 
-static TEE_Result init_timer_itr(void)
+static TEE_Result init_timer_itr(void)//会在设备启动时被调用，设置中断路由，同时初始化队列
 {
 	IMSG("Initializing Physical Secure Timer\n");
 	timer_routing();
@@ -1025,8 +1026,8 @@ static void burn_budget(struct rt_world *world, s_time_t now)
 static void rt_update_deadline_and_replenish_budget(struct rt_world *world, s_time_t now)
 {
 
-	if(world->cur_deadline <= now){
-		if ( world->cur_deadline + (world->period << UPDATE_LIMIT_SHIFT) > now )
+	if(world->cur_deadline <= now){//如果当前时间大于等于当前任务的截止时间，则更新截止时间和预算
+		if ( world->cur_deadline + (world->period << UPDATE_LIMIT_SHIFT) > now )//如果当前截止时间加上一个周期小于当前时间，则更新截止时间为当前时间加上一个周期
 	    {
 	        do
 	            world->cur_deadline += world->period;
@@ -1039,7 +1040,7 @@ static void rt_update_deadline_and_replenish_budget(struct rt_world *world, s_ti
 	    }
 	}
 
-    if(now - world->last_rpl_time >= world->period){
+    if(now - world->last_rpl_time >= world->period){//如果当前时间减去上次补充时间大于等于周期，则补充预算
     	world->cur_budget = world->budget;
     	//now may be slightly larger than ideal plt_time
     	world->last_rpl_time = now - (now - world->last_rpl_time) % world->period;
@@ -1115,7 +1116,7 @@ void setDeadlineMonotonicPriority()
 }
 
 int set_preemptive_timer_flag[CFG_TEE_CORE_NB_CORE] = {0};
-int preemptive_timer[CFG_TEE_CORE_NB_CORE] = {0};
+int preemptive_timer[CFG_TEE_CORE_NB_CORE] = {0};//判断当前核是否有抢占式任务
 //set the nearest high priority task release time to preempt current task
 void set_preemptive_timer(struct secure_task *curr_task){
 
@@ -1130,7 +1131,7 @@ void set_preemptive_timer(struct secure_task *curr_task){
 	for(int i = 0; i < SECURE_WORLD_MAX_SUPPORTED_TASKS; i++){
 		if(secure_tasks[i].occupied && secure_tasks[i].cpu == curr_core && \
 			secure_tasks[i].priority < curr_priority && \
-			secure_tasks[i].lastReleaseOfJob + secure_tasks[i].period < nearest_next_release){
+			secure_tasks[i].lastReleaseOfJob + secure_tasks[i].period < nearest_next_release){//判断是否有更高优先级的任务且该任务会抢占当前任务
 
 			nearest_next_release = secure_tasks[i].lastReleaseOfJob + secure_tasks[i].period;
 			exsit_preempt = 1;
@@ -1166,7 +1167,7 @@ s_time_t get_next_job_release(){
 	s_time_t nearest_release_time = 0;
 	int index = 0;
 
-
+	//重新计算每个任务的发布时间
 	for(index = 0; index < SECURE_WORLD_MAX_SUPPORTED_TASKS; index++){
 		if(secure_tasks[index].occupied && secure_tasks[index].cpu == curr_core){
 			nearest_release_time = secure_tasks[index].lastReleaseOfJob \
@@ -1174,7 +1175,7 @@ s_time_t get_next_job_release(){
 			break;
 		}
 	}
-
+	//找到一个最近的任务发布时间
 	for(int i = index + 1; i < SECURE_WORLD_MAX_SUPPORTED_TASKS; i++){
 		if(secure_tasks[i].occupied && secure_tasks[i].cpu == curr_core){
 			s_time_t i_release_time = secure_tasks[i].lastReleaseOfJob + secure_tasks[i].period;
@@ -1286,7 +1287,7 @@ void world_try_to_wake_up()
 
     s_time_t current_time = getCurrentTime_micro();
 
-	// update deadlien
+	// update deadline
     rt_update_deadline_and_replenish_budget(&rt_world_cores[SECURE_STATE][coreNum],current_time);
     rt_update_deadline_and_replenish_budget(&rt_world_cores[NONSECURE_STATE][coreNum],current_time);
 
@@ -1332,10 +1333,10 @@ static void schedule_world(int coreNum)
 	}
 	execute_secure_world(coreNum);
 	#endif
-
+	//重点是分层调度
 	#ifdef HIERARCHICAL_SCHEDULER
 	//return to normal world when secure world is idle
-	if (rt_world_cores[SECURE_STATE][coreNum].has_nothing_to_run)
+	if (rt_world_cores[SECURE_STATE][coreNum].has_nothing_to_run)//当安全世界没有任务时，返回正常世界
 	{		
 
 		//return from secure world first time after setting has_nothing_to_run, first burn normal world budgets, when it burn out, we can let it continue to run
@@ -1363,7 +1364,7 @@ static void schedule_world(int coreNum)
 			//normal world replenishent, when secure world get replenishened, it will become RUNQ_RUNNABLE (has bedget)
 			//normal world become out of budget will also come into this branch (no budget)
 			else if (rt_world_cores[SECURE_STATE][coreNum].runq_status == RUNQ_NOTHING_TO_RUN && 
-				rt_world_cores[SECURE_STATE][coreNum].nextEarliestJobRelease > getCurrentTime_micro())
+				rt_world_cores[SECURE_STATE][coreNum].nextEarliestJobRelease > getCurrentTime_micro())//当安全世界预算已经被补充且正常世界补充，或者正常世界中没有预算了
 			{
 				set_has_nothing_to_run_timer(coreNum, rt_world_cores[SECURE_STATE][coreNum].nextEarliestJobRelease);
 				rt_world_cores[NONSECURE_STATE][coreNum].runq_status = RUNQ_RUNNING;
@@ -1386,14 +1387,14 @@ static void schedule_world(int coreNum)
        )
     {
         // when there is only one thing that needs to run, we will just run it
-        if(rt_world_cores[SECURE_STATE][coreNum].runq_status == RUNQ_RUNNABLE)
+        if(rt_world_cores[SECURE_STATE][coreNum].runq_status == RUNQ_RUNNABLE)//只有一个世界会运行
         	execute_secure_world(coreNum);  	
         else
         	execute_normal_world(coreNum);
 
     }
     //both worlds cannot run
-    else if(rt_world_cores[SECURE_STATE][coreNum].runq_status     == RUNQ_OUT_OF_BUDGET &&
+    else if(rt_world_cores[SECURE_STATE][coreNum].runq_status     == RUNQ_OUT_OF_BUDGET &&//没有一个世界可以运行
             rt_world_cores[NONSECURE_STATE][coreNum].runq_status  == RUNQ_OUT_OF_BUDGET )
     {
 
@@ -1402,7 +1403,7 @@ static void schedule_world(int coreNum)
         
     }
     //both worlds can run
-    else
+    else//两个世界都能执行，则根据优先级选择
     {
         // when both wants to run, we need to check which one has higher priority
         if(rt_world_cores[SECURE_STATE][coreNum].priority <= 
@@ -1502,7 +1503,11 @@ void secure_world_schedule_event()
 	bool finish = true;
 	int total_missed[CFG_TEE_CORE_NB_CORE] = {0};
 	//when NUM_OF_JOBS all are finished the finish will stay true after iteration
-
+	/*
+	*遍历所有任务，判断每个任务是否在当前核心上运行
+	*如果任务已经完成了NUM_OF_MEASURED个周期，或者当前时间减去任务开始时间大于NUM_OF_MEASURED个周期的时间
+	*则任务没有完成，否则任务完成
+	*/
 	for(int i = 0; i < SECURE_WORLD_MAX_SUPPORTED_TASKS; i++){
 		finish = true;
 		if(secure_tasks[i].occupied && secure_tasks[i].cpu == coreNum){
@@ -1530,7 +1535,7 @@ void secure_world_schedule_event()
 		
 	}
 
-	if(finish == true && print_flg[coreNum] == false ){
+	if(finish == true && print_flg[coreNum] == false ){//防止重复打印
 
 		for(int i = 0; i < SECURE_WORLD_MAX_SUPPORTED_TASKS; i++){
 			if(secure_tasks[i].occupied && secure_tasks[i].cpu == coreNum){
@@ -1587,7 +1592,13 @@ void secure_world_schedule_event()
 	  After releasing a secure task, set timer to the time point of the next 
 	  nearest task period.
 	 */
-
+	/*
+	*遍历所有任务，如果符合以下条件，则释放一个新的任务：
+	*任务上次完成时间大于等于上次发布时间。
+	*当前时间减去上次发布时间大于等于任务周期。说明有新的job要发布了
+	*已完成任务数等于已发布任务数。
+	*发布任务后，更新任务的发布时间，并将任务加入可运行任务队列（TAILQ_INSERT_TAIL）。
+	*/
 	for(int i = 0; i < SECURE_WORLD_MAX_SUPPORTED_TASKS; i++){
 		if(secure_tasks[i].occupied && secure_tasks[i].cpu == get_current_core()){
 			struct secure_task *curr_task = &secure_tasks[i];
@@ -1656,13 +1667,13 @@ void secure_schedule()
 	set_preemptive_timer_flag[coreNum] = 0;
 	for(int i = 0; i < SECURE_WORLD_MIN_PRIORITY; i++){
 		struct secure_task *curr_task = NULL;
-		TAILQ_FOREACH(curr_task, &runnable_tasks[get_current_core()][i], tail_queue_entity){
+		TAILQ_FOREACH(curr_task, &runnable_tasks[get_current_core()][i], tail_queue_entity){//遍历队列
 			//coreNum is used to pin task onto specific core
 			set_preemptive_timer(curr_task);
 			//invoke or resume
 			//in case interrupt occurs between invoke invocation
 			if(curr_task->task_state == SECURE_TASK_RUNNING && \
-				threads[curr_task->curr_thread].state == THREAD_STATE_SUSPENDED){
+				threads[curr_task->curr_thread].state == THREAD_STATE_SUSPENDED){//如果当前任务需要运行，但是该线程是被挂起的
 		
 				//processing _core is used to handle the scenario of interrupt between invoke and SECURE_TASK_RUNNING
 				curr_task->processing_core = coreNum;
