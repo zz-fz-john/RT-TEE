@@ -513,9 +513,9 @@ el1_irq_sp1:
 	check_vector_size el1_irq_sp1
 
 	.align	7, INV_INSN
-el1_fiq_sp1: // wow, rd find out, el1_irq/fiq_sp1 are infinite loop to itself, thus not implemented
-	b	el1_fiq_sp1_rd // this is not called. bc spsel is set to 0 during pta.
-	check_vector_size el1_fiq_sp1
+el1_fiq_sp1: // wow, rd find out, el1_irq/fiq_sp1 are infinite loop to itself, thus not implemented，是一个 EL1 异常向量表中 FIQ 的入口占位符，当前只是跳转到另一个标签（el1_fiq_sp1_rd），没有实际的 FIQ 处理逻辑。sp1 表示这是在 EL1 上下文中使用 SP1 堆栈指针（Secure World 的堆栈指针）时触发的 FIQ
+	b	el1_fiq_sp1_rd // this is not called. bc spsel is set to 0 during pta.当前使用的是 SP_EL0（非特权堆栈指针），而不是 SP_EL1（特权堆栈指针）。
+	check_vector_size el1_fiq_sp1 //使用 check_vector_size 宏验证代码是否符合架构限制（32 条指令,每个向量的长度不能超过 32 条指令（对应 128 字节））。
 	/*
 	 * This macro verifies that the a given vector doesn't exceed the
 	 * architectural limit of 32 instructions. This is meant to be placed
