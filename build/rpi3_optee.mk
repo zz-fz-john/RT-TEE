@@ -116,7 +116,7 @@ u-boot-defconfig-clean:
 ################################################################################
 LINUX_DEFCONFIG_COMMON_ARCH := arm
 LINUX_DEFCONFIG_COMMON_FILES := \
-		$(LINUX_PATH)/arch/arm/configs/bcmrpi2709_defconfig \
+		$(LINUX_PATH)/arch/arm/configs/bcm2709_defconfig \
 		$(CURDIR)/kconfigs/rpi3.conf
 
 linux-defconfig: $(LINUX_PATH)/.config

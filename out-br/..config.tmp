@@ -2424,7 +2424,7 @@ endif
 ifneq "$(HOSTARCH)" "x86_64"
 /home/zrz0517/study/TEE/RT-TEE/out-br/build/buildroot-config/auto.conf: FORCE
 endif
-ifneq "$(BR2_VERSION_FULL)" "2018.08-gf14f98014-dirty"
+ifneq "$(BR2_VERSION_FULL)" "2018.08-gb5ebaa9bd-dirty"
 /home/zrz0517/study/TEE/RT-TEE/out-br/build/buildroot-config/auto.conf: FORCE
 endif
 
