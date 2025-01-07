@@ -15,18 +15,18 @@ The C compiler identification is GNU, found in "/home/zrz0517/study/TEE/RT-TEE/o
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/zrz0517/study/TEE/RT-TEE/optee_client/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make -f Makefile cmTC_8359e/fast && /usr/bin/make  -f CMakeFiles/cmTC_8359e.dir/build.make CMakeFiles/cmTC_8359e.dir/build
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_2551e/fast && /usr/bin/make  -f CMakeFiles/cmTC_2551e.dir/build.make CMakeFiles/cmTC_2551e.dir/build
 make[1]: Entering directory '/home/zrz0517/study/TEE/RT-TEE/optee_client/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_8359e.dir/CMakeCCompilerABI.c.o
-/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/aarch64-linux-gnu-gcc   -v -o CMakeFiles/cmTC_8359e.dir/CMakeCCompilerABI.c.o -c /usr/local/share/cmake-3.23/Modules/CMakeCCompilerABI.c
+Building C object CMakeFiles/cmTC_2551e.dir/CMakeCCompilerABI.c.o
+/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/aarch64-linux-gnu-gcc   -v -o CMakeFiles/cmTC_2551e.dir/CMakeCCompilerABI.c.o -c /usr/local/share/cmake-3.23/Modules/CMakeCCompilerABI.c
 Using built-in specs.
 COLLECT_GCC=/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/aarch64-linux-gnu-gcc
 Target: aarch64-linux-gnu
 Configured with: /tmp/dgboter/bbs/bc-b1-2-12--rhe6x86_64/buildbot/rhe6x86_64--aarch64-linux-gnu/build/src/gcc/configure --target=aarch64-linux-gnu --prefix= --with-sysroot=/aarch64-linux-gnu/libc --with-build-sysroot=/tmp/dgboter/bbs/bc-b1-2-12--rhe6x86_64/buildbot/rhe6x86_64--aarch64-linux-gnu/build/build-aarch64-linux-gnu/install//aarch64-linux-gnu/libc --enable-gnu-indirect-function --enable-shared --disable-libssp --disable-libmudflap --disable-libsanitizer --enable-checking=release --enable-languages=c,c++,fortran --with-gmp=/tmp/dgboter/bbs/bc-b1-2-12--rhe6x86_64/buildbot/rhe6x86_64--aarch64-linux-gnu/build/build-aarch64-linux-gnu/host-tools --with-mpfr=/tmp/dgboter/bbs/bc-b1-2-12--rhe6x86_64/buildbot/rhe6x86_64--aarch64-linux-gnu/build/build-aarch64-linux-gnu/host-tools --with-mpc=/tmp/dgboter/bbs/bc-b1-2-12--rhe6x86_64/buildbot/rhe6x86_64--aarch64-linux-gnu/build/build-aarch64-linux-gnu/host-tools --with-isl=/tmp/dgboter/bbs/bc-b1-2-12--rhe6x86_64/buildbot/rhe6x86_64--aarch64-linux-gnu/build/build-aarch64-linux-gnu/host-tools --enable-fix-cortex-a53-843419 --with-pkgversion='GNU Toolchain for the A-profile Architecture 8.2-2018-08 (arm-rel-8.23)'
 Thread model: posix
 gcc version 8.2.1 20180802 (GNU Toolchain for the A-profile Architecture 8.2-2018-08 (arm-rel-8.23)) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8359e.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64'
- /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../libexec/gcc/aarch64-linux-gnu/8.2.1/cc1 -quiet -v -iprefix /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/ -isysroot /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc /usr/local/share/cmake-3.23/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mlittle-endian -mabi=lp64 -auxbase-strip CMakeFiles/cmTC_8359e.dir/CMakeCCompilerABI.c.o -version -o /tmp/ccQq5MSF.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2551e.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64'
+ /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../libexec/gcc/aarch64-linux-gnu/8.2.1/cc1 -quiet -v -iprefix /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/ -isysroot /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc /usr/local/share/cmake-3.23/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mlittle-endian -mabi=lp64 -auxbase-strip CMakeFiles/cmTC_2551e.dir/CMakeCCompilerABI.c.o -version -o /tmp/ccKqAkMI.s
 GNU C17 (GNU Toolchain for the A-profile Architecture 8.2-2018-08 (arm-rel-8.23)) version 8.2.1 20180802 (aarch64-linux-gnu)
 	compiled by GNU C version 4.8.1, GMP version 4.3.2, MPFR version 3.1.6, MPC version 0.8.2, isl version isl-0.15-1-g835ea3a-GMP
 
@@ -47,15 +47,15 @@ GNU C17 (GNU Toolchain for the A-profile Architecture 8.2-2018-08 (arm-rel-8.23)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 72ce63ddc54d08c5fce4200869b3890c
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8359e.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64'
- /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/../../../../aarch64-linux-gnu/bin/as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_8359e.dir/CMakeCCompilerABI.c.o /tmp/ccQq5MSF.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2551e.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64'
+ /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/../../../../aarch64-linux-gnu/bin/as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_2551e.dir/CMakeCCompilerABI.c.o /tmp/ccKqAkMI.s
 GNU assembler version 2.30.0 (aarch64-linux-gnu) using BFD version (GNU Toolchain for the A-profile Architecture 8.2-2018-08 (arm-rel-8.23)) 2.30.0.20180625
 COMPILER_PATH=/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../libexec/gcc/aarch64-linux-gnu/8.2.1/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../libexec/gcc/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/../../../../aarch64-linux-gnu/bin/
 LIBRARY_PATH=/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/../../../../aarch64-linux-gnu/lib/../lib64/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/lib/../lib64/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib/../lib64/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/../../../../aarch64-linux-gnu/lib/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/lib/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8359e.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64'
-Linking C executable cmTC_8359e
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8359e.dir/link.txt --verbose=1
-/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/aarch64-linux-gnu-gcc  -v CMakeFiles/cmTC_8359e.dir/CMakeCCompilerABI.c.o -o cmTC_8359e 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2551e.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64'
+Linking C executable cmTC_2551e
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2551e.dir/link.txt --verbose=1
+/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/aarch64-linux-gnu-gcc  -v CMakeFiles/cmTC_2551e.dir/CMakeCCompilerABI.c.o -o cmTC_2551e 
 Using built-in specs.
 COLLECT_GCC=/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/aarch64-linux-gnu-gcc
 COLLECT_LTO_WRAPPER=/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../libexec/gcc/aarch64-linux-gnu/8.2.1/lto-wrapper
@@ -65,9 +65,9 @@ Thread model: posix
 gcc version 8.2.1 20180802 (GNU Toolchain for the A-profile Architecture 8.2-2018-08 (arm-rel-8.23)) 
 COMPILER_PATH=/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../libexec/gcc/aarch64-linux-gnu/8.2.1/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../libexec/gcc/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/../../../../aarch64-linux-gnu/bin/
 LIBRARY_PATH=/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/../../../../aarch64-linux-gnu/lib/../lib64/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/lib/../lib64/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib/../lib64/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/../../../../aarch64-linux-gnu/lib/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/lib/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8359e' '-mlittle-endian' '-mabi=lp64'
- /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../libexec/gcc/aarch64-linux-gnu/8.2.1/collect2 -plugin /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../libexec/gcc/aarch64-linux-gnu/8.2.1/liblto_plugin.so -plugin-opt=/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../libexec/gcc/aarch64-linux-gnu/8.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccYAJnya.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc --eh-frame-hdr -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -o cmTC_8359e /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib/../lib64/crt1.o /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib/../lib64/crti.o /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/crtbegin.o -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1 -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/../../../../aarch64-linux-gnu/lib/../lib64 -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/lib/../lib64 -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib/../lib64 -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/../../../../aarch64-linux-gnu/lib -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/lib -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib CMakeFiles/cmTC_8359e.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/crtend.o /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib/../lib64/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8359e' '-mlittle-endian' '-mabi=lp64'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2551e' '-mlittle-endian' '-mabi=lp64'
+ /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../libexec/gcc/aarch64-linux-gnu/8.2.1/collect2 -plugin /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../libexec/gcc/aarch64-linux-gnu/8.2.1/liblto_plugin.so -plugin-opt=/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../libexec/gcc/aarch64-linux-gnu/8.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc05mBdb.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc --eh-frame-hdr -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -o cmTC_2551e /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib/../lib64/crt1.o /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib/../lib64/crti.o /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/crtbegin.o -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1 -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/../../../../aarch64-linux-gnu/lib/../lib64 -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/lib/../lib64 -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib/../lib64 -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/../../../../aarch64-linux-gnu/lib -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/lib -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib CMakeFiles/cmTC_2551e.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/crtend.o /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib/../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2551e' '-mlittle-endian' '-mabi=lp64'
 make[1]: Leaving directory '/home/zrz0517/study/TEE/RT-TEE/optee_client/build/CMakeFiles/CMakeTmp'
 
 
@@ -91,18 +91,18 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(aarch64-linux-gnu-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/zrz0517/study/TEE/RT-TEE/optee_client/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/make -f Makefile cmTC_8359e/fast && /usr/bin/make  -f CMakeFiles/cmTC_8359e.dir/build.make CMakeFiles/cmTC_8359e.dir/build]
+  ignore line: [Run Build Command(s):/usr/bin/make -f Makefile cmTC_2551e/fast && /usr/bin/make  -f CMakeFiles/cmTC_2551e.dir/build.make CMakeFiles/cmTC_2551e.dir/build]
   ignore line: [make[1]: Entering directory '/home/zrz0517/study/TEE/RT-TEE/optee_client/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_8359e.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/aarch64-linux-gnu-gcc   -v -o CMakeFiles/cmTC_8359e.dir/CMakeCCompilerABI.c.o -c /usr/local/share/cmake-3.23/Modules/CMakeCCompilerABI.c]
+  ignore line: [Building C object CMakeFiles/cmTC_2551e.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/aarch64-linux-gnu-gcc   -v -o CMakeFiles/cmTC_2551e.dir/CMakeCCompilerABI.c.o -c /usr/local/share/cmake-3.23/Modules/CMakeCCompilerABI.c]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/aarch64-linux-gnu-gcc]
   ignore line: [Target: aarch64-linux-gnu]
   ignore line: [Configured with: /tmp/dgboter/bbs/bc-b1-2-12--rhe6x86_64/buildbot/rhe6x86_64--aarch64-linux-gnu/build/src/gcc/configure --target=aarch64-linux-gnu --prefix= --with-sysroot=/aarch64-linux-gnu/libc --with-build-sysroot=/tmp/dgboter/bbs/bc-b1-2-12--rhe6x86_64/buildbot/rhe6x86_64--aarch64-linux-gnu/build/build-aarch64-linux-gnu/install//aarch64-linux-gnu/libc --enable-gnu-indirect-function --enable-shared --disable-libssp --disable-libmudflap --disable-libsanitizer --enable-checking=release --enable-languages=c c++ fortran --with-gmp=/tmp/dgboter/bbs/bc-b1-2-12--rhe6x86_64/buildbot/rhe6x86_64--aarch64-linux-gnu/build/build-aarch64-linux-gnu/host-tools --with-mpfr=/tmp/dgboter/bbs/bc-b1-2-12--rhe6x86_64/buildbot/rhe6x86_64--aarch64-linux-gnu/build/build-aarch64-linux-gnu/host-tools --with-mpc=/tmp/dgboter/bbs/bc-b1-2-12--rhe6x86_64/buildbot/rhe6x86_64--aarch64-linux-gnu/build/build-aarch64-linux-gnu/host-tools --with-isl=/tmp/dgboter/bbs/bc-b1-2-12--rhe6x86_64/buildbot/rhe6x86_64--aarch64-linux-gnu/build/build-aarch64-linux-gnu/host-tools --enable-fix-cortex-a53-843419 --with-pkgversion='GNU Toolchain for the A-profile Architecture 8.2-2018-08 (arm-rel-8.23)']
   ignore line: [Thread model: posix]
   ignore line: [gcc version 8.2.1 20180802 (GNU Toolchain for the A-profile Architecture 8.2-2018-08 (arm-rel-8.23)) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8359e.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64']
-  ignore line: [ /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../libexec/gcc/aarch64-linux-gnu/8.2.1/cc1 -quiet -v -iprefix /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/ -isysroot /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc /usr/local/share/cmake-3.23/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mlittle-endian -mabi=lp64 -auxbase-strip CMakeFiles/cmTC_8359e.dir/CMakeCCompilerABI.c.o -version -o /tmp/ccQq5MSF.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2551e.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64']
+  ignore line: [ /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../libexec/gcc/aarch64-linux-gnu/8.2.1/cc1 -quiet -v -iprefix /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/ -isysroot /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc /usr/local/share/cmake-3.23/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mlittle-endian -mabi=lp64 -auxbase-strip CMakeFiles/cmTC_2551e.dir/CMakeCCompilerABI.c.o -version -o /tmp/ccKqAkMI.s]
   ignore line: [GNU C17 (GNU Toolchain for the A-profile Architecture 8.2-2018-08 (arm-rel-8.23)) version 8.2.1 20180802 (aarch64-linux-gnu)]
   ignore line: [	compiled by GNU C version 4.8.1  GMP version 4.3.2  MPFR version 3.1.6  MPC version 0.8.2  isl version isl-0.15-1-g835ea3a-GMP]
   ignore line: []
@@ -123,15 +123,15 @@ Parsed C implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 72ce63ddc54d08c5fce4200869b3890c]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8359e.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64']
-  ignore line: [ /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/../../../../aarch64-linux-gnu/bin/as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_8359e.dir/CMakeCCompilerABI.c.o /tmp/ccQq5MSF.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2551e.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64']
+  ignore line: [ /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/../../../../aarch64-linux-gnu/bin/as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_2551e.dir/CMakeCCompilerABI.c.o /tmp/ccKqAkMI.s]
   ignore line: [GNU assembler version 2.30.0 (aarch64-linux-gnu) using BFD version (GNU Toolchain for the A-profile Architecture 8.2-2018-08 (arm-rel-8.23)) 2.30.0.20180625]
   ignore line: [COMPILER_PATH=/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../libexec/gcc/aarch64-linux-gnu/8.2.1/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../libexec/gcc/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/../../../../aarch64-linux-gnu/bin/]
   ignore line: [LIBRARY_PATH=/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/../../../../aarch64-linux-gnu/lib/../lib64/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/lib/../lib64/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib/../lib64/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/../../../../aarch64-linux-gnu/lib/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/lib/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8359e.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64']
-  ignore line: [Linking C executable cmTC_8359e]
-  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8359e.dir/link.txt --verbose=1]
-  ignore line: [/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/aarch64-linux-gnu-gcc  -v CMakeFiles/cmTC_8359e.dir/CMakeCCompilerABI.c.o -o cmTC_8359e ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2551e.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64']
+  ignore line: [Linking C executable cmTC_2551e]
+  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2551e.dir/link.txt --verbose=1]
+  ignore line: [/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/aarch64-linux-gnu-gcc  -v CMakeFiles/cmTC_2551e.dir/CMakeCCompilerABI.c.o -o cmTC_2551e ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/aarch64-linux-gnu-gcc]
   ignore line: [COLLECT_LTO_WRAPPER=/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../libexec/gcc/aarch64-linux-gnu/8.2.1/lto-wrapper]
@@ -141,13 +141,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 8.2.1 20180802 (GNU Toolchain for the A-profile Architecture 8.2-2018-08 (arm-rel-8.23)) ]
   ignore line: [COMPILER_PATH=/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../libexec/gcc/aarch64-linux-gnu/8.2.1/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../libexec/gcc/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/../../../../aarch64-linux-gnu/bin/]
   ignore line: [LIBRARY_PATH=/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/../../../../aarch64-linux-gnu/lib/../lib64/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/lib/../lib64/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib/../lib64/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/../../../../aarch64-linux-gnu/lib/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/lib/:/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8359e' '-mlittle-endian' '-mabi=lp64']
-  link line: [ /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../libexec/gcc/aarch64-linux-gnu/8.2.1/collect2 -plugin /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../libexec/gcc/aarch64-linux-gnu/8.2.1/liblto_plugin.so -plugin-opt=/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../libexec/gcc/aarch64-linux-gnu/8.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccYAJnya.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc --eh-frame-hdr -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -o cmTC_8359e /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib/../lib64/crt1.o /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib/../lib64/crti.o /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/crtbegin.o -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1 -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/../../../../aarch64-linux-gnu/lib/../lib64 -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/lib/../lib64 -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib/../lib64 -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/../../../../aarch64-linux-gnu/lib -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/lib -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib CMakeFiles/cmTC_8359e.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/crtend.o /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib/../lib64/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2551e' '-mlittle-endian' '-mabi=lp64']
+  link line: [ /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../libexec/gcc/aarch64-linux-gnu/8.2.1/collect2 -plugin /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../libexec/gcc/aarch64-linux-gnu/8.2.1/liblto_plugin.so -plugin-opt=/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../libexec/gcc/aarch64-linux-gnu/8.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc05mBdb.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc --eh-frame-hdr -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -o cmTC_2551e /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib/../lib64/crt1.o /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib/../lib64/crti.o /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/crtbegin.o -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1 -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/../../../../aarch64-linux-gnu/lib/../lib64 -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/lib/../lib64 -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib/../lib64 -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/../../../../aarch64-linux-gnu/lib -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/lib -L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib CMakeFiles/cmTC_2551e.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/crtend.o /home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib/../lib64/crtn.o]
     arg [/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../libexec/gcc/aarch64-linux-gnu/8.2.1/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../libexec/gcc/aarch64-linux-gnu/8.2.1/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../libexec/gcc/aarch64-linux-gnu/8.2.1/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccYAJnya.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc05mBdb.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -162,7 +162,7 @@ Parsed C implicit link information from above output:
     arg [-maarch64linux] ==> ignore
     arg [--fix-cortex-a53-843419] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_8359e] ==> ignore
+    arg [cmTC_2551e] ==> ignore
     arg [/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib/../lib64/crt1.o] ==> obj [/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib/../lib64/crt1.o]
     arg [/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib/../lib64/crti.o] ==> obj [/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib/../lib64/crti.o]
     arg [/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/crtbegin.o] ==> obj [/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/crtbegin.o]
@@ -174,7 +174,7 @@ Parsed C implicit link information from above output:
     arg [-L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/../../../../aarch64-linux-gnu/lib] ==> dir [/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../lib/gcc/aarch64-linux-gnu/8.2.1/../../../../aarch64-linux-gnu/lib]
     arg [-L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/lib] ==> dir [/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/lib]
     arg [-L/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib] ==> dir [/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/../aarch64-linux-gnu/libc/usr/lib]
-    arg [CMakeFiles/cmTC_8359e.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_2551e.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -208,13 +208,13 @@ Parsed C implicit link information from above output:
 Determining if the include file pthread.h exists passed with the following output:
 Change Dir: /home/zrz0517/study/TEE/RT-TEE/optee_client/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make -f Makefile cmTC_5a3fa/fast && /usr/bin/make  -f CMakeFiles/cmTC_5a3fa.dir/build.make CMakeFiles/cmTC_5a3fa.dir/build
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_f7fbc/fast && /usr/bin/make  -f CMakeFiles/cmTC_f7fbc.dir/build.make CMakeFiles/cmTC_f7fbc.dir/build
 make[1]: 进入目录“/home/zrz0517/study/TEE/RT-TEE/optee_client/build/CMakeFiles/CMakeTmp”
-Building C object CMakeFiles/cmTC_5a3fa.dir/CheckIncludeFile.c.o
-/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/aarch64-linux-gnu-gcc    -o CMakeFiles/cmTC_5a3fa.dir/CheckIncludeFile.c.o -c /home/zrz0517/study/TEE/RT-TEE/optee_client/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_5a3fa
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5a3fa.dir/link.txt --verbose=1
-/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/aarch64-linux-gnu-gcc CMakeFiles/cmTC_5a3fa.dir/CheckIncludeFile.c.o -o cmTC_5a3fa 
+Building C object CMakeFiles/cmTC_f7fbc.dir/CheckIncludeFile.c.o
+/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/aarch64-linux-gnu-gcc    -o CMakeFiles/cmTC_f7fbc.dir/CheckIncludeFile.c.o -c /home/zrz0517/study/TEE/RT-TEE/optee_client/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_f7fbc
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f7fbc.dir/link.txt --verbose=1
+/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/aarch64-linux-gnu-gcc CMakeFiles/cmTC_f7fbc.dir/CheckIncludeFile.c.o -o cmTC_f7fbc 
 make[1]: 离开目录“/home/zrz0517/study/TEE/RT-TEE/optee_client/build/CMakeFiles/CMakeTmp”
 
 
@@ -222,13 +222,13 @@ make[1]: 离开目录“/home/zrz0517/study/TEE/RT-TEE/optee_client/build/CMakeF
 Determining if the function pthread_create exists in the pthread passed with the following output:
 Change Dir: /home/zrz0517/study/TEE/RT-TEE/optee_client/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make -f Makefile cmTC_342f8/fast && /usr/bin/make  -f CMakeFiles/cmTC_342f8.dir/build.make CMakeFiles/cmTC_342f8.dir/build
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_63b2c/fast && /usr/bin/make  -f CMakeFiles/cmTC_63b2c.dir/build.make CMakeFiles/cmTC_63b2c.dir/build
 make[1]: 进入目录“/home/zrz0517/study/TEE/RT-TEE/optee_client/build/CMakeFiles/CMakeTmp”
-Building C object CMakeFiles/cmTC_342f8.dir/CheckFunctionExists.c.o
-/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/aarch64-linux-gnu-gcc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_342f8.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.23/Modules/CheckFunctionExists.c
-Linking C executable cmTC_342f8
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_342f8.dir/link.txt --verbose=1
-/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/aarch64-linux-gnu-gcc  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_342f8.dir/CheckFunctionExists.c.o -o cmTC_342f8  -lpthread 
+Building C object CMakeFiles/cmTC_63b2c.dir/CheckFunctionExists.c.o
+/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/aarch64-linux-gnu-gcc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_63b2c.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.23/Modules/CheckFunctionExists.c
+Linking C executable cmTC_63b2c
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_63b2c.dir/link.txt --verbose=1
+/home/zrz0517/study/TEE/RT-TEE/toolchains/aarch64/bin/aarch64-linux-gnu-gcc  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_63b2c.dir/CheckFunctionExists.c.o -o cmTC_63b2c  -lpthread 
 make[1]: 离开目录“/home/zrz0517/study/TEE/RT-TEE/optee_client/build/CMakeFiles/CMakeTmp”
 
 

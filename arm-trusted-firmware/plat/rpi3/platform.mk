@@ -102,7 +102,7 @@ MULTI_CONSOLE_API		:= 1
 # --------------------
 
 # BL33 images are in AArch64 by default
-RPI3_BL33_IN_AARCH32		:= 0
+RPI3_BL33_IN_AARCH32		:= 1
 
 # Assume that BL33 isn't the Linux kernel by default
 RPI3_DIRECT_LINUX_BOOT		:= 0

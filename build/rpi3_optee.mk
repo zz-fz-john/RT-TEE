@@ -9,17 +9,19 @@ override COMPILE_S_USER    := 64
 override COMPILE_S_KERNEL  := 64
 
 # Need to set this before including common.mk
-BUILDROOT_GETTY_PORT ?= ttyS0
+BR2_TARGET_GENERIC_GETTY_PORT ?= ttyS0
 BR2_ROOTFS_POST_BUILD_SCRIPT ?= "board/raspberrypi3-64/post-build.sh"
+
+OPTEE_OS_PLATFORM = rpi3
 
 include common.mk
 
 ################################################################################
 # Paths to git projects and various binaries
 ################################################################################
-ARM_TF_PATH		?= $(ROOT)/arm-trusted-firmware
-ARM_TF_OUT		?= $(ARM_TF_PATH)/build/rpi3/debug
-ARM_TF_BOOT		?= $(ARM_TF_OUT)/armstub8.bin
+TF_A_PATH		?= $(ROOT)/trusted-firmware-a
+TF_A_OUT		?= $(TF_A_PATH)/build/rpi3/debug
+TF_A_BOOT		?= $(TF_A_OUT)/armstub8.bin
 
 OPTEE_PATH		?= $(ROOT)/optee_os
 U-BOOT_PATH		?= $(ROOT)/u-boot
@@ -37,7 +39,8 @@ OPTEE_BIN_EXTRA1	?= $(OPTEE_PATH)/out/arm/core/tee-pager_v2.bin
 OPTEE_BIN_EXTRA2	?= $(OPTEE_PATH)/out/arm/core/tee-pageable_v2.bin
 
 LINUX_IMAGE		?= $(LINUX_PATH)/arch/arm/boot/Image
-LINUX_DTB		?= $(LINUX_PATH)/arch/arm/boot/dts/bcm2710-rpi-3-b.dtb
+LINUX_DTB_RPI3_B	?= $(LINUX_PATH)/arch/arm/boot/dts/broadcom/bcm2710-rpi-3-b.dtb
+LINUX_DTB_RPI3_BPLUS	?= $(LINUX_PATH)/arch/arm/boot/dts/broadcom/bcm2710-rpi-3-b-plus.dtb
 MODULE_OUTPUT		?= $(ROOT)/module_output
 
 ################################################################################
@@ -52,10 +55,10 @@ include toolchain.mk
 ################################################################################
 # ARM Trusted Firmware
 ################################################################################
-ARM_TF_EXPORTS ?= \
+TF_A_EXPORTS ?= \
 	CROSS_COMPILE="$(CCACHE)$(AARCH64_CROSS_COMPILE)"
 
-ARM_TF_FLAGS ?= \
+TF_A_FLAGS ?= \
 	NEED_BL32=yes \
 	BL32=$(OPTEE_BIN) \
 	BL32_EXTRA1=$(OPTEE_BIN_EXTRA1) \
@@ -69,20 +72,20 @@ ARM_TF_FLAGS ?= \
 	RPI3_PRELOADED_DTB_BASE=0x00010000 \
 	SPD=opteed
 
-arm-tf: optee-os $(RPI3_UBOOT_ENV)
-	$(ARM_TF_EXPORTS) $(MAKE) -C $(ARM_TF_PATH) $(ARM_TF_FLAGS) all fip
+arm-tf: optee-os u-boot-env
+	$(TF_A_EXPORTS) $(MAKE) -C $(TF_A_PATH) $(TF_A_FLAGS) all fip
 
 arm-tf-clean:
-	$(ARM_TF_EXPORTS) $(MAKE) -C $(ARM_TF_PATH) $(ARM_TF_FLAGS) clean
+	$(TF_A_EXPORTS) $(MAKE) -C $(TF_A_PATH) $(TF_A_FLAGS) clean
 
 ################################################################################
 # Das U-Boot
 ################################################################################
-
 U-BOOT_EXPORTS ?= CROSS_COMPILE=$(AARCH32_CROSS_COMPILE) ARCH=arm
 U-BOOT_DEFCONFIG_COMMON_FILES := \
 		$(U-BOOT_PATH)/configs/rpi_3_32b_defconfig \
 		$(CURDIR)/kconfigs/u-boot_rpi3.conf
+
 .PHONY: u-boot
 u-boot: u-boot-defconfig
 	$(U-BOOT_EXPORTS) $(MAKE) -C $(U-BOOT_PATH) all
@@ -91,9 +94,10 @@ u-boot: u-boot-defconfig
 u-boot-clean: u-boot-defconfig-clean
 	$(U-BOOT_EXPORTS) $(MAKE) -C $(U-BOOT_PATH) clean
 
-$(RPI3_UBOOT_ENV): $(RPI3_UBOOT_ENV_TXT) u-boot
+u-boot-env: $(RPI3_UBOOT_ENV_TXT) u-boot
 	mkdir -p $(ROOT)/out
-	$(U-BOOT_PATH)/tools/mkenvimage -s 0x4000 -o $(ROOT)/out/uboot.env $(RPI3_UBOOT_ENV_TXT)
+	$(U-BOOT_PATH)/tools/mkenvimage -s 0x4000 -o $(RPI3_UBOOT_ENV) \
+		$(RPI3_UBOOT_ENV_TXT)
 
 u-boot-env-clean:
 	rm -f $(RPI3_UBOOT_ENV)
@@ -106,23 +110,13 @@ u-boot-defconfig: $(U-BOOT_DEFCONFIG_COMMON_FILES)
 .PHONY: u-boot-defconfig-clean
 u-boot-defconfig-clean:
 	rm -f $(U-BOOT_PATH)/.config
-################################################################################
-# Busybox
-################################################################################
-BUSYBOX_COMMON_TARGET = rpi3
-BUSYBOX_CLEAN_COMMON_TARGET = rpi3 clean
 
-busybox: busybox-common
-
-busybox-clean: busybox-clean-common
-
-busybox-cleaner: busybox-cleaner-common
 ################################################################################
 # Linux kernel
 ################################################################################
 LINUX_DEFCONFIG_COMMON_ARCH := arm
 LINUX_DEFCONFIG_COMMON_FILES := \
-		$(LINUX_PATH)/arch/arm/configs/bcm2709_defconfig \
+		$(LINUX_PATH)/arch/arm/configs/bcmrpi2709_defconfig \
 		$(CURDIR)/kconfigs/rpi3.conf
 
 linux-defconfig: $(LINUX_PATH)/.config
@@ -145,10 +139,7 @@ linux-cleaner: linux-cleaner-common
 ################################################################################
 # OP-TEE
 ################################################################################
-OPTEE_OS_COMMON_FLAGS += PLATFORM=rpi3
 optee-os: optee-os-common
-
-OPTEE_OS_CLEAN_COMMON_FLAGS += PLATFORM=rpi3
 optee-os-clean: optee-os-clean-common
 
 ################################################################################
@@ -161,10 +152,11 @@ buildroot: update_rootfs
 update_rootfs: arm-tf linux u-boot
 	@mkdir -p --mode=755 $(BUILDROOT_TARGET_ROOT)/boot
 	@mkdir -p --mode=755 $(BUILDROOT_TARGET_ROOT)/usr/bin
-	@install -v -p --mode=755 $(LINUX_DTB) $(BUILDROOT_TARGET_ROOT)/boot/bcm2710-rpi-3-b.dtb
+	@install -v -p --mode=755 $(LINUX_DTB_RPI3_B) $(BUILDROOT_TARGET_ROOT)/boot/bcm2710-rpi-3-b.dtb
+	@install -v -p --mode=755 $(LINUX_DTB_RPI3_BPLUS) $(BUILDROOT_TARGET_ROOT)/boot/bcm2710-rpi-3-b-plus.dtb
 	@install -v -p --mode=755 $(RPI3_BOOT_CONFIG) $(BUILDROOT_TARGET_ROOT)/boot/config.txt
 	@install -v -p --mode=755 $(LINUX_IMAGE) $(BUILDROOT_TARGET_ROOT)/boot/kernel8.img
-	@install -v -p --mode=755 $(ARM_TF_BOOT) $(BUILDROOT_TARGET_ROOT)/boot/armstub8.bin
+	@install -v -p --mode=755 $(TF_A_BOOT) $(BUILDROOT_TARGET_ROOT)/boot/armstub8.bin
 	@install -v -p --mode=755 $(RPI3_UBOOT_ENV) $(BUILDROOT_TARGET_ROOT)/boot/uboot.env
 	@install -v -p --mode=755 $(RPI3_STOCK_FW_PATH)/boot/bootcode.bin $(BUILDROOT_TARGET_ROOT)/boot/bootcode.bin
 	@install -v -p --mode=755 $(RPI3_STOCK_FW_PATH)/boot/COPYING.linux $(BUILDROOT_TARGET_ROOT)/boot/COPYING.linux
@@ -221,3 +213,4 @@ img-help:
 	@echo "   $$ gunzip -cd $(ROOT)/out-br/images/rootfs.cpio.gz | sudo cpio -idmv"
 	@echo "   $$ rm -rf /media/rootfs/boot/*"
 	@echo "   $$ cd .. && umount rootfs"
+
