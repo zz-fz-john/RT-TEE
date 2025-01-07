@@ -6,6 +6,10 @@ Jinwen Wang, Ao Li, Haoran Li, Chenyang Lu, and Ning Zhang. "RT-TEE: Real-time S
 Original repo is for qemu ,I modirfy it to run on RPI3. The testing environmet is Ubuntu 20.04. Install prerequisite folowing [this](https://optee.readthedocs.io/en/latest/building/prerequisites.html).
 
 gcc version is 4.9
+
+optee-version is v3.4
+
+the modified file name is listed in mgrt_rcd.txt
 ## Project Structure
 The main RT-TEE codes are distributed in directory structure as follows.
 ```
