@@ -3,7 +3,7 @@
 Jinwen Wang, Ao Li, Haoran Li, Chenyang Lu, and Ning Zhang. "RT-TEE: Real-time System Availability for Cyber-physical Systems using ARM TrustZone." 2022 IEEE Symposium on Security and Privacy (SP), pp. 1573-1573. IEEE Computer Society, 2022.
 
 ## Dependencies
-Original repo is for qemu ,I modirfy it to run on RPI3. The testing environmet is Ubuntu 20.04. Install prerequisite folowing [this](https://optee.readthedocs.io/en/latest/building/prerequisites.html).
+Original repo is for qemu ,I modirfy it to run on RPI3. linux kernel is 32bit ,secure world is 64 bit  The testing environmet is Ubuntu 20.04. Install prerequisite folowing [this](https://optee.readthedocs.io/en/latest/building/prerequisites.html).
 
 gcc version is 4.9
 
