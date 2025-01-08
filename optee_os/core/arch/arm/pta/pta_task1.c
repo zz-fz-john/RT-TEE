@@ -23,7 +23,7 @@ extern int get_current_core();
 static TEE_Result test_trace(uint32_t param_types __unused,
 			TEE_Param params[TEE_NUM_PARAMS] __unused)
 {
-	
+	IMSG("pseudo TA \"%s\" says \"Hello world function0!\"", TA_NAME);
 	int task_start_time = getCurrentTime_micro();
 	mult_busy_loop(task1_execution_time);  
 	test_finish[get_current_core()][0] += 1;

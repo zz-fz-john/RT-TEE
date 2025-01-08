@@ -383,29 +383,29 @@ static void rt_tee_thread_invoke(uint32_t arg_session_id, int taskUid)
 		TEEC_UUID uuid = PTA_INVOKE_TESTS_UUID; 		
 	}
 
-	struct optee_msg_arg *msg_arg;
+	struct optee_msg_arg *msg_arg;//用于传递到 TEE 的消息参数结构
 
-	msg_arg = (struct optee_msg_arg *)rt_tee_buf;
+	msg_arg = (struct optee_msg_arg *)rt_tee_buf;//是一个内存缓冲区，用于存储消息参数。
 
-	struct tee_ioctl_open_session_arg *arg;
+	struct tee_ioctl_open_session_arg *arg;//创建会话参数结构 struct tee_ioctl_open_session_arg，用于描述与 TEE 的会话。
 
 	uint64_t buf2[(sizeof(struct tee_ioctl_open_session_arg) + NUM_INVOKE_COMMAND_PARAMS * \
 			sizeof(struct tee_ioctl_param)) / sizeof(uint64_t)] = { 0 };
 	arg = (struct tee_ioctl_open_session_arg *)buf2;
 
-	uuid_to_octets(arg->uuid, &uuid);
+	uuid_to_octets(arg->uuid, &uuid);//使用 uuid_to_octets 将 UUID 转换为字节数组，存储在会话参数中
 	arg->num_params = NUM_INVOKE_COMMAND_PARAMS;
-	arg->clnt_login = TEEC_LOGIN_PUBLIC;
+	arg->clnt_login = TEEC_LOGIN_PUBLIC;//设置参数数量和客户端登录类型（TEEC_LOGIN_PUBLIC 表示无需身份验证）。
 
-	msg_arg->cmd = OPTEE_MSG_CMD_INVOKE_COMMAND;
-	msg_arg->func=0;
-	msg_arg->session = arg_session_id; 
+	msg_arg->cmd = OPTEE_MSG_CMD_INVOKE_COMMAND;//msg_arg->cmd：设置命令类型为 OPTEE_MSG_CMD_INVOKE_COMMAND，表示执行某个命令
+	msg_arg->func=0;//msg_arg->func：指定命令的具体功能编号，这里是 0。
+	msg_arg->session = arg_session_id; //msg_arg->session：指定会话 ID。
 	msg_arg->params[0].attr = 3;
-	msg_arg->params[0].u.value.a = 0x2a; // params from host ta
+	msg_arg->params[0].u.value.a = 0x2a; // params from host ta,msg_arg->params：设置命令参数，这里是一个值为 0x2a 的参数
 	struct thread_smc_args *smc_args;
 	struct thread_smc_args _smc_args = {0};
 	smc_args = &_smc_args;
-	smc_args->a0 = 0x32000004;
+	smc_args->a0 = 0x32000004;//定义在了optee_smc.h中，实际上是OPTEE_SMC_CALL_WITH_ARG
 	smc_args->a1 = 0;
 	smc_args->a2 = virt_to_phys(msg_arg);
 	smc_args->a6 = 0x12345678;
