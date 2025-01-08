@@ -1,5 +1,5 @@
 # auto-generated TEE configuration file
-# TEE version ca82ec103-dev
+# TEE version 3b84e784e-dev
 set(CFG_8250_UART y)
 set(CFG_AES_GCM_TABLE_BASED y)
 set(CFG_ARM32_ta_arm32 y)

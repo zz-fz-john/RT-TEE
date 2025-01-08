@@ -6,6 +6,7 @@ optee_client/out
 optee_os/out
 edk/
 qemu/
+linux
 soc_term
 buildroot
 module_output
