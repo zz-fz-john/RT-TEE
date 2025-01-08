@@ -1,7 +1,7 @@
 export RTTEE_PATH=/home/zrz0517/study/TEE/RT-TEE
-export HOST_CROSS_COMPILE=$RTTEE_PATH/toolchains/aarch64/bin/aarch64-linux-gnu-
-export CROSS_COMPILE=$RTTEE_PATH/toolchains/aarch64/bin/aarch64-linux-gnu-
+export HOST_CROSS_COMPILE=$RTTEE_PATH/toolchains/aarch32/bin/arm-linux-gnueabihf-
+export CROSS_COMPILE=$RTTEE_PATH/toolchains/aarch32/bin/arm-linux-gnueabihf-
 export TA_CROSS_COMPILE=$RTTEE_PATH/toolchains/aarch64/bin/aarch64-linux-gnu-
-export TEEC_EXPORT=$RTTEE_PATH/optee_client/out
+export TEEC_EXPORT=$RTTEE_PATH/optee_client/out/export
 export TA_DEV_KIT_DIR=$RTTEE_PATH/optee_os/out/arm/export-ta_arm64
 

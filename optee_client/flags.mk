@@ -5,7 +5,7 @@
 CROSS_COMPILE   ?= arm-linux-gnueabihf-
 CC              ?= $(CROSS_COMPILE)gcc
 AR		?= $(CROSS_COMPILE)ar
-
+$(info CROSS_COMPILE is set to: $(CROSS_COMPILE))
 CFLAGS          := -Wall -Wbad-function-cast -Wcast-align \
 		   -Werror-implicit-function-declaration -Wextra \
 		   -Wfloat-equal -Wformat-nonliteral -Wformat-security \
