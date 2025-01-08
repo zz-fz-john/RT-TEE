@@ -7,7 +7,6 @@ optee_os/out
 edk/
 qemu/
 linux
-u-boot
 soc_term
 buildroot
 module_output
