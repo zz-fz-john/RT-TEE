@@ -583,7 +583,7 @@ TEE_Result tee_ta_open_session(TEE_ErrorOrigin *err,
 	bool panicked;
 	bool was_busy = false;
 
-	res = tee_ta_init_session(err, open_sessions, uuid, &s);
+	res = tee_ta_init_session(err, open_sessions, uuid, &s);//判断是pta还是dta，并根据结果初始化tee_ta_session *s
 	if (res != TEE_SUCCESS) {
 		DMSG("init session failed 0x%x", res);
 		return res;
