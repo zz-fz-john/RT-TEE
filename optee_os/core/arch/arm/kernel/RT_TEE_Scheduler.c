@@ -172,7 +172,8 @@ struct secure_task secure_world_tasks[SECURE_WORLD_MAX_TASKS];
 
 
 long is_from_interrupt = 0;
-
+int  previous_start_random=0;
+int  previous_end_random=0;
 
 
 //pta_invoke_tests.c part

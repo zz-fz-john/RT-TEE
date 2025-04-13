@@ -28,7 +28,7 @@ extern getCurrentTime_micro();
 extern int get_current_core();
 extern int wait_to_execute[CFG_TEE_CORE_NB_CORE];
 
-
+//only init world parameters and  core parameters ,doesn't start the scheduler
 static TEE_Result start_scheduler(uint32_t param_types __unused,
 			TEE_Param params[TEE_NUM_PARAMS] )//初始化调度参数
 {
@@ -80,7 +80,7 @@ static TEE_Result start_scheduler(uint32_t param_types __unused,
 	return TEE_SUCCESS;
 }
 
-
+//trigger timer to start scheduler
 static TEE_Result trigger_timer_start_scheduler(uint32_t param_types __unused,
 			TEE_Param params[TEE_NUM_PARAMS] ){
 

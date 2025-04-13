@@ -14,18 +14,42 @@
 
 int task1_execution_time = 0;
 extern long loop_result;
+extern int  previous_start_random;
+extern int  previous_end_random;
 extern long mult_busy_loop(unsigned long execution_time);
 extern int test_finish[CFG_TEE_CORE_NB_CORE][5];
 extern int task1_exe_time[CFG_TEE_CORE_NB_CORE];
 extern getCurrentTime_micro();
 extern int get_current_core();
-
+struct Random {
+    int start_random;
+    int end_random;
+}; 
+typedef struct {
+	void *buffer;
+	size_t size;
+	uint32_t flags;
+	/*
+	 * Implementation-Defined
+	 */
+	int id;
+	size_t alloced_size;
+	void *shadow_buffer;
+	int registered_fd;
+	bool buffer_allocated;
+} SHM_Proxy;;
+struct Random *random_data;
 static TEE_Result test_trace(uint32_t param_types __unused,
 			TEE_Param params[TEE_NUM_PARAMS] __unused)
 {
 	IMSG("pseudo TA \"%s\" says \"Hello world function0!\"", TA_NAME);
 	int task_start_time = getCurrentTime_micro();
 	mult_busy_loop(task1_execution_time);  
+	if(previous_end_random==random_data->end_random &&previous_end_random==random_data->start_random){
+		IMSG("random data is the same");
+	}
+	previous_end_random=random_data->end_random;
+	previous_start_random=random_data->start_random;
 	test_finish[get_current_core()][0] += 1;
 	int task_end_time = getCurrentTime_micro();
 	task1_exe_time[get_current_core()] = task_end_time - task_start_time;
@@ -83,7 +107,8 @@ static TEE_Result open_session(uint32_t nParamTypes,
 	struct secure_task_params *curr_task_params = NULL;
 	curr_task_params = (struct secure_task_params*)pParams[0].memref.buffer;
 	task1_execution_time = curr_task_params->execution_time;
-
+	SHM_Proxy *shm_proxy = (SHM_Proxy *)curr_task_params->cstm_param_addr;
+	random_data = (struct Random *)shm_proxy->buffer;
 	return TEE_SUCCESS;
 }
 
