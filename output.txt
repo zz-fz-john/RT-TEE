@@ -1,0 +1,2422 @@
+optee_example_hello_world: TEEC_InitializeContext failed with code 0xffff0008
+pi@navio:~/shared_folder$ D/TC:0 0 tee_ta_init_pseudo_ta_session:412 Lookup pseudo TA 3ae8fc23-c150-4cc6-a55a-768b61ca9308
+D/TC:0 0 tee_ta_init_pseudo_ta_session:425 Open pta_rt_tee_scheduler.pta
+D/TC:0 0 tee_ta_init_pseudo_ta_session:439 pta_rt_tee_scheduler.pta : 3ae8fc23-c150-4cc6-a55a-768b61ca9308
+D/TC:0 0 create_ta:107 create entry point for pseudo TA "pta_rt_tee_scheduler.pta"
+I/TC: rd now at core/arch/arm/kernel/pseudo_ta.c:pseudo_ta_enter_open_session before open_session_entry_point!
+D/TC:0 0 open_session:122 open entry point for pseudo ta "pta_rt_tee_scheduler.pta"
+D/TC:0 0 tee_|a_init_pseudo_ta_session:412 Lookup pseudo TA 72aefbfa-d74b-499e-a039-98fa6cb6ec20
+D/TC:0 0 tee_ta_init_pseudo_ta_session:425 Open pta_task1.pta
+D/TC:0 0 tee_ta_init_pseudo_ta_session:439 pta_task1.pta : 72aefbfa-d74b-499e-a039-98fa6cb6ec20
+D/TC:0 0 create_ta:67 create entry point for pseudo TA "pta_task1.pta"
+I/TC: rd now at core/arch/arm/kernel/pseudo_ta.c:pseudo_ta_enter_open_session before open_session_entry_point!
+D/TC:0 0 opmn_session:82 open entry point for pseudo ta "pta_task1.pta"
+D/TC:0 0 tee_ta_init_pseudo_ta_session:412 Lookup pseudo TA 69bd9327-ab63-4d26-9aa7-b6246fdcee75
+D/TC:0 0 tee_ta_init_pseudo_ta_session:425 Open pta_task2.pta
+D/TC:0 0 tee_ta_init_pseudo_ta_session:439 pta_task2.pta : 69bd9327-ab63-4d26-9aa7-b6246fdcee75
+D/TC:0 0 create_ta:68 create entry point for pseudo TA "pta_task2.pta"
+I/TC: rd now at core/arch/arm/kernel/pseudo_ta.c:pseudo_ta_enter_open_session before open_session_entry_point!
+D/TC:0 0 open_session:82 open entry point for pseudo ta "pta_task2.pta"
+D/TC:0 0 tee_ta_init_pseudo_ta_session:412 Lookup pseudo TA f8b50256-9cdf-4891-b3ce-e72825e5fef0
+D/TC:0 0 tee_ta_init_pseudo_ta_session:425 Open pta_task3.pta
+D/TC:0 0 tee_ta_init_pseudo_ta_session:439 pta_task3.pta : f8b50256-9cdf-4891-b3ce-e72825e5fef0
+D/TC:0 0 create_ta:39 create entry point for pseudo TA "pta_task3.pta"
+I/TC: rd now at core/arch/arm/kernel/pseudo_ta.c:pseudo_ta_enter_open_session before open_session_entry_point!
+D/TC:0 0 open_session:53 open entry point for pseudo ta "pta_task3.pta"
+D/TC:0 0 tee_ta_init_pseudo_ta_session:412 Lookup pseudo TA 27d6ef44-96ec-4ec0-aab3-e050cc02d737
+D/TC:0 0 tee_ta_init_pseudo_ta_session:425 Open pta_task4.pta
+D/TC:0 0 tee_ta_init_pseudo_ta_session:439 pta_task4.pta : 27d6ef44-96ec-4ec0-aab3-e050cc02d737
+D/TC:0 0 create_ta:61 create entry point for pseudo TA "pta_task4.pta"
+I/TC: rd now at core/arch/arm/kernel/pseudo_ta.c:pseudo_ta_enter_open_session before open_session_entry_point!
+D/TC:0 0 open_session:78 open entry point for pseudo ta "pta_task4.pta"
+D/TC:0 0 tee_ta_init_pseudo_ta_session:412 Lookup pseudo TA 4a3dbe29-7faa-4acb-b1da-d35bf922f06e
+D/TC:0 0 tee_ta_init_pseudo_ta_session:425 Open pta_task5.pta
+D/TC:0 0 tee_ta_init_pseudo_ta_session:439 pta_task5.pta : 4a3dbe29-7faa-4acb-b1da-d35bf922f06e
+D/TC:0 0 create_ta:66 create entry point for pseudo TA "pta_task5.pta"
+I/TC: rd now at core/arch/arm/kernel/pseudo_ta.c:pseudo_ta_enter_open_session before open_session_entry_point!
+D/TC:0 0 open_session:83 open entry point for pseudo ta "pta_task5.pta"
+I/TC: ======rt_tee_scheduler is initializaing======
+I/TC: 0: secure world: period 20000, budget 9400
+I/TC: 0: non secure world: period 22000, budget 12800
+I/TC: 1: secure world:�period 20000, budget 9400
+I/TC: 1: non secure world: period 22000, budget 12800
+I/TC: 2: secure world: period 20000, budget 9400
+I/TC: 2: non secure world: period 22000, budget 12800
+I/TC: 3: secure world: period 20000, budget 9400
+I/TC: 3: non secure world: period 22000, budget 12810
+I/TC: core 0 priority 0:
+I/TC: taskUid 0, period 51000, priority 0, execution_time 7000, threadid -1, state 0, sess_id 270015248
+I/TC: core 0 priority 1:
+I/TC: taskUid 1, period 65000, priority 1, execution_time 7000, threadid -1, state 0, sess_id 270014928
+I/TC: core 0 priority 2:
+I/TC: taskUid 2, period 142000, priority 2, execution_time 6000, threadid -1, state 0, sess_id 270014608
+I/TC: core 0 priority 3:
+I/TC: taskUid 3, period 214000, priority 3, execution_time 9000, threadid -1, state 0, sess_id 270014288
+I/TC: core 0 priority 4:
++I/TC: **********core 0**********riority 4, execution_time 8000, threadid -1, state 0, sess_id 270013968
+I/TC: =============core 0 scheduler starts=============
+I/TC: =============test core 0 scheduler starts a�ter last unmusk=============
+I/TC: =============test core 0 scheduler starts after trigger_timer=============
+D/TC:0   main_fiq:432 ZRZ+++++++++++++++++�+++++++++++++++++++++++++
+D/TC:0   main_fiq:440 enable RT-TEE_scheuler.c  main_fiq to else
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta"(says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item�) run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496 0secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_sshedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedune() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1596  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item(9 run
+D/TC:0   secure_world_schgdule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_sc�edule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_ev�nt() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   securg_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: p�eudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_wor|d_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TQ "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() i3 run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is rwn 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_te%_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule�event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: return to normal_word
+I/TC: zrz 1
+D/TC:0   main_fiq:432 ZRZ+++++++++++++++++++++++++++++++++++++++++++
+D/TC:0   main_fiq:440 enable RT-TEE_scheuler.c  main_fiq to else
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is$run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: return to normal_word
+I/TC: zrz 1
+D/TC:0   main_fiq:432 ZRZ+++++++++++++++++++++++++++++++++++++++++++
+D/TC:0   main_fiq:440 enable RT-TEE_scheuler.c  main_fiq to else
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_wor|d_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_even|:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   sec�re_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: return to normal_word
+I/TC: zrz 1
+D/TC:0   main_fiq:432 ZRZ+++++++++++++++++++++++++++++++++++++++++++
+D/TC:0   main_fiq:440 enable RT-TEE_scheuler.c  main_fiq to else
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedulu_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  securm_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC:�pseudo TA "pta_task1.pta" says "Hello`world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: return to normal_word
+I/TC: zrz 1
+D/TC:0   main_fiq:432 ZRZ+++++++++++++++++++++++++++++++++++++++++++
+D/TC:0   main_fiq:440 enable RT-TEE_scheuler.c  main_fiq to else
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: return to normal_word
+I/TC: zrz 1
+D/TC:0   main_fiq:432 ZRZ+++++++++++++++++++++++++++++++++++++++++++
+D/TC:0   main_fiq:440 enable RT-TEE_scheuler.c  main_fiq to else
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:2569628, time_constrains:2550000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 cusrent_time:2590264, time_constrains:2550000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:2614017, time_constrains:2550000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo tA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:2643985, time_constrains:2550000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:2667705, time_constrains:2550000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:2693993, time_constrains:2550000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:2721394, time_constrains:2550000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:2751360, time_constrains:2550000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+T/TC:8   secure_wor|d_schedule_event:1518 current_time:2775081, time_constrains:2550000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:2803991, time_constrains:2550000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:2828769, time_constrains:2550000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:2855049, time_constrains:2550000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:2882457, time_constrains:2550000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:2912424, time_constrains:2550000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:2934262, time_constrains:2550000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schgdule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:2956261, time_constrains:2550000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:2977263, time_constrains:2550000
+I/TC:  secure_schedule() is$run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:3003387, time_constrains:2550000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:3030263, time_constrains:2550000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0 ( secure_world_schedule_event:1518 current_time:3051510, time_constrains:2550000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:3081477, time_constrains:2550000
+I/TC:  secure_schedulm() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:2   secure_world_schedule_event:1518 current_time:3105198, time_constrains:2550000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:3133992, time_constrains:2550000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:3158886, time_constrains:2550000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:3188853, time_constrains:2550000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:3210262, time_constrains:2550000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:3233133, time_constrains:2550000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:3263100, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:3270951, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:3294113, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:3301964, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:1   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:3323083, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:3330934, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:�496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:3360900, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:3368752, time_constrains:3250000
+M/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:3392472, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:3400323, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:3429694, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:3437545, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:3458114, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:3465966, time_consvrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:3490272, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:3498124, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:3524280, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:3532131, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_sched}le_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:3558114, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:3565965, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:3588073, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:3595924, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:3625892, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:3633743, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:3657463, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:3665314, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   sucure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:3691438, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:3699289, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:3726854, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:3734705, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:3764671, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_tmme:3772523, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:3796243, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:3804094, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:3830218, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:3838069, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:3865632, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:3873484, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:3901536, time_constrains:2550000
+D/TC:0   secure_world_schedu�e_event:1518 current_time:3909388, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:3932114, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:3939965, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:3963433, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:3971284, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello wosld function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_eve�t:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:4001252, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:4009103, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:4032823, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:4040674, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:4069694, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:4077546, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:4098114, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:4105965, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_orld_schedule_event:1518 current_time:4130113, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:4137965, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:4159033, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:4166885, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:4196852, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:4204703, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 aurrent_time:4228424, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:4236275, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:4266242, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:4274093, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:4297813, time_constrains:2550000
+D/UC:0   secure_world_schedule_event:1518 current_time:4305664, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:4331788, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:4339639, time_con�trains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:4367203, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:4375054, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:4405020, time_constrains:25=0000
+D/TC:0   secure_world_schedule_event:1518 current_time:4412872, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:4436592, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:4444443, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:4470567, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:4478418, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:4504113, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:4511964, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:4534392, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:4542243, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world func|ion0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:4568402, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:4576253, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:4598114, time_constrains:2550000
+D/TC�0   secure_world_schedule_event:1518 current_time:4605965, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:4632195, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:4640046, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:4670013, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:4677864, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:4701584, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:4709435, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:4735559, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:4743410, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run0
+D/TC:0   secure_world_schedule_event:1518 current_time:4768114, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:4775965, time_constrains:3250000
+I/TC:  secure_schedule() is ruo 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:4798114, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:4805965, ti}e_constrains:3250000
+*I/TC: rt_tee_sched_item() runn 
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:4827795, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:4835647, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:4863804, time_constrains:2550000
+D/TC:0   secure_world_schedule_event>1518 current_time:4871655. time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:4897186, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:4905037, time_constrains:3250000
+I/TC:  secure_scledule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:4931504, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:4939355, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:4966113, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:4973964, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:4994985, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:5002836, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:5028960, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:5036811, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:5058114, time_constrains:2550000M
+                                                                                        D/TC:0   secure_world_schedule_event:1518 current_time:5065965, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:5092787, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:5100638, timm_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: ps�udo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:5130604, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:5138456, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:5162176, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:5170027, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:5196151, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:5204002, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:5230114, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:5237965, time_constrains:3250000
+I/TC:  secure_schedul�() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:5259977, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:5267829, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   sekureOworld_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:5297795, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:5305646, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:5329367, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:5337218, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:5367185, timeconstrains:2550000
+D/TC:0   secure_�orld_schedule_event:1518 current_time:5375036, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:5398113, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:5405964, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() r�n 
+D/TC:0   secure_world_schedule_event:1518 current_time:5427167, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:5435018, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  {ecure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:5461142, time_constrains:2550000
+D/TC:0   secure_world_schedule_evmnt:1518 current_time:5468993, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_evenv() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:5494114, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:5501965, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:5524968, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:5532820, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event>1518 current_time:5562786, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:5570637, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:5594358, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:5602209, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:5629693, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:5637544, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_wobld_schedulu_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:5658113, time_constrains:2550000
+D/TCz0   secure_world_schedule_event:1518 current_time:5665965, time_coostrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:5692113, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:5699965, time_�onstrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:5720569, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:5728420, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:5758387, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:5766238, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 curreot_time:5789958, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:5797810, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:5827777, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:5835629, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:5858114, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:5865965, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:5887759, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:5895610, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedul�_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:5921734, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:5929585, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee�sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_mvent() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:5956113, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:5963965, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched�item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:5985559, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:5993410, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:6023378, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:6031229, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event(� run 
+D/TC:0   secure_world_schedule_event:1518 current_time:6054950, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:6062801, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:6089694, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:6097545, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:6118113, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:6125965, time_constrains:3250000
+I/TCz  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:6152750, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:6160601, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:6188759, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:6196611, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:6218114, time_constrains:2550000
+T/TC:0   secure_world_schedule_event:1518 current_time:6225965, time_constrains:3250000
+I/TC:! secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:6250551, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:6258403, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:6288369, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:6296220, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:6318113, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:6325964, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:6348352, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:6356203, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:6382360, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:6390211, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:6417741, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:6425592, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA!"pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/tC:0   secure_world_schedule_event:1518 current_time:6453502, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:6461354, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:6484114, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:6491966, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:6515542, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:6523394, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:6549551, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:6557402, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:6578114, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:6585966, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:6613344, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:6621195, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:6651162, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:6659013, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TK: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:6682113, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:6689964, time_constrain�:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:6711164, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:6718995, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:6747154, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:6755005, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:6778114, time_constrains:2550000
+D/TC:0   secure_world_sche�ule_event:1518 current_time:6785965, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:6808947, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:6816798, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:6844955, time_constrains:2550000
+D/TC:2   secure_world_schedule_event:1518 current_time:6852806, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:6878114, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:6885965, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_wovld_schedule_event:1518 current_time:6906748, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:6914599, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:6944566, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:6952417, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:6976137, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:6983989, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_efent:1518 current_time:7010112, time_consvrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:7017964, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:7045528, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:7053379, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:1   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:7083347, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:7091198, time_constrains:3250000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  se�ure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:7114918, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:7122770, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:7130621, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:7157545, time_constrains:2550000
+D/TC:0 ! secure_world_schedule_event:1518 current_time:7165396, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:7173247, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:7195963, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:7203815, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:7211666, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:7236272, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:7244123, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:7251974, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:7280281, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:7288132, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:7295984, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:7321364, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:151< current_time:7329215, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:7337066, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello wor�d function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:7367034, t�me_constrains:2550000
+D/TC:4   secure_world_schedule_event:1518 current_time:7374885, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:7382736, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:7405965, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:7413816, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:7421667, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0  "secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:7442719, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:7450570, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:7458421, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.ptab says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:7484545, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:7492396, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:7500247, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:7525966, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:7533817, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:7541668, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:7564073, time_constrains:2550000
+D/TC:0   secure_world_schefwle_event:1518 current_time:7571924, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:7579775, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says�"Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:7605899, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:7613750, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:7621601, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:7645965, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:7653816, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:7661667, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:7685426, time_constrains:2550000
+D/TC:�   secure_world_schedule_event:1518 current_time:7693278, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:7701129, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:7727252, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:7735104, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:7742955, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_�ched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:7765966, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:7773817, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:7781668, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:7805966, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:7813817, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:7821668, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:7843043, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:7850894, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:7858745, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"M
+                                                              I/TC: zt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:7884869, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:7892720, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:7900571, time_constrains:7100100
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event;1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:7921964, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:7929815, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:7937666, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_scheditem() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:7964396, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:7972247, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:7980098, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!&
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:8008405, time_constrains:2550000
+D/TC:0   securm_world_schedule_event:1518 current_time:8016256, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:8024107, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:8045966, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:8053817, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:8061668, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:8085751, time_constrains:2550000
+D/TC:0   wecure_world_schedule_event:1518 current_time:8093602, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:8101453, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_tas{1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_|ime:8127578, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:8135429, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:8143280, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:8163965, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:8171816, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:8179667, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:8205965, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:8213816, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:8221667, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:p   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:8243368, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:8251219, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:8259070, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:8285194, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:8293045, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:8300896, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:8325965, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:8333816, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:8341667, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_vee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:8364721, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:8372573, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:8380424, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:8406547, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:8414399, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:8422250, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:8445966, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:8453817, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:8461668, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:8485965, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:8493816, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:8501667, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:8522337, time_constrains:2550000
+D/TC:0   secure_wosld_schedu,e_event:1518 current_time:8530188, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:8538039, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+*I/TC: rt_tee_sched_item() run" says "Hello world function0!"
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:8564163, time_constrains:2550000
+D/TC:0   secure�world_schedule_event:1518 current_time:8572014, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:8579865, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:8603964, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:8611815, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:8619666, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:8643690, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:8651541, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:8659392, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+*D/TC:0   secure_world_schedule_event:1518 current_time:8693549, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:8701400, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:8725965, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:8733816, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:8741667, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:8765043, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:8772895, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:8780746, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:8806869, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:8814721, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:8822572, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:8845966, time_constrains:2550000
+D/TC:0   secuse_world_schedule_event:1518 current_time:8853817, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:8861668, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:8885965, time_constrains:2550000
+D/TC:0   secu�e_world_schedule_event:1518 current_time:8893816, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:8901667,(time_constrains:7100000
+I/TC:  secure_schedule() is run 
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:8922659, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:8930510, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:8938361, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:8964485, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:8972336, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:8980187, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:9005965, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:9013816, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:9021667, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:9043964, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:9051815, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:9059666, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:9080274, time_cons|rains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:9088125, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:9095976, time_constrains:7100000
+I/TC:  secure_schedule(� is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:9122283, time_constrains:2550000
+D/TC:0   secure_world_schelule_event:1518 current_time:9130134, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:9137985, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:9165365, time_constrains:2550000
+D/TC:0   secure_world_schedule_ewent:1518 current_time:9173217, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:9181068, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:9209055, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:9216906, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:9224757, time_constrains:7100000
+I/TC:  secure�schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:9245964, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:9253816, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:9261667, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:9285965, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:9293816, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:9301667, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:9322981, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:9330832, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:9338683, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_itmm() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:9364807, time_constrains:2550000	
+                                                                                        D/TC:0   secure_world_schedule_event:1518 current_time:9372658, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:9380509, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:9405965, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:9413816, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:9421667, time_constrains:7100000
+I/TC:  secure_schedule() is r}n 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:9444335, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:9452186, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:9460037, time_constrains:71000�0
+I�TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:9486161, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:9494012, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:9501863, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:9525965, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:9533816, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:9541667, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:9565688, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:9573540, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:9581391, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:9607514, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:9615366, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:9623217, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:9645965, time_cnstrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:9653817, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:9661668, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:9685965, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:9693816, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:9701667, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:9723304, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:9731155, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:9739006, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "�ta_task1.pta" says "Helmo world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_s�hedule_event:1518 current_time:9765130, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:9772981, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:9780832, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:9805965, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:9813816, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:9821667, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:9844658, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:9852509, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:9860360, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:9886484, time_constrains:2550000
+D/TC:0   sekure_world_schedule_event:1518 current_time:9894335, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:9902186, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:9923965, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:9931816, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:9939667, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:9965965, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:9973816, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 �urve��_time:9981667, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:10002273, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:10010213, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:10018152, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:10044364, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:10052303, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:10060242, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:10086229, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:10094168, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:10102108, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:10124420, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:10132359, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:10140298, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:10166510, time_constrains:2550000
+D/TC:0   secure_worldschedule_event:1518 current_time:10174450, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:10182389, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:10206230, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:10214169, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current�time:10222108, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TS: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:10246229, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:10254169, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:10262108, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:10283094, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:10291033, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:10298972, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:10325184, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:10333124, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:10341063, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedu�e_event:1518 current_time:10364229, time_constrains:2550000
+D/TC:0   secure_world_schedule_evenv:1518 current_time:10372169, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:10380108, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:10405240, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:10413180, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:10421119, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:10447331, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:10455270, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:10463209, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:10486229, time_constrains:25500p0
+D/TC:0   secure_world_schedule_event:1518 current_time:10494168, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:10502107, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:10526229, time_constrains:2550000
+D/TC:0   secure_world_scjedule_event:1518 current_time:10534169, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:10542108, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:10563913, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:10571853, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:10579792, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_tesk1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0�  secure_world_schedule_event:1518 current_time:10606004, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:10613943, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:10621882, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:10646229, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:10654169, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:10662108, time_constrains:7100000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:10686061, time_constrains:2550000
+D/TC:0   secure_world_sghedule_event:1518 current_time:10694000, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:10701939, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:10709878, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello worle function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:10736178, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:10744118, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:10752057, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:10759996, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:10787735, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:10795675, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:10803614, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:10811553, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+L/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 surrent_time:10841696, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:10849635, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:10857574, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:10865514, time_conwtrains:10700000
+I/TC:" secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:10889410, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:10897350, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:10905289, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:10913228, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:10941978, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:10949917, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:10957856, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:10965796, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:10988256, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:10996195, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:11004135, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:11012074, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:!496  secure_world_schelule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:11034256, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 currenv_time:11042195, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:11050134, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:11058073, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_uee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:11080192, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:11088131, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:11096071, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:11104010, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:11134153, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:11142092, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:11150031, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:11157970, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:11181867, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:11189806, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:11197745, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:11205684, timm_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:11233979, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:11241918, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:11249857, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:11257796, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:11283541, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:11291481, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:11299420, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:11307359, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:11337502, time_constrains:2550000
+D/TC:�   secure_world_schedule_event:1518 current_time:q1345441, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:11353380, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:11361320, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:11384255, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:11392195, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:11400134, time_constrcins:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:11408073, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:11429770, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:11437709, time_constrains:�250000
+D/TC:0   secure_world_schedule_event:1518 current_time:11445648, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:11453587, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:11479887, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:11487827, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:11495766, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:11503705, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:11531444, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:11539384, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:11547323, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:11555262, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:11585405, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:11593344, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:11601283, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:11609223, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:11633119, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:11641059, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:11648998, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:11656937, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:11683237, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:11691176, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:11699115, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:11717054, tim�_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0 ( secure_world_schedule_event:1518 current_time:11734256, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:11742196, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:11750135, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:11758074, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:11779349, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:117872<8, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:11795227, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:11803166, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time>11829466, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:11837406, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:11845345, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:11853284, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:11874257, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:11882196, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:11890135, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:11898075, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:11925578, time_constsains:2550000
+D/TK:0   secure_world_schedule_event:1518 current_time:11933517, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:11941456, time_constrains:7100000
+D/TC:0   secure_wosld_schedule_event:1518 current_time:11949396, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:11979538, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:11987478, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:11995417, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:12003356, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedu|e_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:12027253, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:12035192, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:12043131, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:12051070, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:12081213, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:12089152, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:12097091, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:12105031, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496` secure_world_schedule_event() run 
+D/TC:0   secure_worl�_schedule_event:1518 current_time:12128927, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:12136867, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:12144806, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:12152745, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:12179978, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:12187918, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:12195857, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:12203796, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   sec�re_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:12230603, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:12238542, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:12246482, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:12254421, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world �unction0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/Tc:0   secure_world_schedule_event:1518 current_time:12284565, time_constrains:2551000
+D/TC:0   secure_world_schedule_event:1518 current_time:12292504, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:12300443, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:12308382, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_scheduleevent:1496  secure_world_schedule_event() run 
+D/tC:0   secure_world_schedule_event:1518 current_time:12330256, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:12338196, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:12346135, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:12354074, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() ru�
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:12376832, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:12384772, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:12392711, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:12400650, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: psmudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:12430794, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:12438733, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:12446672, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:12454612, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:12478508, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_ti}e:12486448, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:12494387, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:12502326, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:12531979, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:12539918, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:12547858, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:12555797, time_constrains:10700000
+I/TCz  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:12580184, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:12588123, time_constrains>3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:12596062, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:12604002, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496 $secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:12634144, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:12642084, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:12650023, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:12657962, time_constrqins:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:12681859, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:12689798, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:12697737, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:12705676, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:12731976, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:12739916, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:12747855, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:12755794, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:12783535, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:12791474, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:12799413, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:12807352, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:12837496, time_constrains:2550000
+D/\C:0   secure_world_schedule_event:1518 current_time:12845435, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:12853375, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:12861314, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:12:85210, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:12893150, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:12901089, time_constrains:7100000
+D/TC:0   se�ure_world_schedule_event:1518 current_time:12909028, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_itmm() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:12939171, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:12947110, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:12955049, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:12962988, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:12986885, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:12994824, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:13002763, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:13010703, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pt�" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:13037979, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:13045918, time_�onstrain�:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:13053857, time_constrains:7100000
+D/TC:0   secure_wor|d_schedule_event:1518 current_time:13061796, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:13088560, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:13096499, time_constrains:3250000
+D/TC:�   secure_world_schedule_event:1518 current_time:13104438, time_constrains:7100000
+D/TC:0   secure_wor|d_schedule_event:1518 current_time:13112377, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:13142520, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:13150459, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:13158399, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:13166338, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_�chedule_event:1518 current_time:13188255, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:13196195, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:13204134, time_constrains:7100000
+D/T�:0   secure_world_schedule_event:1518 current_time:13212073, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1�96  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:13234256, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:13242195, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:13250134, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:13258073, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:13279342, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:13287281, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:13295220, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:13303159, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:14960 secuve_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:13333302, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:13341241, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:13349180, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:13357120, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 curvent_time:13381016, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:13388956, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:13396895, time_cons�rains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:13404834, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:13433978, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:13441917, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:13449856, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:13457795, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:13482691, time_constrains:2550000
+D/TC:0   secure_world_schedule_event;1518 current_time:13490630, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:13498569, time_constrains:7100000
+D/TC:0   secure_world_schedqle_event:1518 current_time:13506508, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:13536651, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:13544591, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:13552530, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:13560469, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:13584256, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:13592195, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:13600134, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:13608073, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:13628919, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:13636859, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:13644798, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:13652737, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:13679037, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:13686976, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:13694915, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:13702854, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518$current_time:13730595, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:13738534, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:13746473, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:13754413, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:13784555, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:13792495, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:13800434, time_constrains:7100000
+D/TC:0   sucure_world_schedule_event:1518 current_time:13808373, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:13832270, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:13840209, time_constrains:3250000
+D/TC:0  �secure_world_schedule_event:1518 current_time:13848148, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:13856087, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta& sqys "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:13882387, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 gurrent_time:13890327, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:13898266, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:13906205, time_constrains:10700p00
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:13933945, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:13941885, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:13949824, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:13957763, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:13985823, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:13993763, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:14001702, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:14009641, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_eve�t:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:14034256, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:14042195, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:14050134, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:14058073, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:14080174, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:14088113, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:14096052, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:1410;991, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:14134134, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:14142073, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:14150013, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:14157952, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:14181848, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:14189788, time_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:14197727, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:14205666, time_constrains:10700000
+I/TC:  secure_schedule() is run 
+I/TC: pseudo TA "pta_task1.pta" says "Hello world function0!"
+I/TC: rt_tee_sched_item() run
+D/TC:0   secure_world_schedule_event:1496  secure_world_schedule_event() run 
+D/TC:0   secure_world_schedule_event:1518 current_time:14235810, time_constrains:2550000
+D/TC:0   secure_world_schedule_event:1518 current_time:14243749, ti}e_constrains:3250000
+D/TC:0   secure_world_schedule_event:1518 current_time:14251688, time_constrains:7100000
+D/TC:0   secure_world_schedule_event:1518 current_time:14259628, time_constrains:10700000
+D/TC:0   secure_world_schedule_gvent:1518 current_time:14267655, time_constrains:14250000
+I/TC: ==============Secure World core 0==============
+I/TC: task1 execution time: 51553
+I/TC: Total Missed Tasks: 235
+I/TC: Total Cmpl Tasks: 169
+I/TC: Total Measured Tasks: 250
+I/TC: task 0 miss: 36 finished: 322
+I/TC: task 1 miss: 49 finished: 16
+I/TC: task 2 miss: 50 finished: 0
+I/TC: task 3 miss: 50 finished: 0
+I/TC: task 4 miss: 50 finished: 0
+I/TC: total nw exe: 5
+I/TC: total sw exe: 277
+I/TC: total has_nothing_to_run: 0
+I/TC: suspend num 276
+I/TC: active num 275
+I/TC: core0: 282
+I/TC: core1: 0
+I/TC: core2: 0
+I/TC: core3: 0
+I/TC: core0, nw: 5, sw: 277
+I/TC: core1, nw: 0, sw: 0
+I/TC: core2, nw: 0, sw: 0
+I/TC: core3, nw: 0, sw: 0
+I/TC: max thread index 0
+I/TC: thread 0 use_num 175
+I/TC: thread 1 use_num 0
+I/TC: thread 2 use_num 0
+I/TC: thread 3 use_num 0
+I/TC: ========================================
+I/TC: return to normal_word
+

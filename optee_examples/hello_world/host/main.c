@@ -244,7 +244,7 @@ int main(int argc, char *argv[])
 
 
 	// // 70%
-	task_param_init(&task_params[1], 51000,0,7000,1,0); 
+	task_param_init(&task_params[1], 51000,0,7000,1,0); //周期51000，优先级0，执行时间7000，初始化flag 1，cpu核 0
 	task_param_init(&task_params[2], 65000,1,7000,1,0); 
 	task_param_init(&task_params[3], 142000,2,6000,1,0);
 	task_param_init(&task_params[4], 214000,3,9000,1,0); 

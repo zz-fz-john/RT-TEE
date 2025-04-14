@@ -105,7 +105,7 @@ at the world switching level, for each core, we run a deferrable servers, one fo
 
 
  #define RT-TEE_SYNTHETIC	
-
+#define FLIGHT_CONTROL_LOOP_TIME 4000
 
 // choosing schedulre one of following scheduler must be defined
 // #define IDLE_SCHEDULER
@@ -169,7 +169,7 @@ struct rt_world rt_world_cores[NUM_OF_SECURITY_STATES][NUM_OF_CORES];
 
 // we will keep a task state struct 
 struct secure_task secure_world_tasks[SECURE_WORLD_MAX_TASKS];
-
+struct secure_task second_verifier;
 
 long is_from_interrupt = 0;
 int  previous_start_random=0;
@@ -440,7 +440,11 @@ static void main_fiq(void)
 		//save normal world vfp state
 		DMSG("enable RT-TEE_scheuler.c  main_fiq to else");
 		fp_regs_save(&nw_vfp_state[get_current_core()]);
-		world_schedule_item();
+		//world_schedule_item();
+        rt_tee_thread_invoke();//todo get session_id,taskUid
+        set_next_timer(FLIGHT_CONTROL_LOOP_TIME);
+        return_to_normal_world();
+
 	}
 }
 
@@ -473,209 +477,6 @@ void console_init(void)
 	register_serial_console(&console_data.chip);
 }
 
-//qemu plat
-// static const struct thread_handlers handlers = {
-// 	.std_smc = tee_entry_std,
-// 	.fast_smc = tee_entry_fast,
-// 	.nintr = main_fiq,
-// #if defined(CFG_WITH_ARM_TRUSTED_FW)
-// 	.cpu_on = cpu_on_handler,
-// 	.cpu_off = pm_do_nothing,
-// 	.cpu_suspend = pm_do_nothing,
-// 	.cpu_resume = pm_do_nothing,
-// 	.system_off = pm_do_nothing,
-// 	.system_reset = pm_do_nothing,
-// #else
-// 	.cpu_on = pm_panic,
-// 	.cpu_off = pm_panic,
-// 	.cpu_suspend = pm_panic,
-// 	.cpu_resume = pm_panic,
-// 	.system_off = pm_panic,
-// 	.system_reset = pm_panic,
-// #endif
-// };
-
-// static struct gic_data gic_data;
-// static struct pl011_data console_data;
-
-
-// //export gic address
-// struct gic_data *addr_gic_data = &gic_data;
-// register_phys_mem(MEM_AREA_IO_SEC, 0x08020000, PL011_REG_SIZE);
-
-// test_gic_fun();
-
-// register_phys_mem(MEM_AREA_IO_SEC, CONSOLE_UART_BASE, PL011_REG_SIZE);
-// #if defined(PLATFORM_FLAVOR_fvp)
-// register_phys_mem(MEM_AREA_RAM_SEC, TZCDRAM_BASE, TZCDRAM_SIZE);
-// #endif
-// #if defined(PLATFORM_FLAVOR_qemu_virt)
-// register_phys_mem(MEM_AREA_IO_SEC, SECRAM_BASE, SECRAM_COHERENT_SIZE);
-// #endif
-// #ifdef DRAM0_BASE
-// register_ddr(DRAM0_BASE, DRAM0_SIZE);
-// #endif
-// #ifdef DRAM1_BASE
-// register_ddr(DRAM1_BASE, DRAM1_SIZE);
-// #endif
-
-// // const struct thread_handlers *generic_boot_get_handlers(void)
-// // {
-// // 	return &handlers;
-// // }
-
-// #ifdef GIC_BASE
-
-// register_phys_mem(MEM_AREA_IO_SEC, GICD_BASE, GIC_DIST_REG_SIZE);
-// register_phys_mem(MEM_AREA_IO_SEC, GICC_BASE, GIC_DIST_REG_SIZE);
-
-// void main_init_gic(void)
-// {
-// 	vaddr_t gicc_base;
-// 	vaddr_t gicd_base;
-
-// 	gicc_base = (vaddr_t)phys_to_virt(GIC_BASE + GICC_OFFSET,
-// 					  MEM_AREA_IO_SEC);
-// 	gicd_base = (vaddr_t)phys_to_virt(GIC_BASE + GICD_OFFSET,
-// 					  MEM_AREA_IO_SEC);
-// 	if (!gicc_base || !gicd_base)
-// 		panic();
-
-// #if defined(CFG_WITH_ARM_TRUSTED_FW)
-// 	/* On ARMv8, GIC configuration is initialized in ARM-TF */
-// 	gic_init_base_addr(&gic_data, gicc_base, gicd_base);
-// #elseconsole_init
-// 	/* Initialize GIC */
-// 	gic_init(&gic_data, gicc_base, gicd_base);
-// #endif
-// 	itr_init(&gic_data.chip);
-// }
-
-// #if !defined(CFG_WITH_ARM_TRUSTED_FW)
-// void main_secondary_init_gic(void)
-// {
-// 	gic_cpu_init(&gic_data);
-// }
-// #endif
-
-// #endif
-
-
-// void console_init(void)
-// {
-
-// 	pl011_init(&console_data, CONSOLE_UART_BASE, CONSOLE_UART_CLK_IN_HZ,
-// 		   CONSOLE_BAUDRATE);
-// 	register_serial_console(&console_data.chip);
-// }
-
-// #if defined(IT_CONSOLE_UART) && \
-// 	!(defined(CFG_WITH_ARM_TRUSTED_FW) && defined(CFG_ARM_GICV3))
-// /*
-//  * This cannot be enabled with TF-A and GICv3 because TF-A then need to
-//  * assign the interrupt number of the UART to OP-TEE (S-EL1). Currently
-//  * there's no way of TF-A to know which interrupts that OP-TEE will serve.
-//  * If TF-A doesn't assign the interrupt we're enabling below to OP-TEE it
-//  * will hang in EL3 since the interrupt will just be delivered again and
-//  * again.
-//  */
-// static enum itr_return console_itr_cb(struct itr_handler *h __unused)
-// {
-// 	struct serial_chip *cons = &console_data.chip;
-
-// 	while (cons->ops->have_rx_data(cons)) {
-// 		int ch __maybe_unused = cons->ops->getchar(cons);
-
-// 		DMSG("cpu %zu: got 0x%x", get_core_pos(), ch);
-// 	}
-// 	return ITRR_HANDLED;
-// }
-
-// static struct itr_handler console_itr = {
-// 	.it = IT_CONSOLE_UART,
-// 	.flags = ITRF_TRIGGER_LEVEL,
-// 	.handler = console_itr_cb,
-// };
-// KEEP_PAGER(console_itr);
-
-// static TEE_Result init_console_itr(void)
-// {
-// 	itr_add(&console_itr);
-// 	itr_enable(IT_CONSOLE_UART);
-// 	return TEE_SUCCESS;
-// }
-// driver_init(init_console_itr);
-// #endif
-
-// #ifdef CFG_TZC400
-// register_phys_mem(MEM_AREA_IO_SEC, TZC400_BASE, TZC400_REG_SIZE);
-
-// static TEE_Result init_tzc400(void)
-// {
-// 	void *va;
-
-// 	DMSG("Initializing TZC400");
-
-// 	va = phys_to_virt(TZC400_BASE, MEM_AREA_IO_SEC);
-// 	if (!va) {
-// 		EMSG("TZC400 not mapped");
-// 		panic();
-// 	}
-
-// 	tzc_init((vaddr_t)va);
-// 	tzc_dump_state();
-
-// 	return TEE_SUCCESS;
-// }
-
-// service_init(init_tzc400);
-// #endif /*CFG_TZC400*/
-
-// #if defined(PLATFORM_FLAVOR_qemu_virt)
-// static void release_secondary_early_hpen(size_t pos)
-// {
-// 	struct mailbox {
-// 		uint64_t ep;
-// 		uint64_t hpen[];
-// 	} *mailbox;
-
-// 	if (cpu_mmu_enabled())
-// 		mailbox = phys_to_virt(SECRAM_BASE, MEM_AREA_IO_SEC);
-// 	else
-// 		mailbox = (void *)SECRAM_BASE;
-
-// 	if (!mailbox)
-// 		panic();
-
-// 	mailbox->ep = TEE_LOAD_ADDR;
-// 	dsb_ishst();
-// 	mailbox->hpen[pos] = 1;
-// 	dsb_ishst();
-// 	sev();
-// }
-
-// int psci_cpu_on(uint32_t core_id, uint32_t entry, uint32_t context_id)
-// {
-// 	size_t pos = get_core_pos_mpidr(core_id);
-// 	static bool core_is_released[CFG_TEE_CORE_NB_CORE];
-
-// 	if (!pos || pos >= CFG_TEE_CORE_NB_CORE)
-// 		return PSCI_RET_INVALID_PARAMETERS;
-
-// 	DMSG("core pos: %zu: ns_entry %#" PRIx32, pos, entry);
-
-// 	if (core_is_released[pos]) {
-// 		EMSG("core %zu already released", pos);
-// 		return PSCI_RET_DENIED;
-// 	}
-// 	core_is_released[pos] = true;
-
-// 	generic_boot_set_core_ns_entry(pos, entry, context_id);
-// 	release_secondary_early_hpen(pos);
-
-// 	return PSCI_RET_SUCCESS;
-// }
-// #endif /*PLATFORM_FLAVOR_qemu_virt*/
 
 
 extern int gic_init_fun(void);
@@ -903,36 +704,10 @@ int world_scheduler_trigger_time = 0;
 int set_next_timer_flag[CFG_TEE_CORE_NB_CORE] = {0};
 //setting next timer for executing secure world or normal worlds
 //set to nearest deadline or out of current budget
-void set_next_timer(int security_state, int coreNum)
+void set_next_timer(int time)
 {
 
-	//jinwen comment
-	#ifdef HIERARCHICAL_SCHEDULER
-
-	s_time_t now = getCurrentTime_micro();
-
-	// // we need to decide when to invoke the timer again for this core
-	s_time_t timerToTrigger = min(now + rt_world_cores[security_state][coreNum].cur_budget,
- 					  rt_world_cores[SECURE_STATE][coreNum].cur_deadline,
- 					  rt_world_cores[NONSECURE_STATE][coreNum].cur_deadline);
-
-	// next_interrupt_time[get_current_core()] = timerToTrigger;
-
-	// //original codes
-	if(security_state == SECURE_STATE){
-		secure_exe_next_timer[get_current_core()] = timerToTrigger - now;
-		set_next_timer_flag[get_current_core()] = 1;
-	}
-	else{
-		trigger_timer_micro_s(timerToTrigger - now);
-	}
-
-	#endif
-
-	//idle scheduling
-	#ifdef IDLE_SCHEDULER
-	trigger_timer_micro_s(100000000);
-	#endif
+	trigger_timer_micro_s(time);
 
 }
 
@@ -1660,47 +1435,7 @@ void secure_world_recalculate_prio()
 
 
 extern  void context_saving_begin();
-void secure_schedule()
-{
-	IMSG(" secure_schedule() is run ");
-	int coreNum = get_current_core();
-	// picks and executes the right secure wolrd task to execute
-	// pick the task with highest priority
-	// loops through all the secure task
-	set_preemptive_timer_flag[coreNum] = 0;
-	for(int i = 0; i < SECURE_WORLD_MIN_PRIORITY; i++){
-		struct secure_task *curr_task = NULL;
-		TAILQ_FOREACH(curr_task, &runnable_tasks[get_current_core()][i], tail_queue_entity){//遍历队列
-			//coreNum is used to pin task onto specific core
-			set_preemptive_timer(curr_task);
-			//invoke or resume
-			//in case interrupt occurs between invoke invocation
-			if(curr_task->task_state == SECURE_TASK_RUNNING && \
-				threads[curr_task->curr_thread].state == THREAD_STATE_SUSPENDED){//如果当前任务需要运行，但是该线程是被挂起的
-		
-				//processing _core is used to handle the scenario of interrupt between invoke and SECURE_TASK_RUNNING
-				curr_task->processing_core = coreNum;
 
-				trigger_timer_micro_s(secure_exe_next_timer[get_current_core()]);
-
-
-				rt_tee_thread_resume(&curr_task->saved_regs, curr_task->taskUid);
-			}
-			else{
-
-				//curr_task has not been processed by other core or 
-				//processed by current core but interrupted before actually execution
-				if(curr_task->processing_core = -1 \
-					|| curr_task->processing_core == coreNum){
-
-					curr_task->processing_core = coreNum;
-					
-					rt_tee_thread_invoke(curr_task->session_id, curr_task->taskUid);
-				}
-			}
-		}
-	}
-}
 
 //pta part
 long loop_result = 0;
