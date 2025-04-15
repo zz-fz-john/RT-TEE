@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "initcall.h": "c",
-        "memory": "cpp"
+        "memory": "cpp",
+        "timer.h": "c"
     }
 }
