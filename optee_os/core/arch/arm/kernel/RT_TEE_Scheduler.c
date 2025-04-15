@@ -812,7 +812,8 @@ int first = 0;
 
 void rd_scheduler_stub(){
 
-
+	IMSG("run rd scheduler stub\n");
+	
 	world_schedule_item();
 
 
@@ -1509,7 +1510,7 @@ void secure_world_schedule_event()
 	*如果任务已经完成了NUM_OF_MEASURED个周期，或者当前时间减去任务开始时间大于NUM_OF_MEASURED个周期的时间
 	*则任务没有完成，否则任务完成
 	*/
-	for(int i = 0; i < SECURE_WORLD_MAX_SUPPORTED_TASKS; i++){
+	for(int i = 0; i < SECURE_WORLD_MAX_SUPPORTED_TASKS; i++){//调度结束，会返回normal world，且调度器停止，估计bug就出现在这个地方。
 		finish = true;
 		if(secure_tasks[i].occupied && secure_tasks[i].cpu == coreNum){
 			if(secure_tasks[i].numOfJobCompleted >= NUM_OF_MEASURED \
@@ -1583,7 +1584,7 @@ void secure_world_schedule_event()
 		print_flg[coreNum] = true;
 		write_cntps_ctl(0);
 		cpu_spin_unlock(&result_print_lock);
-		return_to_normal_world();
+		return_to_normal_world();//bug出现在这个位置，估计是没有恢复寄存器，或者某个地址出了什么问题
 		//fixme:experiment require
 	}
 // #endif
