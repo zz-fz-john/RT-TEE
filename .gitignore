@@ -1,7 +1,6 @@
 out/
 out-br/
 toolchains/
-arm-trusted-firmware/
 optee_client/out
 optee_os/out
 edk/
