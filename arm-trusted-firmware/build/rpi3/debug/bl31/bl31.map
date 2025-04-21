@@ -1,0 +1,2865 @@
+Archive member included to satisfy reference by file (symbol)
+
+./build/rpi3/debug/lib/libc.a(assert.o)
+                              ./build/rpi3/debug/bl31/plat_psci_common.o (__assert)
+./build/rpi3/debug/lib/libc.a(memchr.o)
+                              ./build/rpi3/debug/bl31/fdt_ro.o (memchr)
+./build/rpi3/debug/lib/libc.a(memcmp.o)
+                              ./build/rpi3/debug/bl31/fdt.o (memcmp)
+./build/rpi3/debug/lib/libc.a(memcpy.o)
+                              ./build/rpi3/debug/bl31/rpi3_bl31_setup.o (memcpy)
+./build/rpi3/debug/lib/libc.a(memmove.o)
+                              ./build/rpi3/debug/bl31/fdt.o (memmove)
+./build/rpi3/debug/lib/libc.a(memset.o)
+                              ./build/rpi3/debug/bl31/fdt_rw.o (memset)
+./build/rpi3/debug/lib/libc.a(printf.o)
+                              ./build/rpi3/debug/bl31/tf_log.o (vprintf)
+./build/rpi3/debug/lib/libc.a(putchar.o)
+                              ./build/rpi3/debug/bl31/tf_log.o (putchar)
+./build/rpi3/debug/lib/libc.a(strlen.o)
+                              ./build/rpi3/debug/bl31/fdt.o (strlen)
+./build/rpi3/debug/lib/libc.a(strnlen.o)
+                              ./build/rpi3/debug/bl31/fdt_ro.o (strnlen)
+./build/rpi3/debug/lib/libc.a(strrchr.o)
+                              ./build/rpi3/debug/bl31/fdt_ro.o (strrchr)
+
+Allocating common symbols
+Common symbol       size              file
+
+mmu_cfg_params      0x18              ./build/rpi3/debug/bl31/xlat_tables_context.o
+rt_svc_descs_indices
+                    0x80              ./build/rpi3/debug/bl31/runtime_svc.o
+psci_cpu_pd_nodes   0x40              ./build/rpi3/debug/bl31/psci_common.o
+psci_caps           0x4               ./build/rpi3/debug/bl31/psci_setup.o
+optee_vector_table  0x8               ./build/rpi3/debug/bl31/opteed_main.o
+psci_plat_pm_ops    0x8               ./build/rpi3/debug/bl31/psci_common.o
+opteed_rw           0x4               ./build/rpi3/debug/bl31/opteed_main.o
+percpu_data         0x200             ./build/rpi3/debug/bl31/cpu_data_array.o
+opteed_sp_context   0x940             ./build/rpi3/debug/bl31/opteed_main.o
+console_list        0x8               ./build/rpi3/debug/bl31/multi_console.o
+psci_spd_pm         0x8               ./build/rpi3/debug/bl31/psci_common.o
+
+Discarded input sections
+
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/plat_psci_common.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/plat_psci_common.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/plat_psci_common.o
+ .eh_frame      0x0000000000000000       0x38 ./build/rpi3/debug/bl31/plat_psci_common.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/rpi3_bl31_setup.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/rpi3_bl31_setup.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/rpi3_bl31_setup.o
+ .eh_frame      0x0000000000000000       0xa8 ./build/rpi3/debug/bl31/rpi3_bl31_setup.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/rpi3_pm.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/rpi3_pm.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/rpi3_pm.o
+ .eh_frame      0x0000000000000000       0xf0 ./build/rpi3/debug/bl31/rpi3_pm.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/rpi3_topology.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/rpi3_topology.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/rpi3_topology.o
+ .eh_frame      0x0000000000000000       0x40 ./build/rpi3/debug/bl31/rpi3_topology.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt.o
+ .text.fdt_offset_ptr
+                0x0000000000000000       0x88 ./build/rpi3/debug/bl31/fdt.o
+ .text.fdt_next_tag
+                0x0000000000000000      0x10c ./build/rpi3/debug/bl31/fdt.o
+ .rodata.fdt_next_tag
+                0x0000000000000000        0x9 ./build/rpi3/debug/bl31/fdt.o
+ .text.fdt_check_node_offset_
+                0x0000000000000000       0x40 ./build/rpi3/debug/bl31/fdt.o
+ .text.fdt_check_prop_offset_
+                0x0000000000000000       0x40 ./build/rpi3/debug/bl31/fdt.o
+ .text.fdt_next_node
+                0x0000000000000000       0xb0 ./build/rpi3/debug/bl31/fdt.o
+ .text.fdt_first_subnode
+                0x0000000000000000       0x34 ./build/rpi3/debug/bl31/fdt.o
+ .text.fdt_next_subnode
+                0x0000000000000000       0x50 ./build/rpi3/debug/bl31/fdt.o
+ .text.fdt_find_string_
+                0x0000000000000000       0x70 ./build/rpi3/debug/bl31/fdt.o
+ .text.fdt_move
+                0x0000000000000000       0x5c ./build/rpi3/debug/bl31/fdt.o
+ .eh_frame      0x0000000000000000      0x180 ./build/rpi3/debug/bl31/fdt.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt_addresses.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt_addresses.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt_addresses.o
+ .text.fdt_address_cells
+                0x0000000000000000       0x70 ./build/rpi3/debug/bl31/fdt_addresses.o
+ .text.fdt_size_cells
+                0x0000000000000000       0x6c ./build/rpi3/debug/bl31/fdt_addresses.o
+ .rodata.fdt_address_cells.str1.1
+                0x0000000000000000        0xf ./build/rpi3/debug/bl31/fdt_addresses.o
+ .rodata.fdt_size_cells.str1.1
+                0x0000000000000000        0xc ./build/rpi3/debug/bl31/fdt_addresses.o
+ .debug_info    0x0000000000000000      0x29c ./build/rpi3/debug/bl31/fdt_addresses.o
+ .debug_abbrev  0x0000000000000000      0x12b ./build/rpi3/debug/bl31/fdt_addresses.o
+ .debug_loc     0x0000000000000000      0x226 ./build/rpi3/debug/bl31/fdt_addresses.o
+ .debug_aranges
+                0x0000000000000000       0x40 ./build/rpi3/debug/bl31/fdt_addresses.o
+ .debug_ranges  0x0000000000000000       0x30 ./build/rpi3/debug/bl31/fdt_addresses.o
+ .debug_line    0x0000000000000000      0x180 ./build/rpi3/debug/bl31/fdt_addresses.o
+ .debug_str     0x0000000000000000      0x22e ./build/rpi3/debug/bl31/fdt_addresses.o
+ .comment       0x0000000000000000       0x5f ./build/rpi3/debug/bl31/fdt_addresses.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt_addresses.o
+ .eh_frame      0x0000000000000000       0x58 ./build/rpi3/debug/bl31/fdt_addresses.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt_empty_tree.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt_empty_tree.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt_empty_tree.o
+ .text.fdt_create_empty_tree
+                0x0000000000000000       0x78 ./build/rpi3/debug/bl31/fdt_empty_tree.o
+ .rodata.fdt_create_empty_tree.str1.1
+                0x0000000000000000        0x1 ./build/rpi3/debug/bl31/fdt_empty_tree.o
+ .debug_info    0x0000000000000000      0x1d4 ./build/rpi3/debug/bl31/fdt_empty_tree.o
+ .debug_abbrev  0x0000000000000000       0xc5 ./build/rpi3/debug/bl31/fdt_empty_tree.o
+ .debug_loc     0x0000000000000000      0x1b6 ./build/rpi3/debug/bl31/fdt_empty_tree.o
+ .debug_aranges
+                0x0000000000000000       0x30 ./build/rpi3/debug/bl31/fdt_empty_tree.o
+ .debug_ranges  0x0000000000000000       0x20 ./build/rpi3/debug/bl31/fdt_empty_tree.o
+ .debug_line    0x0000000000000000       0xdb ./build/rpi3/debug/bl31/fdt_empty_tree.o
+ .debug_str     0x0000000000000000      0x245 ./build/rpi3/debug/bl31/fdt_empty_tree.o
+ .comment       0x0000000000000000       0x5f ./build/rpi3/debug/bl31/fdt_empty_tree.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt_empty_tree.o
+ .eh_frame      0x0000000000000000       0x48 ./build/rpi3/debug/bl31/fdt_empty_tree.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt_ro.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt_ro.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.nextprop_.part.0
+                0x0000000000000000       0x64 ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_get_property_by_offset_
+                0x0000000000000000       0x68 ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_string
+                0x0000000000000000       0x28 ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_get_name
+                0x0000000000000000       0xa8 ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_subnode_offset_namelen
+                0x0000000000000000       0xe8 ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_subnode_offset
+                0x0000000000000000       0x44 ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_first_property_offset
+                0x0000000000000000       0x38 ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_next_property_offset
+                0x0000000000000000       0x38 ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_get_property_namelen_
+                0x0000000000000000       0xd4 ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_get_property_by_offset
+                0x0000000000000000       0x40 ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_get_property_namelen
+                0x0000000000000000       0x44 ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_get_property
+                0x0000000000000000       0x4c ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_getprop_namelen
+                0x0000000000000000       0x70 ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_getprop_by_offset
+                0x0000000000000000       0x98 ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_getprop
+                0x0000000000000000       0x4c ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_get_phandle
+                0x0000000000000000       0x7c ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_get_max_phandle
+                0x0000000000000000       0x80 ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_get_alias_namelen
+                0x0000000000000000       0x64 ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_path_offset_namelen
+                0x0000000000000000       0xf8 ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_path_offset
+                0x0000000000000000       0x34 ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_get_alias
+                0x0000000000000000       0x34 ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_get_path
+                0x0000000000000000      0x168 ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_supernode_atdepth_offset
+                0x0000000000000000       0xb8 ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_node_depth
+                0x0000000000000000       0x30 ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_parent_offset
+                0x0000000000000000       0x44 ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_node_offset_by_prop_value
+                0x0000000000000000       0xb4 ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_node_offset_by_phandle
+                0x0000000000000000       0x84 ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_stringlist_contains
+                0x0000000000000000       0x98 ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_stringlist_count
+                0x0000000000000000       0x7c ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_stringlist_search
+                0x0000000000000000       0xc4 ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_stringlist_get
+                0x0000000000000000       0xb4 ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_node_check_compatible
+                0x0000000000000000       0x4c ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_node_offset_by_compatible
+                0x0000000000000000       0x84 ./build/rpi3/debug/bl31/fdt_ro.o
+ .rodata.fdt_get_alias_namelen.str1.1
+                0x0000000000000000        0x9 ./build/rpi3/debug/bl31/fdt_ro.o
+ .rodata.fdt_get_phandle.str1.1
+                0x0000000000000000       0x16 ./build/rpi3/debug/bl31/fdt_ro.o
+ .rodata.fdt_node_check_compatible.str1.1
+                0x0000000000000000        0xb ./build/rpi3/debug/bl31/fdt_ro.o
+ .eh_frame      0x0000000000000000      0x660 ./build/rpi3/debug/bl31/fdt_ro.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt_rw.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt_rw.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt_rw.o
+ .text.fdt_packblocks_
+                0x0000000000000000       0xd0 ./build/rpi3/debug/bl31/fdt_rw.o
+ .text.fdt_splice_struct_
+                0x0000000000000000       0x68 ./build/rpi3/debug/bl31/fdt_rw.o
+ .text.fdt_add_property_
+                0x0000000000000000      0x158 ./build/rpi3/debug/bl31/fdt_rw.o
+ .text.fdt_set_name
+                0x0000000000000000       0xac ./build/rpi3/debug/bl31/fdt_rw.o
+ .text.fdt_setprop_placeholder
+                0x0000000000000000       0xdc ./build/rpi3/debug/bl31/fdt_rw.o
+ .text.fdt_setprop
+                0x0000000000000000       0x54 ./build/rpi3/debug/bl31/fdt_rw.o
+ .text.fdt_appendprop
+                0x0000000000000000       0xf0 ./build/rpi3/debug/bl31/fdt_rw.o
+ .text.fdt_delprop
+                0x0000000000000000       0x74 ./build/rpi3/debug/bl31/fdt_rw.o
+ .text.fdt_add_subnode_namelen
+                0x0000000000000000      0x120 ./build/rpi3/debug/bl31/fdt_rw.o
+ .text.fdt_add_subnode
+                0x0000000000000000       0x44 ./build/rpi3/debug/bl31/fdt_rw.o
+ .text.fdt_del_node
+                0x0000000000000000       0x70 ./build/rpi3/debug/bl31/fdt_rw.o
+ .text.fdt_open_into
+                0x0000000000000000      0x1b4 ./build/rpi3/debug/bl31/fdt_rw.o
+ .text.fdt_pack
+                0x0000000000000000       0x78 ./build/rpi3/debug/bl31/fdt_rw.o
+ .eh_frame      0x0000000000000000      0x3b0 ./build/rpi3/debug/bl31/fdt_rw.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt_strerror.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt_strerror.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt_strerror.o
+ .text.fdt_strerror
+                0x0000000000000000       0x4c ./build/rpi3/debug/bl31/fdt_strerror.o
+ .rodata.fdt_errtable
+                0x0000000000000000       0x90 ./build/rpi3/debug/bl31/fdt_strerror.o
+ .rodata.fdt_strerror.str1.1
+                0x0000000000000000       0x31 ./build/rpi3/debug/bl31/fdt_strerror.o
+ .rodata.str1.1
+                0x0000000000000000      0x12d ./build/rpi3/debug/bl31/fdt_strerror.o
+ .debug_info    0x0000000000000000      0x11a ./build/rpi3/debug/bl31/fdt_strerror.o
+ .debug_abbrev  0x0000000000000000       0xcc ./build/rpi3/debug/bl31/fdt_strerror.o
+ .debug_loc     0x0000000000000000       0xd4 ./build/rpi3/debug/bl31/fdt_strerror.o
+ .debug_aranges
+                0x0000000000000000       0x30 ./build/rpi3/debug/bl31/fdt_strerror.o
+ .debug_ranges  0x0000000000000000       0x20 ./build/rpi3/debug/bl31/fdt_strerror.o
+ .debug_line    0x0000000000000000       0x8f ./build/rpi3/debug/bl31/fdt_strerror.o
+ .debug_str     0x0000000000000000      0x1fe ./build/rpi3/debug/bl31/fdt_strerror.o
+ .comment       0x0000000000000000       0x5f ./build/rpi3/debug/bl31/fdt_strerror.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt_strerror.o
+ .eh_frame      0x0000000000000000       0x28 ./build/rpi3/debug/bl31/fdt_strerror.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt_sw.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt_sw.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt_sw.o
+ .text.fdt32_to_cpu
+                0x0000000000000000        0x8 ./build/rpi3/debug/bl31/fdt_sw.o
+ .text.cpu_to_fdt64
+                0x0000000000000000        0x8 ./build/rpi3/debug/bl31/fdt_sw.o
+ .text.fdt_sw_check_header_
+                0x0000000000000000       0x2c ./build/rpi3/debug/bl31/fdt_sw.o
+ .text.fdt_grab_space_
+                0x0000000000000000       0x7c ./build/rpi3/debug/bl31/fdt_sw.o
+ .text.fdt_create
+                0x0000000000000000       0x80 ./build/rpi3/debug/bl31/fdt_sw.o
+ .text.fdt_resize
+                0x0000000000000000       0xf0 ./build/rpi3/debug/bl31/fdt_sw.o
+ .text.fdt_add_reservemap_entry
+                0x0000000000000000       0x8c ./build/rpi3/debug/bl31/fdt_sw.o
+ .text.fdt_finish_reservemap
+                0x0000000000000000        0xc ./build/rpi3/debug/bl31/fdt_sw.o
+ .text.fdt_begin_node
+                0x0000000000000000       0x84 ./build/rpi3/debug/bl31/fdt_sw.o
+ .text.fdt_end_node
+                0x0000000000000000       0x44 ./build/rpi3/debug/bl31/fdt_sw.o
+ .text.fdt_property_placeholder
+                0x0000000000000000      0x140 ./build/rpi3/debug/bl31/fdt_sw.o
+ .text.fdt_property
+                0x0000000000000000       0x50 ./build/rpi3/debug/bl31/fdt_sw.o
+ .text.fdt_finish
+                0x0000000000000000      0x12c ./build/rpi3/debug/bl31/fdt_sw.o
+ .debug_info    0x0000000000000000     0x17b2 ./build/rpi3/debug/bl31/fdt_sw.o
+ .debug_abbrev  0x0000000000000000      0x37d ./build/rpi3/debug/bl31/fdt_sw.o
+ .debug_loc     0x0000000000000000     0x1d48 ./build/rpi3/debug/bl31/fdt_sw.o
+ .debug_aranges
+                0x0000000000000000       0xf0 ./build/rpi3/debug/bl31/fdt_sw.o
+ .debug_ranges  0x0000000000000000      0x4b0 ./build/rpi3/debug/bl31/fdt_sw.o
+ .debug_line    0x0000000000000000      0x83c ./build/rpi3/debug/bl31/fdt_sw.o
+ .debug_str     0x0000000000000000      0x57b ./build/rpi3/debug/bl31/fdt_sw.o
+ .comment       0x0000000000000000       0x5f ./build/rpi3/debug/bl31/fdt_sw.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt_sw.o
+ .eh_frame      0x0000000000000000      0x1f8 ./build/rpi3/debug/bl31/fdt_sw.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt_wip.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt_wip.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt_wip.o
+ .text.fdt_setprop_inplace_namelen_partial
+                0x0000000000000000       0x6c ./build/rpi3/debug/bl31/fdt_wip.o
+ .text.fdt_setprop_inplace
+                0x0000000000000000       0x8c ./build/rpi3/debug/bl31/fdt_wip.o
+ .text.fdt_nop_property
+                0x0000000000000000       0x48 ./build/rpi3/debug/bl31/fdt_wip.o
+ .text.fdt_node_end_offset_
+                0x0000000000000000       0x48 ./build/rpi3/debug/bl31/fdt_wip.o
+ .text.fdt_nop_node
+                0x0000000000000000       0x68 ./build/rpi3/debug/bl31/fdt_wip.o
+ .debug_info    0x0000000000000000      0x7fc ./build/rpi3/debug/bl31/fdt_wip.o
+ .debug_abbrev  0x0000000000000000      0x22f ./build/rpi3/debug/bl31/fdt_wip.o
+ .debug_loc     0x0000000000000000      0xb42 ./build/rpi3/debug/bl31/fdt_wip.o
+ .debug_aranges
+                0x0000000000000000       0x70 ./build/rpi3/debug/bl31/fdt_wip.o
+ .debug_ranges  0x0000000000000000      0x190 ./build/rpi3/debug/bl31/fdt_wip.o
+ .debug_line    0x0000000000000000      0x2e0 ./build/rpi3/debug/bl31/fdt_wip.o
+ .debug_str     0x0000000000000000      0x37d ./build/rpi3/debug/bl31/fdt_wip.o
+ .comment       0x0000000000000000       0x5f ./build/rpi3/debug/bl31/fdt_wip.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt_wip.o
+ .eh_frame      0x0000000000000000       0xe8 ./build/rpi3/debug/bl31/fdt_wip.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/bl31_main.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/bl31_main.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/bl31_main.o
+ .text.bl31_lib_init
+                0x0000000000000000        0x4 ./build/rpi3/debug/bl31/bl31_main.o
+ .text.bl31_set_next_image_type
+                0x0000000000000000       0x2c ./build/rpi3/debug/bl31/bl31_main.o
+ .text.bl31_get_next_image_type
+                0x0000000000000000        0xc ./build/rpi3/debug/bl31/bl31_main.o
+ .eh_frame      0x0000000000000000       0xe0 ./build/rpi3/debug/bl31/bl31_main.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/interrupt_mgmt.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/interrupt_mgmt.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/interrupt_mgmt.o
+ .text.disable_intr_rm_local
+                0x0000000000000000       0x60 ./build/rpi3/debug/bl31/interrupt_mgmt.o
+ .text.enable_intr_rm_local
+                0x0000000000000000       0x70 ./build/rpi3/debug/bl31/interrupt_mgmt.o
+ .eh_frame      0x0000000000000000      0x128 ./build/rpi3/debug/bl31/interrupt_mgmt.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/bl31_context_mgmt.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/bl31_context_mgmt.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/bl31_context_mgmt.o
+ .eh_frame      0x0000000000000000       0xa0 ./build/rpi3/debug/bl31/bl31_context_mgmt.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/runtime_svc.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/runtime_svc.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/runtime_svc.o
+ .text.handle_runtime_svc
+                0x0000000000000000       0x8c ./build/rpi3/debug/bl31/runtime_svc.o
+ .eh_frame      0x0000000000000000       0x70 ./build/rpi3/debug/bl31/runtime_svc.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/arm_arch_svc_setup.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/arm_arch_svc_setup.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/arm_arch_svc_setup.o
+ .eh_frame      0x0000000000000000       0x38 ./build/rpi3/debug/bl31/arm_arch_svc_setup.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/std_svc_setup.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/std_svc_setup.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/std_svc_setup.o
+ .eh_frame      0x0000000000000000       0x58 ./build/rpi3/debug/bl31/std_svc_setup.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/cpu_data_array.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/cpu_data_array.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/cpu_data_array.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/context_mgmt.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/context_mgmt.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/context_mgmt.o
+ .text.cm_set_elr_spsr_el3
+                0x0000000000000000       0x3c ./build/rpi3/debug/bl31/context_mgmt.o
+ .text.cm_get_scr_el3
+                0x0000000000000000       0x2c ./build/rpi3/debug/bl31/context_mgmt.o
+ .eh_frame      0x0000000000000000      0x1c0 ./build/rpi3/debug/bl31/context_mgmt.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/errata_report.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/errata_report.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/errata_report.o
+ .eh_frame      0x0000000000000000       0x68 ./build/rpi3/debug/bl31/errata_report.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_off.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_off.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_off.o
+ .eh_frame      0x0000000000000000       0x40 ./build/rpi3/debug/bl31/psci_off.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_on.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_on.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_on.o
+ .eh_frame      0x0000000000000000       0x80 ./build/rpi3/debug/bl31/psci_on.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_suspend.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_suspend.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_suspend.o
+ .eh_frame      0x0000000000000000       0x80 ./build/rpi3/debug/bl31/psci_suspend.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_common.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_common.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_common.o
+ .text.psci_secondaries_brought_up
+                0x0000000000000000       0x58 ./build/rpi3/debug/bl31/psci_common.o
+ .eh_frame      0x0000000000000000      0x300 ./build/rpi3/debug/bl31/psci_common.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_main.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_main.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_main.o
+ .text.psci_version
+                0x0000000000000000        0x8 ./build/rpi3/debug/bl31/psci_main.o
+ .eh_frame      0x0000000000000000      0x1e8 ./build/rpi3/debug/bl31/psci_main.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_setup.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_setup.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_setup.o
+ .text.psci_prepare_next_non_secure_ctx
+                0x0000000000000000       0x30 ./build/rpi3/debug/bl31/psci_setup.o
+ .eh_frame      0x0000000000000000       0x98 ./build/rpi3/debug/bl31/psci_setup.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_system_off.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_system_off.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_system_off.o
+ .eh_frame      0x0000000000000000       0x80 ./build/rpi3/debug/bl31/psci_system_off.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_mem_protect.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_mem_protect.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_mem_protect.o
+ .eh_frame      0x0000000000000000       0x60 ./build/rpi3/debug/bl31/psci_mem_protect.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/bakery_lock_coherent.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/bakery_lock_coherent.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/bakery_lock_coherent.o
+ .eh_frame      0x0000000000000000       0x60 ./build/rpi3/debug/bl31/bakery_lock_coherent.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/spe.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/spe.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/spe.o
+ .text.spe_disable
+                0x0000000000000000       0x34 ./build/rpi3/debug/bl31/spe.o
+ .eh_frame      0x0000000000000000       0x88 ./build/rpi3/debug/bl31/spe.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/sve.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/sve.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/sve.o
+ .eh_frame      0x0000000000000000       0x88 ./build/rpi3/debug/bl31/sve.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/opteed_common.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/opteed_common.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/opteed_common.o
+ .eh_frame      0x0000000000000000       0x88 ./build/rpi3/debug/bl31/opteed_common.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/opteed_main.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/opteed_main.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/opteed_main.o
+ .eh_frame      0x0000000000000000       0xc8 ./build/rpi3/debug/bl31/opteed_main.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/opteed_pm.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/opteed_pm.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/opteed_pm.o
+ .eh_frame      0x0000000000000000      0x130 ./build/rpi3/debug/bl31/opteed_pm.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/bl_common.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/bl_common.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/bl_common.o
+ .text.page_align
+                0x0000000000000000       0x1c ./build/rpi3/debug/bl31/bl_common.o
+ .text.is_mem_free
+                0x0000000000000000       0x50 ./build/rpi3/debug/bl31/bl_common.o
+ .text.get_image_size
+                0x0000000000000000       0xb4 ./build/rpi3/debug/bl31/bl_common.o
+ .text.load_auth_image
+                0x0000000000000000      0x1a8 ./build/rpi3/debug/bl31/bl_common.o
+ .rodata.get_image_size.str1.1
+                0x0000000000000000       0x8c ./build/rpi3/debug/bl31/bl_common.o
+ .rodata.load_auth_image.str1.1
+                0x0000000000000000       0xa1 ./build/rpi3/debug/bl31/bl_common.o
+ .eh_frame      0x0000000000000000       0xb8 ./build/rpi3/debug/bl31/bl_common.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/tf_log.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/tf_log.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/tf_log.o
+ .text.tf_log_set_max_level
+                0x0000000000000000       0x50 ./build/rpi3/debug/bl31/tf_log.o
+ .eh_frame      0x0000000000000000       0x60 ./build/rpi3/debug/bl31/tf_log.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/multi_console.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/multi_console.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/multi_console.o
+ .text.console_unregister
+                0x0000000000000000       0x54 ./build/rpi3/debug/bl31/multi_console.o
+ .text.console_getc
+                0x0000000000000000       0x74 ./build/rpi3/debug/bl31/multi_console.o
+ .eh_frame      0x0000000000000000      0x138 ./build/rpi3/debug/bl31/multi_console.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/plat_bl_common.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/plat_bl_common.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/plat_bl_common.o
+ .text.bl2_el3_plat_prepare_exit
+                0x0000000000000000        0x4 ./build/rpi3/debug/bl31/plat_bl_common.o
+ .text.plat_error_handler
+                0x0000000000000000        0x8 ./build/rpi3/debug/bl31/plat_bl_common.o
+ .text.bl2_plat_preload_setup
+                0x0000000000000000        0x4 ./build/rpi3/debug/bl31/plat_bl_common.o
+ .text.bl2_plat_handle_pre_image_load
+                0x0000000000000000        0x8 ./build/rpi3/debug/bl31/plat_bl_common.o
+ .text.bl2_plat_handle_post_image_load
+                0x0000000000000000        0x8 ./build/rpi3/debug/bl31/plat_bl_common.o
+ .text.plat_try_next_boot_source
+                0x0000000000000000        0x8 ./build/rpi3/debug/bl31/plat_bl_common.o
+ .text.setup_page_tables
+                0x0000000000000000       0x28 ./build/rpi3/debug/bl31/plat_bl_common.o
+ .debug_info    0x0000000000000000      0x397 ./build/rpi3/debug/bl31/plat_bl_common.o
+ .debug_abbrev  0x0000000000000000      0x1ff ./build/rpi3/debug/bl31/plat_bl_common.o
+ .debug_loc     0x0000000000000000       0xf1 ./build/rpi3/debug/bl31/plat_bl_common.o
+ .debug_aranges
+                0x0000000000000000       0x70 ./build/rpi3/debug/bl31/plat_bl_common.o
+ .debug_ranges  0x0000000000000000       0x60 ./build/rpi3/debug/bl31/plat_bl_common.o
+ .debug_line    0x0000000000000000      0x196 ./build/rpi3/debug/bl31/plat_bl_common.o
+ .debug_str     0x0000000000000000      0x429 ./build/rpi3/debug/bl31/plat_bl_common.o
+ .comment       0x0000000000000000       0x5f ./build/rpi3/debug/bl31/plat_bl_common.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/plat_bl_common.o
+ .eh_frame      0x0000000000000000       0xb0 ./build/rpi3/debug/bl31/plat_bl_common.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/plat_log_common.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/plat_log_common.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/plat_log_common.o
+ .eh_frame      0x0000000000000000       0x28 ./build/rpi3/debug/bl31/plat_log_common.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/plat_common.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/plat_common.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/plat_common.o
+ .text.platform_core_pos_helper
+                0x0000000000000000       0x28 ./build/rpi3/debug/bl31/plat_common.o
+ .rodata.platform_core_pos_helper.str1.1
+                0x0000000000000000       0x22 ./build/rpi3/debug/bl31/plat_common.o
+ .eh_frame      0x0000000000000000       0x68 ./build/rpi3/debug/bl31/plat_common.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/backtrace.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/backtrace.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/backtrace.o
+ .eh_frame      0x0000000000000000       0x88 ./build/rpi3/debug/bl31/backtrace.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/rpi3_common.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/rpi3_common.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/rpi3_common.o
+ .text.plat_get_ns_image_entrypoint
+                0x0000000000000000        0x8 ./build/rpi3/debug/bl31/rpi3_common.o
+ .text.rpi3_get_spsr_for_bl32_entry
+                0x0000000000000000        0x8 ./build/rpi3/debug/bl31/rpi3_common.o
+ .text.rpi3_get_spsr_for_bl33_entry
+                0x0000000000000000       0x20 ./build/rpi3/debug/bl31/rpi3_common.o
+ .rodata.rpi3_get_spsr_for_bl33_entry.str1.1
+                0x0000000000000000       0x37 ./build/rpi3/debug/bl31/rpi3_common.o
+ .eh_frame      0x0000000000000000      0x108 ./build/rpi3/debug/bl31/rpi3_common.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/xlat_tables_arch.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/xlat_tables_arch.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/xlat_tables_arch.o
+ .text.xlat_arch_is_granule_size_supported
+                0x0000000000000000       0x48 ./build/rpi3/debug/bl31/xlat_tables_arch.o
+ .text.xlat_arch_get_max_supported_granule_size
+                0x0000000000000000       0x64 ./build/rpi3/debug/bl31/xlat_tables_arch.o
+ .text.xlat_arch_tlbi_va_sync
+                0x0000000000000000        0xc ./build/rpi3/debug/bl31/xlat_tables_arch.o
+ .text.xlat_arch_tlbi_va
+                0x0000000000000000       0xa0 ./build/rpi3/debug/bl31/xlat_tables_arch.o
+ .eh_frame      0x0000000000000000      0x168 ./build/rpi3/debug/bl31/xlat_tables_arch.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/xlat_tables_context.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/xlat_tables_context.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/xlat_tables_context.o
+ .text.mmap_add_region_alloc_va
+                0x0000000000000000       0x48 ./build/rpi3/debug/bl31/xlat_tables_context.o
+ .text.mmap_add_alloc_va
+                0x0000000000000000       0x58 ./build/rpi3/debug/bl31/xlat_tables_context.o
+ .text.xlat_get_mem_attributes
+                0x0000000000000000       0x14 ./build/rpi3/debug/bl31/xlat_tables_context.o
+ .text.xlat_change_mem_attributes
+                0x0000000000000000       0x18 ./build/rpi3/debug/bl31/xlat_tables_context.o
+ .text.enable_mmu_el1
+                0x0000000000000000       0x48 ./build/rpi3/debug/bl31/xlat_tables_context.o
+ .text.enable_mmu_el2
+                0x0000000000000000       0x48 ./build/rpi3/debug/bl31/xlat_tables_context.o
+ .eh_frame      0x0000000000000000      0x150 ./build/rpi3/debug/bl31/xlat_tables_context.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/xlat_tables_core.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/xlat_tables_core.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/xlat_tables_core.o
+ .text.mmap_add_region_alloc_va_ctx
+                0x0000000000000000       0x98 ./build/rpi3/debug/bl31/xlat_tables_core.o
+ .eh_frame      0x0000000000000000      0x160 ./build/rpi3/debug/bl31/xlat_tables_core.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/xlat_tables_utils.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/xlat_tables_utils.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/xlat_tables_utils.o
+ .text.find_xlat_table_entry
+                0x0000000000000000       0xd4 ./build/rpi3/debug/bl31/xlat_tables_utils.o
+ .text.xlat_get_mem_attributes_internal
+                0x0000000000000000      0x198 ./build/rpi3/debug/bl31/xlat_tables_utils.o
+ .text.xlat_get_mem_attributes_ctx
+                0x0000000000000000       0x10 ./build/rpi3/debug/bl31/xlat_tables_utils.o
+ .text.xlat_change_mem_attributes_ctx
+                0x0000000000000000      0x254 ./build/rpi3/debug/bl31/xlat_tables_utils.o
+ .rodata.__func__.2430
+                0x0000000000000000       0x1f ./build/rpi3/debug/bl31/xlat_tables_utils.o
+ .rodata.find_xlat_table_entry.str1.1
+                0x0000000000000000       0x53 ./build/rpi3/debug/bl31/xlat_tables_utils.o
+ .rodata.xlat_change_mem_attributes_ctx.str1.1
+                0x0000000000000000      0x152 ./build/rpi3/debug/bl31/xlat_tables_utils.o
+ .rodata.xlat_get_mem_attributes_internal.str1.1
+                0x0000000000000000       0x1f ./build/rpi3/debug/bl31/xlat_tables_utils.o
+ .eh_frame      0x0000000000000000       0xe0 ./build/rpi3/debug/bl31/xlat_tables_utils.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/cortex_a53.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/cortex_a53.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/plat_helpers.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/plat_helpers.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/plat_helpers.o
+ .text.asm.plat_is_my_cpu_primary
+                0x0000000000000000       0x14 ./build/rpi3/debug/bl31/plat_helpers.o
+ .text.asm.plat_secondary_cold_boot_setup
+                0x0000000000000000       0x38 ./build/rpi3/debug/bl31/plat_helpers.o
+ .text.asm.plat_get_my_entrypoint
+                0x0000000000000000        0x8 ./build/rpi3/debug/bl31/plat_helpers.o
+ .text.asm.platform_mem_init
+                0x0000000000000000        0x4 ./build/rpi3/debug/bl31/plat_helpers.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/bl31_entrypoint.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/bl31_entrypoint.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/bl31_entrypoint.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/crash_reporting.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/crash_reporting.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/crash_reporting.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/ea_delegate.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/ea_delegate.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/ea_delegate.o
+ .text.asm.handle_lower_el_ea_esb
+                0x0000000000000000        0xc ./build/rpi3/debug/bl31/ea_delegate.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/runtime_exceptions.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/runtime_exceptions.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/runtime_exceptions.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/setjmp.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/setjmp.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/setjmp.o
+ .text.asm.setjmp
+                0x0000000000000000       0x28 ./build/rpi3/debug/bl31/setjmp.o
+ .text.asm.longjmp
+                0x0000000000000000       0x40 ./build/rpi3/debug/bl31/setjmp.o
+ .rodata.str1.1
+                0x0000000000000000       0x15 ./build/rpi3/debug/bl31/setjmp.o
+ .debug_line    0x0000000000000000       0x70 ./build/rpi3/debug/bl31/setjmp.o
+ .debug_info    0x0000000000000000       0x22 ./build/rpi3/debug/bl31/setjmp.o
+ .debug_abbrev  0x0000000000000000       0x12 ./build/rpi3/debug/bl31/setjmp.o
+ .debug_aranges
+                0x0000000000000000       0x40 ./build/rpi3/debug/bl31/setjmp.o
+ .debug_str     0x0000000000000000       0x57 ./build/rpi3/debug/bl31/setjmp.o
+ .debug_ranges  0x0000000000000000       0x40 ./build/rpi3/debug/bl31/setjmp.o
+ .debug_frame   0x0000000000000000       0x40 ./build/rpi3/debug/bl31/setjmp.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/dsu_helpers.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/dsu_helpers.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/dsu_helpers.o
+ .text.asm.check_errata_dsu_936184
+                0x0000000000000000       0x30 ./build/rpi3/debug/bl31/dsu_helpers.o
+ .text.asm.errata_dsu_936184_wa
+                0x0000000000000000       0x30 ./build/rpi3/debug/bl31/dsu_helpers.o
+ .debug_line    0x0000000000000000       0x78 ./build/rpi3/debug/bl31/dsu_helpers.o
+ .debug_info    0x0000000000000000       0x22 ./build/rpi3/debug/bl31/dsu_helpers.o
+ .debug_abbrev  0x0000000000000000       0x12 ./build/rpi3/debug/bl31/dsu_helpers.o
+ .debug_aranges
+                0x0000000000000000       0x40 ./build/rpi3/debug/bl31/dsu_helpers.o
+ .debug_str     0x0000000000000000       0x61 ./build/rpi3/debug/bl31/dsu_helpers.o
+ .debug_ranges  0x0000000000000000       0x40 ./build/rpi3/debug/bl31/dsu_helpers.o
+ .debug_frame   0x0000000000000000       0x40 ./build/rpi3/debug/bl31/dsu_helpers.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/platform_mp_stack.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/platform_mp_stack.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/platform_mp_stack.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/cpu_data.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/cpu_data.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/cpu_data.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/cpu_helpers.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/cpu_helpers.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/cpu_helpers.o
+ .text.asm.check_wa_cve_2017_5715
+                0x0000000000000000       0x34 ./build/rpi3/debug/bl31/cpu_helpers.o
+ .text.asm.wa_cve_2018_3639_get_disable_ptr
+                0x0000000000000000       0x24 ./build/rpi3/debug/bl31/cpu_helpers.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/spinlock.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/spinlock.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/spinlock.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_helpers.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_helpers.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_helpers.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/context.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/context.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/context.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/opteed_helpers.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/opteed_helpers.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/opteed_helpers.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/debug.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/debug.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/debug.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/cache_helpers.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/cache_helpers.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/cache_helpers.o
+ .text.asm.dcsw_op_louis
+                0x0000000000000000       0x14 ./build/rpi3/debug/bl31/cache_helpers.o
+ .text.asm.dcsw_op_all
+                0x0000000000000000       0x14 ./build/rpi3/debug/bl31/cache_helpers.o
+ .text.asm.dcsw_op_level3
+                0x0000000000000000       0x10 ./build/rpi3/debug/bl31/cache_helpers.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/misc_helpers.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/misc_helpers.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/misc_helpers.o
+ .text.asm.get_afflvl_shift
+                0x0000000000000000       0x14 ./build/rpi3/debug/bl31/misc_helpers.o
+ .text.asm.mpidr_mask_lower_afflvls
+                0x0000000000000000       0x1c ./build/rpi3/debug/bl31/misc_helpers.o
+ .text.asm.eret
+                0x0000000000000000        0x4 ./build/rpi3/debug/bl31/misc_helpers.o
+ .text.asm.smc  0x0000000000000000        0x4 ./build/rpi3/debug/bl31/misc_helpers.o
+ .text.asm.memcpy16
+                0x0000000000000000       0x48 ./build/rpi3/debug/bl31/misc_helpers.o
+ .text.asm.disable_mmu_el3
+                0x0000000000000000       0x1c ./build/rpi3/debug/bl31/misc_helpers.o
+ .text.asm.disable_mmu_icache_el3
+                0x0000000000000000        0x8 ./build/rpi3/debug/bl31/misc_helpers.o
+ .text.asm.disable_mmu_el1
+                0x0000000000000000       0x1c ./build/rpi3/debug/bl31/misc_helpers.o
+ .text.asm.disable_mmu_icache_el1
+                0x0000000000000000        0x8 ./build/rpi3/debug/bl31/misc_helpers.o
+ .text.asm.fixup_gdt_reloc
+                0x0000000000000000       0xbc ./build/rpi3/debug/bl31/misc_helpers.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/platform_helpers.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/platform_helpers.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/platform_helpers.o
+ .text.asm.plat_report_exception
+                0x0000000000000000        0x4 ./build/rpi3/debug/bl31/platform_helpers.o
+ .text.asm.plat_crash_console_init
+                0x0000000000000000        0x8 ./build/rpi3/debug/bl31/platform_helpers.o
+ .text.asm.plat_crash_console_putc
+                0x0000000000000000        0x4 ./build/rpi3/debug/bl31/platform_helpers.o
+ .text.asm.plat_crash_console_flush
+                0x0000000000000000        0x4 ./build/rpi3/debug/bl31/platform_helpers.o
+ .text.asm.plat_reset_handler
+                0x0000000000000000        0x4 ./build/rpi3/debug/bl31/platform_helpers.o
+ .text.asm.bl1_plat_prepare_exit
+                0x0000000000000000        0x4 ./build/rpi3/debug/bl31/platform_helpers.o
+ .text.asm.bl32_plat_enable_mmu
+                0x0000000000000000        0x4 ./build/rpi3/debug/bl31/platform_helpers.o
+ .text.asm.plat_handle_uncontainable_ea
+                0x0000000000000000        0x4 ./build/rpi3/debug/bl31/platform_helpers.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/16550_console.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/16550_console.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/16550_console.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/enable_mmu.o
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/bl31/enable_mmu.o
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/bl31/enable_mmu.o
+ .text.asm.enable_mmu_direct_el1
+                0x0000000000000000       0x70 ./build/rpi3/debug/bl31/enable_mmu.o
+ .text.asm.enable_mmu_direct_el2
+                0x0000000000000000       0x70 ./build/rpi3/debug/bl31/enable_mmu.o
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(assert.o)
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(assert.o)
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(assert.o)
+ .eh_frame      0x0000000000000000       0x30 ./build/rpi3/debug/lib/libc.a(assert.o)
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(memchr.o)
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(memchr.o)
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(memchr.o)
+ .text.memchr   0x0000000000000000       0x28 ./build/rpi3/debug/lib/libc.a(memchr.o)
+ .debug_info    0x0000000000000000       0xcf ./build/rpi3/debug/lib/libc.a(memchr.o)
+ .debug_abbrev  0x0000000000000000       0xac ./build/rpi3/debug/lib/libc.a(memchr.o)
+ .debug_loc     0x0000000000000000       0xb6 ./build/rpi3/debug/lib/libc.a(memchr.o)
+ .debug_aranges
+                0x0000000000000000       0x30 ./build/rpi3/debug/lib/libc.a(memchr.o)
+ .debug_ranges  0x0000000000000000       0x20 ./build/rpi3/debug/lib/libc.a(memchr.o)
+ .debug_line    0x0000000000000000       0x91 ./build/rpi3/debug/lib/libc.a(memchr.o)
+ .debug_str     0x0000000000000000      0x16c ./build/rpi3/debug/lib/libc.a(memchr.o)
+ .comment       0x0000000000000000       0x5f ./build/rpi3/debug/lib/libc.a(memchr.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(memchr.o)
+ .eh_frame      0x0000000000000000       0x28 ./build/rpi3/debug/lib/libc.a(memchr.o)
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(memcmp.o)
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(memcmp.o)
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(memcmp.o)
+ .text.memcmp   0x0000000000000000       0x34 ./build/rpi3/debug/lib/libc.a(memcmp.o)
+ .debug_info    0x0000000000000000      0x10b ./build/rpi3/debug/lib/libc.a(memcmp.o)
+ .debug_abbrev  0x0000000000000000       0x94 ./build/rpi3/debug/lib/libc.a(memcmp.o)
+ .debug_loc     0x0000000000000000      0x284 ./build/rpi3/debug/lib/libc.a(memcmp.o)
+ .debug_aranges
+                0x0000000000000000       0x30 ./build/rpi3/debug/lib/libc.a(memcmp.o)
+ .debug_ranges  0x0000000000000000       0x20 ./build/rpi3/debug/lib/libc.a(memcmp.o)
+ .debug_line    0x0000000000000000       0xa6 ./build/rpi3/debug/lib/libc.a(memcmp.o)
+ .debug_str     0x0000000000000000      0x175 ./build/rpi3/debug/lib/libc.a(memcmp.o)
+ .comment       0x0000000000000000       0x5f ./build/rpi3/debug/lib/libc.a(memcmp.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(memcmp.o)
+ .eh_frame      0x0000000000000000       0x28 ./build/rpi3/debug/lib/libc.a(memcmp.o)
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(memcpy.o)
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(memcpy.o)
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(memcpy.o)
+ .eh_frame      0x0000000000000000       0x28 ./build/rpi3/debug/lib/libc.a(memcpy.o)
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(memmove.o)
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(memmove.o)
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(memmove.o)
+ .eh_frame      0x0000000000000000       0x28 ./build/rpi3/debug/lib/libc.a(memmove.o)
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(memset.o)
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(memset.o)
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(memset.o)
+ .eh_frame      0x0000000000000000       0x28 ./build/rpi3/debug/lib/libc.a(memset.o)
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(printf.o)
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(printf.o)
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(printf.o)
+ .eh_frame      0x0000000000000000       0xb0 ./build/rpi3/debug/lib/libc.a(printf.o)
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(putchar.o)
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(putchar.o)
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(putchar.o)
+ .eh_frame      0x0000000000000000       0x38 ./build/rpi3/debug/lib/libc.a(putchar.o)
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(strlen.o)
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(strlen.o)
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(strlen.o)
+ .text.strlen   0x0000000000000000       0x1c ./build/rpi3/debug/lib/libc.a(strlen.o)
+ .debug_info    0x0000000000000000       0x98 ./build/rpi3/debug/lib/libc.a(strlen.o)
+ .debug_abbrev  0x0000000000000000       0x84 ./build/rpi3/debug/lib/libc.a(strlen.o)
+ .debug_loc     0x0000000000000000       0x8c ./build/rpi3/debug/lib/libc.a(strlen.o)
+ .debug_aranges
+                0x0000000000000000       0x30 ./build/rpi3/debug/lib/libc.a(strlen.o)
+ .debug_ranges  0x0000000000000000       0x20 ./build/rpi3/debug/lib/libc.a(strlen.o)
+ .debug_line    0x0000000000000000       0x8a ./build/rpi3/debug/lib/libc.a(strlen.o)
+ .debug_str     0x0000000000000000      0x16a ./build/rpi3/debug/lib/libc.a(strlen.o)
+ .comment       0x0000000000000000       0x5f ./build/rpi3/debug/lib/libc.a(strlen.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(strlen.o)
+ .eh_frame      0x0000000000000000       0x28 ./build/rpi3/debug/lib/libc.a(strlen.o)
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(strnlen.o)
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(strnlen.o)
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(strnlen.o)
+ .text.strnlen  0x0000000000000000       0x24 ./build/rpi3/debug/lib/libc.a(strnlen.o)
+ .debug_info    0x0000000000000000       0xa6 ./build/rpi3/debug/lib/libc.a(strnlen.o)
+ .debug_abbrev  0x0000000000000000       0x95 ./build/rpi3/debug/lib/libc.a(strnlen.o)
+ .debug_loc     0x0000000000000000       0x7a ./build/rpi3/debug/lib/libc.a(strnlen.o)
+ .debug_aranges
+                0x0000000000000000       0x30 ./build/rpi3/debug/lib/libc.a(strnlen.o)
+ .debug_ranges  0x0000000000000000       0x20 ./build/rpi3/debug/lib/libc.a(strnlen.o)
+ .debug_line    0x0000000000000000       0x97 ./build/rpi3/debug/lib/libc.a(strnlen.o)
+ .debug_str     0x0000000000000000      0x16c ./build/rpi3/debug/lib/libc.a(strnlen.o)
+ .comment       0x0000000000000000       0x5f ./build/rpi3/debug/lib/libc.a(strnlen.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(strnlen.o)
+ .eh_frame      0x0000000000000000       0x28 ./build/rpi3/debug/lib/libc.a(strnlen.o)
+ .text          0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(strrchr.o)
+ .data          0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(strrchr.o)
+ .bss           0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(strrchr.o)
+ .text.strrchr  0x0000000000000000       0x28 ./build/rpi3/debug/lib/libc.a(strrchr.o)
+ .debug_info    0x0000000000000000       0xc5 ./build/rpi3/debug/lib/libc.a(strrchr.o)
+ .debug_abbrev  0x0000000000000000       0x94 ./build/rpi3/debug/lib/libc.a(strrchr.o)
+ .debug_loc     0x0000000000000000       0xd7 ./build/rpi3/debug/lib/libc.a(strrchr.o)
+ .debug_aranges
+                0x0000000000000000       0x30 ./build/rpi3/debug/lib/libc.a(strrchr.o)
+ .debug_ranges  0x0000000000000000       0x20 ./build/rpi3/debug/lib/libc.a(strrchr.o)
+ .debug_line    0x0000000000000000       0x76 ./build/rpi3/debug/lib/libc.a(strrchr.o)
+ .debug_str     0x0000000000000000      0x16c ./build/rpi3/debug/lib/libc.a(strrchr.o)
+ .comment       0x0000000000000000       0x5f ./build/rpi3/debug/lib/libc.a(strrchr.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(strrchr.o)
+ .eh_frame      0x0000000000000000       0x28 ./build/rpi3/debug/lib/libc.a(strrchr.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+RAM              0x00000000100e0000 0x0000000000020000 xrw
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+                0x00000000100e0000                . = 0x100e0000
+                0x0000000000000001                ASSERT ((. == ALIGN (0x1000)), BL31_BASE address is not aligned on a page boundary.)
+                0x00000000100e0000                __BL31_START__ = .
+
+.text           0x00000000100e0000     0x7000
+                0x00000000100e0000                __TEXT_START__ = .
+ *bl31_entrypoint.o(.text*)
+ .text.asm.bl31_entrypoint
+                0x00000000100e0000      0x104 ./build/rpi3/debug/bl31/bl31_entrypoint.o
+                0x00000000100e0000                bl31_entrypoint
+ .text.asm.bl31_warm_entrypoint
+                0x00000000100e0104       0x7c ./build/rpi3/debug/bl31/bl31_entrypoint.o
+                0x00000000100e0104                bl31_warm_entrypoint
+ *(.text*)
+ .text.plat_get_target_pwr_state
+                0x00000000100e0180       0x44 ./build/rpi3/debug/bl31/plat_psci_common.o
+                0x00000000100e0180                plat_get_target_pwr_state
+ .text.bl31_plat_get_next_image_ep_info
+                0x00000000100e01c4       0x44 ./build/rpi3/debug/bl31/rpi3_bl31_setup.o
+                0x00000000100e01c4                bl31_plat_get_next_image_ep_info
+ .text.bl31_early_platform_setup2
+                0x00000000100e0208       0xfc ./build/rpi3/debug/bl31/rpi3_bl31_setup.o
+                0x00000000100e0208                bl31_early_platform_setup2
+ .text.bl31_plat_arch_setup
+                0x00000000100e0304       0x60 ./build/rpi3/debug/bl31/rpi3_bl31_setup.o
+                0x00000000100e0304                bl31_plat_arch_setup
+ .text.bl31_platform_setup
+                0x00000000100e0364       0xd0 ./build/rpi3/debug/bl31/rpi3_bl31_setup.o
+                0x00000000100e0364                bl31_platform_setup
+ .text.rpi3_watchdog_reset
+                0x00000000100e0434       0x50 ./build/rpi3/debug/bl31/rpi3_pm.o
+ .text.rpi3_system_reset
+                0x00000000100e0484       0x18 ./build/rpi3/debug/bl31/rpi3_pm.o
+ .text.rpi3_system_off
+                0x00000000100e049c       0x34 ./build/rpi3/debug/bl31/rpi3_pm.o
+ .text.rpi3_pwr_domain_on_finish
+                0x00000000100e04d0       0x28 ./build/rpi3/debug/bl31/rpi3_pm.o
+                0x00000000100e04d0                rpi3_pwr_domain_on_finish
+ .text.rpi3_validate_power_state
+                0x00000000100e04f8       0x5c ./build/rpi3/debug/bl31/rpi3_pm.o
+ .text.rpi3_cpu_standby
+                0x00000000100e0554       0x30 ./build/rpi3/debug/bl31/rpi3_pm.o
+ .text.rpi3_pwr_domain_on
+                0x00000000100e0584       0x4c ./build/rpi3/debug/bl31/rpi3_pm.o
+ .text.plat_setup_psci_ops
+                0x00000000100e05d0       0x1c ./build/rpi3/debug/bl31/rpi3_pm.o
+                0x00000000100e05d0                plat_setup_psci_ops
+ .text.plat_get_power_domain_tree_desc
+                0x00000000100e05ec        0xc ./build/rpi3/debug/bl31/rpi3_topology.o
+                0x00000000100e05ec                plat_get_power_domain_tree_desc
+ .text.plat_core_pos_by_mpidr
+                0x00000000100e05f8       0x34 ./build/rpi3/debug/bl31/rpi3_topology.o
+                0x00000000100e05f8                plat_core_pos_by_mpidr
+ .text.fdt32_to_cpu
+                0x00000000100e062c        0x8 ./build/rpi3/debug/bl31/fdt.o
+ .text.fdt_check_header
+                0x00000000100e0634       0x88 ./build/rpi3/debug/bl31/fdt.o
+                0x00000000100e0634                fdt_check_header
+ .text.fdt32_to_cpu
+                0x00000000100e06bc        0x8 ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt64_to_cpu
+                0x00000000100e06c4        0x8 ./build/rpi3/debug/bl31/fdt_ro.o
+ .text.fdt_get_mem_rsv
+                0x00000000100e06cc       0x6c ./build/rpi3/debug/bl31/fdt_ro.o
+                0x00000000100e06cc                fdt_get_mem_rsv
+ .text.fdt_num_mem_rsv
+                0x00000000100e0738       0x40 ./build/rpi3/debug/bl31/fdt_ro.o
+                0x00000000100e0738                fdt_num_mem_rsv
+ .text.fdt32_to_cpu
+                0x00000000100e0778        0x8 ./build/rpi3/debug/bl31/fdt_rw.o
+ .text.cpu_to_fdt64
+                0x00000000100e0780        0x8 ./build/rpi3/debug/bl31/fdt_rw.o
+ .text.fdt_blocks_misordered_
+                0x00000000100e0788       0x80 ./build/rpi3/debug/bl31/fdt_rw.o
+ .text.fdt_rw_check_header_
+                0x00000000100e0808       0x74 ./build/rpi3/debug/bl31/fdt_rw.o
+ .text.fdt_splice_
+                0x00000000100e087c       0x9c ./build/rpi3/debug/bl31/fdt_rw.o
+ .text.fdt_splice_mem_rsv_
+                0x00000000100e0918       0x74 ./build/rpi3/debug/bl31/fdt_rw.o
+ .text.fdt_add_mem_rsv
+                0x00000000100e098c       0x98 ./build/rpi3/debug/bl31/fdt_rw.o
+                0x00000000100e098c                fdt_add_mem_rsv
+ .text.fdt_del_mem_rsv
+                0x00000000100e0a24       0x78 ./build/rpi3/debug/bl31/fdt_rw.o
+                0x00000000100e0a24                fdt_del_mem_rsv
+ .text.get_arm_std_svc_args
+                0x00000000100e0a9c       0x30 ./build/rpi3/debug/bl31/bl31_main.o
+                0x00000000100e0a9c                get_arm_std_svc_args
+ .text.bl31_prepare_next_image_entry
+                0x00000000100e0acc       0xc8 ./build/rpi3/debug/bl31/bl31_main.o
+                0x00000000100e0acc                bl31_prepare_next_image_entry
+ .text.bl31_main
+                0x00000000100e0b94       0x90 ./build/rpi3/debug/bl31/bl31_main.o
+                0x00000000100e0b94                bl31_main
+ .text.bl31_register_bl32_init
+                0x00000000100e0c24        0xc ./build/rpi3/debug/bl31/bl31_main.o
+                0x00000000100e0c24                bl31_register_bl32_init
+ .text.set_scr_el3_from_rm
+                0x00000000100e0c30       0x84 ./build/rpi3/debug/bl31/interrupt_mgmt.o
+ .text.get_scr_el3_from_routing_model
+                0x00000000100e0cb4       0x50 ./build/rpi3/debug/bl31/interrupt_mgmt.o
+                0x00000000100e0cb4                get_scr_el3_from_routing_model
+ .text.set_routing_model
+                0x00000000100e0d04       0x9c ./build/rpi3/debug/bl31/interrupt_mgmt.o
+                0x00000000100e0d04                set_routing_model
+ .text.register_interrupt_type_handler
+                0x00000000100e0da0       0x6c ./build/rpi3/debug/bl31/interrupt_mgmt.o
+                0x00000000100e0da0                register_interrupt_type_handler
+ .text.get_interrupt_type_handler
+                0x00000000100e0e0c       0x2c ./build/rpi3/debug/bl31/interrupt_mgmt.o
+                0x00000000100e0e0c                get_interrupt_type_handler
+ .text.cm_get_context
+                0x00000000100e0e38       0x2c ./build/rpi3/debug/bl31/bl31_context_mgmt.o
+                0x00000000100e0e38                cm_get_context
+ .text.cm_set_context
+                0x00000000100e0e64       0x2c ./build/rpi3/debug/bl31/bl31_context_mgmt.o
+                0x00000000100e0e64                cm_set_context
+ .text.cm_get_context_by_index
+                0x00000000100e0e90       0x3c ./build/rpi3/debug/bl31/bl31_context_mgmt.o
+                0x00000000100e0e90                cm_get_context_by_index
+ .text.cm_set_context_by_index
+                0x00000000100e0ecc       0x40 ./build/rpi3/debug/bl31/bl31_context_mgmt.o
+                0x00000000100e0ecc                cm_set_context_by_index
+ .text.runtime_svc_init
+                0x00000000100e0f0c      0x168 ./build/rpi3/debug/bl31/runtime_svc.o
+                0x00000000100e0f0c                runtime_svc_init
+ .text.arm_arch_svc_smc_handler
+                0x00000000100e1074       0xa4 ./build/rpi3/debug/bl31/arm_arch_svc_setup.o
+ .text.std_svc_smc_handler
+                0x00000000100e1118       0xbc ./build/rpi3/debug/bl31/std_svc_setup.o
+ .text.std_svc_setup
+                0x00000000100e11d4       0x38 ./build/rpi3/debug/bl31/std_svc_setup.o
+ .text.cm_init  0x00000000100e120c        0x4 ./build/rpi3/debug/bl31/context_mgmt.o
+                0x00000000100e120c                cm_init
+ .text.cm_setup_context
+                0x00000000100e1210      0x110 ./build/rpi3/debug/bl31/context_mgmt.o
+                0x00000000100e1210                cm_setup_context
+ .text.cm_init_context_by_index
+                0x00000000100e1320       0x2c ./build/rpi3/debug/bl31/context_mgmt.o
+                0x00000000100e1320                cm_init_context_by_index
+ .text.cm_init_my_context
+                0x00000000100e134c       0x2c ./build/rpi3/debug/bl31/context_mgmt.o
+                0x00000000100e134c                cm_init_my_context
+ .text.cm_el1_sysregs_context_save
+                0x00000000100e1378       0x90 ./build/rpi3/debug/bl31/context_mgmt.o
+                0x00000000100e1378                cm_el1_sysregs_context_save
+ .text.cm_el1_sysregs_context_restore
+                0x00000000100e1408       0x90 ./build/rpi3/debug/bl31/context_mgmt.o
+                0x00000000100e1408                cm_el1_sysregs_context_restore
+ .text.cm_set_elr_el3
+                0x00000000100e1498       0x38 ./build/rpi3/debug/bl31/context_mgmt.o
+                0x00000000100e1498                cm_set_elr_el3
+ .text.cm_write_scr_el3_bit
+                0x00000000100e14d0       0x78 ./build/rpi3/debug/bl31/context_mgmt.o
+                0x00000000100e14d0                cm_write_scr_el3_bit
+ .text.cm_set_next_eret_context
+                0x00000000100e1548       0x4c ./build/rpi3/debug/bl31/context_mgmt.o
+                0x00000000100e1548                cm_set_next_eret_context
+ .text.cm_prepare_el3_exit
+                0x00000000100e1594       0xe0 ./build/rpi3/debug/bl31/context_mgmt.o
+                0x00000000100e1594                cm_prepare_el3_exit
+ .text.errata_needs_reporting
+                0x00000000100e1674       0x60 ./build/rpi3/debug/bl31/errata_report.o
+                0x00000000100e1674                errata_needs_reporting
+ .text.errata_print_msg
+                0x00000000100e16d4       0x98 ./build/rpi3/debug/bl31/errata_report.o
+                0x00000000100e16d4                errata_print_msg
+ .text.psci_do_cpu_off
+                0x00000000100e176c      0x110 ./build/rpi3/debug/bl31/psci_off.o
+                0x00000000100e176c                psci_do_cpu_off
+ .text.psci_cpu_on_start
+                0x00000000100e187c      0x1ec ./build/rpi3/debug/bl31/psci_on.o
+                0x00000000100e187c                psci_cpu_on_start
+ .text.psci_cpu_on_finish
+                0x00000000100e1a68       0xe0 ./build/rpi3/debug/bl31/psci_on.o
+                0x00000000100e1a68                psci_cpu_on_finish
+ .text.psci_cpu_suspend_start
+                0x00000000100e1b48      0x1b0 ./build/rpi3/debug/bl31/psci_suspend.o
+                0x00000000100e1b48                psci_cpu_suspend_start
+ .text.psci_cpu_suspend_finish
+                0x00000000100e1cf8       0xdc ./build/rpi3/debug/bl31/psci_suspend.o
+                0x00000000100e1cf8                psci_cpu_suspend_finish
+ .text.psci_validate_power_state
+                0x00000000100e1dd4       0x40 ./build/rpi3/debug/bl31/psci_common.o
+                0x00000000100e1dd4                psci_validate_power_state
+ .text.psci_query_sys_suspend_pwrstate
+                0x00000000100e1e14       0x2c ./build/rpi3/debug/bl31/psci_common.o
+                0x00000000100e1e14                psci_query_sys_suspend_pwrstate
+ .text.psci_is_last_on_cpu
+                0x00000000100e1e40       0x74 ./build/rpi3/debug/bl31/psci_common.o
+                0x00000000100e1e40                psci_is_last_on_cpu
+ .text.psci_init_req_local_pwr_states
+                0x00000000100e1eb4       0x20 ./build/rpi3/debug/bl31/psci_common.o
+                0x00000000100e1eb4                psci_init_req_local_pwr_states
+ .text.psci_get_target_local_pwr_states
+                0x00000000100e1ed4       0x80 ./build/rpi3/debug/bl31/psci_common.o
+                0x00000000100e1ed4                psci_get_target_local_pwr_states
+ .text.psci_get_parent_pwr_domain_nodes
+                0x00000000100e1f54       0x44 ./build/rpi3/debug/bl31/psci_common.o
+                0x00000000100e1f54                psci_get_parent_pwr_domain_nodes
+ .text.psci_set_pwr_domains_to_run
+                0x00000000100e1f98       0x9c ./build/rpi3/debug/bl31/psci_common.o
+                0x00000000100e1f98                psci_set_pwr_domains_to_run
+ .text.psci_do_state_coordination
+                0x00000000100e2034      0x10c ./build/rpi3/debug/bl31/psci_common.o
+                0x00000000100e2034                psci_do_state_coordination
+ .text.psci_validate_suspend_req
+                0x00000000100e2140       0x90 ./build/rpi3/debug/bl31/psci_common.o
+                0x00000000100e2140                psci_validate_suspend_req
+ .text.psci_find_max_off_lvl
+                0x00000000100e21d0       0x2c ./build/rpi3/debug/bl31/psci_common.o
+                0x00000000100e21d0                psci_find_max_off_lvl
+ .text.psci_find_target_suspend_lvl
+                0x00000000100e21fc       0x24 ./build/rpi3/debug/bl31/psci_common.o
+                0x00000000100e21fc                psci_find_target_suspend_lvl
+ .text.psci_acquire_pwr_domain_locks
+                0x00000000100e2220       0x78 ./build/rpi3/debug/bl31/psci_common.o
+                0x00000000100e2220                psci_acquire_pwr_domain_locks
+ .text.psci_release_pwr_domain_locks
+                0x00000000100e2298       0x6c ./build/rpi3/debug/bl31/psci_common.o
+                0x00000000100e2298                psci_release_pwr_domain_locks
+ .text.psci_validate_mpidr
+                0x00000000100e2304       0x20 ./build/rpi3/debug/bl31/psci_common.o
+                0x00000000100e2304                psci_validate_mpidr
+ .text.psci_validate_entry_point
+                0x00000000100e2324       0xf4 ./build/rpi3/debug/bl31/psci_common.o
+                0x00000000100e2324                psci_validate_entry_point
+ .text.psci_warmboot_entrypoint
+                0x00000000100e2418       0xb4 ./build/rpi3/debug/bl31/psci_common.o
+                0x00000000100e2418                psci_warmboot_entrypoint
+ .text.psci_register_spd_pm_hook
+                0x00000000100e24cc       0x58 ./build/rpi3/debug/bl31/psci_common.o
+                0x00000000100e24cc                psci_register_spd_pm_hook
+ .text.psci_spd_migrate_info
+                0x00000000100e2524       0x4c ./build/rpi3/debug/bl31/psci_common.o
+                0x00000000100e2524                psci_spd_migrate_info
+ .text.psci_print_power_domain_map
+                0x00000000100e2570       0xf8 ./build/rpi3/debug/bl31/psci_common.o
+                0x00000000100e2570                psci_print_power_domain_map
+ .text.psci_do_pwrdown_sequence
+                0x00000000100e2668        0x4 ./build/rpi3/debug/bl31/psci_common.o
+                0x00000000100e2668                psci_do_pwrdown_sequence
+ .text.psci_cpu_on
+                0x00000000100e266c       0x5c ./build/rpi3/debug/bl31/psci_main.o
+                0x00000000100e266c                psci_cpu_on
+ .text.psci_cpu_suspend
+                0x00000000100e26c8      0x124 ./build/rpi3/debug/bl31/psci_main.o
+                0x00000000100e26c8                psci_cpu_suspend
+ .text.psci_system_suspend
+                0x00000000100e27ec       0xac ./build/rpi3/debug/bl31/psci_main.o
+                0x00000000100e27ec                psci_system_suspend
+ .text.psci_cpu_off
+                0x00000000100e2898       0x30 ./build/rpi3/debug/bl31/psci_main.o
+                0x00000000100e2898                psci_cpu_off
+ .text.psci_affinity_info
+                0x00000000100e28c8       0x58 ./build/rpi3/debug/bl31/psci_main.o
+                0x00000000100e28c8                psci_affinity_info
+ .text.psci_migrate
+                0x00000000100e2920       0xa4 ./build/rpi3/debug/bl31/psci_main.o
+                0x00000000100e2920                psci_migrate
+ .text.psci_migrate_info_type
+                0x00000000100e29c4       0x18 ./build/rpi3/debug/bl31/psci_main.o
+                0x00000000100e29c4                psci_migrate_info_type
+ .text.psci_migrate_info_up_cpu
+                0x00000000100e29dc       0x28 ./build/rpi3/debug/bl31/psci_main.o
+                0x00000000100e29dc                psci_migrate_info_up_cpu
+ .text.psci_node_hw_state
+                0x00000000100e2a04       0x7c ./build/rpi3/debug/bl31/psci_main.o
+                0x00000000100e2a04                psci_node_hw_state
+ .text.psci_features
+                0x00000000100e2a80       0x68 ./build/rpi3/debug/bl31/psci_main.o
+                0x00000000100e2a80                psci_features
+ .text.psci_smc_handler
+                0x00000000100e2ae8      0x164 ./build/rpi3/debug/bl31/psci_main.o
+                0x00000000100e2ae8                psci_smc_handler
+ .text.psci_arch_setup
+                0x00000000100e2c4c       0x20 ./build/rpi3/debug/bl31/psci_setup.o
+                0x00000000100e2c4c                psci_arch_setup
+ .text.psci_setup
+                0x00000000100e2c6c      0x378 ./build/rpi3/debug/bl31/psci_setup.o
+                0x00000000100e2c6c                psci_setup
+ .text.psci_system_off
+                0x00000000100e2fe4       0x5c ./build/rpi3/debug/bl31/psci_system_off.o
+                0x00000000100e2fe4                psci_system_off
+ .text.psci_system_reset
+                0x00000000100e3040       0x5c ./build/rpi3/debug/bl31/psci_system_off.o
+                0x00000000100e3040                psci_system_reset
+ .text.psci_system_reset2
+                0x00000000100e309c       0xbc ./build/rpi3/debug/bl31/psci_system_off.o
+                0x00000000100e309c                psci_system_reset2
+ .text.psci_mem_protect
+                0x00000000100e3158       0x80 ./build/rpi3/debug/bl31/psci_mem_protect.o
+                0x00000000100e3158                psci_mem_protect
+ .text.psci_mem_chk_range
+                0x00000000100e31d8       0x54 ./build/rpi3/debug/bl31/psci_mem_protect.o
+                0x00000000100e31d8                psci_mem_chk_range
+ .text.bakery_lock_get
+                0x00000000100e322c       0xe8 ./build/rpi3/debug/bl31/bakery_lock_coherent.o
+                0x00000000100e322c                bakery_lock_get
+ .text.bakery_lock_release
+                0x00000000100e3314       0x64 ./build/rpi3/debug/bl31/bakery_lock_coherent.o
+                0x00000000100e3314                bakery_lock_release
+ .text.spe_supported
+                0x00000000100e3378       0x14 ./build/rpi3/debug/bl31/spe.o
+                0x00000000100e3378                spe_supported
+ .text.spe_drain_buffers_hook
+                0x00000000100e338c       0x30 ./build/rpi3/debug/bl31/spe.o
+ .text.spe_enable
+                0x00000000100e33bc       0x44 ./build/rpi3/debug/bl31/spe.o
+                0x00000000100e33bc                spe_enable
+ .text.sve_supported
+                0x00000000100e3400       0x14 ./build/rpi3/debug/bl31/sve.o
+                0x00000000100e3400                sve_supported
+ .text.disable_sve_hook
+                0x00000000100e3414       0x3c ./build/rpi3/debug/bl31/sve.o
+ .text.enable_sve_hook
+                0x00000000100e3450       0x3c ./build/rpi3/debug/bl31/sve.o
+ .text.sve_enable
+                0x00000000100e348c       0x50 ./build/rpi3/debug/bl31/sve.o
+                0x00000000100e348c                sve_enable
+ .text.opteed_init_optee_ep_state
+                0x00000000100e34dc       0xd0 ./build/rpi3/debug/bl31/opteed_common.o
+                0x00000000100e34dc                opteed_init_optee_ep_state
+ .text.opteed_synchronous_sp_entry
+                0x00000000100e35ac       0x78 ./build/rpi3/debug/bl31/opteed_common.o
+                0x00000000100e35ac                opteed_synchronous_sp_entry
+ .text.opteed_synchronous_sp_exit
+                0x00000000100e3624       0x64 ./build/rpi3/debug/bl31/opteed_common.o
+                0x00000000100e3624                opteed_synchronous_sp_exit
+ .text.opteed_smc_handler
+                0x00000000100e3688      0x244 ./build/rpi3/debug/bl31/opteed_main.o
+ .text.opteed_setup
+                0x00000000100e38cc       0x88 ./build/rpi3/debug/bl31/opteed_main.o
+ .text.opteed_sel1_interrupt_handler
+                0x00000000100e3954       0xcc ./build/rpi3/debug/bl31/opteed_main.o
+ .text.opteed_init
+                0x00000000100e3a20       0x60 ./build/rpi3/debug/bl31/opteed_main.o
+ .text.opteed_cpu_on_handler
+                0x00000000100e3a80        0x4 ./build/rpi3/debug/bl31/opteed_pm.o
+ .text.opteed_cpu_migrate_info
+                0x00000000100e3a84        0x8 ./build/rpi3/debug/bl31/opteed_pm.o
+ .text.opteed_system_reset
+                0x00000000100e3a8c       0x7c ./build/rpi3/debug/bl31/opteed_pm.o
+ .text.opteed_system_off
+                0x00000000100e3b08       0x7c ./build/rpi3/debug/bl31/opteed_pm.o
+ .text.opteed_cpu_suspend_finish_handler
+                0x00000000100e3b84       0xbc ./build/rpi3/debug/bl31/opteed_pm.o
+ .text.opteed_cpu_suspend_handler
+                0x00000000100e3c40       0xbc ./build/rpi3/debug/bl31/opteed_pm.o
+ .text.opteed_cpu_off_handler
+                0x00000000100e3cfc       0xb0 ./build/rpi3/debug/bl31/opteed_pm.o
+ .text.opteed_cpu_on_finish_handler
+                0x00000000100e3dac       0xcc ./build/rpi3/debug/bl31/opteed_pm.o
+ .text.print_entry_point_info
+                0x00000000100e3e78       0x38 ./build/rpi3/debug/bl31/bl_common.o
+                0x00000000100e3e78                print_entry_point_info
+ .text.tf_log   0x00000000100e3eb0       0xc8 ./build/rpi3/debug/bl31/tf_log.o
+                0x00000000100e3eb0                tf_log
+ .text.console_is_registered
+                0x00000000100e3f78       0x48 ./build/rpi3/debug/bl31/multi_console.o
+                0x00000000100e3f78                console_is_registered
+ .text.console_register
+                0x00000000100e3fc0       0x74 ./build/rpi3/debug/bl31/multi_console.o
+                0x00000000100e3fc0                console_register
+ .text.console_switch_state
+                0x00000000100e4034        0xc ./build/rpi3/debug/bl31/multi_console.o
+                0x00000000100e4034                console_switch_state
+ .text.console_set_scope
+                0x00000000100e4040       0x34 ./build/rpi3/debug/bl31/multi_console.o
+                0x00000000100e4040                console_set_scope
+ .text.console_putc
+                0x00000000100e4074       0x74 ./build/rpi3/debug/bl31/multi_console.o
+                0x00000000100e4074                console_putc
+ .text.console_flush
+                0x00000000100e40e8       0x6c ./build/rpi3/debug/bl31/multi_console.o
+                0x00000000100e40e8                console_flush
+ .text.plat_log_get_prefix
+                0x00000000100e4154       0x30 ./build/rpi3/debug/bl31/plat_log_common.o
+                0x00000000100e4154                plat_log_get_prefix
+ .text.bl31_plat_runtime_setup
+                0x00000000100e4184        0x8 ./build/rpi3/debug/bl31/plat_common.o
+                0x00000000100e4184                bl31_plat_runtime_setup
+ .text.plat_ea_handler
+                0x00000000100e418c       0x4c ./build/rpi3/debug/bl31/plat_common.o
+                0x00000000100e418c                plat_ea_handler
+ .text.is_address_readable
+                0x00000000100e41d8       0x40 ./build/rpi3/debug/bl31/backtrace.o
+ .text.is_valid_object.constprop.0
+                0x00000000100e4218       0x58 ./build/rpi3/debug/bl31/backtrace.o
+ .text.backtrace
+                0x00000000100e4270      0x14c ./build/rpi3/debug/bl31/backtrace.o
+                0x00000000100e4270                backtrace
+ .text.rpi3_console_init
+                0x00000000100e43bc       0x60 ./build/rpi3/debug/bl31/rpi3_common.o
+                0x00000000100e43bc                rpi3_console_init
+ .text.rpi3_setup_page_tables
+                0x00000000100e441c       0x98 ./build/rpi3/debug/bl31/rpi3_common.o
+                0x00000000100e441c                rpi3_setup_page_tables
+ .text.plat_get_syscnt_freq2
+                0x00000000100e44b4        0xc ./build/rpi3/debug/bl31/rpi3_common.o
+                0x00000000100e44b4                plat_get_syscnt_freq2
+ .text.plat_ic_get_pending_interrupt_type
+                0x00000000100e44c0       0x20 ./build/rpi3/debug/bl31/rpi3_common.o
+                0x00000000100e44c0                plat_ic_get_pending_interrupt_type
+ .text.plat_interrupt_type_to_line
+                0x00000000100e44e0       0x44 ./build/rpi3/debug/bl31/rpi3_common.o
+                0x00000000100e44e0                plat_interrupt_type_to_line
+ .text.tcr_physical_addr_size_bits
+                0x00000000100e4524       0x6c ./build/rpi3/debug/bl31/xlat_tables_arch.o
+                0x00000000100e4524                tcr_physical_addr_size_bits
+ .text.xlat_arch_get_max_supported_pa
+                0x00000000100e4590       0x44 ./build/rpi3/debug/bl31/xlat_tables_arch.o
+                0x00000000100e4590                xlat_arch_get_max_supported_pa
+ .text.is_dcache_enabled
+                0x00000000100e45d4       0x34 ./build/rpi3/debug/bl31/xlat_tables_arch.o
+                0x00000000100e45d4                is_dcache_enabled
+ .text.xlat_arch_regime_get_xn_desc
+                0x00000000100e4608       0x38 ./build/rpi3/debug/bl31/xlat_tables_arch.o
+                0x00000000100e4608                xlat_arch_regime_get_xn_desc
+ .text.xlat_arch_current_el
+                0x00000000100e4640       0x28 ./build/rpi3/debug/bl31/xlat_tables_arch.o
+                0x00000000100e4640                xlat_arch_current_el
+ .text.is_mmu_enabled_ctx
+                0x00000000100e4668       0x8c ./build/rpi3/debug/bl31/xlat_tables_arch.o
+                0x00000000100e4668                is_mmu_enabled_ctx
+ .text.setup_mmu_cfg
+                0x00000000100e46f4       0xe0 ./build/rpi3/debug/bl31/xlat_tables_arch.o
+                0x00000000100e46f4                setup_mmu_cfg
+ .text.mmap_add_region
+                0x00000000100e47d4       0x34 ./build/rpi3/debug/bl31/xlat_tables_context.o
+                0x00000000100e47d4                mmap_add_region
+ .text.mmap_add
+                0x00000000100e4808       0x10 ./build/rpi3/debug/bl31/xlat_tables_context.o
+                0x00000000100e4808                mmap_add
+ .text.init_xlat_tables
+                0x00000000100e4818       0x68 ./build/rpi3/debug/bl31/xlat_tables_context.o
+                0x00000000100e4818                init_xlat_tables
+ .text.enable_mmu_el3
+                0x00000000100e4880       0x48 ./build/rpi3/debug/bl31/xlat_tables_context.o
+                0x00000000100e4880                enable_mmu_el3
+ .text.xlat_clean_dcache_range
+                0x00000000100e48c8       0x40 ./build/rpi3/debug/bl31/xlat_tables_core.o
+ .text.xlat_desc
+                0x00000000100e4908      0x104 ./build/rpi3/debug/bl31/xlat_tables_core.o
+                0x00000000100e4908                xlat_desc
+ .text.xlat_tables_map_region
+                0x00000000100e4a0c      0x294 ./build/rpi3/debug/bl31/xlat_tables_core.o
+ .text.mmap_add_region_ctx
+                0x00000000100e4ca0      0x278 ./build/rpi3/debug/bl31/xlat_tables_core.o
+                0x00000000100e4ca0                mmap_add_region_ctx
+ .text.mmap_add_ctx
+                0x00000000100e4f18       0x3c ./build/rpi3/debug/bl31/xlat_tables_core.o
+                0x00000000100e4f18                mmap_add_ctx
+ .text.init_xlat_tables_ctx
+                0x00000000100e4f54      0x1a4 ./build/rpi3/debug/bl31/xlat_tables_core.o
+                0x00000000100e4f54                init_xlat_tables_ctx
+ .text.xlat_mmap_print
+                0x00000000100e50f8        0x4 ./build/rpi3/debug/bl31/xlat_tables_utils.o
+                0x00000000100e50f8                xlat_mmap_print
+ .text.xlat_tables_print
+                0x00000000100e50fc        0x4 ./build/rpi3/debug/bl31/xlat_tables_utils.o
+                0x00000000100e50fc                xlat_tables_print
+ .text.asm.cortex_a53_disable_dcache
+                0x00000000100e5100       0x14 ./build/rpi3/debug/bl31/cortex_a53.o
+ .text.asm.cortex_a53_disable_smp
+                0x00000000100e5114       0x18 ./build/rpi3/debug/bl31/cortex_a53.o
+ .text.asm.errata_a53_826319_wa
+                0x00000000100e512c       0x20 ./build/rpi3/debug/bl31/cortex_a53.o
+ .text.asm.check_errata_826319
+                0x00000000100e514c        0x8 ./build/rpi3/debug/bl31/cortex_a53.o
+ .text.asm.a53_disable_non_temporal_hint
+                0x00000000100e5154       0x1c ./build/rpi3/debug/bl31/cortex_a53.o
+ .text.asm.check_errata_disable_non_temporal_hint
+                0x00000000100e5170        0x8 ./build/rpi3/debug/bl31/cortex_a53.o
+ .text.asm.errata_a53_855873_wa
+                0x00000000100e5178       0x1c ./build/rpi3/debug/bl31/cortex_a53.o
+ .text.asm.check_errata_855873
+                0x00000000100e5194        0x8 ./build/rpi3/debug/bl31/cortex_a53.o
+ .text.asm.check_errata_835769
+                0x00000000100e519c       0x24 ./build/rpi3/debug/bl31/cortex_a53.o
+ .text.asm.check_errata_843419
+                0x00000000100e51c0       0x24 ./build/rpi3/debug/bl31/cortex_a53.o
+ .text.asm.cortex_a53_reset_func
+                0x00000000100e51e4       0x38 ./build/rpi3/debug/bl31/cortex_a53.o
+ .text.asm.cortex_a53_core_pwr_dwn
+                0x00000000100e521c       0x18 ./build/rpi3/debug/bl31/cortex_a53.o
+ .text.asm.cortex_a53_cluster_pwr_dwn
+                0x00000000100e5234       0x24 ./build/rpi3/debug/bl31/cortex_a53.o
+ .text.asm.cortex_a53_errata_report
+                0x00000000100e5258       0x78 ./build/rpi3/debug/bl31/cortex_a53.o
+ .text.asm.cortex_a53_cpu_reg_dump
+                0x00000000100e52d0       0x18 ./build/rpi3/debug/bl31/cortex_a53.o
+ .text.asm.plat_my_core_pos
+                0x00000000100e52e8        0x8 ./build/rpi3/debug/bl31/plat_helpers.o
+                0x00000000100e52e8                plat_my_core_pos
+ .text.asm.plat_rpi3_calc_core_pos
+                0x00000000100e52f0       0x10 ./build/rpi3/debug/bl31/plat_helpers.o
+                0x00000000100e52f0                plat_rpi3_calc_core_pos
+ .text.asm.plat_crash_console_init
+                0x00000000100e5300       0x1c ./build/rpi3/debug/bl31/plat_helpers.o
+                0x00000000100e5300                plat_crash_console_init
+ .text.asm.plat_crash_console_putc
+                0x00000000100e531c        0xc ./build/rpi3/debug/bl31/plat_helpers.o
+                0x00000000100e531c                plat_crash_console_putc
+ .text.asm.plat_crash_console_flush
+                0x00000000100e5328        0xc ./build/rpi3/debug/bl31/plat_helpers.o
+                0x00000000100e5328                plat_crash_console_flush
+ .text.asm.plat_reset_handler
+                0x00000000100e5334       0x14 ./build/rpi3/debug/bl31/plat_helpers.o
+                0x00000000100e5334                plat_reset_handler
+ .text.asm.print_newline
+                0x00000000100e5348        0x8 ./build/rpi3/debug/bl31/crash_reporting.o
+ .text.asm.size_controlled_print
+                0x00000000100e5350       0x4c ./build/rpi3/debug/bl31/crash_reporting.o
+ .text.asm.str_in_crash_buf_print
+                0x00000000100e539c       0x18 ./build/rpi3/debug/bl31/crash_reporting.o
+ .text.asm.report_unhandled_exception
+                0x00000000100e53b4       0x28 ./build/rpi3/debug/bl31/crash_reporting.o
+                0x00000000100e53b4                report_unhandled_exception
+ .text.asm.report_unhandled_interrupt
+                0x00000000100e53dc       0x28 ./build/rpi3/debug/bl31/crash_reporting.o
+                0x00000000100e53dc                report_unhandled_interrupt
+ .text.asm.el3_panic
+                0x00000000100e5404       0x2c ./build/rpi3/debug/bl31/crash_reporting.o
+                0x00000000100e5404                el3_panic
+ .text.asm.do_crash_reporting
+                0x00000000100e5430      0x160 ./build/rpi3/debug/bl31/crash_reporting.o
+ .text.asm.crash_panic
+                0x00000000100e5590        0x8 ./build/rpi3/debug/bl31/crash_reporting.o
+ .text.asm.enter_lower_el_sync_ea
+                0x00000000100e5598       0x44 ./build/rpi3/debug/bl31/ea_delegate.o
+                0x00000000100e5598                enter_lower_el_sync_ea
+ .text.asm.enter_lower_el_async_ea
+                0x00000000100e55dc       0x18 ./build/rpi3/debug/bl31/ea_delegate.o
+                0x00000000100e55dc                enter_lower_el_async_ea
+ .text.asm.delegate_sync_ea
+                0x00000000100e55f4        0x4 ./build/rpi3/debug/bl31/ea_delegate.o
+ .text.asm.delegate_async_ea
+                0x00000000100e55f8        0x4 ./build/rpi3/debug/bl31/ea_delegate.o
+ .text.asm.ea_proceed
+                0x00000000100e55fc       0x9c ./build/rpi3/debug/bl31/ea_delegate.o
+ .text.asm.smc_handler
+                0x00000000100e5698       0x88 ./build/rpi3/debug/bl31/runtime_exceptions.o
+ .text.asm.plat_get_my_stack
+                0x00000000100e5720       0x1c ./build/rpi3/debug/bl31/platform_mp_stack.o
+                0x00000000100e5720                plat_get_my_stack
+ .text.asm.plat_set_my_stack
+                0x00000000100e573c       0x10 ./build/rpi3/debug/bl31/platform_mp_stack.o
+                0x00000000100e573c                plat_set_my_stack
+ .text.asm.init_cpu_data_ptr
+                0x00000000100e574c       0x14 ./build/rpi3/debug/bl31/cpu_data.o
+                0x00000000100e574c                init_cpu_data_ptr
+ .text.asm._cpu_data_by_index
+                0x00000000100e5760       0x14 ./build/rpi3/debug/bl31/cpu_data.o
+                0x00000000100e5760                _cpu_data_by_index
+ .text.asm.reset_handler
+                0x00000000100e5774       0x34 ./build/rpi3/debug/bl31/cpu_helpers.o
+                0x00000000100e5774                reset_handler
+ .text.asm.prepare_cpu_pwr_dwn
+                0x00000000100e57a8       0x38 ./build/rpi3/debug/bl31/cpu_helpers.o
+                0x00000000100e57a8                prepare_cpu_pwr_dwn
+ .text.asm.init_cpu_ops
+                0x00000000100e57e0       0x34 ./build/rpi3/debug/bl31/cpu_helpers.o
+                0x00000000100e57e0                init_cpu_ops
+ .text.asm.do_cpu_reg_dump
+                0x00000000100e5814       0x20 ./build/rpi3/debug/bl31/cpu_helpers.o
+                0x00000000100e5814                do_cpu_reg_dump
+ .text.asm.get_cpu_ops_ptr
+                0x00000000100e5834       0x3c ./build/rpi3/debug/bl31/cpu_helpers.o
+                0x00000000100e5834                get_cpu_ops_ptr
+ .text.asm.cpu_get_rev_var
+                0x00000000100e5870       0x10 ./build/rpi3/debug/bl31/cpu_helpers.o
+                0x00000000100e5870                cpu_get_rev_var
+ .text.asm.cpu_rev_var_ls
+                0x00000000100e5880       0x14 ./build/rpi3/debug/bl31/cpu_helpers.o
+                0x00000000100e5880                cpu_rev_var_ls
+ .text.asm.cpu_rev_var_hs
+                0x00000000100e5894       0x14 ./build/rpi3/debug/bl31/cpu_helpers.o
+                0x00000000100e5894                cpu_rev_var_hs
+ .text.asm.print_errata_status
+                0x00000000100e58a8       0x38 ./build/rpi3/debug/bl31/cpu_helpers.o
+                0x00000000100e58a8                print_errata_status
+ .text.asm.spin_lock
+                0x00000000100e58e0       0x20 ./build/rpi3/debug/bl31/spinlock.o
+                0x00000000100e58e0                spin_lock
+ .text.asm.spin_unlock
+                0x00000000100e5900        0x8 ./build/rpi3/debug/bl31/spinlock.o
+                0x00000000100e5900                spin_unlock
+ .text.asm.psci_do_pwrdown_cache_maintenance
+                0x00000000100e5908       0x3c ./build/rpi3/debug/bl31/psci_helpers.o
+                0x00000000100e5908                psci_do_pwrdown_cache_maintenance
+ .text.asm.psci_do_pwrup_cache_maintenance
+                0x00000000100e5944       0x34 ./build/rpi3/debug/bl31/psci_helpers.o
+                0x00000000100e5944                psci_do_pwrup_cache_maintenance
+ .text.asm.psci_power_down_wfi
+                0x00000000100e5978       0x10 ./build/rpi3/debug/bl31/psci_helpers.o
+                0x00000000100e5978                psci_power_down_wfi
+ .text.asm.el1_sysregs_context_save
+                0x00000000100e5988       0xb4 ./build/rpi3/debug/bl31/context.o
+                0x00000000100e5988                el1_sysregs_context_save
+ .text.asm.el1_sysregs_context_restore
+                0x00000000100e5a3c       0xb4 ./build/rpi3/debug/bl31/context.o
+                0x00000000100e5a3c                el1_sysregs_context_restore
+ .text.asm.save_gp_registers
+                0x00000000100e5af0       0x48 ./build/rpi3/debug/bl31/context.o
+                0x00000000100e5af0                save_gp_registers
+ .text.asm.restore_gp_registers
+                0x00000000100e5b38       0x48 ./build/rpi3/debug/bl31/context.o
+                0x00000000100e5b38                restore_gp_registers
+ .text.asm.restore_gp_registers_eret
+                0x00000000100e5b80        0xc ./build/rpi3/debug/bl31/context.o
+                0x00000000100e5b80                restore_gp_registers_eret
+ .text.asm.el3_exit
+                0x00000000100e5b8c       0x24 ./build/rpi3/debug/bl31/context.o
+                0x00000000100e5b8c                el3_exit
+ .text.asm.opteed_enter_sp
+                0x00000000100e5bb0       0x28 ./build/rpi3/debug/bl31/opteed_helpers.o
+                0x00000000100e5bb0                opteed_enter_sp
+ .text.asm.opteed_exit_sp
+                0x00000000100e5bd8       0x24 ./build/rpi3/debug/bl31/opteed_helpers.o
+                0x00000000100e5bd8                opteed_exit_sp
+ .text.asm.asm_assert
+                0x00000000100e5bfc       0x60 ./build/rpi3/debug/bl31/debug.o
+                0x00000000100e5bfc                asm_assert
+ .text.asm.asm_print_str
+                0x00000000100e5c5c       0x18 ./build/rpi3/debug/bl31/debug.o
+                0x00000000100e5c5c                asm_print_str
+ .text.asm.asm_print_hex
+                0x00000000100e5c74       0x30 ./build/rpi3/debug/bl31/debug.o
+                0x00000000100e5c74                asm_print_hex
+ .text.asm.do_panic
+                0x00000000100e5ca4       0x44 ./build/rpi3/debug/bl31/debug.o
+                0x00000000100e5ca4                do_panic
+ .text.asm.flush_dcache_range
+                0x00000000100e5ce8       0x38 ./build/rpi3/debug/bl31/cache_helpers.o
+                0x00000000100e5ce8                flush_dcache_range
+ .text.asm.clean_dcache_range
+                0x00000000100e5d20       0x38 ./build/rpi3/debug/bl31/cache_helpers.o
+                0x00000000100e5d20                clean_dcache_range
+ .text.asm.inv_dcache_range
+                0x00000000100e5d58       0x38 ./build/rpi3/debug/bl31/cache_helpers.o
+                0x00000000100e5d58                inv_dcache_range
+ .text.asm.do_dcsw_op
+                0x00000000100e5d90       0xdc ./build/rpi3/debug/bl31/cache_helpers.o
+ .text.asm.dcsw_op_level1
+                0x00000000100e5e6c       0x10 ./build/rpi3/debug/bl31/cache_helpers.o
+                0x00000000100e5e6c                dcsw_op_level1
+ .text.asm.dcsw_op_level2
+                0x00000000100e5e7c       0x10 ./build/rpi3/debug/bl31/cache_helpers.o
+                0x00000000100e5e7c                dcsw_op_level2
+ .text.asm.zeromem
+                0x00000000100e5e8c        0x8 ./build/rpi3/debug/bl31/misc_helpers.o
+                0x00000000100e5e8c                zeromem
+ .text.asm.zeromem_dczva
+                0x00000000100e5e94      0x114 ./build/rpi3/debug/bl31/misc_helpers.o
+                0x00000000100e5e94                zero_normalmem
+ .text.asm.plat_disable_acp
+                0x00000000100e5fa8        0x4 ./build/rpi3/debug/bl31/platform_helpers.o
+                0x00000000100e5fa8                plat_disable_acp
+ .text.asm.plat_panic_handler
+                0x00000000100e5fac        0x8 ./build/rpi3/debug/bl31/platform_helpers.o
+                0x00000000100e5fac                plat_panic_handler
+ .text.asm.bl31_plat_enable_mmu
+                0x00000000100e5fb4        0x4 ./build/rpi3/debug/bl31/platform_helpers.o
+                0x00000000100e5fb4                bl31_plat_enable_mmu
+ .text.asm.plat_handle_double_fault
+                0x00000000100e5fb8        0x4 ./build/rpi3/debug/bl31/platform_helpers.o
+                0x00000000100e5fb8                plat_handle_double_fault
+ .text.asm.plat_handle_el3_ea
+                0x00000000100e5fbc        0x4 ./build/rpi3/debug/bl31/platform_helpers.o
+                0x00000000100e5fbc                plat_handle_el3_ea
+ .text.asm.console_16550_core_init
+                0x00000000100e5fc0       0x70 ./build/rpi3/debug/bl31/16550_console.o
+                0x00000000100e5fc0                console_16550_core_init
+ .text.asm.console_16550_register
+                0x00000000100e6030       0x54 ./build/rpi3/debug/bl31/16550_console.o
+                0x00000000100e6030                console_16550_register
+ .text.asm.console_16550_core_putc
+                0x00000000100e6084       0x4c ./build/rpi3/debug/bl31/16550_console.o
+                0x00000000100e6084                console_16550_core_putc
+ .text.asm.console_16550_putc
+                0x00000000100e60d0       0x1c ./build/rpi3/debug/bl31/16550_console.o
+                0x00000000100e60d0                console_16550_putc
+ .text.asm.console_16550_core_getc
+                0x00000000100e60ec       0x2c ./build/rpi3/debug/bl31/16550_console.o
+                0x00000000100e60ec                console_16550_core_getc
+ .text.asm.console_16550_getc
+                0x00000000100e6118       0x1c ./build/rpi3/debug/bl31/16550_console.o
+                0x00000000100e6118                console_16550_getc
+ .text.asm.console_16550_core_flush
+                0x00000000100e6134       0x2c ./build/rpi3/debug/bl31/16550_console.o
+                0x00000000100e6134                console_16550_core_flush
+ .text.asm.console_16550_flush
+                0x00000000100e6160       0x1c ./build/rpi3/debug/bl31/16550_console.o
+                0x00000000100e6160                console_16550_flush
+ .text.asm.enable_mmu_direct_el3
+                0x00000000100e617c       0x70 ./build/rpi3/debug/bl31/enable_mmu.o
+                0x00000000100e617c                enable_mmu_direct_el3
+ .text.__assert
+                0x00000000100e61ec       0x30 ./build/rpi3/debug/lib/libc.a(assert.o)
+                0x00000000100e61ec                __assert
+ .text.memcpy   0x00000000100e621c       0x20 ./build/rpi3/debug/lib/libc.a(memcpy.o)
+                0x00000000100e621c                memcpy
+ .text.memmove  0x00000000100e623c       0x34 ./build/rpi3/debug/lib/libc.a(memmove.o)
+                0x00000000100e623c                memmove
+ .text.memset   0x00000000100e6270       0x1c ./build/rpi3/debug/lib/libc.a(memset.o)
+                0x00000000100e6270                memset
+ .text.unsigned_num_print
+                0x00000000100e628c       0xc4 ./build/rpi3/debug/lib/libc.a(printf.o)
+ .text.vprintf  0x00000000100e6350      0x410 ./build/rpi3/debug/lib/libc.a(printf.o)
+                0x00000000100e6350                vprintf
+ .text.printf   0x00000000100e6760       0x54 ./build/rpi3/debug/lib/libc.a(printf.o)
+                0x00000000100e6760                printf
+ .text.putchar  0x00000000100e67b4       0x2c ./build/rpi3/debug/lib/libc.a(putchar.o)
+                0x00000000100e67b4                putchar
+ *(.vectors)
+ *fill*         0x00000000100e67e0       0x20 
+ .vectors       0x00000000100e6800      0x800 ./build/rpi3/debug/bl31/runtime_exceptions.o
+                0x00000000100e6800                sync_exception_sp_el0
+                0x00000000100e6800                runtime_exceptions
+                0x00000000100e6880                irq_sp_el0
+                0x00000000100e6900                fiq_sp_el0
+                0x00000000100e6980                serror_sp_el0
+                0x00000000100e6a00                sync_exception_sp_elx
+                0x00000000100e6a80                irq_sp_elx
+                0x00000000100e6b00                fiq_sp_elx
+                0x00000000100e6b80                serror_sp_elx
+                0x00000000100e6c00                sync_exception_aarch64
+                0x00000000100e6c80                irq_aarch64
+                0x00000000100e6d00                fiq_aarch64
+                0x00000000100e6d80                serror_aarch64
+                0x00000000100e6e00                sync_exception_aarch32
+                0x00000000100e6e80                irq_aarch32
+                0x00000000100e6f00                fiq_aarch32
+                0x00000000100e6f80                serror_aarch32
+                0x00000000100e7000                . = ALIGN (0x1000)
+                0x00000000100e7000                __TEXT_END__ = .
+
+.iplt           0x00000000100e7000        0x0
+ .iplt          0x00000000100e7000        0x0 ./build/rpi3/debug/bl31/build_message.o
+
+.rodata         0x00000000100e7000     0x2000
+                0x00000000100e7000                __RODATA_START__ = .
+ *(.rodata*)
+ .rodata.build_message
+                0x00000000100e7000       0x1e ./build/rpi3/debug/bl31/build_message.o
+                0x00000000100e7000                build_message
+ .rodata.version_string
+                0x00000000100e701e       0x1c ./build/rpi3/debug/bl31/build_message.o
+                0x00000000100e701e                version_string
+ .rodata.plat_get_target_pwr_state.str1.1
+                0x00000000100e703a       0x1f ./build/rpi3/debug/bl31/plat_psci_common.o
+ .rodata.__func__.2233
+                0x00000000100e7059       0x1b ./build/rpi3/debug/bl31/rpi3_bl31_setup.o
+ .rodata.bl31_plat_get_next_image_ep_info.str1.1
+                0x00000000100e7074       0x1c ./build/rpi3/debug/bl31/rpi3_bl31_setup.o
+ .rodata.bl31_platform_setup.str1.1
+                0x00000000100e7090       0x97 ./build/rpi3/debug/bl31/rpi3_bl31_setup.o
+ *fill*         0x00000000100e7127        0x1 
+ .rodata.plat_rpi3_psci_pm_ops
+                0x00000000100e7128       0xa0 ./build/rpi3/debug/bl31/rpi3_pm.o
+ .rodata.rpi3_pm_idle_states
+                0x00000000100e71c8       0x10 ./build/rpi3/debug/bl31/rpi3_pm.o
+ .rodata.rpi3_pwr_domain_on_finish.str1.1
+                0x00000000100e71d8       0x14 ./build/rpi3/debug/bl31/rpi3_pm.o
+ .rodata.rpi3_system_off.str1.1
+                0x00000000100e71ec       0x31 ./build/rpi3/debug/bl31/rpi3_pm.o
+ .rodata.rpi3_system_reset.str1.1
+                0x00000000100e721d       0x33 ./build/rpi3/debug/bl31/rpi3_pm.o
+ .rodata.__func__.2930
+                0x00000000100e7250       0x1e ./build/rpi3/debug/bl31/bl31_main.o
+ .rodata.bl31_main.str1.1
+                0x00000000100e726e       0x6e ./build/rpi3/debug/bl31/bl31_main.o
+ .rodata.bl31_prepare_next_image_entry.str1.1
+                0x00000000100e72dc       0x89 ./build/rpi3/debug/bl31/bl31_main.o
+ .rodata.get_arm_std_svc_args.str1.1
+                0x00000000100e7365       0x11 ./build/rpi3/debug/bl31/bl31_main.o
+ *fill*         0x00000000100e7376        0x2 
+ .rodata.psci_args.2911
+                0x00000000100e7378       0x10 ./build/rpi3/debug/bl31/bl31_main.o
+ .rodata.get_scr_el3_from_routing_model.str1.1
+                0x00000000100e7388       0x16 ./build/rpi3/debug/bl31/interrupt_mgmt.o
+ .rodata.cm_get_context.str1.1
+                0x00000000100e739e       0x19 ./build/rpi3/debug/bl31/bl31_context_mgmt.o
+ .rodata.__func__.1410
+                0x00000000100e73b7       0x11 ./build/rpi3/debug/bl31/runtime_svc.o
+ .rodata.handle_runtime_svc.str1.1
+                0x00000000100e73c8       0x15 ./build/rpi3/debug/bl31/runtime_svc.o
+ .rodata.runtime_svc_init.str1.1
+                0x00000000100e73dd       0x50 ./build/rpi3/debug/bl31/runtime_svc.o
+ .rodata.arm_arch_svc_smc_handler.str1.1
+                0x00000000100e742d       0x35 ./build/rpi3/debug/bl31/arm_arch_svc_setup.o
+ .rodata.str1.1
+                0x00000000100e7462        0xd ./build/rpi3/debug/bl31/arm_arch_svc_setup.o
+ .rodata.std_svc_setup.str1.1
+                0x00000000100e746f       0x21 ./build/rpi3/debug/bl31/std_svc_setup.o
+ .rodata.std_svc_smc_handler.str1.1
+                0x00000000100e7490       0x2d ./build/rpi3/debug/bl31/std_svc_setup.o
+ .rodata.str1.1
+                0x00000000100e74bd        0x8 ./build/rpi3/debug/bl31/std_svc_setup.o
+ .rodata.cm_set_next_eret_context.str1.1
+                0x00000000100e74c5       0x27 ./build/rpi3/debug/bl31/context_mgmt.o
+ .rodata.cm_setup_context.str1.1
+                0x00000000100e74ec       0x27 ./build/rpi3/debug/bl31/context_mgmt.o
+ .rodata.errata_print_msg.str1.1
+                0x00000000100e7513       0x7d ./build/rpi3/debug/bl31/errata_report.o
+ .rodata.psci_do_cpu_off.str1.1
+                0x00000000100e7590       0x14 ./build/rpi3/debug/bl31/psci_off.o
+ .rodata.psci_cpu_on_start.str1.1
+                0x00000000100e75a4       0x13 ./build/rpi3/debug/bl31/psci_on.o
+ .rodata.psci_cpu_suspend_start.str1.1
+                0x00000000100e75b7       0x18 ./build/rpi3/debug/bl31/psci_suspend.o
+ .rodata.__func__.3198
+                0x00000000100e75cf       0x19 ./build/rpi3/debug/bl31/psci_common.o
+ .rodata.psci_print_power_domain_map.str1.1
+                0x00000000100e75e8       0x91 ./build/rpi3/debug/bl31/psci_common.o
+ *fill*         0x00000000100e7679        0x7 
+ .rodata.psci_state_type_str.3212
+                0x00000000100e7680       0x18 ./build/rpi3/debug/bl31/psci_common.o
+ .rodata.psci_validate_power_state.str1.1
+                0x00000000100e7698       0x17 ./build/rpi3/debug/bl31/psci_common.o
+ .rodata.psci_warmboot_entrypoint.str1.1
+                0x00000000100e76af       0x20 ./build/rpi3/debug/bl31/psci_common.o
+ .rodata.str1.1
+                0x00000000100e76cf        0xe ./build/rpi3/debug/bl31/psci_common.o
+                                         0x11 (size before relaxing)
+ *fill*         0x00000000100e76dd        0x3 
+ .rodata.psci_smc_handler
+                0x00000000100e76e0       0x2c ./build/rpi3/debug/bl31/psci_main.o
+ .rodata.__func__.2977
+                0x00000000100e770c       0x11 ./build/rpi3/debug/bl31/psci_main.o
+ .rodata.psci_cpu_suspend.str1.1
+                0x00000000100e771d       0x48 ./build/rpi3/debug/bl31/psci_main.o
+ .rodata.psci_smc_handler.str1.1
+                0x00000000100e7765       0x20 ./build/rpi3/debug/bl31/psci_main.o
+ .rodata.psci_setup.str1.1
+                0x00000000100e7785       0x16 ./build/rpi3/debug/bl31/psci_setup.o
+ .rodata.psci_system_off.str1.1
+                0x00000000100e779b       0x1b ./build/rpi3/debug/bl31/psci_system_off.o
+ .rodata.psci_mem_protect.str1.1
+                0x00000000100e77b6       0x1c ./build/rpi3/debug/bl31/psci_mem_protect.o
+ .rodata.bakery_lock_get.str1.1
+                0x00000000100e77d2       0x28 ./build/rpi3/debug/bl31/bakery_lock_coherent.o
+ .rodata.opteed_init_optee_ep_state.str1.1
+                0x00000000100e77fa       0x24 ./build/rpi3/debug/bl31/opteed_common.o
+ *fill*         0x00000000100e781e        0x2 
+ .rodata.opteed_smc_handler
+                0x00000000100e7820        0x9 ./build/rpi3/debug/bl31/opteed_main.o
+ .rodata.__func__.2952
+                0x00000000100e7829       0x13 ./build/rpi3/debug/bl31/opteed_main.o
+ .rodata.opteed_setup.str1.1
+                0x00000000100e783c       0x82 ./build/rpi3/debug/bl31/opteed_main.o
+ .rodata.opteed_smc_handler.str1.1
+                0x00000000100e78be       0x22 ./build/rpi3/debug/bl31/opteed_main.o
+ .rodata.str1.1
+                0x00000000100e78e0       0x17 ./build/rpi3/debug/bl31/opteed_main.o
+ .rodata.__func__.2844
+                0x00000000100e78f7       0x17 ./build/rpi3/debug/bl31/opteed_pm.o
+ .rodata.__func__.2851
+                0x00000000100e790e       0x1b ./build/rpi3/debug/bl31/opteed_pm.o
+ .rodata.__func__.2859
+                0x00000000100e7929       0x1d ./build/rpi3/debug/bl31/opteed_pm.o
+ .rodata.__func__.2866
+                0x00000000100e7946       0x22 ./build/rpi3/debug/bl31/opteed_pm.o
+ .rodata.opteed_pm
+                0x00000000100e7968       0x48 ./build/rpi3/debug/bl31/opteed_pm.o
+                0x00000000100e7968                opteed_pm
+ .rodata.opteed_system_reset.str1.1
+                0x00000000100e79b0       0x20 ./build/rpi3/debug/bl31/opteed_pm.o
+ .rodata.print_entry_point_info.str1.1
+                0x00000000100e79d0       0x2c ./build/rpi3/debug/bl31/bl_common.o
+ .rodata.tf_log.str1.1
+                0x00000000100e79fc       0x10 ./build/rpi3/debug/bl31/tf_log.o
+ .rodata.console_unregister.str1.1
+                0x00000000100e7a0c       0x20 ./build/rpi3/debug/bl31/multi_console.o
+ *fill*         0x00000000100e7a2c        0x4 
+ .rodata.plat_prefix_str
+                0x00000000100e7a30       0x28 ./build/rpi3/debug/bl31/plat_log_common.o
+ .rodata.str1.1
+                0x00000000100e7a58       0x32 ./build/rpi3/debug/bl31/plat_log_common.o
+ .rodata.__func__.2701
+                0x00000000100e7a8a       0x10 ./build/rpi3/debug/bl31/plat_common.o
+ .rodata.plat_ea_handler.str1.1
+                0x00000000100e7a9a       0x5c ./build/rpi3/debug/bl31/plat_common.o
+ .rodata.backtrace.str1.1
+                0x00000000100e7af6       0xdb ./build/rpi3/debug/bl31/backtrace.o
+ .rodata.__func__.2424
+                0x00000000100e7bd1       0x12 ./build/rpi3/debug/bl31/rpi3_common.o
+ .rodata.plat_ic_get_pending_interrupt_type.str1.1
+                0x00000000100e7be3       0x21 ./build/rpi3/debug/bl31/rpi3_common.o
+ .rodata.plat_interrupt_type_to_line.str1.1
+                0x00000000100e7c04       0x18 ./build/rpi3/debug/bl31/rpi3_common.o
+ *fill*         0x00000000100e7c1c        0x4 
+ .rodata.plat_rpi3_mmap
+                0x00000000100e7c20       0xc8 ./build/rpi3/debug/bl31/rpi3_common.o
+ .rodata.pa_range_bits_arr
+                0x00000000100e7ce8       0x1c ./build/rpi3/debug/bl31/xlat_tables_arch.o
+ .rodata.xlat_arch_get_max_supported_granule_size.str1.1
+                0x00000000100e7d04       0x2e ./build/rpi3/debug/bl31/xlat_tables_arch.o
+ .rodata.mmap_add_alloc_va.str1.1
+                0x00000000100e7d32       0x29 ./build/rpi3/debug/bl31/xlat_tables_context.o
+ .rodata.__func__.2506
+                0x00000000100e7d5b       0x15 ./build/rpi3/debug/bl31/xlat_tables_core.o
+ .rodata.init_xlat_tables_ctx.str1.1
+                0x00000000100e7d70       0x4f ./build/rpi3/debug/bl31/xlat_tables_core.o
+ .rodata.mmap_add_region_ctx.str1.1
+                0x00000000100e7dbf       0x2b ./build/rpi3/debug/bl31/xlat_tables_core.o
+ .rodata.xlat_desc.str1.1
+                0x00000000100e7dea       0x26 ./build/rpi3/debug/bl31/xlat_tables_core.o
+ .rodata        0x00000000100e7e10       0x41 ./build/rpi3/debug/bl31/cortex_a53.o
+ .rodata.cortex_a53_regs
+                0x00000000100e7e51       0x36 ./build/rpi3/debug/bl31/cortex_a53.o
+ .rodata.crash_prints
+                0x00000000100e7e87      0x2a4 ./build/rpi3/debug/bl31/crash_reporting.o
+ .rodata.str1.1
+                0x00000000100e812b       0x1b ./build/rpi3/debug/bl31/ea_delegate.o
+ .rodata.str1.1
+                0x00000000100e8146       0x1f ./build/rpi3/debug/bl31/cpu_helpers.o
+ .rodata.assert_str
+                0x00000000100e8165       0x15 ./build/rpi3/debug/bl31/debug.o
+ .rodata.panic_str
+                0x00000000100e817a       0x11 ./build/rpi3/debug/bl31/debug.o
+ .rodata.str1.1
+                0x00000000100e818b       0x1b ./build/rpi3/debug/bl31/misc_helpers.o
+ .rodata.str1.1
+                0x00000000100e81a6       0x28 ./build/rpi3/debug/bl31/16550_console.o
+ .rodata.str1.1
+                0x00000000100e81ce       0x28 ./build/rpi3/debug/bl31/enable_mmu.o
+ .rodata.__assert.str1.1
+                0x00000000100e81f6       0x16 ./build/rpi3/debug/lib/libc.a(assert.o)
+ .rodata.vprintf.str1.1
+                0x00000000100e820c       0x15 ./build/rpi3/debug/lib/libc.a(printf.o)
+                0x00000000100e8228                . = ALIGN (0x8)
+ *fill*         0x00000000100e8221        0x7 
+                0x00000000100e8228                __RT_SVC_DESCS_START__ = .
+ *(rt_svc_descs)
+ rt_svc_descs   0x00000000100e8228       0x20 ./build/rpi3/debug/bl31/arm_arch_svc_setup.o
+ rt_svc_descs   0x00000000100e8248       0x20 ./build/rpi3/debug/bl31/std_svc_setup.o
+ rt_svc_descs   0x00000000100e8268       0x40 ./build/rpi3/debug/bl31/opteed_main.o
+                0x00000000100e82a8                __RT_SVC_DESCS_END__ = .
+                0x00000000100e82a8                . = ALIGN (0x8)
+                0x00000000100e82a8                __CPU_OPS_START__ = .
+ *(cpu_ops)
+ cpu_ops        0x00000000100e82a8       0x50 ./build/rpi3/debug/bl31/cortex_a53.o
+                0x00000000100e82f8                __CPU_OPS_END__ = .
+                0x00000000100e82f8                . = ALIGN (0x8)
+                0x00000000100e82f8                __GOT_START__ = .
+ *(.got)
+                0x00000000100e82f8                __GOT_END__ = .
+                0x00000000100e82f8                . = ALIGN (0x8)
+                0x00000000100e82f8                __pubsub_psci_cpu_on_finish_start = .
+ *(__pubsub_psci_cpu_on_finish)
+                0x00000000100e82f8                __pubsub_psci_cpu_on_finish_end = .
+                0x00000000100e82f8                __pubsub_psci_suspend_pwrdown_start_start = .
+ *(__pubsub_psci_suspend_pwrdown_start)
+                0x00000000100e82f8                __pubsub_psci_suspend_pwrdown_start_end = .
+                0x00000000100e82f8                __pubsub_psci_suspend_pwrdown_finish_start = .
+ *(__pubsub_psci_suspend_pwrdown_finish)
+                0x00000000100e82f8                __pubsub_psci_suspend_pwrdown_finish_end = .
+                0x00000000100e82f8                __pubsub_cm_entering_secure_world_start = .
+ *(__pubsub_cm_entering_secure_world)
+ __pubsub_cm_entering_secure_world
+                0x00000000100e82f8        0x8 ./build/rpi3/debug/bl31/spe.o
+                0x00000000100e82f8                __cb_func_spe_drain_buffers_hookcm_entering_secure_world
+                0x00000000100e8300                __pubsub_cm_entering_secure_world_end = .
+                0x00000000100e8300                __pubsub_cm_exited_secure_world_start = .
+ *(__pubsub_cm_exited_secure_world)
+                0x00000000100e8300                __pubsub_cm_exited_secure_world_end = .
+                0x00000000100e8300                __pubsub_cm_entering_normal_world_start = .
+ *(__pubsub_cm_entering_normal_world)
+ __pubsub_cm_entering_normal_world
+                0x00000000100e8300        0x8 ./build/rpi3/debug/bl31/sve.o
+                0x00000000100e8300                __cb_func_enable_sve_hookcm_entering_normal_world
+                0x00000000100e8308                __pubsub_cm_entering_normal_world_end = .
+                0x00000000100e8308                __pubsub_cm_exited_normal_world_start = .
+ *(__pubsub_cm_exited_normal_world)
+ __pubsub_cm_exited_normal_world
+                0x00000000100e8308        0x8 ./build/rpi3/debug/bl31/sve.o
+                0x00000000100e8308                __cb_func_disable_sve_hookcm_exited_normal_world
+                0x00000000100e8310                __pubsub_cm_exited_normal_world_end = .
+                0x00000000100e9000                . = ALIGN (0x1000)
+ *fill*         0x00000000100e8310      0xcf0 
+                0x00000000100e9000                __RODATA_END__ = .
+                0x0000000000000001                ASSERT ((__CPU_OPS_END__ > __CPU_OPS_START__), cpu_ops not defined for this platform.)
+                0x00000000100e9000                __RW_START__ = .
+
+.data           0x00000000100e9000       0x78
+                0x00000000100e9000                __DATA_START__ = .
+ *(.data*)
+ .data.power_domain_tree_desc
+                0x00000000100e9000        0x2 ./build/rpi3/debug/bl31/rpi3_topology.o
+ *fill*         0x00000000100e9002        0x2 
+ .data.next_image_type
+                0x00000000100e9004        0x4 ./build/rpi3/debug/bl31/bl31_main.o
+ .data.max_log_level
+                0x00000000100e9008        0x4 ./build/rpi3/debug/bl31/tf_log.o
+ .data.console_state
+                0x00000000100e900c        0x1 ./build/rpi3/debug/bl31/multi_console.o
+                0x00000000100e900c                console_state
+ *fill*         0x00000000100e900d        0x3 
+ .data.tf_xlat_ctx
+                0x00000000100e9010       0x60 ./build/rpi3/debug/bl31/xlat_tables_context.o
+ .data          0x00000000100e9070        0x8 ./build/rpi3/debug/bl31/cortex_a53.o
+                0x00000000100e9078                __DATA_END__ = .
+
+.igot.plt       0x00000000100e9078        0x0
+ .igot.plt      0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+                0x00000000100e9078                . = ALIGN (0x8)
+                0x00000000100e9078                __RELA_START__ = .
+
+.rela.dyn       0x00000000100e9078        0x0
+ .rela.iplt     0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.bl31_plat_arch_setup
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.runtime_svc_init
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.cm_el1_sysregs_context_save
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.cm_el1_sysregs_context_restore
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.psci_do_cpu_off
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.psci_cpu_on_start
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.psci_cpu_on_finish
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.psci_cpu_suspend_start
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.psci_cpu_suspend_finish
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.psci_validate_power_state
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.psci_query_sys_suspend_pwrstate
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.psci_get_target_local_pwr_states
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.psci_get_parent_pwr_domain_nodes
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.psci_set_pwr_domains_to_run
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.psci_do_state_coordination
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.psci_acquire_pwr_domain_locks
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.psci_validate_entry_point
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.psci_register_spd_pm_hook
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.psci_spd_migrate_info
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.psci_print_power_domain_map
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.psci_cpu_suspend
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.psci_migrate
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.psci_node_hw_state
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.psci_features
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.psci_smc_handler
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.psci_setup
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.psci_system_off
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.psci_system_reset
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.psci_system_reset2
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.psci_mem_protect
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.psci_mem_chk_range
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.opteed_smc_handler
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.opteed_setup
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.opteed_sel1_interrupt_handler
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.opteed_init
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.opteed_system_reset
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.opteed_system_off
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.opteed_cpu_suspend_finish_handler
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.opteed_cpu_suspend_handler
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.opteed_cpu_off_handler
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.opteed_cpu_on_finish_handler
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.console_is_registered
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.console_register
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.console_putc
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.console_flush
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.enable_mmu_el3
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.asm.bl31_entrypoint
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.asm.smc_handler
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.asm._cpu_data_by_index
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.asm.get_cpu_ops_ptr
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .rela.text.asm.enable_mmu_direct_el3
+                0x00000000100e9078        0x0 ./build/rpi3/debug/bl31/build_message.o
+                0x00000000100e9078                __RELA_END__ = .
+                0x0000000000000001                ASSERT ((. <= 0x100ee000), BL31 progbits has exceeded its limit.)
+
+stacks          0x00000000100e9080     0x4000
+                0x00000000100e9080                __STACKS_START__ = .
+ *(tzfw_normal_stacks)
+ tzfw_normal_stacks
+                0x00000000100e9080     0x4000 ./build/rpi3/debug/bl31/platform_mp_stack.o
+                0x00000000100ed080                __STACKS_END__ = .
+
+.bss            0x00000000100ed080     0x1810
+                0x00000000100ed080                __BSS_START__ = .
+ *(.bss*)
+ .bss.bl32_image_ep_info
+                0x00000000100ed080       0x58 ./build/rpi3/debug/bl31/rpi3_bl31_setup.o
+ .bss.bl33_image_ep_info
+                0x00000000100ed0d8       0x58 ./build/rpi3/debug/bl31/rpi3_bl31_setup.o
+ .bss.bl32_init
+                0x00000000100ed130        0x8 ./build/rpi3/debug/bl31/bl31_main.o
+ .bss.intr_type_descs
+                0x00000000100ed138       0x48 ./build/rpi3/debug/bl31/interrupt_mgmt.o
+ .bss.psci_req_local_pwr_states
+                0x00000000100ed180        0x4 ./build/rpi3/debug/bl31/psci_common.o
+ *fill*         0x00000000100ed184        0xc 
+ .bss.psci_ns_context
+                0x00000000100ed190      0x8c0 ./build/rpi3/debug/bl31/psci_setup.o
+ .bss.rpi3_console
+                0x00000000100eda50       0x30 ./build/rpi3/debug/bl31/rpi3_common.o
+ .bss.tf_base_xlat_table
+                0x00000000100eda80       0x20 ./build/rpi3/debug/bl31/xlat_tables_context.o
+ .bss.tf_mmap   0x00000000100edaa0      0x168 ./build/rpi3/debug/bl31/xlat_tables_context.o
+ *(COMMON)
+ COMMON         0x00000000100edc08       0x80 ./build/rpi3/debug/bl31/runtime_svc.o
+                0x00000000100edc08                rt_svc_descs_indices
+ *fill*         0x00000000100edc88       0x38 
+ COMMON         0x00000000100edcc0      0x200 ./build/rpi3/debug/bl31/cpu_data_array.o
+                0x00000000100edcc0                percpu_data
+ COMMON         0x00000000100edec0       0x50 ./build/rpi3/debug/bl31/psci_common.o
+                0x00000000100edec0                psci_cpu_pd_nodes
+                0x00000000100edf00                psci_plat_pm_ops
+                0x00000000100edf08                psci_spd_pm
+ COMMON         0x00000000100edf10        0x4 ./build/rpi3/debug/bl31/psci_setup.o
+                0x00000000100edf10                psci_caps
+ *fill*         0x00000000100edf14        0xc 
+ COMMON         0x00000000100edf20      0x950 ./build/rpi3/debug/bl31/opteed_main.o
+                0x00000000100edf20                optee_vector_table
+                0x00000000100edf28                opteed_rw
+                0x00000000100edf30                opteed_sp_context
+ COMMON         0x00000000100ee870        0x8 ./build/rpi3/debug/bl31/multi_console.o
+                0x00000000100ee870                console_list
+ COMMON         0x00000000100ee878       0x18 ./build/rpi3/debug/bl31/xlat_tables_context.o
+                0x00000000100ee878                mmu_cfg_params
+                0x00000000100ee890                __BSS_END__ = .
+
+xlat_table      0x00000000100ef000     0x4000
+ *(xlat_table)
+ xlat_table     0x00000000100ef000     0x4000 ./build/rpi3/debug/bl31/xlat_tables_context.o
+
+coherent_ram    0x00000000100f3000     0x1000
+                0x00000000100f3000                __COHERENT_RAM_START__ = .
+ *(bakery_lock)
+ bakery_lock    0x00000000100f3000        0x8 ./build/rpi3/debug/bl31/psci_common.o
+                0x00000000100f3000                psci_locks
+ *(tzfw_coherent_mem)
+ tzfw_coherent_mem
+                0x00000000100f3008       0x10 ./build/rpi3/debug/bl31/psci_common.o
+                0x00000000100f3008                psci_non_cpu_pd_nodes
+                0x00000000100f3018                __COHERENT_RAM_END_UNALIGNED__ = .
+                0x00000000100f4000                . = ALIGN (0x1000)
+ *fill*         0x00000000100f3018      0xfe8 
+                0x00000000100f4000                __COHERENT_RAM_END__ = .
+                0x00000000100f4000                __RW_END__ = .
+                0x00000000100f4000                __BL31_END__ = .
+                0x0000000000000001                ASSERT ((. <= 0x10100000), BL31 image has exceeded its limit.)
+LOAD ./build/rpi3/debug/bl31/build_message.o
+LOAD ./build/rpi3/debug/bl31/plat_psci_common.o
+LOAD ./build/rpi3/debug/bl31/rpi3_bl31_setup.o
+LOAD ./build/rpi3/debug/bl31/rpi3_pm.o
+LOAD ./build/rpi3/debug/bl31/rpi3_topology.o
+LOAD ./build/rpi3/debug/bl31/fdt.o
+LOAD ./build/rpi3/debug/bl31/fdt_addresses.o
+LOAD ./build/rpi3/debug/bl31/fdt_empty_tree.o
+LOAD ./build/rpi3/debug/bl31/fdt_ro.o
+LOAD ./build/rpi3/debug/bl31/fdt_rw.o
+LOAD ./build/rpi3/debug/bl31/fdt_strerror.o
+LOAD ./build/rpi3/debug/bl31/fdt_sw.o
+LOAD ./build/rpi3/debug/bl31/fdt_wip.o
+LOAD ./build/rpi3/debug/bl31/bl31_main.o
+LOAD ./build/rpi3/debug/bl31/interrupt_mgmt.o
+LOAD ./build/rpi3/debug/bl31/bl31_context_mgmt.o
+LOAD ./build/rpi3/debug/bl31/runtime_svc.o
+LOAD ./build/rpi3/debug/bl31/arm_arch_svc_setup.o
+LOAD ./build/rpi3/debug/bl31/std_svc_setup.o
+LOAD ./build/rpi3/debug/bl31/cpu_data_array.o
+LOAD ./build/rpi3/debug/bl31/context_mgmt.o
+LOAD ./build/rpi3/debug/bl31/errata_report.o
+LOAD ./build/rpi3/debug/bl31/psci_off.o
+LOAD ./build/rpi3/debug/bl31/psci_on.o
+LOAD ./build/rpi3/debug/bl31/psci_suspend.o
+LOAD ./build/rpi3/debug/bl31/psci_common.o
+LOAD ./build/rpi3/debug/bl31/psci_main.o
+LOAD ./build/rpi3/debug/bl31/psci_setup.o
+LOAD ./build/rpi3/debug/bl31/psci_system_off.o
+LOAD ./build/rpi3/debug/bl31/psci_mem_protect.o
+LOAD ./build/rpi3/debug/bl31/bakery_lock_coherent.o
+LOAD ./build/rpi3/debug/bl31/spe.o
+LOAD ./build/rpi3/debug/bl31/sve.o
+LOAD ./build/rpi3/debug/bl31/opteed_common.o
+LOAD ./build/rpi3/debug/bl31/opteed_main.o
+LOAD ./build/rpi3/debug/bl31/opteed_pm.o
+LOAD ./build/rpi3/debug/bl31/bl_common.o
+LOAD ./build/rpi3/debug/bl31/tf_log.o
+LOAD ./build/rpi3/debug/bl31/multi_console.o
+LOAD ./build/rpi3/debug/bl31/plat_bl_common.o
+LOAD ./build/rpi3/debug/bl31/plat_log_common.o
+LOAD ./build/rpi3/debug/bl31/plat_common.o
+LOAD ./build/rpi3/debug/bl31/backtrace.o
+LOAD ./build/rpi3/debug/bl31/rpi3_common.o
+LOAD ./build/rpi3/debug/bl31/xlat_tables_arch.o
+LOAD ./build/rpi3/debug/bl31/xlat_tables_context.o
+LOAD ./build/rpi3/debug/bl31/xlat_tables_core.o
+LOAD ./build/rpi3/debug/bl31/xlat_tables_utils.o
+LOAD ./build/rpi3/debug/bl31/cortex_a53.o
+LOAD ./build/rpi3/debug/bl31/plat_helpers.o
+LOAD ./build/rpi3/debug/bl31/bl31_entrypoint.o
+LOAD ./build/rpi3/debug/bl31/crash_reporting.o
+LOAD ./build/rpi3/debug/bl31/ea_delegate.o
+LOAD ./build/rpi3/debug/bl31/runtime_exceptions.o
+LOAD ./build/rpi3/debug/bl31/setjmp.o
+LOAD ./build/rpi3/debug/bl31/dsu_helpers.o
+LOAD ./build/rpi3/debug/bl31/platform_mp_stack.o
+LOAD ./build/rpi3/debug/bl31/cpu_data.o
+LOAD ./build/rpi3/debug/bl31/cpu_helpers.o
+LOAD ./build/rpi3/debug/bl31/spinlock.o
+LOAD ./build/rpi3/debug/bl31/psci_helpers.o
+LOAD ./build/rpi3/debug/bl31/context.o
+LOAD ./build/rpi3/debug/bl31/opteed_helpers.o
+LOAD ./build/rpi3/debug/bl31/debug.o
+LOAD ./build/rpi3/debug/bl31/cache_helpers.o
+LOAD ./build/rpi3/debug/bl31/misc_helpers.o
+LOAD ./build/rpi3/debug/bl31/platform_helpers.o
+LOAD ./build/rpi3/debug/bl31/16550_console.o
+LOAD ./build/rpi3/debug/bl31/enable_mmu.o
+LOAD ./build/rpi3/debug/lib/libfdt.a
+LOAD ./build/rpi3/debug/lib/libc.a
+OUTPUT(build/rpi3/debug/bl31/bl31.elf elf64-littleaarch64)
+
+.debug_info     0x0000000000000000    0x1fd72
+ .debug_info    0x0000000000000000       0x83 ./build/rpi3/debug/bl31/build_message.o
+ .debug_info    0x0000000000000083      0x270 ./build/rpi3/debug/bl31/plat_psci_common.o
+ .debug_info    0x00000000000002f3      0x87e ./build/rpi3/debug/bl31/rpi3_bl31_setup.o
+ .debug_info    0x0000000000000b71      0xc05 ./build/rpi3/debug/bl31/rpi3_pm.o
+ .debug_info    0x0000000000001776      0x257 ./build/rpi3/debug/bl31/rpi3_topology.o
+ .debug_info    0x00000000000019cd      0x8ce ./build/rpi3/debug/bl31/fdt.o
+ .debug_info    0x000000000000229b     0x2655 ./build/rpi3/debug/bl31/fdt_ro.o
+ .debug_info    0x00000000000048f0     0x2c31 ./build/rpi3/debug/bl31/fdt_rw.o
+ .debug_info    0x0000000000007521      0x955 ./build/rpi3/debug/bl31/bl31_main.o
+ .debug_info    0x0000000000007e76      0x89c ./build/rpi3/debug/bl31/interrupt_mgmt.o
+ .debug_info    0x0000000000008712      0x585 ./build/rpi3/debug/bl31/bl31_context_mgmt.o
+ .debug_info    0x0000000000008c97      0x8c5 ./build/rpi3/debug/bl31/runtime_svc.o
+ .debug_info    0x000000000000955c      0x572 ./build/rpi3/debug/bl31/arm_arch_svc_setup.o
+ .debug_info    0x0000000000009ace      0x9a2 ./build/rpi3/debug/bl31/std_svc_setup.o
+ .debug_info    0x000000000000a470      0x29f ./build/rpi3/debug/bl31/cpu_data_array.o
+ .debug_info    0x000000000000a70f     0x15f0 ./build/rpi3/debug/bl31/context_mgmt.o
+ .debug_info    0x000000000000bcff      0x47f ./build/rpi3/debug/bl31/errata_report.o
+ .debug_info    0x000000000000c17e      0xc88 ./build/rpi3/debug/bl31/psci_off.o
+ .debug_info    0x000000000000ce06     0x121c ./build/rpi3/debug/bl31/psci_on.o
+ .debug_info    0x000000000000e022     0x12e8 ./build/rpi3/debug/bl31/psci_suspend.o
+ .debug_info    0x000000000000f30a     0x2625 ./build/rpi3/debug/bl31/psci_common.o
+ .debug_info    0x000000000001192f     0x195d ./build/rpi3/debug/bl31/psci_main.o
+ .debug_info    0x000000000001328c     0x11ed ./build/rpi3/debug/bl31/psci_setup.o
+ .debug_info    0x0000000000014479      0x9c8 ./build/rpi3/debug/bl31/psci_system_off.o
+ .debug_info    0x0000000000014e41      0x94c ./build/rpi3/debug/bl31/psci_mem_protect.o
+ .debug_info    0x000000000001578d      0x81b ./build/rpi3/debug/bl31/bakery_lock_coherent.o
+ .debug_info    0x0000000000015fa8      0x5e8 ./build/rpi3/debug/bl31/spe.o
+ .debug_info    0x0000000000016590      0x709 ./build/rpi3/debug/bl31/sve.o
+ .debug_info    0x0000000000016c99      0x9f3 ./build/rpi3/debug/bl31/opteed_common.o
+ .debug_info    0x000000000001768c     0x1055 ./build/rpi3/debug/bl31/opteed_main.o
+ .debug_info    0x00000000000186e1      0xf23 ./build/rpi3/debug/bl31/opteed_pm.o
+ .debug_info    0x0000000000019604      0x967 ./build/rpi3/debug/bl31/bl_common.o
+ .debug_info    0x0000000000019f6b      0x313 ./build/rpi3/debug/bl31/tf_log.o
+ .debug_info    0x000000000001a27e      0x64e ./build/rpi3/debug/bl31/multi_console.o
+ .debug_info    0x000000000001a8cc      0x1e7 ./build/rpi3/debug/bl31/plat_log_common.o
+ .debug_info    0x000000000001aab3      0x412 ./build/rpi3/debug/bl31/plat_common.o
+ .debug_info    0x000000000001aec5      0x8a2 ./build/rpi3/debug/bl31/backtrace.o
+ .debug_info    0x000000000001b767      0x73e ./build/rpi3/debug/bl31/rpi3_common.o
+ .debug_info    0x000000000001bea5      0xcac ./build/rpi3/debug/bl31/xlat_tables_arch.o
+ .debug_info    0x000000000001cb51      0x93c ./build/rpi3/debug/bl31/xlat_tables_context.o
+ .debug_info    0x000000000001d48d      0xfb7 ./build/rpi3/debug/bl31/xlat_tables_core.o
+ .debug_info    0x000000000001e444      0xb5a ./build/rpi3/debug/bl31/xlat_tables_utils.o
+ .debug_info    0x000000000001ef9e       0x22 ./build/rpi3/debug/bl31/cortex_a53.o
+ .debug_info    0x000000000001efc0       0x22 ./build/rpi3/debug/bl31/plat_helpers.o
+ .debug_info    0x000000000001efe2       0x22 ./build/rpi3/debug/bl31/bl31_entrypoint.o
+ .debug_info    0x000000000001f004       0x22 ./build/rpi3/debug/bl31/crash_reporting.o
+ .debug_info    0x000000000001f026       0x22 ./build/rpi3/debug/bl31/ea_delegate.o
+ .debug_info    0x000000000001f048       0x22 ./build/rpi3/debug/bl31/runtime_exceptions.o
+ .debug_info    0x000000000001f06a       0x22 ./build/rpi3/debug/bl31/platform_mp_stack.o
+ .debug_info    0x000000000001f08c       0x22 ./build/rpi3/debug/bl31/cpu_data.o
+ .debug_info    0x000000000001f0ae       0x22 ./build/rpi3/debug/bl31/cpu_helpers.o
+ .debug_info    0x000000000001f0d0       0x22 ./build/rpi3/debug/bl31/spinlock.o
+ .debug_info    0x000000000001f0f2       0x22 ./build/rpi3/debug/bl31/psci_helpers.o
+ .debug_info    0x000000000001f114       0x22 ./build/rpi3/debug/bl31/context.o
+ .debug_info    0x000000000001f136       0x22 ./build/rpi3/debug/bl31/opteed_helpers.o
+ .debug_info    0x000000000001f158       0x22 ./build/rpi3/debug/bl31/debug.o
+ .debug_info    0x000000000001f17a       0x22 ./build/rpi3/debug/bl31/cache_helpers.o
+ .debug_info    0x000000000001f19c       0x22 ./build/rpi3/debug/bl31/misc_helpers.o
+ .debug_info    0x000000000001f1be       0x22 ./build/rpi3/debug/bl31/platform_helpers.o
+ .debug_info    0x000000000001f1e0       0x22 ./build/rpi3/debug/bl31/16550_console.o
+ .debug_info    0x000000000001f202       0x22 ./build/rpi3/debug/bl31/enable_mmu.o
+ .debug_info    0x000000000001f224      0x227 ./build/rpi3/debug/lib/libc.a(assert.o)
+ .debug_info    0x000000000001f44b       0xdc ./build/rpi3/debug/lib/libc.a(memcpy.o)
+ .debug_info    0x000000000001f527      0x12e ./build/rpi3/debug/lib/libc.a(memmove.o)
+ .debug_info    0x000000000001f655       0xc1 ./build/rpi3/debug/lib/libc.a(memset.o)
+ .debug_info    0x000000000001f716      0x579 ./build/rpi3/debug/lib/libc.a(printf.o)
+ .debug_info    0x000000000001fc8f       0xe3 ./build/rpi3/debug/lib/libc.a(putchar.o)
+
+.debug_abbrev   0x0000000000000000     0x73db
+ .debug_abbrev  0x0000000000000000       0x45 ./build/rpi3/debug/bl31/build_message.o
+ .debug_abbrev  0x0000000000000045      0x111 ./build/rpi3/debug/bl31/plat_psci_common.o
+ .debug_abbrev  0x0000000000000156      0x20b ./build/rpi3/debug/bl31/rpi3_bl31_setup.o
+ .debug_abbrev  0x0000000000000361      0x308 ./build/rpi3/debug/bl31/rpi3_pm.o
+ .debug_abbrev  0x0000000000000669      0x122 ./build/rpi3/debug/bl31/rpi3_topology.o
+ .debug_abbrev  0x000000000000078b      0x1e8 ./build/rpi3/debug/bl31/fdt.o
+ .debug_abbrev  0x0000000000000973      0x3d5 ./build/rpi3/debug/bl31/fdt_ro.o
+ .debug_abbrev  0x0000000000000d48      0x41a ./build/rpi3/debug/bl31/fdt_rw.o
+ .debug_abbrev  0x0000000000001162      0x318 ./build/rpi3/debug/bl31/bl31_main.o
+ .debug_abbrev  0x000000000000147a      0x276 ./build/rpi3/debug/bl31/interrupt_mgmt.o
+ .debug_abbrev  0x00000000000016f0      0x214 ./build/rpi3/debug/bl31/bl31_context_mgmt.o
+ .debug_abbrev  0x0000000000001904      0x2d4 ./build/rpi3/debug/bl31/runtime_svc.o
+ .debug_abbrev  0x0000000000001bd8      0x237 ./build/rpi3/debug/bl31/arm_arch_svc_setup.o
+ .debug_abbrev  0x0000000000001e0f      0x2ab ./build/rpi3/debug/bl31/std_svc_setup.o
+ .debug_abbrev  0x00000000000020ba      0x10c ./build/rpi3/debug/bl31/cpu_data_array.o
+ .debug_abbrev  0x00000000000021c6      0x454 ./build/rpi3/debug/bl31/context_mgmt.o
+ .debug_abbrev  0x000000000000261a      0x1fd ./build/rpi3/debug/bl31/errata_report.o
+ .debug_abbrev  0x0000000000002817      0x334 ./build/rpi3/debug/bl31/psci_off.o
+ .debug_abbrev  0x0000000000002b4b      0x377 ./build/rpi3/debug/bl31/psci_on.o
+ .debug_abbrev  0x0000000000002ec2      0x448 ./build/rpi3/debug/bl31/psci_suspend.o
+ .debug_abbrev  0x000000000000330a      0x52c ./build/rpi3/debug/bl31/psci_common.o
+ .debug_abbrev  0x0000000000003836      0x4fe ./build/rpi3/debug/bl31/psci_main.o
+ .debug_abbrev  0x0000000000003d34      0x441 ./build/rpi3/debug/bl31/psci_setup.o
+ .debug_abbrev  0x0000000000004175      0x229 ./build/rpi3/debug/bl31/psci_system_off.o
+ .debug_abbrev  0x000000000000439e      0x1fd ./build/rpi3/debug/bl31/psci_mem_protect.o
+ .debug_abbrev  0x000000000000459b      0x286 ./build/rpi3/debug/bl31/bakery_lock_coherent.o
+ .debug_abbrev  0x0000000000004821      0x256 ./build/rpi3/debug/bl31/spe.o
+ .debug_abbrev  0x0000000000004a77      0x25c ./build/rpi3/debug/bl31/sve.o
+ .debug_abbrev  0x0000000000004cd3      0x2c1 ./build/rpi3/debug/bl31/opteed_common.o
+ .debug_abbrev  0x0000000000004f94      0x325 ./build/rpi3/debug/bl31/opteed_main.o
+ .debug_abbrev  0x00000000000052b9      0x2f6 ./build/rpi3/debug/bl31/opteed_pm.o
+ .debug_abbrev  0x00000000000055af      0x274 ./build/rpi3/debug/bl31/bl_common.o
+ .debug_abbrev  0x0000000000005823      0x13d ./build/rpi3/debug/bl31/tf_log.o
+ .debug_abbrev  0x0000000000005960      0x20b ./build/rpi3/debug/bl31/multi_console.o
+ .debug_abbrev  0x0000000000005b6b       0xc8 ./build/rpi3/debug/bl31/plat_log_common.o
+ .debug_abbrev  0x0000000000005c33      0x18c ./build/rpi3/debug/bl31/plat_common.o
+ .debug_abbrev  0x0000000000005dbf      0x2ab ./build/rpi3/debug/bl31/backtrace.o
+ .debug_abbrev  0x000000000000606a      0x1d0 ./build/rpi3/debug/bl31/rpi3_common.o
+ .debug_abbrev  0x000000000000623a      0x2f4 ./build/rpi3/debug/bl31/xlat_tables_arch.o
+ .debug_abbrev  0x000000000000652e      0x1df ./build/rpi3/debug/bl31/xlat_tables_context.o
+ .debug_abbrev  0x000000000000670d      0x330 ./build/rpi3/debug/bl31/xlat_tables_core.o
+ .debug_abbrev  0x0000000000006a3d      0x295 ./build/rpi3/debug/bl31/xlat_tables_utils.o
+ .debug_abbrev  0x0000000000006cd2       0x12 ./build/rpi3/debug/bl31/cortex_a53.o
+ .debug_abbrev  0x0000000000006ce4       0x12 ./build/rpi3/debug/bl31/plat_helpers.o
+ .debug_abbrev  0x0000000000006cf6       0x12 ./build/rpi3/debug/bl31/bl31_entrypoint.o
+ .debug_abbrev  0x0000000000006d08       0x12 ./build/rpi3/debug/bl31/crash_reporting.o
+ .debug_abbrev  0x0000000000006d1a       0x12 ./build/rpi3/debug/bl31/ea_delegate.o
+ .debug_abbrev  0x0000000000006d2c       0x12 ./build/rpi3/debug/bl31/runtime_exceptions.o
+ .debug_abbrev  0x0000000000006d3e       0x12 ./build/rpi3/debug/bl31/platform_mp_stack.o
+ .debug_abbrev  0x0000000000006d50       0x12 ./build/rpi3/debug/bl31/cpu_data.o
+ .debug_abbrev  0x0000000000006d62       0x12 ./build/rpi3/debug/bl31/cpu_helpers.o
+ .debug_abbrev  0x0000000000006d74       0x12 ./build/rpi3/debug/bl31/spinlock.o
+ .debug_abbrev  0x0000000000006d86       0x12 ./build/rpi3/debug/bl31/psci_helpers.o
+ .debug_abbrev  0x0000000000006d98       0x12 ./build/rpi3/debug/bl31/context.o
+ .debug_abbrev  0x0000000000006daa       0x12 ./build/rpi3/debug/bl31/opteed_helpers.o
+ .debug_abbrev  0x0000000000006dbc       0x12 ./build/rpi3/debug/bl31/debug.o
+ .debug_abbrev  0x0000000000006dce       0x12 ./build/rpi3/debug/bl31/cache_helpers.o
+ .debug_abbrev  0x0000000000006de0       0x12 ./build/rpi3/debug/bl31/misc_helpers.o
+ .debug_abbrev  0x0000000000006df2       0x12 ./build/rpi3/debug/bl31/platform_helpers.o
+ .debug_abbrev  0x0000000000006e04       0x12 ./build/rpi3/debug/bl31/16550_console.o
+ .debug_abbrev  0x0000000000006e16       0x12 ./build/rpi3/debug/bl31/enable_mmu.o
+ .debug_abbrev  0x0000000000006e28       0xd4 ./build/rpi3/debug/lib/libc.a(assert.o)
+ .debug_abbrev  0x0000000000006efc       0xa1 ./build/rpi3/debug/lib/libc.a(memcpy.o)
+ .debug_abbrev  0x0000000000006f9d       0xc6 ./build/rpi3/debug/lib/libc.a(memmove.o)
+ .debug_abbrev  0x0000000000007063       0xa0 ./build/rpi3/debug/lib/libc.a(memset.o)
+ .debug_abbrev  0x0000000000007103      0x23e ./build/rpi3/debug/lib/libc.a(printf.o)
+ .debug_abbrev  0x0000000000007341       0x9a ./build/rpi3/debug/lib/libc.a(putchar.o)
+
+.debug_aranges  0x0000000000000000     0x2050
+ .debug_aranges
+                0x0000000000000000       0x20 ./build/rpi3/debug/bl31/build_message.o
+ .debug_aranges
+                0x0000000000000020       0x30 ./build/rpi3/debug/bl31/plat_psci_common.o
+ .debug_aranges
+                0x0000000000000050       0x60 ./build/rpi3/debug/bl31/rpi3_bl31_setup.o
+ .debug_aranges
+                0x00000000000000b0       0xa0 ./build/rpi3/debug/bl31/rpi3_pm.o
+ .debug_aranges
+                0x0000000000000150       0x40 ./build/rpi3/debug/bl31/rpi3_topology.o
+ .debug_aranges
+                0x0000000000000190       0xd0 ./build/rpi3/debug/bl31/fdt.o
+ .debug_aranges
+                0x0000000000000260      0x270 ./build/rpi3/debug/bl31/fdt_ro.o
+ .debug_aranges
+                0x00000000000004d0      0x170 ./build/rpi3/debug/bl31/fdt_rw.o
+ .debug_aranges
+                0x0000000000000640       0x90 ./build/rpi3/debug/bl31/bl31_main.o
+ .debug_aranges
+                0x00000000000006d0       0x90 ./build/rpi3/debug/bl31/interrupt_mgmt.o
+ .debug_aranges
+                0x0000000000000760       0x60 ./build/rpi3/debug/bl31/bl31_context_mgmt.o
+ .debug_aranges
+                0x00000000000007c0       0x40 ./build/rpi3/debug/bl31/runtime_svc.o
+ .debug_aranges
+                0x0000000000000800       0x30 ./build/rpi3/debug/bl31/arm_arch_svc_setup.o
+ .debug_aranges
+                0x0000000000000830       0x40 ./build/rpi3/debug/bl31/std_svc_setup.o
+ .debug_aranges
+                0x0000000000000870       0x20 ./build/rpi3/debug/bl31/cpu_data_array.o
+ .debug_aranges
+                0x0000000000000890       0xe0 ./build/rpi3/debug/bl31/context_mgmt.o
+ .debug_aranges
+                0x0000000000000970       0x40 ./build/rpi3/debug/bl31/errata_report.o
+ .debug_aranges
+                0x00000000000009b0       0x30 ./build/rpi3/debug/bl31/psci_off.o
+ .debug_aranges
+                0x00000000000009e0       0x40 ./build/rpi3/debug/bl31/psci_on.o
+ .debug_aranges
+                0x0000000000000a20       0x40 ./build/rpi3/debug/bl31/psci_suspend.o
+ .debug_aranges
+                0x0000000000000a60      0x170 ./build/rpi3/debug/bl31/psci_common.o
+ .debug_aranges
+                0x0000000000000bd0       0xe0 ./build/rpi3/debug/bl31/psci_main.o
+ .debug_aranges
+                0x0000000000000cb0       0x50 ./build/rpi3/debug/bl31/psci_setup.o
+ .debug_aranges
+                0x0000000000000d00       0x50 ./build/rpi3/debug/bl31/psci_system_off.o
+ .debug_aranges
+                0x0000000000000d50       0x40 ./build/rpi3/debug/bl31/psci_mem_protect.o
+ .debug_aranges
+                0x0000000000000d90       0x40 ./build/rpi3/debug/bl31/bakery_lock_coherent.o
+ .debug_aranges
+                0x0000000000000dd0       0x60 ./build/rpi3/debug/bl31/spe.o
+ .debug_aranges
+                0x0000000000000e30       0x60 ./build/rpi3/debug/bl31/sve.o
+ .debug_aranges
+                0x0000000000000e90       0x50 ./build/rpi3/debug/bl31/opteed_common.o
+ .debug_aranges
+                0x0000000000000ee0       0x60 ./build/rpi3/debug/bl31/opteed_main.o
+ .debug_aranges
+                0x0000000000000f40       0xa0 ./build/rpi3/debug/bl31/opteed_pm.o
+ .debug_aranges
+                0x0000000000000fe0       0x70 ./build/rpi3/debug/bl31/bl_common.o
+ .debug_aranges
+                0x0000000000001050       0x40 ./build/rpi3/debug/bl31/tf_log.o
+ .debug_aranges
+                0x0000000000001090       0xa0 ./build/rpi3/debug/bl31/multi_console.o
+ .debug_aranges
+                0x0000000000001130       0x30 ./build/rpi3/debug/bl31/plat_log_common.o
+ .debug_aranges
+                0x0000000000001160       0x50 ./build/rpi3/debug/bl31/plat_common.o
+ .debug_aranges
+                0x00000000000011b0       0x50 ./build/rpi3/debug/bl31/backtrace.o
+ .debug_aranges
+                0x0000000000001200       0xa0 ./build/rpi3/debug/bl31/rpi3_common.o
+ .debug_aranges
+                0x00000000000012a0       0xd0 ./build/rpi3/debug/bl31/xlat_tables_arch.o
+ .debug_aranges
+                0x0000000000001370       0xc0 ./build/rpi3/debug/bl31/xlat_tables_context.o
+ .debug_aranges
+                0x0000000000001430       0x90 ./build/rpi3/debug/bl31/xlat_tables_core.o
+ .debug_aranges
+                0x00000000000014c0       0x70 ./build/rpi3/debug/bl31/xlat_tables_utils.o
+ .debug_aranges
+                0x0000000000001530      0x110 ./build/rpi3/debug/bl31/cortex_a53.o
+ .debug_aranges
+                0x0000000000001640       0xc0 ./build/rpi3/debug/bl31/plat_helpers.o
+ .debug_aranges
+                0x0000000000001700       0x40 ./build/rpi3/debug/bl31/bl31_entrypoint.o
+ .debug_aranges
+                0x0000000000001740       0xa0 ./build/rpi3/debug/bl31/crash_reporting.o
+ .debug_aranges
+                0x00000000000017e0       0x80 ./build/rpi3/debug/bl31/ea_delegate.o
+ .debug_aranges
+                0x0000000000001860       0x40 ./build/rpi3/debug/bl31/runtime_exceptions.o
+ .debug_aranges
+                0x00000000000018a0       0x40 ./build/rpi3/debug/bl31/platform_mp_stack.o
+ .debug_aranges
+                0x00000000000018e0       0x40 ./build/rpi3/debug/bl31/cpu_data.o
+ .debug_aranges
+                0x0000000000001920       0xd0 ./build/rpi3/debug/bl31/cpu_helpers.o
+ .debug_aranges
+                0x00000000000019f0       0x40 ./build/rpi3/debug/bl31/spinlock.o
+ .debug_aranges
+                0x0000000000001a30       0x50 ./build/rpi3/debug/bl31/psci_helpers.o
+ .debug_aranges
+                0x0000000000001a80       0x80 ./build/rpi3/debug/bl31/context.o
+ .debug_aranges
+                0x0000000000001b00       0x40 ./build/rpi3/debug/bl31/opteed_helpers.o
+ .debug_aranges
+                0x0000000000001b40       0x60 ./build/rpi3/debug/bl31/debug.o
+ .debug_aranges
+                0x0000000000001ba0       0xb0 ./build/rpi3/debug/bl31/cache_helpers.o
+ .debug_aranges
+                0x0000000000001c50       0xe0 ./build/rpi3/debug/bl31/misc_helpers.o
+ .debug_aranges
+                0x0000000000001d30       0xf0 ./build/rpi3/debug/bl31/platform_helpers.o
+ .debug_aranges
+                0x0000000000001e20       0xa0 ./build/rpi3/debug/bl31/16550_console.o
+ .debug_aranges
+                0x0000000000001ec0       0x50 ./build/rpi3/debug/bl31/enable_mmu.o
+ .debug_aranges
+                0x0000000000001f10       0x30 ./build/rpi3/debug/lib/libc.a(assert.o)
+ .debug_aranges
+                0x0000000000001f40       0x30 ./build/rpi3/debug/lib/libc.a(memcpy.o)
+ .debug_aranges
+                0x0000000000001f70       0x30 ./build/rpi3/debug/lib/libc.a(memmove.o)
+ .debug_aranges
+                0x0000000000001fa0       0x30 ./build/rpi3/debug/lib/libc.a(memset.o)
+ .debug_aranges
+                0x0000000000001fd0       0x50 ./build/rpi3/debug/lib/libc.a(printf.o)
+ .debug_aranges
+                0x0000000000002020       0x30 ./build/rpi3/debug/lib/libc.a(putchar.o)
+
+.debug_line     0x0000000000000000     0xce7b
+ .debug_line    0x0000000000000000       0x28 ./build/rpi3/debug/bl31/build_message.o
+ .debug_line    0x0000000000000028      0x125 ./build/rpi3/debug/bl31/plat_psci_common.o
+ .debug_line    0x000000000000014d      0x330 ./build/rpi3/debug/bl31/rpi3_bl31_setup.o
+ .debug_line    0x000000000000047d      0x436 ./build/rpi3/debug/bl31/rpi3_pm.o
+ .debug_line    0x00000000000008b3       0xf9 ./build/rpi3/debug/bl31/rpi3_topology.o
+ .debug_line    0x00000000000009ac      0x511 ./build/rpi3/debug/bl31/fdt.o
+ .debug_line    0x0000000000000ebd     0x1039 ./build/rpi3/debug/bl31/fdt_ro.o
+ .debug_line    0x0000000000001ef6      0xf06 ./build/rpi3/debug/bl31/fdt_rw.o
+ .debug_line    0x0000000000002dfc      0x365 ./build/rpi3/debug/bl31/bl31_main.o
+ .debug_line    0x0000000000003161      0x3fd ./build/rpi3/debug/bl31/interrupt_mgmt.o
+ .debug_line    0x000000000000355e      0x259 ./build/rpi3/debug/bl31/bl31_context_mgmt.o
+ .debug_line    0x00000000000037b7      0x347 ./build/rpi3/debug/bl31/runtime_svc.o
+ .debug_line    0x0000000000003afe      0x150 ./build/rpi3/debug/bl31/arm_arch_svc_setup.o
+ .debug_line    0x0000000000003c4e      0x2b4 ./build/rpi3/debug/bl31/std_svc_setup.o
+ .debug_line    0x0000000000003f02       0xc6 ./build/rpi3/debug/bl31/cpu_data_array.o
+ .debug_line    0x0000000000003fc8      0x7b0 ./build/rpi3/debug/bl31/context_mgmt.o
+ .debug_line    0x0000000000004778      0x1e4 ./build/rpi3/debug/bl31/errata_report.o
+ .debug_line    0x000000000000495c      0x2b7 ./build/rpi3/debug/bl31/psci_off.o
+ .debug_line    0x0000000000004c13      0x445 ./build/rpi3/debug/bl31/psci_on.o
+ .debug_line    0x0000000000005058      0x47e ./build/rpi3/debug/bl31/psci_suspend.o
+ .debug_line    0x00000000000054d6      0xf3a ./build/rpi3/debug/bl31/psci_common.o
+ .debug_line    0x0000000000006410      0x82b ./build/rpi3/debug/bl31/psci_main.o
+ .debug_line    0x0000000000006c3b      0x5ce ./build/rpi3/debug/bl31/psci_setup.o
+ .debug_line    0x0000000000007209      0x28a ./build/rpi3/debug/bl31/psci_system_off.o
+ .debug_line    0x0000000000007493      0x1df ./build/rpi3/debug/bl31/psci_mem_protect.o
+ .debug_line    0x0000000000007672      0x3ad ./build/rpi3/debug/bl31/bakery_lock_coherent.o
+ .debug_line    0x0000000000007a1f      0x28e ./build/rpi3/debug/bl31/spe.o
+ .debug_line    0x0000000000007cad      0x2d6 ./build/rpi3/debug/bl31/sve.o
+ .debug_line    0x0000000000007f83      0x2f9 ./build/rpi3/debug/bl31/opteed_common.o
+ .debug_line    0x000000000000827c      0x472 ./build/rpi3/debug/bl31/opteed_main.o
+ .debug_line    0x00000000000086ee      0x435 ./build/rpi3/debug/bl31/opteed_pm.o
+ .debug_line    0x0000000000008b23      0x407 ./build/rpi3/debug/bl31/bl_common.o
+ .debug_line    0x0000000000008f2a      0x176 ./build/rpi3/debug/bl31/tf_log.o
+ .debug_line    0x00000000000090a0      0x39d ./build/rpi3/debug/bl31/multi_console.o
+ .debug_line    0x000000000000943d       0x84 ./build/rpi3/debug/bl31/plat_log_common.o
+ .debug_line    0x00000000000094c1      0x1a4 ./build/rpi3/debug/bl31/plat_common.o
+ .debug_line    0x0000000000009665      0x33e ./build/rpi3/debug/bl31/backtrace.o
+ .debug_line    0x00000000000099a3      0x2a5 ./build/rpi3/debug/bl31/rpi3_common.o
+ .debug_line    0x0000000000009c48      0x67f ./build/rpi3/debug/bl31/xlat_tables_arch.o
+ .debug_line    0x000000000000a2c7      0x32a ./build/rpi3/debug/bl31/xlat_tables_context.o
+ .debug_line    0x000000000000a5f1      0x8e3 ./build/rpi3/debug/bl31/xlat_tables_core.o
+ .debug_line    0x000000000000aed4      0x660 ./build/rpi3/debug/bl31/xlat_tables_utils.o
+ .debug_line    0x000000000000b534      0x1be ./build/rpi3/debug/bl31/cortex_a53.o
+ .debug_line    0x000000000000b6f2      0x124 ./build/rpi3/debug/bl31/plat_helpers.o
+ .debug_line    0x000000000000b816       0x8b ./build/rpi3/debug/bl31/bl31_entrypoint.o
+ .debug_line    0x000000000000b8a1      0x156 ./build/rpi3/debug/bl31/crash_reporting.o
+ .debug_line    0x000000000000b9f7       0xe8 ./build/rpi3/debug/bl31/ea_delegate.o
+ .debug_line    0x000000000000badf       0xb5 ./build/rpi3/debug/bl31/runtime_exceptions.o
+ .debug_line    0x000000000000bb94       0x73 ./build/rpi3/debug/bl31/platform_mp_stack.o
+ .debug_line    0x000000000000bc07       0x71 ./build/rpi3/debug/bl31/cpu_data.o
+ .debug_line    0x000000000000bc78      0x172 ./build/rpi3/debug/bl31/cpu_helpers.o
+ .debug_line    0x000000000000bdea       0x77 ./build/rpi3/debug/bl31/spinlock.o
+ .debug_line    0x000000000000be61       0x97 ./build/rpi3/debug/bl31/psci_helpers.o
+ .debug_line    0x000000000000bef8      0x145 ./build/rpi3/debug/bl31/context.o
+ .debug_line    0x000000000000c03d       0x80 ./build/rpi3/debug/bl31/opteed_helpers.o
+ .debug_line    0x000000000000c0bd       0xb7 ./build/rpi3/debug/bl31/debug.o
+ .debug_line    0x000000000000c174      0x110 ./build/rpi3/debug/bl31/cache_helpers.o
+ .debug_line    0x000000000000c284      0x1c0 ./build/rpi3/debug/bl31/misc_helpers.o
+ .debug_line    0x000000000000c444      0x148 ./build/rpi3/debug/bl31/platform_helpers.o
+ .debug_line    0x000000000000c58c      0x131 ./build/rpi3/debug/bl31/16550_console.o
+ .debug_line    0x000000000000c6bd       0x84 ./build/rpi3/debug/bl31/enable_mmu.o
+ .debug_line    0x000000000000c741       0xed ./build/rpi3/debug/lib/libc.a(assert.o)
+ .debug_line    0x000000000000c82e       0x86 ./build/rpi3/debug/lib/libc.a(memcpy.o)
+ .debug_line    0x000000000000c8b4       0xce ./build/rpi3/debug/lib/libc.a(memmove.o)
+ .debug_line    0x000000000000c982       0x82 ./build/rpi3/debug/lib/libc.a(memset.o)
+ .debug_line    0x000000000000ca04      0x3f8 ./build/rpi3/debug/lib/libc.a(printf.o)
+ .debug_line    0x000000000000cdfc       0x7f ./build/rpi3/debug/lib/libc.a(putchar.o)
+
+.debug_str      0x0000000000000000     0x444a
+ .debug_str     0x0000000000000000      0x149 ./build/rpi3/debug/bl31/build_message.o
+                                        0x160 (size before relaxing)
+ .debug_str     0x0000000000000149      0x1b7 ./build/rpi3/debug/bl31/plat_psci_common.o
+                                        0x340 (size before relaxing)
+ .debug_str     0x0000000000000300      0x2d9 ./build/rpi3/debug/bl31/rpi3_bl31_setup.o
+                                        0x60c (size before relaxing)
+ .debug_str     0x00000000000005d9      0x2e4 ./build/rpi3/debug/bl31/rpi3_pm.o
+                                        0x6b5 (size before relaxing)
+ .debug_str     0x00000000000008bd       0x64 ./build/rpi3/debug/bl31/rpi3_topology.o
+                                        0x370 (size before relaxing)
+ .debug_str     0x0000000000000921      0x133 ./build/rpi3/debug/bl31/fdt.o
+                                        0x3a1 (size before relaxing)
+ .debug_str     0x0000000000000a54      0x409 ./build/rpi3/debug/bl31/fdt_ro.o
+                                        0x7c2 (size before relaxing)
+ .debug_str     0x0000000000000e5d      0x369 ./build/rpi3/debug/bl31/fdt_rw.o
+                                        0x790 (size before relaxing)
+ .debug_str     0x00000000000011c6      0x209 ./build/rpi3/debug/bl31/bl31_main.o
+                                        0x663 (size before relaxing)
+ .debug_str     0x00000000000013cf      0x1f2 ./build/rpi3/debug/bl31/interrupt_mgmt.o
+                                        0x50a (size before relaxing)
+ .debug_str     0x00000000000015c1      0x105 ./build/rpi3/debug/bl31/bl31_context_mgmt.o
+                                        0x48d (size before relaxing)
+ .debug_str     0x00000000000016c6      0x17a ./build/rpi3/debug/bl31/runtime_svc.o
+                                        0x58c (size before relaxing)
+ .debug_str     0x0000000000001840       0x7e ./build/rpi3/debug/bl31/arm_arch_svc_setup.o
+                                        0x520 (size before relaxing)
+ .debug_str     0x00000000000018be       0xee ./build/rpi3/debug/bl31/std_svc_setup.o
+                                        0x700 (size before relaxing)
+ .debug_str     0x00000000000019ac       0x21 ./build/rpi3/debug/bl31/cpu_data_array.o
+                                        0x3ea (size before relaxing)
+ .debug_str     0x00000000000019cd      0x47c ./build/rpi3/debug/bl31/context_mgmt.o
+                                        0xa3b (size before relaxing)
+ .debug_str     0x0000000000001e49       0x98 ./build/rpi3/debug/bl31/errata_report.o
+                                        0x48c (size before relaxing)
+ .debug_str     0x0000000000001ee1      0x295 ./build/rpi3/debug/bl31/psci_off.o
+                                        0x8f4 (size before relaxing)
+ .debug_str     0x0000000000002176      0x123 ./build/rpi3/debug/bl31/psci_on.o
+                                        0xc44 (size before relaxing)
+ .debug_str     0x0000000000002299      0x168 ./build/rpi3/debug/bl31/psci_suspend.o
+                                        0xd24 (size before relaxing)
+ .debug_str     0x0000000000002401      0x4e4 ./build/rpi3/debug/bl31/psci_common.o
+                                        0xff3 (size before relaxing)
+ .debug_str     0x00000000000028e5      0x1ac ./build/rpi3/debug/bl31/psci_main.o
+                                        0xc88 (size before relaxing)
+ .debug_str     0x0000000000002a91      0x170 ./build/rpi3/debug/bl31/psci_setup.o
+                                        0xc4b (size before relaxing)
+ .debug_str     0x0000000000002c01       0x30 ./build/rpi3/debug/bl31/psci_system_off.o
+                                        0x815 (size before relaxing)
+ .debug_str     0x0000000000002c31       0x1c ./build/rpi3/debug/bl31/psci_mem_protect.o
+                                        0x7d2 (size before relaxing)
+ .debug_str     0x0000000000002c4d       0xd0 ./build/rpi3/debug/bl31/bakery_lock_coherent.o
+                                        0x51e (size before relaxing)
+ .debug_str     0x0000000000002d1d       0xfb ./build/rpi3/debug/bl31/spe.o
+                                        0x41c (size before relaxing)
+ .debug_str     0x0000000000002e18       0xf7 ./build/rpi3/debug/bl31/sve.o
+                                        0x42d (size before relaxing)
+ .debug_str     0x0000000000002f0f      0x1dc ./build/rpi3/debug/bl31/opteed_common.o
+                                        0x786 (size before relaxing)
+ .debug_str     0x00000000000030eb      0x103 ./build/rpi3/debug/bl31/opteed_main.o
+                                        0x9ba (size before relaxing)
+ .debug_str     0x00000000000031ee      0x115 ./build/rpi3/debug/bl31/opteed_pm.o
+                                        0x7f7 (size before relaxing)
+ .debug_str     0x0000000000003303      0x149 ./build/rpi3/debug/bl31/bl_common.o
+                                        0x58d (size before relaxing)
+ .debug_str     0x000000000000344c       0x8f ./build/rpi3/debug/bl31/tf_log.o
+                                        0x384 (size before relaxing)
+ .debug_str     0x00000000000034db      0x11d ./build/rpi3/debug/bl31/multi_console.o
+                                        0x438 (size before relaxing)
+ .debug_str     0x00000000000035f8       0x2e ./build/rpi3/debug/bl31/plat_log_common.o
+                                        0x31d (size before relaxing)
+ .debug_str     0x0000000000003626       0x5e ./build/rpi3/debug/bl31/plat_common.o
+                                        0x3e6 (size before relaxing)
+ .debug_str     0x0000000000003684      0x12f ./build/rpi3/debug/bl31/backtrace.o
+                                        0x46b (size before relaxing)
+ .debug_str     0x00000000000037b3      0x195 ./build/rpi3/debug/bl31/rpi3_common.o
+                                        0x58c (size before relaxing)
+ .debug_str     0x0000000000003948      0x283 ./build/rpi3/debug/bl31/xlat_tables_arch.o
+                                        0x62c (size before relaxing)
+ .debug_str     0x0000000000003bcb      0x1ab ./build/rpi3/debug/bl31/xlat_tables_context.o
+                                        0x610 (size before relaxing)
+ .debug_str     0x0000000000003d76      0x255 ./build/rpi3/debug/bl31/xlat_tables_core.o
+                                        0x7a3 (size before relaxing)
+ .debug_str     0x0000000000003fcb      0x12a ./build/rpi3/debug/bl31/xlat_tables_utils.o
+                                        0x62e (size before relaxing)
+ .debug_str     0x00000000000040f5       0x2c ./build/rpi3/debug/bl31/cortex_a53.o
+                                         0x60 (size before relaxing)
+ .debug_str     0x0000000000004121       0x21 ./build/rpi3/debug/bl31/plat_helpers.o
+                                         0x63 (size before relaxing)
+ .debug_str     0x0000000000004142       0x1f ./build/rpi3/debug/bl31/bl31_entrypoint.o
+                                         0x61 (size before relaxing)
+ .debug_str     0x0000000000004161       0x1f ./build/rpi3/debug/bl31/crash_reporting.o
+                                         0x61 (size before relaxing)
+ .debug_str     0x0000000000004180       0x1b ./build/rpi3/debug/bl31/ea_delegate.o
+                                         0x5d (size before relaxing)
+ .debug_str     0x000000000000419b       0x22 ./build/rpi3/debug/bl31/runtime_exceptions.o
+                                         0x64 (size before relaxing)
+ .debug_str     0x00000000000041bd       0x28 ./build/rpi3/debug/bl31/platform_mp_stack.o
+                                         0x6a (size before relaxing)
+ .debug_str     0x00000000000041e5       0x23 ./build/rpi3/debug/bl31/cpu_data.o
+                                         0x65 (size before relaxing)
+ .debug_str     0x0000000000004208       0x1f ./build/rpi3/debug/bl31/cpu_helpers.o
+                                         0x61 (size before relaxing)
+ .debug_str     0x0000000000004227       0x27 ./build/rpi3/debug/bl31/spinlock.o
+                                         0x69 (size before relaxing)
+ .debug_str     0x000000000000424e       0x20 ./build/rpi3/debug/bl31/psci_helpers.o
+                                         0x62 (size before relaxing)
+ .debug_str     0x000000000000426e       0x22 ./build/rpi3/debug/bl31/context.o
+                                         0x64 (size before relaxing)
+ .debug_str     0x0000000000004290       0x25 ./build/rpi3/debug/bl31/opteed_helpers.o
+                                         0x67 (size before relaxing)
+ .debug_str     0x00000000000042b5       0x17 ./build/rpi3/debug/bl31/debug.o
+                                         0x59 (size before relaxing)
+ .debug_str     0x00000000000042cc       0x1c ./build/rpi3/debug/bl31/cache_helpers.o
+                                         0x5e (size before relaxing)
+ .debug_str     0x00000000000042e8       0x1b ./build/rpi3/debug/bl31/misc_helpers.o
+                                         0x5d (size before relaxing)
+ .debug_str     0x0000000000004303       0x27 ./build/rpi3/debug/bl31/platform_helpers.o
+                                         0x69 (size before relaxing)
+ .debug_str     0x000000000000432a       0x28 ./build/rpi3/debug/bl31/16550_console.o
+                                         0x6a (size before relaxing)
+ .debug_str     0x0000000000004352       0x28 ./build/rpi3/debug/bl31/enable_mmu.o
+                                         0x6a (size before relaxing)
+ .debug_str     0x000000000000437a       0x2a ./build/rpi3/debug/lib/libc.a(assert.o)
+                                        0x2f2 (size before relaxing)
+ .debug_str     0x00000000000043a4       0x12 ./build/rpi3/debug/lib/libc.a(memcpy.o)
+                                        0x16c (size before relaxing)
+ .debug_str     0x00000000000043b6       0x13 ./build/rpi3/debug/lib/libc.a(memmove.o)
+                                        0x16c (size before relaxing)
+ .debug_str     0x00000000000043c9       0x12 ./build/rpi3/debug/lib/libc.a(memset.o)
+                                        0x172 (size before relaxing)
+ .debug_str     0x00000000000043db       0x5c ./build/rpi3/debug/lib/libc.a(printf.o)
+                                        0x364 (size before relaxing)
+ .debug_str     0x0000000000004437       0x13 ./build/rpi3/debug/lib/libc.a(putchar.o)
+                                        0x1dd (size before relaxing)
+
+.comment        0x0000000000000000       0x5e
+ .comment       0x0000000000000000       0x5e ./build/rpi3/debug/bl31/build_message.o
+                                         0x5f (size before relaxing)
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/plat_psci_common.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/rpi3_bl31_setup.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/rpi3_pm.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/rpi3_topology.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/fdt.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/fdt_ro.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/fdt_rw.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/bl31_main.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/interrupt_mgmt.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/bl31_context_mgmt.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/runtime_svc.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/arm_arch_svc_setup.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/std_svc_setup.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/cpu_data_array.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/context_mgmt.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/errata_report.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/psci_off.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/psci_on.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/psci_suspend.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/psci_common.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/psci_main.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/psci_setup.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/psci_system_off.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/psci_mem_protect.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/bakery_lock_coherent.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/spe.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/sve.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/opteed_common.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/opteed_main.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/opteed_pm.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/bl_common.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/tf_log.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/multi_console.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/plat_log_common.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/plat_common.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/backtrace.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/rpi3_common.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/xlat_tables_arch.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/xlat_tables_context.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/xlat_tables_core.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/bl31/xlat_tables_utils.o
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/lib/libc.a(assert.o)
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/lib/libc.a(memcpy.o)
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/lib/libc.a(memmove.o)
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/lib/libc.a(memset.o)
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/lib/libc.a(printf.o)
+ .comment       0x000000000000005e       0x5f ./build/rpi3/debug/lib/libc.a(putchar.o)
+
+.note.GNU-stack
+                0x0000000000000000        0x0
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/build_message.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/plat_psci_common.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/rpi3_bl31_setup.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/rpi3_pm.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/rpi3_topology.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt_ro.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/fdt_rw.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/bl31_main.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/interrupt_mgmt.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/bl31_context_mgmt.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/runtime_svc.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/arm_arch_svc_setup.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/std_svc_setup.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/cpu_data_array.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/context_mgmt.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/errata_report.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_off.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_on.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_suspend.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_common.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_main.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_setup.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_system_off.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/psci_mem_protect.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/bakery_lock_coherent.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/spe.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/sve.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/opteed_common.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/opteed_main.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/opteed_pm.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/bl_common.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/tf_log.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/multi_console.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/plat_log_common.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/plat_common.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/backtrace.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/rpi3_common.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/xlat_tables_arch.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/xlat_tables_context.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/xlat_tables_core.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/bl31/xlat_tables_utils.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(assert.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(memcpy.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(memmove.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(memset.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(printf.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./build/rpi3/debug/lib/libc.a(putchar.o)
+
+.debug_loc      0x0000000000000000    0x1c124
+ .debug_loc     0x0000000000000000      0x2b0 ./build/rpi3/debug/bl31/plat_psci_common.o
+ .debug_loc     0x00000000000002b0      0x332 ./build/rpi3/debug/bl31/rpi3_bl31_setup.o
+ .debug_loc     0x00000000000005e2      0x55b ./build/rpi3/debug/bl31/rpi3_pm.o
+ .debug_loc     0x0000000000000b3d      0x15a ./build/rpi3/debug/bl31/rpi3_topology.o
+ .debug_loc     0x0000000000000c97      0xbe2 ./build/rpi3/debug/bl31/fdt.o
+ .debug_loc     0x0000000000001879     0x4002 ./build/rpi3/debug/bl31/fdt_ro.o
+ .debug_loc     0x000000000000587b     0x3a58 ./build/rpi3/debug/bl31/fdt_rw.o
+ .debug_loc     0x00000000000092d3      0x1db ./build/rpi3/debug/bl31/bl31_main.o
+ .debug_loc     0x00000000000094ae      0xb91 ./build/rpi3/debug/bl31/interrupt_mgmt.o
+ .debug_loc     0x000000000000a03f      0x3a9 ./build/rpi3/debug/bl31/bl31_context_mgmt.o
+ .debug_loc     0x000000000000a3e8      0x7c6 ./build/rpi3/debug/bl31/runtime_svc.o
+ .debug_loc     0x000000000000abae      0x3ae ./build/rpi3/debug/bl31/arm_arch_svc_setup.o
+ .debug_loc     0x000000000000af5c      0x685 ./build/rpi3/debug/bl31/std_svc_setup.o
+ .debug_loc     0x000000000000b5e1     0x12f1 ./build/rpi3/debug/bl31/context_mgmt.o
+ .debug_loc     0x000000000000c8d2      0x363 ./build/rpi3/debug/bl31/errata_report.o
+ .debug_loc     0x000000000000cc35      0x203 ./build/rpi3/debug/bl31/psci_off.o
+ .debug_loc     0x000000000000ce38      0x543 ./build/rpi3/debug/bl31/psci_on.o
+ .debug_loc     0x000000000000d37b      0x632 ./build/rpi3/debug/bl31/psci_suspend.o
+ .debug_loc     0x000000000000d9ad     0x2213 ./build/rpi3/debug/bl31/psci_common.o
+ .debug_loc     0x000000000000fbc0     0x24d4 ./build/rpi3/debug/bl31/psci_main.o
+ .debug_loc     0x0000000000012094      0x691 ./build/rpi3/debug/bl31/psci_setup.o
+ .debug_loc     0x0000000000012725      0x122 ./build/rpi3/debug/bl31/psci_system_off.o
+ .debug_loc     0x0000000000012847      0x1ba ./build/rpi3/debug/bl31/psci_mem_protect.o
+ .debug_loc     0x0000000000012a01      0x485 ./build/rpi3/debug/bl31/bakery_lock_coherent.o
+ .debug_loc     0x0000000000012e86      0x2f7 ./build/rpi3/debug/bl31/spe.o
+ .debug_loc     0x000000000001317d      0x469 ./build/rpi3/debug/bl31/sve.o
+ .debug_loc     0x00000000000135e6      0x5ce ./build/rpi3/debug/bl31/opteed_common.o
+ .debug_loc     0x0000000000013bb4      0xa35 ./build/rpi3/debug/bl31/opteed_main.o
+ .debug_loc     0x00000000000145e9      0x599 ./build/rpi3/debug/bl31/opteed_pm.o
+ .debug_loc     0x0000000000014b82      0x88d ./build/rpi3/debug/bl31/bl_common.o
+ .debug_loc     0x000000000001540f      0x15e ./build/rpi3/debug/bl31/tf_log.o
+ .debug_loc     0x000000000001556d      0x534 ./build/rpi3/debug/bl31/multi_console.o
+ .debug_loc     0x0000000000015aa1       0xd6 ./build/rpi3/debug/bl31/plat_log_common.o
+ .debug_loc     0x0000000000015b77      0x1c7 ./build/rpi3/debug/bl31/plat_common.o
+ .debug_loc     0x0000000000015d3e      0x58e ./build/rpi3/debug/bl31/backtrace.o
+ .debug_loc     0x00000000000162cc      0x39e ./build/rpi3/debug/bl31/rpi3_common.o
+ .debug_loc     0x000000000001666a      0xc80 ./build/rpi3/debug/bl31/xlat_tables_arch.o
+ .debug_loc     0x00000000000172ea      0x673 ./build/rpi3/debug/bl31/xlat_tables_context.o
+ .debug_loc     0x000000000001795d     0x1c96 ./build/rpi3/debug/bl31/xlat_tables_core.o
+ .debug_loc     0x00000000000195f3     0x126d ./build/rpi3/debug/bl31/xlat_tables_utils.o
+ .debug_loc     0x000000000001a860       0xa4 ./build/rpi3/debug/lib/libc.a(assert.o)
+ .debug_loc     0x000000000001a904      0x144 ./build/rpi3/debug/lib/libc.a(memcpy.o)
+ .debug_loc     0x000000000001aa48      0x1d5 ./build/rpi3/debug/lib/libc.a(memmove.o)
+ .debug_loc     0x000000000001ac1d       0xcf ./build/rpi3/debug/lib/libc.a(memset.o)
+ .debug_loc     0x000000000001acec     0x13c1 ./build/rpi3/debug/lib/libc.a(printf.o)
+ .debug_loc     0x000000000001c0ad       0x77 ./build/rpi3/debug/lib/libc.a(putchar.o)
+
+.debug_ranges   0x0000000000000000     0x4390
+ .debug_ranges  0x0000000000000000       0x20 ./build/rpi3/debug/bl31/plat_psci_common.o
+ .debug_ranges  0x0000000000000020       0xa0 ./build/rpi3/debug/bl31/rpi3_bl31_setup.o
+ .debug_ranges  0x00000000000000c0      0x1b0 ./build/rpi3/debug/bl31/rpi3_pm.o
+ .debug_ranges  0x0000000000000270       0x30 ./build/rpi3/debug/bl31/rpi3_topology.o
+ .debug_ranges  0x00000000000002a0      0x120 ./build/rpi3/debug/bl31/fdt.o
+ .debug_ranges  0x00000000000003c0      0x5e0 ./build/rpi3/debug/bl31/fdt_ro.o
+ .debug_ranges  0x00000000000009a0      0x770 ./build/rpi3/debug/bl31/fdt_rw.o
+ .debug_ranges  0x0000000000001110      0x120 ./build/rpi3/debug/bl31/bl31_main.o
+ .debug_ranges  0x0000000000001230      0x120 ./build/rpi3/debug/bl31/interrupt_mgmt.o
+ .debug_ranges  0x0000000000001350       0x50 ./build/rpi3/debug/bl31/bl31_context_mgmt.o
+ .debug_ranges  0x00000000000013a0      0x160 ./build/rpi3/debug/bl31/runtime_svc.o
+ .debug_ranges  0x0000000000001500       0x50 ./build/rpi3/debug/bl31/arm_arch_svc_setup.o
+ .debug_ranges  0x0000000000001550       0xc0 ./build/rpi3/debug/bl31/std_svc_setup.o
+ .debug_ranges  0x0000000000001610      0x220 ./build/rpi3/debug/bl31/context_mgmt.o
+ .debug_ranges  0x0000000000001830       0x30 ./build/rpi3/debug/bl31/errata_report.o
+ .debug_ranges  0x0000000000001860       0x80 ./build/rpi3/debug/bl31/psci_off.o
+ .debug_ranges  0x00000000000018e0       0xe0 ./build/rpi3/debug/bl31/psci_on.o
+ .debug_ranges  0x00000000000019c0      0x210 ./build/rpi3/debug/bl31/psci_suspend.o
+ .debug_ranges  0x0000000000001bd0      0x620 ./build/rpi3/debug/bl31/psci_common.o
+ .debug_ranges  0x00000000000021f0      0x240 ./build/rpi3/debug/bl31/psci_main.o
+ .debug_ranges  0x0000000000002430      0x1a0 ./build/rpi3/debug/bl31/psci_setup.o
+ .debug_ranges  0x00000000000025d0       0x40 ./build/rpi3/debug/bl31/psci_system_off.o
+ .debug_ranges  0x0000000000002610       0x30 ./build/rpi3/debug/bl31/psci_mem_protect.o
+ .debug_ranges  0x0000000000002640       0xe0 ./build/rpi3/debug/bl31/bakery_lock_coherent.o
+ .debug_ranges  0x0000000000002720       0xe0 ./build/rpi3/debug/bl31/spe.o
+ .debug_ranges  0x0000000000002800      0x130 ./build/rpi3/debug/bl31/sve.o
+ .debug_ranges  0x0000000000002930       0x40 ./build/rpi3/debug/bl31/opteed_common.o
+ .debug_ranges  0x0000000000002970       0x80 ./build/rpi3/debug/bl31/opteed_main.o
+ .debug_ranges  0x00000000000029f0       0xf0 ./build/rpi3/debug/bl31/opteed_pm.o
+ .debug_ranges  0x0000000000002ae0      0x100 ./build/rpi3/debug/bl31/bl_common.o
+ .debug_ranges  0x0000000000002be0       0x30 ./build/rpi3/debug/bl31/tf_log.o
+ .debug_ranges  0x0000000000002c10       0xd0 ./build/rpi3/debug/bl31/multi_console.o
+ .debug_ranges  0x0000000000002ce0       0x20 ./build/rpi3/debug/bl31/plat_log_common.o
+ .debug_ranges  0x0000000000002d00       0x70 ./build/rpi3/debug/bl31/plat_common.o
+ .debug_ranges  0x0000000000002d70      0x120 ./build/rpi3/debug/bl31/backtrace.o
+ .debug_ranges  0x0000000000002e90       0x90 ./build/rpi3/debug/bl31/rpi3_common.o
+ .debug_ranges  0x0000000000002f20      0x260 ./build/rpi3/debug/bl31/xlat_tables_arch.o
+ .debug_ranges  0x0000000000003180       0xb0 ./build/rpi3/debug/bl31/xlat_tables_context.o
+ .debug_ranges  0x0000000000003230      0x410 ./build/rpi3/debug/bl31/xlat_tables_core.o
+ .debug_ranges  0x0000000000003640      0x1f0 ./build/rpi3/debug/bl31/xlat_tables_utils.o
+ .debug_ranges  0x0000000000003830      0x110 ./build/rpi3/debug/bl31/cortex_a53.o
+ .debug_ranges  0x0000000000003940       0xc0 ./build/rpi3/debug/bl31/plat_helpers.o
+ .debug_ranges  0x0000000000003a00       0x40 ./build/rpi3/debug/bl31/bl31_entrypoint.o
+ .debug_ranges  0x0000000000003a40       0xa0 ./build/rpi3/debug/bl31/crash_reporting.o
+ .debug_ranges  0x0000000000003ae0       0x80 ./build/rpi3/debug/bl31/ea_delegate.o
+ .debug_ranges  0x0000000000003b60       0x40 ./build/rpi3/debug/bl31/runtime_exceptions.o
+ .debug_ranges  0x0000000000003ba0       0x40 ./build/rpi3/debug/bl31/platform_mp_stack.o
+ .debug_ranges  0x0000000000003be0       0x40 ./build/rpi3/debug/bl31/cpu_data.o
+ .debug_ranges  0x0000000000003c20       0xd0 ./build/rpi3/debug/bl31/cpu_helpers.o
+ .debug_ranges  0x0000000000003cf0       0x40 ./build/rpi3/debug/bl31/spinlock.o
+ .debug_ranges  0x0000000000003d30       0x50 ./build/rpi3/debug/bl31/psci_helpers.o
+ .debug_ranges  0x0000000000003d80       0x80 ./build/rpi3/debug/bl31/context.o
+ .debug_ranges  0x0000000000003e00       0x40 ./build/rpi3/debug/bl31/opteed_helpers.o
+ .debug_ranges  0x0000000000003e40       0x60 ./build/rpi3/debug/bl31/debug.o
+ .debug_ranges  0x0000000000003ea0       0xb0 ./build/rpi3/debug/bl31/cache_helpers.o
+ .debug_ranges  0x0000000000003f50       0xe0 ./build/rpi3/debug/bl31/misc_helpers.o
+ .debug_ranges  0x0000000000004030       0xf0 ./build/rpi3/debug/bl31/platform_helpers.o
+ .debug_ranges  0x0000000000004120       0xa0 ./build/rpi3/debug/bl31/16550_console.o
+ .debug_ranges  0x00000000000041c0       0x50 ./build/rpi3/debug/bl31/enable_mmu.o
+ .debug_ranges  0x0000000000004210       0x20 ./build/rpi3/debug/lib/libc.a(assert.o)
+ .debug_ranges  0x0000000000004230       0x20 ./build/rpi3/debug/lib/libc.a(memcpy.o)
+ .debug_ranges  0x0000000000004250       0x50 ./build/rpi3/debug/lib/libc.a(memmove.o)
+ .debug_ranges  0x00000000000042a0       0x20 ./build/rpi3/debug/lib/libc.a(memset.o)
+ .debug_ranges  0x00000000000042c0       0xb0 ./build/rpi3/debug/lib/libc.a(printf.o)
+ .debug_ranges  0x0000000000004370       0x20 ./build/rpi3/debug/lib/libc.a(putchar.o)
+
+.debug_frame    0x0000000000000000      0xdd8
+ .debug_frame   0x0000000000000000      0x178 ./build/rpi3/debug/bl31/cortex_a53.o
+ .debug_frame   0x0000000000000178      0x100 ./build/rpi3/debug/bl31/plat_helpers.o
+ .debug_frame   0x0000000000000278       0x40 ./build/rpi3/debug/bl31/bl31_entrypoint.o
+ .debug_frame   0x00000000000002b8       0xd0 ./build/rpi3/debug/bl31/crash_reporting.o
+ .debug_frame   0x0000000000000388       0xa0 ./build/rpi3/debug/bl31/ea_delegate.o
+ .debug_frame   0x0000000000000428      0x1a8 ./build/rpi3/debug/bl31/runtime_exceptions.o
+ .debug_frame   0x00000000000005d0       0x40 ./build/rpi3/debug/bl31/platform_mp_stack.o
+ .debug_frame   0x0000000000000610       0x40 ./build/rpi3/debug/bl31/cpu_data.o
+ .debug_frame   0x0000000000000650      0x118 ./build/rpi3/debug/bl31/cpu_helpers.o
+ .debug_frame   0x0000000000000768       0x40 ./build/rpi3/debug/bl31/spinlock.o
+ .debug_frame   0x00000000000007a8       0x58 ./build/rpi3/debug/bl31/psci_helpers.o
+ .debug_frame   0x0000000000000800       0xa0 ./build/rpi3/debug/bl31/context.o
+ .debug_frame   0x00000000000008a0       0x40 ./build/rpi3/debug/bl31/opteed_helpers.o
+ .debug_frame   0x00000000000008e0       0x70 ./build/rpi3/debug/bl31/debug.o
+ .debug_frame   0x0000000000000950       0xe8 ./build/rpi3/debug/bl31/cache_helpers.o
+ .debug_frame   0x0000000000000a38      0x130 ./build/rpi3/debug/bl31/misc_helpers.o
+ .debug_frame   0x0000000000000b68      0x148 ./build/rpi3/debug/bl31/platform_helpers.o
+ .debug_frame   0x0000000000000cb0       0xd0 ./build/rpi3/debug/bl31/16550_console.o
+ .debug_frame   0x0000000000000d80       0x58 ./build/rpi3/debug/bl31/enable_mmu.o
