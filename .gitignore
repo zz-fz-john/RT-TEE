@@ -12,4 +12,7 @@ buildroot
 module_output
 optee_client/build
 optee_os/out
-
+arm-trusted-firmware/tools/fiptool/fiptool
+arm-trusted-firmware/tools/fiptool/fiptool.o
+arm-trusted-firmware/tools/fiptool/tbbr_config.o
+arm-trusted-firmware/build/*
